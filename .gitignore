@@ -23,7 +23,6 @@ build/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
 
 # Pytest / coverage
 .pytest_cache/
@@ -34,9 +33,11 @@ htmlcov/
 playwright-browsers/
 ms-playwright/
 
-# Data artifacts — no subir datasets ni outputs del pipeline
-data/raw/
-data/processed/
+# Data — no upload datasets
+data/
+
+# Models — no upload large model files
+models/*.pkl
 
 # Logs
 *.log
