@@ -1,3 +1,5 @@
+<img src="app/static/img/border2.png" width="100%" style="display:block;margin:0;padding:0;"/>
+
 <div align="center">
   <img src="app/static/img/items_flipped.png" width="160" align="left"/>
   <img src="app/static/img/items.png" width="160" align="right"/>
@@ -23,7 +25,7 @@
 
 **InWine** es un sommelier virtual para vinos españoles.
 
-La mayoría de personas no sabe elegir vino — las etiquetas son confusas, las regiones desconocidas y el precio no siempre garantiza calidad. InWine analiza más de **1.900 vinos españoles** y, a partir de tus gustos, ocasión y presupuesto, te recomienda el vino perfecto. Sin que necesites saber nada de vinos.
+La mayoría de personas no sabe elegir vino, las etiquetas son confusas, las regiones desconocidas y el precio no siempre garantiza calidad. InWine analiza más de **1.900 vinos españoles** y, a partir de tus gustos, ocasión y presupuesto, te recomienda el vino perfecto. Sin que necesites saber nada de vinos.
 
 ---
 
@@ -69,7 +71,7 @@ Preparación y validación del dataset enriquecido:
 
 Exploración visual y estadística para entender el dataset y justificar las decisiones de modelado:
 
-- Distribución de precios — fuerte asimetría → transformación logarítmica
+- Distribución de precios - fuerte asimetría → transformación logarítmica
 - Distribución de ratings y relación calidad-precio
 - Análisis por región, tipo de vino y uva
 - Correlaciones y detección de outliers
