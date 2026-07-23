@@ -47,11 +47,16 @@ Variables numéricas escaladas con StandardScaler (media 0, desviación 1):
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path # <-- Añadimos pathlib para gestionar rutas de forma dinámica
 from mappings import map_flavors_to_families, map_temperature_to_semantic, FLAVOR_FAMILIES
 
-# Usamos el dataset limpio estándar. Si el enriquecido existe, se puede sustituir.
-INPUT_PATH = "../data/processed/wines_SPA_clean.csv" 
-OUTPUT_PATH = "../data/processed/wines_SPA_model_ready.csv"
+# 1. Detectamos dónde está ubicado ESTE script (carpeta 'preprocessing')
+BASE_DIR = Path(__file__).resolve().parent
+
+# 2. Construimos las rutas absolutas subiendo un nivel (.parent) hacia 'data/processed'
+# Esto funcionará sin importar desde qué carpeta de la terminal se ejecute el script.
+INPUT_PATH = BASE_DIR.parent / "data" / "processed" / "wines_SPA_clean.csv"
+OUTPUT_PATH = BASE_DIR.parent / "data" / "processed" / "wines_SPA_model_ready.csv"
 
 TARGET_ENCODING_SMOOTHING = 10  # Suavizado estadístico
 
