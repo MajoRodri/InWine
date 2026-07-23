@@ -255,6 +255,4 @@ cd preprocessing && python preprocessing.py
 | **Adrianna Aránguez** | Developer | [@adrianaarang](https://github.com/adrianaarang) |
 | **Gema Villanueva** | Developer | [@Gema-Villanueva](https://github.com/Gema-Villanueva) |
 
-<br/>
-
-<img src="app/static/img/tinto.png" width="100%" style="display:block;margin:0;padding:0;"/>
+<img src="app/static/img/border.png" width="100%" style="display:block;margin:0;padding:0;"/>
