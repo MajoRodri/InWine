@@ -1,3 +1,4 @@
+"""
 mappings.py
 ===========
 Diccionarios de mapeo semántico para Sommelier IA.
@@ -14,6 +15,7 @@ Contiene dos mapeos:
 Basado en el vocabulario real presente en wines_SPA_enriched_FINAL.csv
 (51 descriptores únicos tras fusionar sinónimos ES/EN) y en las 5 familias
 usadas originalmente en FLAVOR_KEYWORDS del scraper.
+"""
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 1. FLAVOR_DESCRIPTOR -> FAMILIA AROMÁTICA
