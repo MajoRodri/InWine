@@ -47,7 +47,7 @@ Variables numéricas escaladas con StandardScaler (media 0, desviación 1):
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from pathlib import Path # <-- Añadimos pathlib para gestionar rutas de forma dinámica
+from pathlib import Path
 from mappings import map_flavors_to_families, map_temperature_to_semantic, FLAVOR_FAMILIES
 
 # 1. Detectamos dónde está ubicado ESTE script (carpeta 'preprocessing')
@@ -94,8 +94,11 @@ def target_encode_feature(df: pd.DataFrame, feature_name: str) -> tuple:
     df[f"{feature_name}_mean_price"] = df[f"{feature_name}_mean_price"].fillna(global_mean_price)
     df[f"{feature_name}_mean_rating"] = df[f"{feature_name}_mean_rating"].fillna(global_mean_rating)
     
-    dict_stats = {"global_mean_price": global_mean_price, "global_mean_rating": global_mean_rating,
-                  f"{feature_name}_stats": stats[[f"{feature_name}_mean_price", f"{feature_name}_mean_rating"]].to_dict("index")}
+    dict_stats = {
+        "global_mean_price": global_mean_price, 
+        "global_mean_rating": global_mean_rating,
+        f"{feature_name}_stats": stats[[f"{feature_name}_mean_price", f"{feature_name}_mean_rating"]].to_dict("index")
+    }
     return df, dict_stats
 
 def apply_flavor_mapping(df: pd.DataFrame) -> pd.DataFrame:
@@ -148,13 +151,16 @@ def preprocess(df: pd.DataFrame) -> tuple:
         "grape_variety_mean_price", "grape_variety_mean_rating", "service_temp_midpoint"
     ]
     
-    # Añadimos las variables de sabor a escalar si existen
+# Añadimos las variables de sabor a escalar si existen
     flavor_cols = [f"flavor_{fam}" for fam in FLAVOR_FAMILIES]
     numeric_cols.extend(flavor_cols)
 
     scaler = StandardScaler()
     scaled_feature_names = [f"{c}_scaled" for c in numeric_cols]
     df[scaled_feature_names] = scaler.fit_transform(df[numeric_cols])
+
+    # --> NUEVO: Borramos las columnas redundantes del DataFrame final
+    df = df.drop(columns=['price_euros', 'luxury_category'], errors='ignore')
 
     return df, scaler, {"region": region_encoding, "grape": grape_encoding}
 
@@ -165,4 +171,4 @@ if __name__ == "__main__":
     df_processed.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print(f"\nForma final: {df_processed.shape}")
-    print(f"\nGuardado en: {OUTPUT_PATH}")
+    print(f"Guardado en: {OUTPUT_PATH}")
