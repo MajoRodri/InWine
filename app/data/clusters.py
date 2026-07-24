@@ -1,0 +1,98 @@
+"""
+clusters.py
+===========
+Perfiles comerciales de los clusters de vino, generados en 04_clustering.ipynb.
+Cada perfil incluye nombre comercial, descripcion y estadisticas de caracterizacion
+(precio medio/mediano, rating medio, tipo de vino y regiones dominantes, % crianza).
+"""
+
+CLUSTER_PROFILES: dict = {
+    0: {
+        'name': 'Iconos de Guarda',
+        'description': 'Tintos de muy alta gama y precio elevado, procedentes de las D.O. más prestigiosas (Ribera del Duero, Priorato, Rioja). Vinos de coleccionista.',
+        'n_wines': 315,
+        'price_mean': 540.92,
+        'price_median': 315.0,
+        'rating_mean': 4.63,
+        'dominant_vine_type': 'Tinto',
+        'dominant_regions': ['Ribera del Duero', 'Priorato', 'Rioja'],
+        'pct_ageing': 13.0,
+    },
+    1: {
+        'name': 'Blancos Selectos',
+        'description': 'Blancos de gama media-alta, con Rioja, Rias Baixas y Rueda como regiones principales.',
+        'n_wines': 137,
+        'price_mean': 47.89,
+        'price_median': 32.58,
+        'rating_mean': 4.35,
+        'dominant_vine_type': 'Blanco',
+        'dominant_regions': ['Rioja', 'Rias Baixas', 'Rueda'],
+        'pct_ageing': 12.4,
+    },
+    2: {
+        'name': 'Tintos Jovenes de Autor',
+        'description': 'Tintos jovenes (sin crianza) de precio medio, de regiones emergentes o menos mediaticas.',
+        'n_wines': 288,
+        'price_mean': 46.18,
+        'price_median': 33.84,
+        'rating_mean': 4.36,
+        'dominant_vine_type': 'Tinto',
+        'dominant_regions': ['Castilla y Leon', 'Emporda', 'Montsant'],
+        'pct_ageing': 0.0,
+    },
+    3: {
+        'name': 'Vinos Singulares',
+        'description': 'Vinos de tipo o variedad no clasificada de forma clara, de precio accesible y regiones diversas (Valdeorras, Penedes...).',
+        'n_wines': 65,
+        'price_mean': 33.53,
+        'price_median': 23.7,
+        'rating_mean': 4.34,
+        'dominant_vine_type': 'Desconocido',
+        'dominant_regions': ['Valdeorras', 'Penedes', 'Navarra'],
+        'pct_ageing': 6.2,
+    },
+    4: {
+        'name': 'Generosos y Jerez',
+        'description': 'Vinos generosos (Jerez, Montilla-Moriles), de precio medio-alto, para maridajes y sobremesa.',
+        'n_wines': 90,
+        'price_mean': 113.36,
+        'price_median': 66.95,
+        'rating_mean': 4.43,
+        'dominant_vine_type': 'Generoso',
+        'dominant_regions': ['Jerez-Xeres-Sherry', 'Montilla-Moriles', 'Jerez Amontillado'],
+        'pct_ageing': 6.7,
+    },
+    5: {
+        'name': 'Espumosos Premium',
+        'description': 'Espumosos de Cava con crianza prolongada, de precio medio-alto.',
+        'n_wines': 38,
+        'price_mean': 62.69,
+        'price_median': 53.32,
+        'rating_mean': 4.41,
+        'dominant_vine_type': 'Espumoso',
+        'dominant_regions': ['Cava', 'Penedes', 'Cataluna'],
+        'pct_ageing': 42.1,
+    },
+    6: {
+        'name': 'Tintos Crianza Clasicos',
+        'description': 'Tintos con crianza en barrica, de precio medio, de Rioja y Ribera del Duero — el perfil clasico de tinto espanol.',
+        'n_wines': 333,
+        'price_mean': 63.06,
+        'price_median': 40.45,
+        'rating_mean': 4.33,
+        'dominant_vine_type': 'Tinto',
+        'dominant_regions': ['Rioja', 'Ribera del Duero', 'Penedes'],
+        'pct_ageing': 100.0,
+    },
+    7: {
+        'name': 'Tintos Jovenes Premium',
+        'description': 'Tintos jovenes de denominaciones de prestigio (Ribera del Duero, Priorato, Rioja), precio medio-alto. Es el grupo mas numeroso.',
+        'n_wines': 758,
+        'price_mean': 66.17,
+        'price_median': 55.34,
+        'rating_mean': 4.37,
+        'dominant_vine_type': 'Tinto',
+        'dominant_regions': ['Ribera del Duero', 'Priorato', 'Rioja'],
+        'pct_ageing': 0.0,
+    },
+}
