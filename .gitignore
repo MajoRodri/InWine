@@ -56,3 +56,8 @@ desktop.ini
 # Secrets
 *.pem
 *.key
+
+# Datos y objetos generados por el preprocesamiento
+preprocessing/*.csv
+preprocessing/*.pkl
+
