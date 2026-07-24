@@ -132,9 +132,17 @@ def preprocess(df: pd.DataFrame) -> tuple:
     df = apply_flavor_mapping(df)
     df = apply_temperature_mapping(df)
 
-    # 2. Target Encoding para regiones y uvas (CORRECCIÓN: Se añade uva por alta cardinalidad)
+    # 2. Target Encoding para regiones y uvas (usan price_euros y rating, por eso van
+    #    ANTES de descartar esas columnas)
     df, region_encoding = target_encode_feature(df, "region")
     df, grape_encoding = target_encode_feature(df, "grape_variety")
+
+    # 2b. CORRECCIÓN: aquí sí se descartan de verdad 'price_euros' crudo y
+    # 'luxury_category' (antes solo se excluían del escalado, pero seguían
+    # presentes en el CSV final, dejando la redundancia de precio que se
+    # quería evitar). Se hace después del Target Encoding porque esas
+    # funciones todavía necesitan 'price_euros' para calcular las medias.
+    df = df.drop(columns=["price_euros", "luxury_category"], errors="ignore")
 
     # 3. One-Hot Encoding de vine_type (baja cardinalidad)
     df = pd.get_dummies(df, columns=["vine_type"], prefix="vine_type", dtype=int)
@@ -164,5 +172,16 @@ if __name__ == "__main__":
 
     df_processed.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
+    # CORRECCIÓN: guardar el scaler y los diccionarios de Target Encoding.
+    # Sin esto no había forma de aplicar la misma transformación a un vino
+    # nuevo en producción sin re-entrenar el escalador desde cero (lo que
+    # daría una escala distinta a la del modelo ya entrenado).
+    import pickle
+
+    PKL_PATH = BASE_DIR / "preprocessing_objects.pkl"
+    with open(PKL_PATH, "wb") as f:
+        pickle.dump({"scaler": scaler, "encodings": encodings}, f)
+
     print(f"\nForma final: {df_processed.shape}")
     print(f"\nGuardado en: {OUTPUT_PATH}")
+    print(f"Objetos de preprocesamiento guardados en: {PKL_PATH}")

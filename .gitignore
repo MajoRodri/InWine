@@ -34,7 +34,7 @@ playwright-browsers/
 ms-playwright/
 
 # Data — no upload datasets
-data/
+/data/
 
 # Models — no upload large model files
 models/*.pkl
@@ -56,3 +56,8 @@ desktop.ini
 # Secrets
 *.pem
 *.key
+
+# Datos y objetos generados por el preprocesamiento
+preprocessing/*.csv
+preprocessing/*.pkl
+
