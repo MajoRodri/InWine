@@ -34,7 +34,7 @@ playwright-browsers/
 ms-playwright/
 
 # Data — no upload datasets
-data/
+/data/
 
 # Models — no upload large model files
 models/*.pkl
