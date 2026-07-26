@@ -67,6 +67,14 @@ def get_value_filter_options() -> dict:
     return {"vine_types": vine_types, "regions": regions, "grapes": grapes}
 
 
+def get_wine_by_id(wine_id: int) -> dict | None:
+    """Return a wine by its unique ID, or None if not found.
+    Devuelve un vino por su ID único, o None si no existe."""
+    if wine_id <= 0:
+        return None
+    return next((w for w in WINES if w["id"] == wine_id), None)
+
+
 def get_best_value_wines(
     max_price: int = 50,
     min_rating: float = 4.2,

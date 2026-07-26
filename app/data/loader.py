@@ -102,16 +102,20 @@ def _load_wines() -> list[dict]:
 
     wines = df.to_dict("records")
     classified = []
-    for i, wine in enumerate(wines, start=1):
-        wine["id"] = i
+    for wine in wines:
         wine.setdefault("flavor_descriptor", "")
         if wine.get("vine_type") == "Desconocido":
             inferred = _infer_vine_type(wine.get("wine_name", ""))
             if inferred:
                 wine["vine_type"] = inferred
             else:
-                continue  # drop wines with no classifiable type
+                continue  # drop wines with no classifiable type / descarta vinos sin tipo identificable
         classified.append(wine)
+
+    # Assign sequential IDs only after dropping unclassifiable wines
+    # Asigna IDs secuenciales solo después de descartar vinos sin clasificar
+    for i, wine in enumerate(classified, start=1):
+        wine["id"] = i
 
     return classified
 

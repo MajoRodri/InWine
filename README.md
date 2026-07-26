@@ -53,7 +53,7 @@
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary> <strong>English</strong></summary>
 <br>
 
 <p align="center">
@@ -132,7 +132,7 @@
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 <div align="center">
@@ -323,7 +323,7 @@ Web app con **FastAPI + Jinja2**. Diseño luxury: fondo burdeos, tipografía ser
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 <p align="center">
@@ -520,7 +520,7 @@ Un modelo de clustering no es neutral. Las decisiones de preprocesamiento y la c
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 A clustering model is not neutral. Preprocessing decisions and the dataset composition introduce patterns that affect which wines get recommended and which regions become invisible.
@@ -572,7 +572,7 @@ A clustering model is not neutral. Preprocessing decisions and the dataset compo
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 <div align="center">
@@ -626,7 +626,7 @@ InWine/
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 ```
@@ -699,7 +699,7 @@ cd preprocessing && python preprocessing.py
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 **Requirements:** Python 3.11+ · pip
@@ -757,7 +757,7 @@ cd preprocessing && python preprocessing.py
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 <div align="center">
@@ -792,7 +792,7 @@ cd preprocessing && python preprocessing.py
 <br>
 
 <details>
-<summary>&nbsp;🇬🇧&nbsp; <strong>English</strong></summary>
+<summary><strong>English</strong></summary>
 <br>
 
 <div align="center">
