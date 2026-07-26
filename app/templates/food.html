@@ -13,7 +13,7 @@
   </div>
 </div>
 
-{# Iconos pre-renderizados para el JS — no visibles #}
+{# Iconos pre-renderizados para el JS: no visibles #}
 <span id="aiIconSvg" hidden>{{ svg_icon("ai-circuit") }}</span>
 <div id="chatIconsStore" hidden>
   {% for f in food_options %}<span data-icon="{{ f.icon_name }}">{{ svg_icon(f.icon_name) }}</span>{% endfor %}
@@ -49,7 +49,7 @@
   margin: 0 auto;
 }
 
-/* LEFT — chat bubbles, centered al nivel de la cabeza del bot */
+/* LEFT  */
 .bs-left {
   grid-column: 1;
   grid-row: 1;
@@ -73,7 +73,7 @@
 .bs-msgs::-webkit-scrollbar { width: 3px; }
 .bs-msgs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-/* BOT — solo row 1, pies con overlap mínimo sobre el mostrador */
+/* BOT  */
 .bs-bot-wrap {
   grid-column: 2;
   grid-row: 1;          /* solo la fila superior, NO spans al mostrador */
@@ -96,7 +96,7 @@
     drop-shadow(0 0 18px rgba(240,210,140,.22));
 }
 
-/* CHIPS STRIP — row 2, franja entre chat y mostrador */
+/* CHIPS STRIP  */
 .bs-chips-strip {
   grid-column: 1 / -1;
   grid-row: 2;
@@ -106,7 +106,7 @@
   justify-content: center;
 }
 
-/* COUNTER — row 3, mostrador completo sin recorte */
+/* COUNTER  */
 .bs-counter {
   grid-column: 1 / -1;
   grid-row: 3;
@@ -166,7 +166,7 @@
   color: #f2dc80;
 }
 
-/* ── Speech bubbles — cloud sutil desde la cabeza del bot ── */
+/* ── Speech bubbles  */
 .bs-bubble-bot {
   position: relative;
   background: rgba(244, 237, 227, 0.65);
@@ -272,7 +272,7 @@
         <div class="bs-msgs" id="chatMessages"></div>
       </div>
 
-      {# Columna derecha: bot — ocupa row 1 Y row 2, pies detrás del mostrador #}
+      {# Columna derecha: bot  #}
       <div class="bs-bot-wrap">
         <img src="/static/img/bot.png" alt="MrSommi" class="bs-bot-img">
       </div>
@@ -315,7 +315,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     msgs.scrollTo({ top: msgs.scrollHeight, behavior:'smooth' });
   }
 
-  /* Mensaje del bot — texto en burbuja, chips en el mostrador */
+  /* Mensaje del bot  */
   function botMsg(html) {
     var tmp = document.createElement('div');
     tmp.innerHTML = html;
@@ -334,7 +334,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     }
   }
 
-  /* Respuesta del usuario — píldora vino a la derecha */
+  /* Respuesta del usuario  */
   function userMsg(iconName, label) {
     var b = document.createElement('div');
     b.className = 'bs-bubble-user';
@@ -392,8 +392,8 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     { action:'type', value:'Sin preferencia', label:'Sorpréndeme', icon:'sparkle'            },
   ];
   var AGEINGS = [
-    { action:'ageing', value:'Joven',       label:'Joven — fresco y afrutado',  icon:'leaf'    },
-    { action:'ageing', value:'Crianza',     label:'Crianza — complejo y largo', icon:'trophy'  },
+    { action:'ageing', value:'Joven',       label:'Joven → Fresco y afrutado',  icon:'leaf'    },
+    { action:'ageing', value:'Crianza',     label:'Crianza → Complejo y largo', icon:'trophy'  },
     { action:'ageing', value:'Indiferente', label:'Me da igual',                icon:'sparkle' },
   ];
   var BUDGETS = [
@@ -472,7 +472,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
           if(hasTop) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('star')+' Los más destacados</div><div class="chat-wines">'+data.top_pairings.map(wineCardHtml).join('')+'</div></div>';
           if(hasVal) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('gem')+' Mejor calidad-precio</div><div class="chat-wines">'+data.value_pairings.map(wineCardHtml).join('')+'</div></div>';
         } else {
-          wines='<div class="chat-placeholder">'+aiIcon+'<strong>'+data.food.name+'</strong> — '+data.food.description+'</div>';
+          wines='<div class="chat-placeholder">'+aiIcon+'<strong>'+data.food.name+'</strong> '+data.food.description+'</div>';
         }
         botMsg(wines+'<div class="chat-followup">¿Qué más puedo hacer por ti?</div>'+intentChips());
         state={intent:null,food:null,wineType:null,ageing:null,budget:null};
@@ -489,7 +489,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
   async function handleAgeing(value, label, iconName) {
     state.ageing=value; disableChips(); userMsg(iconName,label);
     await new Promise(function(r){ setTimeout(r,350); });
-    botMsg('Por último — ¿qué presupuesto tienes?'+chipsHtml(BUDGETS));
+    botMsg('Por último, ¿Qué presupuesto tienes?'+chipsHtml(BUDGETS));
   }
   async function handleBudget(value, label, iconName) {
     state.budget=parseInt(value,10); disableChips(); userMsg(iconName,label); showTyping();
@@ -558,7 +558,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
   /* Saludo */
   botMsg(
     '¡Hola! Soy <strong>MrSommi</strong>, tu sommelier personal en InWine.<br>'+
-    'Estoy aquí para ayudarte a encontrar el vino perfecto — para una cena especial, un maridaje o simplemente una buena recomendación.<br><br>'+
+    'Estoy aquí para ayudarte a encontrar el vino perfecto ya sea para una cena especial, un maridaje o simplemente una buena recomendación.<br><br>'+
     '¿En qué puedo ayudarte hoy?'+intentChips()
   );
 

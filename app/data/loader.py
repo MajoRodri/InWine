@@ -97,7 +97,7 @@ def _load_wines() -> list[dict]:
             "Re-run the preprocessing and clustering notebooks."
         )
 
-    df["wine_ageing"] = df["wine_ageing"].map(_AGEING_LABEL)
+    df["wine_ageing"] = df["wine_ageing"].map(_AGEING_LABEL).fillna("Joven")
     df["luxury_category"] = df["luxury_category"].astype(bool)
 
     wines = df.to_dict("records")

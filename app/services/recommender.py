@@ -56,14 +56,14 @@ _AGEING_LABELS = {
     "Joven":   "estilo joven y fresco",
 }
 
-# Razones de maridaje por plato — tono humano y cálido
+# Razones de maridaje por plato 
 _FOOD_PAIRING_REASONS = {
     "carne_roja": (
         "Las carnes rojas piden un tinto con carácter: sus taninos se ablandan con las proteínas y la grasa de la carne, "
         "creando ese equilibrio que hace que cada bocado sea mejor que el anterior."
     ),
     "pescado": (
-        "El pescado tiene una textura delicada que se realza con un blanco fresco — "
+        "El pescado tiene una textura delicada que se realza con un blanco fresco "
         "su acidez limpia el paladar entre bocado y bocado sin eclipsar el sabor del mar."
     ),
     "marisco": (
@@ -75,7 +75,7 @@ _FOOD_PAIRING_REASONS = {
         "Este en concreto da justo en el clavo para conseguir ese equilibrio perfecto."
     ),
     "pasta": (
-        "La pasta y el arroz agradecen un vino con personalidad propia que acompañe sin eclipsar el plato — "
+        "La pasta y el arroz agradecen un vino con personalidad propia que acompañe sin eclipsar el plato "
         "ni demasiado tímido ni demasiado contundente, simplemente el compañero ideal."
     ),
     "quesos": (
@@ -132,7 +132,7 @@ def get_wine_recommendation(
     if wine_type not in _VALID_WINE_TYPES:
         wine_type = _NO_PREF
 
-    # 1. Filtro DURO de presupuesto — primero, nunca se relaja
+    # 1. Filtro de presupuesto 
     in_budget = [w for w in WINES if w["price_euros"] <= budget]
     if not in_budget:
         return None
@@ -142,26 +142,26 @@ def get_wine_recommendation(
     if wine_type != _NO_PREF:
         candidates = [w for w in candidates if w["vine_type"] == wine_type]
 
-    # 3. Región (blando — los desplegables vienen del dataset, rara vez vacío)
+    # 3. Región 
     if region != _NO_PREF:
         region_match = [w for w in candidates if w["region"] == region]
         if region_match:
             candidates = region_match
 
-    # 4. Variedad de uva (blando — misma razón)
+    # 4. Variedad de uva 
     if grape_variety != _NO_PREF:
         grape_match = [w for w in candidates if grape_variety in w["grape_variety"]]
         if grape_match:
             candidates = grape_match
 
-    # 5. Maridaje por comida (blando — preferencia orientativa)
+    # 5. Maridaje por comida 
     preferred_types = _FOOD_WINE_MAP.get(food, [])
     if preferred_types and wine_type == _NO_PREF:
         food_match = [w for w in candidates if w["vine_type"] in preferred_types]
         if food_match:
             candidates = food_match
 
-    # 6. Sabor (blando — preferencia orientativa)
+    # 6. Sabor 
     if flavor != _NO_PREF:
         keyword = _FLAVOR_MAP.get(flavor, "")
         if keyword:
@@ -204,13 +204,13 @@ def get_wine_recommendation_chat(
     ageing = _clean(ageing) or "Indiferente"
     budget = max(1, int(budget))
 
-    # 1. Filtro DURO de presupuesto — siempre primero, nunca se relaja
+    # 1. Filtro de presupuesto 
     in_budget = [w for w in WINES if w["price_euros"] <= budget]
     if not in_budget:
         return None
     candidates = in_budget
 
-    # 2. Filtro de tipo de vino (blando — si no hay resultado se queda con in_budget)
+    # 2. Filtro de tipo de vino
     if wine_type != _NO_PREF and wine_type in _VALID_WINE_TYPES:
         type_match = [w for w in candidates if w["vine_type"] == wine_type]
         if type_match:
@@ -223,17 +223,27 @@ def get_wine_recommendation_chat(
             if food_match:
                 candidates = food_match
 
-    # 3. Filtro de crianza (blando — si no hay resultado se queda con los anteriores)
+    # Guardar pool post-tipo para poder relajar crianza en "Dame otra opción"
+    # Save post-type pool so ageing can be relaxed when "Dame otra opción" runs out
+    pool_after_type = candidates
+
+    # 3. Filtro de crianza 
     if ageing != "Indiferente":
         ageing_match = [w for w in candidates if w.get("wine_ageing") == ageing]
         if ageing_match:
             candidates = ageing_match
 
     if exclude_ids:
-        candidates = [w for w in candidates if w["id"] not in exclude_ids]
+        after_exclude = [w for w in candidates if w["id"] not in exclude_ids]
+        # Si no quedan candidatos, relajar crianza y volver al pool de tipo
+        # If empty after excluding, relax ageing and fall back to type pool
+        if not after_exclude:
+            after_exclude = [w for w in pool_after_type if w["id"] not in exclude_ids]
+        candidates = after_exclude
 
     # Si hay vino de referencia, restringir al mismo cluster (estilo similar)
-    if reference_id:
+    # Only apply cluster filter when there are enough candidates to avoid emptying the list
+    if reference_id and len(candidates) > 1:
         ref = next((w for w in WINES if w["id"] == reference_id), None)
         if ref:
             same_cluster = [w for w in candidates if w["cluster_id"] == ref["cluster_id"]]
@@ -275,7 +285,7 @@ def get_wine_recommendation_chat(
     pairing_reason = _FOOD_PAIRING_REASONS.get(food, f"que marida a la perfección con {food_label}")
 
     explanation = (
-        f"Mi elección es <strong>{best['wine_name']}</strong>, de la bodega {best['winery']} — "
+        f"Mi elección es <strong>{best['wine_name']}</strong>, de la bodega {best['winery']}, "
         f"un {vine} de {region}{grape_part} con una valoración de {best['rating']:.1f} sobre 5, "
         f"que lo sitúa entre los mejores de su categoría.{ageing_part} "
         f"{pairing_reason} "
@@ -327,14 +337,14 @@ def get_user_profile(answers: list[str]) -> dict:
     Asigna un perfil vinícola del usuario basado en las respuestas del quiz.
 
     Profile reference / Referencia de perfiles:
-      0 = El Coleccionista       — high-end, collector
-      1 = El Amante del Blanco   — whites, fresh, seafood
-      2 = El Explorador          — young reds, emerging regions
-      3 = El Libre Pensador      — eclectic, affordable
-      4 = El Sibarita            — fortified, jerez, gourmet
-      5 = El Festivo             — sparkling, celebrations
-      6 = El Clásico             — classic aged reds, Rioja/Ribera
-      7 = El Cotidiano Premium   — everyday quality reds
+      0 = El Coleccionista       → high-end, collector
+      1 = El Amante del Blanco   → whites, fresh, seafood
+      2 = El Explorador          → young reds, emerging regions
+      3 = El Libre Pensador      → eclectic, affordable
+      4 = El Sibarita            → fortified, jerez, gourmet
+      5 = El Festivo             → sparkling, celebrations
+      6 = El Clásico             → classic aged reds, Rioja/Ribera
+      7 = El Cotidiano Premium   → everyday quality reds
     """
     answer_profile_map = {
         # Q1: flavors / sabores

@@ -46,5 +46,8 @@ app.include_router(about.router)
 # Railway asigna $PORT automáticamente; localmente usa 8000 por defecto.
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
+    try:
+        port = int(os.getenv("PORT", "8000"))
+    except ValueError:
+        port = 8000
     uvicorn.run("app.main:app", host="0.0.0.0", port=port)

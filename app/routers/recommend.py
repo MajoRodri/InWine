@@ -2,7 +2,7 @@
 Router de recomendación / Recommendation router.
 """
 
-from fastapi import APIRouter, Request, Form
+from fastapi import APIRouter, Request, Form, Query
 from fastapi.responses import HTMLResponse
 
 from app.services.recommender import get_wine_recommendation, get_filter_options
@@ -23,7 +23,7 @@ async def recommend_form(request: Request):
 async def recommend_result(
     request: Request,
     food: str = Form(...),
-    budget: int = Form(30),
+    budget: int = Form(30, ge=0, le=5000),
     wine_type: str = Form("Sin preferencia"),
     region: str = Form("Sin preferencia"),
     grape_variety: str = Form("Sin preferencia"),
