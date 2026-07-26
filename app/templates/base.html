@@ -1,0 +1,92 @@
+{% from "macros.html" import svg_icon %}
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}InWine — Sommelier IA{% endblock %}</title>
+  <meta name="description" content="{% block description %}Tu sumiller virtual de vinos españoles. Descubre, comprende y disfruta el vino perfecto con inteligencia artificial.{% endblock %}">
+
+  {# Anti-flash: aplica tema guardado antes de renderizar — default: dark (luxury mode) #}
+  <script>
+    (function(){
+      var t = localStorage.getItem('inwine-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      else document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+{# ── NAVBAR ─────────────────────────────────────────────────── #}
+<nav class="navbar" id="navbar">
+
+  <a href="/" class="navbar-brand">
+    <img src="/static/img/logosinfondo.png" alt="InWine logo" class="navbar-logo">
+    In<span class="accent">Wine</span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/"         {% if request.url.path == '/'         %}class="active"{% endif %}>Inicio</a></li>
+    <li><a href="/buscar"   {% if request.url.path == '/buscar'   %}class="active"{% endif %}>Buscar</a></li>
+    <li><a href="/explorar" {% if request.url.path == '/explorar' %}class="active"{% endif %}>Perfiles</a></li>
+    <li><a href="/valor"    {% if request.url.path == '/valor'    %}class="active"{% endif %}>Calidad-Precio</a></li>
+    <li><a href="/nosotros" {% if request.url.path == '/nosotros' %}class="active"{% endif %}>Sobre Nosotros</a></li>
+  </ul>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+    <span class="theme-icon-light">🌙</span>
+    <span class="theme-icon-dark">☀️</span>
+  </button>
+
+  <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+</nav>
+
+{# ── CONTENIDO PRINCIPAL ─────────────────────────────────────── #}
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+{# ── FOOTER ─────────────────────────────────────────────────── #}
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-center">
+      <div class="footer-brand">
+        <img src="/static/img/logosinfondo.png" alt="InWine" class="footer-logo-img">
+        In<span>Wine</span>
+      </div>
+      <div class="footer-tagline">Descubre · Comprende · Disfruta</div>
+      <div class="footer-gold-line"><span class="footer-dot">●</span></div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 InWine — Sommelier IA. Proyecto de Data Science.</span>
+      <span>Vinos españoles · Machine Learning · FastAPI</span>
+    </div>
+
+  </div>
+</footer>
+
+{# ── CHATBOT FAB → navega a la página completa (oculto dentro del chat) ── #}
+{% if request.url.path != '/comida' %}
+<a class="fchat-fab" href="/comida" aria-label="Abrir MrSommi">
+  <img src="/static/img/chatbot.png" alt="MrSommi" class="fchat-fab-img">
+</a>
+{% endif %}
+
+<script src="/static/js/main.js"></script>
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

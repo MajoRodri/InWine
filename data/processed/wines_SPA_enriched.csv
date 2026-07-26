@@ -1,0 +1,2025 @@
+﻿winery,wine_name,year,rating,region,price_euros,vine_type,grape_variety,wine_ageing,service_temperature,quality_price_ratio,luxury_category,cluster_id
+Teso La Monja,Tinto,2013,4.9,Toro,995.0,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Artadi,Vina El Pison,2018,4.9,Vino de Espana,313.5,Tinto,Tempranillo,0,16-18°C,0.016,1,0
+Vega Sicilia,Unico,2009,4.8,Ribera del Duero,324.95,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Vega Sicilia,Unico,1999,4.8,Ribera del Duero,692.96,Tinto,Tempranillo,0,16-18°C,0.007,1,0
+Vega Sicilia,Unico,1996,4.8,Ribera del Duero,778.06,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Vega Sicilia,Unico,1998,4.8,Ribera del Duero,490.0,Tinto,Tempranillo,0,16-18°C,0.01,1,0
+Vega Sicilia,Unico,2010,4.8,Ribera del Duero,349.0,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Vega Sicilia,Unico,1995,4.8,Ribera del Duero,810.89,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2015,4.8,Ribera del Duero,345.0,Tinto,Tempranillo,1,16-18°C,0.014,1,0
+Vega Sicilia,Unico,2011,4.8,Ribera del Duero,315.0,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2016,4.8,Ribera del Duero,514.85,Tinto,Tempranillo,1,16-18°C,0.009,1,0
+Pago de Carraovejas,El Anejon,2016,4.8,Ribera del Duero,105.15,Tinto,Tempranillo,0,16-18°C,0.046,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2018,4.8,Ribera del Duero,430.0,Tinto,Tempranillo,1,16-18°C,0.011,1,0
+Vega Sicilia,Unico,1970,4.8,Ribera del Duero,925.0,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Toro Albala,Don PX Convento Seleccion,1946,4.8,Montilla-Moriles,350.0,Generoso,Pedro Ximenez,0,12-14°C,0.014,1,4
+Pago de Carraovejas,Cuesta de Las Liebres,2015,4.8,Ribera del Duero,166.18,Tinto,Tempranillo,0,16-18°C,0.029,1,0
+Vega Sicilia,Unico,1962,4.8,Ribera del Duero,1620.0,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2019,4.8,Ribera del Duero,431.36,Tinto,Tempranillo,1,16-18°C,0.011,1,0
+Bodegas El Nido,El Nido,2018,4.8,Jumilla,195.627379550654,Tinto,Blend/Other,0,16-18°C,0.025,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2004,4.8,Ribera del Duero,824.43,Tinto,Tempranillo,1,16-18°C,0.006,1,0
+Valdespino,Toneles Moscatel,2015,4.8,Jerez-Xeres-Sherry,253.0,Generoso,Blend/Other,0,12-14°C,0.019,1,4
+Vega Sicilia,Unico Reserva Especial Edicion,2013,4.8,Ribera del Duero,570.51,Tinto,Tempranillo,1,16-18°C,0.008,1,0
+Dominio de Pingus,Pingus,2016,4.8,Ribera del Duero,1280.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Toro Albala,Don PX Convento Seleccion,1931,4.8,Montilla-Moriles,244.85,Generoso,Pedro Ximenez,0,12-14°C,0.02,1,4
+Vega Sicilia,Unico Reserva Especial Edicion,2010,4.8,Ribera del Duero,719.34,Tinto,Tempranillo,1,16-18°C,0.007,1,0
+Vega Sicilia,Unico,1979,4.8,Ribera del Duero,815.0,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Toro Albala,Don PX Pedro Ximenez,1946,4.8,Montilla-Moriles,285.86,Generoso,Pedro Ximenez,0,12-14°C,0.017,1,4
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2004,4.8,Priorato,1410.26,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2005,4.8,Ribera del Duero,813.96,Tinto,Tempranillo,1,16-18°C,0.006,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2020,4.8,Ribera del Duero,435.75,Tinto,Tempranillo,1,16-18°C,0.011,1,0
+Ordonez,Vatan Arena Tinta de Toro,2014,4.8,Toro,369.05,Tinto,Tempranillo,0,16-18°C,0.013,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,1985,4.8,Ribera del Duero,1182.77,Tinto,Tempranillo,1,16-18°C,0.004,1,0
+Toro Albala,Don PX Convento Seleccion,1929,4.8,Montilla-Moriles,227.95,Generoso,Pedro Ximenez,0,12-14°C,0.021,1,4
+Bodegas Valduero,Ribera Del Duero Gran Reserva 12 Anos,1999,4.8,Ribera del Duero,999.0,Tinto,Tempranillo,1,16-18°C,0.005,1,0
+Vina Sastre,Pesus Ribera del Duero,2007,4.8,Ribera del Duero,360.0,Tinto,Tempranillo,0,16-18°C,0.013,1,0
+Teso La Monja,Tinto,2012,4.8,Toro,1190.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Dominio de Pingus,Pingus,2017,4.8,Ribera del Duero,1150.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Teso La Monja,Tinto,2009,4.8,Toro,950.0,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2008,4.8,Priorato,1021.21,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Sierra Cantabria,Magico,2016,4.8,Rioja,544.5,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Teso La Monja,Tinto,2011,4.8,Toro,1295.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2017,4.8,Priorato,992.2,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Teso La Monja,Tinto,2015,4.8,Toro,1289.44,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Descendientes de J. Palacios,La Faraona Bierzo (Corullon),2017,4.8,Bierzo,1098.9,Tinto,Blend/Other,0,16-18°C,0.004,1,0
+La Rioja Alta,Gran Reserva 890,1985,4.8,Rioja,215.34,Tinto,Tempranillo,1,16-18°C,0.022,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2018,4.8,Priorato,1094.9,Tinto,Grenache / Carinena,0,16-18°C,0.004,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2015,4.7,Ribera del Duero,423.5,Tinto,Tempranillo,1,16-18°C,0.011,1,0
+Vega Sicilia,Valbuena 5o,2010,4.7,Ribera del Duero,239.5,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Vega Sicilia,Valbuena 5o,2014,4.7,Ribera del Duero,175.5,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Vega Sicilia,Valbuena 5o,2006,4.7,Ribera del Duero,194.0,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Vega Sicilia,Unico,2005,4.7,Ribera del Duero,381.15,Tinto,Tempranillo,0,16-18°C,0.012,1,0
+Vega Sicilia,Unico,2004,4.7,Ribera del Duero,584.43,Tinto,Tempranillo,0,16-18°C,0.008,1,0
+Vega Sicilia,Unico,2000,4.7,Ribera del Duero,555.2,Tinto,Tempranillo,0,16-18°C,0.008,1,0
+Vega Sicilia,Unico,2007,4.7,Ribera del Duero,445.28,Tinto,Tempranillo,0,16-18°C,0.011,1,0
+Vega Sicilia,Valbuena 5o,2015,4.7,Ribera del Duero,189.0,Tinto,Tempranillo,0,16-18°C,0.025,1,0
+Vega Sicilia,Unico,2006,4.7,Ribera del Duero,362.25,Tinto,Tempranillo,0,16-18°C,0.013,1,0
+Vega Sicilia,Unico,2008,4.7,Ribera del Duero,289.0,Tinto,Tempranillo,0,16-18°C,0.016,1,0
+Vega Sicilia,Unico,2003,4.7,Ribera del Duero,325.0,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Vega Sicilia,Valbuena 5o,2016,4.7,Ribera del Duero,107.57,Tinto,Tempranillo,0,16-18°C,0.044,1,0
+Vega Sicilia,Valbuena 5o,2005,4.7,Ribera del Duero,234.0,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Vega Sicilia,Unico,2002,4.7,Ribera del Duero,500.94,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Vega Sicilia,Unico,1991,4.7,Ribera del Duero,698.9,Tinto,Tempranillo,0,16-18°C,0.007,1,0
+Vega Sicilia,Unico,1994,4.7,Ribera del Duero,872.47,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2000,4.7,Ribera del Duero,877.85,Tinto,Tempranillo,1,16-18°C,0.005,1,0
+Vega Sicilia,Unico,1990,4.7,Ribera del Duero,827.94,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Pago de Carraovejas,Cuesta de Las Liebres,2014,4.7,Ribera del Duero,113.18,Tinto,Tempranillo,0,16-18°C,0.042,1,0
+Vega Sicilia,Unico,1989,4.7,Ribera del Duero,679.72,Tinto,Tempranillo,0,16-18°C,0.007,1,0
+Vega Sicilia,Unico,1987,4.7,Ribera del Duero,787.59,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2017,4.7,Ribera del Duero,480.06,Tinto,Tempranillo,1,16-18°C,0.01,1,0
+Pago de Carraovejas,El Anejon,2015,4.7,Ribera del Duero,75.1,Tinto,Tempranillo,0,16-18°C,0.063,1,0
+Bodegas El Nido,El Nido,2014,4.7,Jumilla,154.9,Tinto,Blend/Other,0,16-18°C,0.03,1,0
+Bodegas El Nido,El Nido,2013,4.7,Jumilla,145.0,Tinto,Blend/Other,0,16-18°C,0.032,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,1996,4.7,Ribera del Duero,290.0,Tinto,Tempranillo,1,16-18°C,0.016,1,0
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Blanco,1986,4.7,Rioja,795.0,Blanco,Viura,1,8-10°C,0.006,1,1
+Bodegas El Nido,El Nido,2016,4.7,Jumilla,371.78009750522,Tinto,Blend/Other,0,16-18°C,0.013,1,0
+Bodegas El Nido,El Nido,2008,4.7,Jumilla,134.19,Tinto,Blend/Other,0,16-18°C,0.035,1,0
+Vinedos de Paganos,La Nieta,2015,4.7,Rioja,82.58,Tinto,Tempranillo,0,16-18°C,0.057,1,0
+Vega Sicilia,Unico,1981,4.7,Ribera del Duero,873.86,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2007,4.7,Ribera del Duero,774.4,Tinto,Tempranillo,1,16-18°C,0.006,1,0
+Emilio Moro,Malleolus de Valderramiro,2016,4.7,Ribera del Duero,84.95,Tinto,Tempranillo,0,16-18°C,0.055,1,0
+Dominio de Pingus,Pingus,2001,4.7,Ribera del Duero,940.0,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Vega Sicilia,Unico,1986,4.7,Ribera del Duero,812.63,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Emilio Moro,Malleolus de Sanchomartin,2016,4.7,Ribera del Duero,116.54,Tinto,Tempranillo,0,16-18°C,0.04,1,0
+Dominio de Pingus,Pingus,2004,4.7,Ribera del Duero,1500.0,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Dominio de Pingus,Pingus,2006,4.7,Ribera del Duero,1190.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Bodegas El Nido,El Nido,2017,4.7,Jumilla,154.85,Tinto,Blend/Other,0,16-18°C,0.03,1,0
+Teso La Monja,Alabaster,2016,4.7,Toro,135.0,Tinto,Tempranillo,0,16-18°C,0.035,1,0
+Quinta de la Quietud,La Mula de la Quietud,2015,4.7,Toro,63.75,Tinto,Tempranillo,0,16-18°C,0.074,1,0
+Vega Sicilia,Unico,1985,4.7,Ribera del Duero,827.94,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Bodegas Mauro,Terreus Paraje de Cueva Baja,2017,4.7,Castilla y Leon,66.07,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Bodega Contador (Benjamin Romeo),Contador Rioja,2012,4.7,Rioja,213.9,Tinto,Tempranillo,0,16-18°C,0.022,1,0
+Remirez de Ganuza,Maria Remirez de Ganuza,2006,4.7,Rioja,234.9,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Vega Sicilia,Unico,1968,4.7,Ribera del Duero,2087.25,Tinto,Tempranillo,0,16-18°C,0.002,1,0
+Vinedos de Paganos,La Nieta,2018,4.7,Rioja,89.9,Tinto,Tempranillo,0,16-18°C,0.052,1,0
+Vega Sicilia,Unico,1964,4.7,Ribera del Duero,1384.54,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Vega Sicilia,Unico,1982,4.7,Ribera del Duero,820.98,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Dominio de Pingus,Pingus,2015,4.7,Ribera del Duero,1250.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,1995,4.7,Ribera del Duero,1500.0,Tinto,Tempranillo,1,16-18°C,0.003,1,0
+Dominio de Pingus,Pingus,1999,4.7,Ribera del Duero,1715.18,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Vega Sicilia,Unico,1974,4.7,Ribera del Duero,932.3,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,1998,4.7,Priorato,1372.14,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Bodegas San Roman,Cartago Paraje de Pozo,2015,4.7,Toro,78.9,Tinto,Tempranillo,0,16-18°C,0.06,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2012,4.7,Ribera del Duero,660.96,Tinto,Tempranillo,1,16-18°C,0.007,1,0
+Pago de Los Capellanes,Parcela El Picon Tinto,2009,4.7,Ribera del Duero,154.0,Tinto,Tempranillo,0,16-18°C,0.031,1,0
+Vega Sicilia,Valbuena 5o,2017,4.7,Ribera del Duero,134.89,Tinto,Tempranillo,0,16-18°C,0.035,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2000,4.7,Priorato,1422.96,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Bodega Numanthia,Termanthia,2005,4.7,Toro,207.11,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2011,4.7,Ribera del Duero,340.49,Tinto,Tempranillo,1,16-18°C,0.014,1,0
+Emilio Moro,Clon De La Familia,2010,4.7,Ribera del Duero,317.63,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Alto Moncayo,Aquilon Garnacha,2011,4.7,Campo de Borja,108.9,Tinto,Grenache,0,16-18°C,0.043,1,2
+Vega Sicilia,Unico,1983,4.7,Ribera del Duero,700.0,Tinto,Tempranillo,0,16-18°C,0.007,1,0
+Toro Albala,Don PX Convento Seleccion,1955,4.7,Montilla-Moriles,185.0,Generoso,Pedro Ximenez,0,12-14°C,0.025,1,4
+Vega Sicilia,Unico,1980,4.7,Ribera del Duero,911.43,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Bodega Contador (Benjamin Romeo),Contador Rioja,2005,4.7,Rioja,1150.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Vega Sicilia,Unico,1972,4.7,Ribera del Duero,698.95,Tinto,Tempranillo,0,16-18°C,0.007,1,0
+Bodega Numanthia,Termanthia,2004,4.7,Toro,2814.16,Tinto,Tempranillo,0,16-18°C,0.002,1,0
+Teso La Monja,Tinto,2010,4.7,Toro,1325.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Alvaro Palacios,Quinon de Valmira,2015,4.7,Rioja,527.26,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,1987,4.7,Ribera del Duero,1071.45,Tinto,Tempranillo,1,16-18°C,0.004,1,0
+Mas Doix,1902 Centenary Carignan Priorat,2015,4.7,Priorato,299.0,Tinto,Grenache / Carinena,0,16-18°C,0.016,1,0
+Finca Moncloa,Tintilla de Rota,2016,4.7,Cadiz,43.13,Desconocido,Blend/Other,0,10-14°C,0.109,0,3
+Vega Sicilia,Unico,1953,4.7,Ribera del Duero,1207.6,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Bodegas Roda,Cirsion Rioja,2000,4.7,Rioja,175.0,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2015,4.7,Priorato,1252.35,Tinto,Grenache / Carinena,0,16-18°C,0.004,1,0
+Bodegas El Nido,El Nido,2019,4.7,Jumilla,145.9,Tinto,Blend/Other,0,16-18°C,0.032,1,0
+Mas Doix,1902 Centenary Carignan Priorat,2013,4.7,Priorato,447.95,Tinto,Grenache / Carinena,0,16-18°C,0.01,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2006,4.7,Ribera del Duero,813.96,Tinto,Tempranillo,1,16-18°C,0.006,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2005,4.7,Priorato,1410.26,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Martinet,Cami Pesseroles,2006,4.7,Priorato,182.9,Tinto,Grenache / Carinena,0,16-18°C,0.026,1,0
+Recaredo,Turo d'en Mota,2007,4.7,Cava,99.0,Espumoso,Blend/Other,0,6-8°C,0.047,1,5
+Vega Sicilia,Unico Reserva Especial Edicion,1986,4.7,Ribera del Duero,1113.2,Tinto,Tempranillo,1,16-18°C,0.004,1,0
+Clos Erasmus,Priorat,2007,4.7,Priorato,654.31,Tinto,Grenache / Carinena,0,16-18°C,0.007,1,0
+Pago de Los Capellanes,Parcela El Picon Tinto,2016,4.7,Ribera del Duero,134.26,Tinto,Tempranillo,0,16-18°C,0.035,1,0
+Barbadillo,Reliquia Palo Cortado Sherry,2015,4.7,Jerez Palo Cortado,380.0,Generoso,Blend/Other,0,12-14°C,0.012,1,4
+La Rioja Alta,Gran Reserva 890,1982,4.7,Rioja,292.09,Tinto,Tempranillo,1,16-18°C,0.016,1,0
+Gonzalez-Byass,Anada Palo Cortado 1987,1987,4.7,Jerez Palo Cortado,400.85,Generoso,Blend/Other,0,12-14°C,0.012,1,4
+Clos Erasmus,Daphne Glorian Red,2007,4.7,Priorato,202.01,Tinto,Grenache / Carinena,0,16-18°C,0.023,1,0
+Toro Albala,Don PX Pedro Ximenez,1955,4.7,Montilla-Moriles,250.0,Generoso,Pedro Ximenez,0,12-14°C,0.019,1,4
+Vinedos de Paganos,La Nieta,2019,4.7,Rioja,88.9,Tinto,Tempranillo,0,16-18°C,0.053,1,0
+Bodegas Amaren,El Regollar,2016,4.7,Rioja,77.9,Tinto,Tempranillo,0,16-18°C,0.06,1,0
+Toro Albala,Don PX Convento Seleccion,1958,4.7,Montilla-Moriles,191.61,Generoso,Pedro Ximenez,0,12-14°C,0.025,1,4
+Teso La Monja,Alabaster,2018,4.7,Toro,123.89,Tinto,Tempranillo,0,16-18°C,0.038,1,0
+Alvear,Abuelo Diego Palo Cortado,2015,4.7,Montilla-Moriles,114.28,Generoso,Pedro Ximenez,0,12-14°C,0.041,1,4
+Equipo Navazos,La Bota 78 de Oloroso,2015,4.7,Manzanilla,95.57,Generoso,Blend/Other,0,12-14°C,0.049,1,4
+Morca,Touran,2018,4.7,Campo de Borja,93.95,Tinto,Grenache,0,16-18°C,0.05,1,2
+Territorio Luthier,Luthier Gran Reserva,2012,4.7,Ribera del Duero,248.0,Tinto,Tempranillo,1,16-18°C,0.019,1,0
+Artadi,Vina El Pison,1995,4.7,Vino de Espana,397.0,Tinto,Tempranillo,0,16-18°C,0.012,1,0
+Rafael Palacios,Sorte O Soro Val do Bibei,2019,4.7,Valdeorras,194.86,Desconocido,Blend/Other,0,10-14°C,0.024,1,3
+Recaredo,Reserva Particular de Recaredo Brut Nature,2011,4.7,Cava,65.05,Espumoso,Blend/Other,1,6-8°C,0.072,1,5
+Bodegas Mauro,Terreus Paraje de Cueva Baja,2019,4.7,Castilla y Leon,86.9,Tinto,Tempranillo,0,16-18°C,0.054,1,0
+Vina Sastre,Pesus Ribera del Duero,2004,4.7,Ribera del Duero,472.5,Tinto,Tempranillo,0,16-18°C,0.01,1,0
+Terra Remota,Usted,2010,4.7,Emporda,379.0,Tinto,Blend/Other,0,16-18°C,0.012,1,0
+Dehesa de Los Canonigos,Gran Reserva,2001,4.7,Ribera del Duero,185.15,Tinto,Tempranillo,1,16-18°C,0.025,1,0
+Vina Sastre,Regina Vides Ribera del Duero,1998,4.7,Ribera del Duero,94.2,Tinto,Tempranillo,0,16-18°C,0.05,1,0
+Miguel Merino,La Loma,2018,4.7,Rioja Alta,46.0,Tinto,Blend/Other,0,16-18°C,0.102,0,2
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2016,4.7,Priorato,919.6,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Gutierrez de la Vega,Recondita Armonia Monastrell Dulce,1987,4.7,Alicante,81.9,Tinto,Monastrell,0,16-18°C,0.057,1,2
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1942,4.7,Rioja,680.0,Tinto,Tempranillo,1,16-18°C,0.007,1,0
+Vega Sicilia,Valbuena 5o,2011,4.6,Ribera del Duero,218.0,Tinto,Tempranillo,0,16-18°C,0.021,1,0
+Vega Sicilia,Valbuena 5o,2012,4.6,Ribera del Duero,177.0,Tinto,Tempranillo,0,16-18°C,0.026,1,0
+Vega Sicilia,Valbuena 5o,2008,4.6,Ribera del Duero,187.3,Tinto,Tempranillo,0,16-18°C,0.025,1,0
+Vega Sicilia,Valbuena 5o,2007,4.6,Ribera del Duero,195.59,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Vega Sicilia,Valbuena 5o,2013,4.6,Ribera del Duero,135.0,Tinto,Tempranillo,0,16-18°C,0.034,1,0
+Vega Sicilia,Valbuena 5o,2009,4.6,Ribera del Duero,225.2,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Alion,Ribera del Duero,2016,4.6,Ribera del Duero,79.8,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2017,4.6,Ribera del Duero,116.187943627787,Tinto,Tempranillo,0,16-18°C,0.04,1,0
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2018,4.6,Ribera del Duero,89.3,Tinto,Tempranillo,0,16-18°C,0.052,1,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,2010,4.6,Rioja,438.9,Tinto,Tempranillo,1,16-18°C,0.01,1,0
+Alion,Ribera del Duero,2017,4.6,Ribera del Duero,79.9,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Vega Sicilia,Valbuena 5o,2004,4.6,Ribera del Duero,249.0,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Dominio de Pingus,Flor de Pingus,2018,4.6,Ribera del Duero,129.95,Tinto,Tempranillo,0,16-18°C,0.035,1,0
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2019,4.6,Ribera del Duero,76.95,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Vega Sicilia,Valbuena 5o,2000,4.6,Ribera del Duero,252.0,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Vega Sicilia,Valbuena 5o,2002,4.6,Ribera del Duero,232.0,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Bodega Numanthia,Termanthia,2012,4.6,Toro,214.0,Tinto,Tempranillo,0,16-18°C,0.021,1,0
+Bodega Numanthia,Termanthia,2011,4.6,Toro,205.0,Tinto,Tempranillo,0,16-18°C,0.022,1,0
+Carmelo Rodero,Pago De Valtarrena,2015,4.6,Ribera del Duero,49.95,Tinto,Tempranillo,0,16-18°C,0.092,0,7
+Emilio Moro,Malleolus de Sanchomartin,2011,4.6,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.037,1,0
+Vega Sicilia,Valbuena 5o,1999,4.6,Ribera del Duero,276.8,Tinto,Tempranillo,0,16-18°C,0.017,1,0
+Emilio Moro,Malleolus de Valderramiro,2015,4.6,Ribera del Duero,75.0,Tinto,Tempranillo,0,16-18°C,0.061,1,7
+Dominio de Pingus,Pingus,2010,4.6,Ribera del Duero,1359.75,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Pago de Carraovejas,Cuesta de Las Liebres,2010,4.6,Ribera del Duero,81.5,Tinto,Tempranillo,0,16-18°C,0.056,1,0
+Dominio de Pingus,Pingus,2012,4.6,Ribera del Duero,890.0,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Dominio del Bendito,El Titan del Bendito,2015,4.6,Toro,43.5,Tinto,Tempranillo,0,16-18°C,0.106,0,7
+Emilio Moro,Malleolus de Sanchomartin,2015,4.6,Ribera del Duero,99.0,Tinto,Tempranillo,0,16-18°C,0.046,1,0
+Dominio de Pingus,Pingus,2013,4.6,Ribera del Duero,1198.72,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Bodegas Mauro,Terreus Paraje de Cueva Baja,2015,4.6,Castilla y Leon,94.95,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Bodegas Mauro,Terreus Paraje de Cueva Baja,2016,4.6,Castilla y Leon,89.0,Tinto,Tempranillo,0,16-18°C,0.052,1,7
+Dominio de Pingus,Pingus,2005,4.6,Ribera del Duero,1785.96,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Vinedos de Paganos,La Nieta,2017,4.6,Rioja,108.21,Tinto,Tempranillo,0,16-18°C,0.043,1,7
+Artadi,Vina El Pison,2006,4.6,Vino de Espana,391.5,Tinto,Tempranillo,0,16-18°C,0.012,1,0
+Dominio de Pingus,Pingus,1998,4.6,Ribera del Duero,1350.0,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Bodegas Roda,Cirsion Rioja,2007,4.6,Rioja,145.0,Tinto,Tempranillo,0,16-18°C,0.032,1,0
+Bodegas Roda,Cirsion Rioja,2012,4.6,Rioja,173.38,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Bodega Contador (Benjamin Romeo),Contador Rioja,2011,4.6,Rioja,220.0,Tinto,Tempranillo,0,16-18°C,0.021,1,0
+Marques de Murrieta,Dalmau Rioja,2017,4.6,Rioja,85.7,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Vega Sicilia,Unico,1965,4.6,Ribera del Duero,2884.04,Tinto,Tempranillo,0,16-18°C,0.002,1,0
+Sierra Cantabria,Finca el Bosque,2015,4.6,Rioja,79.9,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Vina Sastre,Pago de Santa Cruz,2018,4.6,Ribera del Duero,68.7,Tinto,Tempranillo,0,16-18°C,0.067,1,7
+Dominio de Pingus,Pingus,2003,4.6,Ribera del Duero,1638.95,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Mas d'en Gil,Clos Fonta Priorat,2004,4.6,Priorato,150.0,Tinto,Grenache / Carinena,0,16-18°C,0.031,1,0
+Carmelo Rodero,Pago De Valtarrena,2016,4.6,Ribera del Duero,48.95,Tinto,Tempranillo,0,16-18°C,0.094,0,7
+Pago de Los Capellanes,Parcela El Picon Tinto,2014,4.6,Ribera del Duero,109.41,Tinto,Tempranillo,0,16-18°C,0.042,1,0
+Emilio Moro,Malleolus de Sanchomartin,2014,4.6,Ribera del Duero,119.0,Tinto,Tempranillo,0,16-18°C,0.039,1,0
+Vega Sicilia,Valbuena 5o,1992,4.6,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Dominio de Pingus,Pingus,2014,4.6,Ribera del Duero,1595.0,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Artadi,Vina El Pison,2010,4.6,Vino de Espana,519.55,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Pago de Los Capellanes,Parcela El Picon Tinto,2012,4.6,Ribera del Duero,89.0,Tinto,Tempranillo,0,16-18°C,0.052,1,0
+Artadi,Vina El Pison,2011,4.6,Vino de Espana,511.9,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,1999,4.6,Priorato,980.0,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Casa Castillo,Cuvee N Vinas Viejas,2015,4.6,Jumilla,73.0,Tinto,Blend/Other,0,16-18°C,0.063,1,2
+Artadi,Vina El Pison,2012,4.6,Vino de Espana,280.0,Tinto,Tempranillo,0,16-18°C,0.016,1,0
+Vega Sicilia,Unico,1973,4.6,Ribera del Duero,932.3,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Bodega Contador (Benjamin Romeo),Contador Rioja,2014,4.6,Rioja,251.99,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Bodegas San Roman,Cartago Paraje de Pozo,2014,4.6,Toro,61.69,Tinto,Tempranillo,0,16-18°C,0.075,1,7
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,1996,4.6,Priorato,1372.14,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Bodega Numanthia,Termanthia,2014,4.6,Toro,210.5,Tinto,Tempranillo,0,16-18°C,0.022,1,0
+Vega Sicilia,Valbuena 5o,1985,4.6,Ribera del Duero,285.0,Tinto,Tempranillo,0,16-18°C,0.016,1,0
+Matarromera,Ribera del Duero Prestigio Pago de las Solanas,2001,4.6,Ribera del Duero,245.75,Tinto,Tempranillo,0,16-18°C,0.019,1,0
+Vega Sicilia,Valbuena 5o,1989,4.6,Ribera del Duero,228.57,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Bodega Contador (Benjamin Romeo),Contador Rioja,2015,4.6,Rioja,319.9,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Artadi,Vina El Pison,2005,4.6,Vino de Espana,325.0,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Nin-Ortiz,Nit de Nin Mas d'en Cacador,2011,4.6,Priorato,345.0,Tinto,Grenache / Carinena,0,16-18°C,0.013,1,0
+Bodegas Mauro,VS,2018,4.6,Castilla y Leon,58.9,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Remirez de Ganuza,Maria Remirez de Ganuza,2005,4.6,Rioja,159.0,Tinto,Tempranillo,0,16-18°C,0.029,1,0
+Vinas del Vero,Blecua Somontano,2013,4.6,Somontano,69.9,Tinto,Blend/Other,0,16-18°C,0.066,1,2
+Vega Sicilia,Unico Reserva Especial Edicion,1989,4.6,Ribera del Duero,895.4,Tinto,Tempranillo,1,16-18°C,0.005,1,0
+Teso La Monja,Alabaster,2017,4.6,Toro,147.85,Tinto,Tempranillo,0,16-18°C,0.031,1,0
+Bodegas Mauro,Terreus Paraje de Cueva Baja,2018,4.6,Castilla y Leon,88.05,Tinto,Tempranillo,0,16-18°C,0.052,1,7
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,1997,4.6,Priorato,1080.0,Tinto,Grenache / Carinena,0,16-18°C,0.004,1,0
+Marques de Riscal,Frank Gehry Selection,2001,4.6,Rioja,301.0,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Artadi,Vina El Pison,2014,4.6,Vino de Espana,275.0,Tinto,Tempranillo,0,16-18°C,0.017,1,0
+Vega Sicilia,Unico,1967,4.6,Ribera del Duero,1106.24,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Arzuaga,Amaya Arzuaga (Coleccion),2016,4.6,Ribera del Duero,64.9,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Dominio de Pingus,Pingus,2000,4.6,Ribera del Duero,1503.0,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,1995,4.6,Priorato,1372.14,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Artadi,Vina El Pison,2015,4.6,Vino de Espana,241.55,Tinto,Tempranillo,0,16-18°C,0.019,1,0
+Bodegas Mas Alta,La Creu Alta,2013,4.6,Priorato,89.17,Tinto,Grenache / Carinena,0,16-18°C,0.052,1,7
+Vega Sicilia,Unico,1975,4.6,Ribera del Duero,769.9,Tinto,Tempranillo,0,16-18°C,0.006,1,0
+Dominio de Calogia,Tinto,2019,4.6,Ribera del Duero,67.94,Tinto,Tempranillo,0,16-18°C,0.068,1,7
+Tomas Postigo,5o Ano Ribera del Duero Tinto,2016,4.6,Ribera del Duero,44.0,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+Artadi,Vina El Pison,2009,4.6,Vino de Espana,445.0,Tinto,Tempranillo,0,16-18°C,0.01,1,0
+Cal Pla,Planots Priorat,2010,4.6,Priorato,87.02,Tinto,Grenache / Carinena,0,16-18°C,0.053,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,2009,4.6,Ribera del Duero,747.17,Tinto,Tempranillo,1,16-18°C,0.006,1,0
+Dominio del Bendito,El Titan del Bendito,2018,4.6,Toro,49.95,Tinto,Tempranillo,0,16-18°C,0.092,0,7
+Ossian,Capitel,2018,4.6,Castilla y Leon,50.51,Blanco,Verdejo,0,8-10°C,0.091,1,1
+Arzuaga,Gran Arzuaga Ribera del Duero,2004,4.6,Ribera del Duero,157.4,Tinto,Tempranillo,0,16-18°C,0.029,1,0
+Alto Moncayo,Aquilon Garnacha,2015,4.6,Campo de Borja,120.9,Tinto,Grenache,0,16-18°C,0.038,1,2
+Dominio de Pingus,Pingus,1996,4.6,Ribera del Duero,1746.94,Tinto,Tempranillo,0,16-18°C,0.003,1,0
+Cepa 21,Horcajo,2015,4.6,Ribera del Duero,75.3,Tinto,Tempranillo,0,16-18°C,0.061,1,7
+Carmelo Rodero,Pago De Valtarrena,2018,4.6,Ribera del Duero,47.5,Tinto,Tempranillo,0,16-18°C,0.097,0,7
+Vega Sicilia,Unico,2012,4.6,Ribera del Duero,359.9,Tinto,Tempranillo,0,16-18°C,0.013,1,0
+Bodegas Vilano,Tinto,2019,4.6,Ribera del Duero,43.5,Tinto,Tempranillo,0,16-18°C,0.106,0,7
+Allende,Aurus,2005,4.6,Rioja,136.0,Tinto,Tempranillo,0,16-18°C,0.034,1,0
+Costers del Siurana,Dolc de L'Obac,2006,4.6,Priorato,117.239420060872,Tinto,Grenache / Carinena,0,16-18°C,0.039,1,0
+Pago de Los Capellanes,Parcela El Picon Tinto,2011,4.6,Ribera del Duero,135.0,Tinto,Tempranillo,0,16-18°C,0.034,1,0
+Remirez de Ganuza,Trasnocho,2013,4.6,Rioja,82.5,Tinto,Tempranillo,0,16-18°C,0.056,1,7
+Bodegas Roda,Cirsion Rioja,2017,4.6,Rioja,149.9,Tinto,Tempranillo,0,16-18°C,0.031,1,0
+Teso La Monja,Tinto,2008,4.6,Toro,1260.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Pago de Los Capellanes,Doroteo Edicion Especial 25 Aniversario,2015,4.6,Ribera del Duero,59.0,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Bodegas Valduero,Tierra Alta de 2 Racimos Gran Reserva,2011,4.6,Ribera del Duero,82.5,Tinto,Tempranillo,1,16-18°C,0.056,1,6
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,2011,4.6,Rioja,195.0,Tinto,Tempranillo,1,16-18°C,0.024,1,6
+Vega Sicilia,Valbuena 5o,1980,4.6,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Arzuaga,Reserva Especial Ribera del Duero,2016,4.6,Ribera del Duero,54.5,Tinto,Tempranillo,1,16-18°C,0.084,1,6
+Hacienda Monasterio,Reserva Especial,2015,4.6,Ribera del Duero,79.1,Tinto,Tempranillo,1,16-18°C,0.058,1,6
+Mas d'en Gil,Gran Buig Priorat,2004,4.6,Priorato,272.0,Tinto,Grenache / Carinena,0,16-18°C,0.017,1,0
+Castillo Perelada,Finca Garbet,2014,4.6,Emporda,99.0,Tinto,Syrah,0,16-18°C,0.046,1,2
+Osborne,Solera India Oloroso Rare Sherry,2015,4.6,Jerez-Xeres-Sherry,189.99,Generoso,Blend/Other,0,12-14°C,0.024,1,4
+Emilio Moro,Clon De La Familia,2011,4.6,Ribera del Duero,317.63,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Sierra Cantabria,Amancio,2007,4.6,Rioja,399.6,Tinto,Tempranillo,0,16-18°C,0.012,1,0
+Toro Albala,Gines Liebana Pedro Ximenez,1910,4.6,Montilla-Moriles,701.05,Generoso,Pedro Ximenez,0,12-14°C,0.007,1,4
+Recaredo,Reserva Particular de Recaredo Brut Nature,2008,4.6,Cava,74.9,Espumoso,Blend/Other,1,6-8°C,0.061,1,5
+Clos Erasmus,Priorat,2008,4.6,Priorato,654.31,Tinto,Grenache / Carinena,0,16-18°C,0.007,1,0
+Vega Sicilia,Valbuena 5o,1983,4.6,Ribera del Duero,247.75,Tinto,Tempranillo,0,16-18°C,0.019,1,0
+Toro Albala,Don PX Seleccion,1965,4.6,Montilla-Moriles,144.99,Generoso,Pedro Ximenez,0,12-14°C,0.032,1,4
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2001,4.6,Priorato,945.0,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Hacienda Monasterio,Reserva,2017,4.6,Ribera del Duero,50.0,Tinto,Tempranillo,1,16-18°C,0.092,0,6
+Ysios,Finca Las Naves,2016,4.6,Rioja,126.64,Tinto,Tempranillo,0,16-18°C,0.036,1,0
+Marques de Grinon,AAA,2008,4.6,Dominio de Valdepusa,162.38,Tinto,Blend/Other,0,16-18°C,0.028,1,0
+Contino,Vina del Olivo,2001,4.6,Rioja,81.0,Tinto,Tempranillo,0,16-18°C,0.057,1,0
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2010,4.6,Priorato,2750.0,Tinto,Grenache / Carinena,0,16-18°C,0.002,1,0
+Marques de Murrieta,Dalmau Rioja,2001,4.6,Rioja,121.0,Tinto,Tempranillo,0,16-18°C,0.038,1,0
+Alvaro Palacios,Les Aubaguetes Priorat,2016,4.6,Priorato,355.95,Tinto,Grenache / Carinena,0,16-18°C,0.013,1,0
+Gramona,Cava Enoteca Finca La Plana Brut Nature,2001,4.6,Cava,164.66,Espumoso,Blend/Other,0,6-8°C,0.028,1,5
+Alto Moncayo,Aquilon Garnacha,2016,4.6,Campo de Borja,120.9,Tinto,Grenache,0,16-18°C,0.038,1,2
+Dominio del Aguila,Gran Reserva Penas Aladas,2014,4.6,Ribera del Duero,218.9,Tinto,Tempranillo,1,16-18°C,0.021,1,0
+Hacienda Solano,Pena Lobera,2016,4.6,Ribera del Duero,65.95,Tinto,Tempranillo,0,16-18°C,0.07,1,7
+Bodegas Mas Alta,La Creu Alta,2014,4.6,Priorato,86.0,Tinto,Grenache / Carinena,0,16-18°C,0.053,1,7
+Francisco Garcia Perez,Adega do Moucho Treixadura,2017,4.6,Ribeiro,34.5,Blanco,Treixadura,0,8-10°C,0.133,0,1
+Anima Negra,Son Negre,2007,4.6,Mallorca,282.65,Tinto,Blend/Other,0,16-18°C,0.016,1,0
+Mas Doix,1902 Centenary Carignan Priorat,2017,4.6,Priorato,259.9,Tinto,Grenache / Carinena,0,16-18°C,0.018,1,0
+Vega Sicilia,Unico,1961,4.6,Ribera del Duero,1099.28,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Castano,Casa Cisca Monastrell,2016,4.6,Yecla,35.0,Tinto,Monastrell,0,16-18°C,0.131,0,2
+Descendientes de J. Palacios,Moncerbal Bierzo (Corullon),2016,4.6,Bierzo,269.95,Tinto,Mencia,0,16-18°C,0.017,1,0
+La Legua,Capricho,2014,4.6,Cigales,27.2693427,Tinto,Blend/Other,0,16-18°C,0.169,0,2
+Dominio de Pingus,Pingus,2018,4.6,Ribera del Duero,1250.0,Tinto,Tempranillo,0,16-18°C,0.004,1,0
+Castillo de Cuzcurrita,Cerrado del Castillo Rioja,2016,4.6,Rioja,52.95,Tinto,Tempranillo,0,16-18°C,0.087,1,7
+Oxer Wines,Kalamity Rioja,2018,4.6,Rioja,114.95,Tinto,Tempranillo,0,16-18°C,0.04,1,7
+Bodegas Yuste,Conde de Aldama Amontillado,2015,4.6,Jerez-Xeres-Sherry,89.9,Generoso,Blend/Other,0,12-14°C,0.051,1,4
+Vega Sicilia,Valbuena 5o,1979,4.6,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Bodegas 6o Elemento - Vino Sexto Elemento,Respeto,2015,4.6,Utiel-Requena,29.35,Tinto,Blend/Other,0,16-18°C,0.157,0,2
+Proyecto Garnachas de Espana,El Garnacho Viejo de la Familia Acha,2014,4.6,Rioja,79.9,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Matarromera,Ribera del Duero Prestigio,2016,4.6,Ribera del Duero,53.95,Tinto,Tempranillo,0,16-18°C,0.085,1,7
+Casal de Arman,Finca Misenhora Edicion Limitada,2018,4.6,Ribeiro,26.2,Blanco,Treixadura,0,8-10°C,0.176,0,1
+Mas Doix,1902 Centenary Carignan Priorat,2016,4.6,Priorato,270.44,Tinto,Grenache / Carinena,0,16-18°C,0.017,1,0
+Artadi,La Poza de Ballesteros,2009,4.6,Vino de Espana,187.5,Tinto,Tempranillo,0,16-18°C,0.025,1,0
+Marques de Murrieta,Reserva Rioja (Finca Ygay),1954,4.6,Rioja,210.0,Tinto,Tempranillo,1,16-18°C,0.022,1,0
+Hacienda Monasterio,Reserva Especial,2016,4.6,Ribera del Duero,85.63,Tinto,Tempranillo,1,16-18°C,0.054,1,6
+Artadi,Vina El Pison,2017,4.6,Vino de Espana,304.54,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Vall Llach,Idus,2020,4.6,Priorato,34.3,Tinto,Grenache / Carinena,0,16-18°C,0.134,0,7
+Clos Erasmus,Priorat,2003,4.6,Priorato,993.28,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Sierra Cantabria,Amancio,2017,4.6,Rioja,85.95,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Pago de Larrainzar,Rosado de Larrainzar,2020,4.6,Navarra,12.0,Desconocido,Blend/Other,0,10-14°C,0.383,0,3
+Emilio Moro,Clon De La Familia,2015,4.6,Ribera del Duero,249.9,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Vega Sicilia,Unico Reserva Especial Edicion,1982,4.6,Ribera del Duero,1238.43,Tinto,Tempranillo,1,16-18°C,0.004,1,0
+Sierra Cantabria,Finca el Bosque,2002,4.6,Rioja,128.0,Tinto,Tempranillo,0,16-18°C,0.036,1,0
+Descendientes de J. Palacios,Valdafoz Bierzo (Corullon),2011,4.6,Bierzo,135.5,Tinto,Mencia,0,16-18°C,0.034,1,0
+Ukan Winery,Tinto,2019,4.6,Rioja Alavesa,40.5,Tinto,Blend/Other,0,16-18°C,0.114,0,2
+Finca Moncloa,Tintilla de Rota,2017,4.6,Cadiz,43.1,Desconocido,Blend/Other,0,10-14°C,0.107,0,3
+Bodegas Mas Alta,La Creu Alta,2017,4.6,Priorato,85.0,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Vina Real,Rioja Gran Reserva,1986,4.6,Rioja,123.0,Tinto,Tempranillo,1,16-18°C,0.037,1,6
+Dominio de Atauta,Valdegatiles Ribera del Duero,2012,4.6,Ribera del Duero,106.35,Tinto,Tempranillo,0,16-18°C,0.043,1,0
+Toro Albala,Don PX Seleccion,1962,4.6,Montilla-Moriles,207.0,Generoso,Pedro Ximenez,0,12-14°C,0.022,1,4
+Micro Bio (MicroBio),Respublica Verdejo,2016,4.6,Vino de Espana,75.95,Blanco,Verdejo,0,8-10°C,0.061,1,1
+Dominio del Aguila,Gran Reserva Penas Aladas,2015,4.6,Ribera del Duero,185.3,Tinto,Tempranillo,1,16-18°C,0.025,1,0
+Terroir Al Limit Soc. Lda,Les Tosses,2016,4.6,Priorato,205.95,Tinto,Grenache / Carinena,0,16-18°C,0.022,1,0
+Finca Torremilanos,Torremilanos Coleccion Ribera del Duero,2016,4.6,Ribera del Duero,40.45,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Artadi,El Carretil,2017,4.6,Vino de Espana,176.89,Tinto,Tempranillo,0,16-18°C,0.026,1,0
+Huerta de Albala,Taberner No. 1,2013,4.6,Cadiz,79.9,Tinto,Blend/Other,0,16-18°C,0.058,1,2
+Gomez Cruzado,Vina Motulleri,2011,4.6,Rioja,79.0,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Castell d'Encus,Saktih,2013,4.6,Costers del Segre,195.27,Tinto,Blend/Other,0,16-18°C,0.024,1,2
+Abadia Retuerta,Cuvee Palomar,2017,4.6,Sardon de Duero,58.9,Tinto,Blend/Other,0,16-18°C,0.078,1,2
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2014,4.6,Priorato,1660.0,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Dominio de Atauta,Valdegatiles Ribera del Duero,2013,4.6,Ribera del Duero,111.9,Tinto,Tempranillo,0,16-18°C,0.041,1,0
+Bodegas 6o Elemento - Vino Sexto Elemento,Respeto,2017,4.6,Utiel-Requena,29.95,Tinto,Blend/Other,0,16-18°C,0.154,0,2
+Enate,Uno Tinto,2010,4.6,Somontano,129.9,Tinto,Blend/Other,0,16-18°C,0.035,1,2
+Benjamin de Rothschild - Vega Sicilia,Macan,2017,4.6,Rioja,69.95,Tinto,Tempranillo,0,16-18°C,0.066,1,7
+Mas Doix,1903 Centenary Grenache,2016,4.6,Priorato,299.0,Tinto,Grenache / Carinena,0,16-18°C,0.015,1,0
+Descendientes de J. Palacios,La Faraona Bierzo (Corullon),2010,4.6,Bierzo,3119.08,Tinto,Blend/Other,0,16-18°C,0.001,1,0
+Bodegas Aragonesas,Galiano Seleccion Especial,2013,4.6,Campo de Borja,99.95,Tinto,Blend/Other,0,16-18°C,0.046,1,2
+Telmo Rodriguez,Molino Real,2016,4.6,Malaga,41.69,Desconocido,Blend/Other,0,10-14°C,0.11,0,3
+Anima Negra,Son Negre,2004,4.6,Mallorca,374.35,Tinto,Blend/Other,0,16-18°C,0.012,1,0
+Tomas Postigo,5o Ano Ribera del Duero Tinto,2017,4.6,Ribera del Duero,46.45,Tinto,Tempranillo,0,16-18°C,0.099,0,7
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2011,4.6,Priorato,2750.0,Tinto,Grenache / Carinena,0,16-18°C,0.002,1,0
+Acustic Celler,Etern Vinyes Molt Velles,2016,4.6,Priorato,42.5,Tinto,Grenache / Carinena,0,16-18°C,0.108,0,7
+Vina Pedrosa,40 Aniversario Gran Reserva,2012,4.6,Ribera del Duero,95.0,Tinto,Tempranillo,1,16-18°C,0.048,1,6
+Osborne,Solera BC-200,2015,4.6,Jerez-Xeres-Sherry,197.3,Generoso,Blend/Other,0,12-14°C,0.023,1,4
+Recaredo,Corpinnat Enoteca Reserva Particular de Recaredo,2004,4.6,Cataluna,130.0,Espumoso,Blend/Other,1,6-8°C,0.035,1,5
+Toro Albala,Don PX Pedro Ximenez,1968,4.6,Montilla-Moriles,181.5,Generoso,Pedro Ximenez,0,12-14°C,0.025,1,4
+Pago de Carraovejas,Tinto,2016,4.5,Ribera del Duero,29.8,Tinto,Tempranillo,0,16-18°C,0.151,0,7
+Alion,Ribera del Duero,2013,4.5,Ribera del Duero,73.0,Tinto,Tempranillo,0,16-18°C,0.062,1,7
+Alion,Ribera del Duero,2014,4.5,Ribera del Duero,56.27,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Pintia,Toro,2014,4.5,Toro,69.0,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Pago de Carraovejas,Tinto,2018,4.5,Ribera del Duero,45.0,Tinto,Tempranillo,0,16-18°C,0.1,0,7
+Alion,Ribera del Duero,2015,4.5,Ribera del Duero,75.0,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Pintia,Toro,2015,4.5,Toro,69.8,Tinto,Tempranillo,0,16-18°C,0.064,1,7
+Pago de Carraovejas,Tinto,2017,4.5,Ribera del Duero,121.936825872994,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2016,4.5,Ribera del Duero,78.65,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,2005,4.5,Rioja,400.0,Tinto,Tempranillo,1,16-18°C,0.011,1,0
+La Rioja Alta,Gran Reserva 890,2005,4.5,Rioja,125.0,Tinto,Tempranillo,1,16-18°C,0.036,1,6
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,2009,4.5,Rioja,229.0,Tinto,Tempranillo,1,16-18°C,0.02,1,6
+Pintia,Toro,2016,4.5,Toro,40.41,Tinto,Tempranillo,0,16-18°C,0.111,0,7
+Dominio de Pingus,Flor de Pingus,2016,4.5,Ribera del Duero,101.94,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2015,4.5,Ribera del Duero,172.5,Tinto,Tempranillo,0,16-18°C,0.026,1,0
+Bodegas El Nido,Clio,2015,4.5,Jumilla,33.2,Tinto,Blend/Other,0,16-18°C,0.136,0,2
+Dominio de Pingus,Flor de Pingus,2014,4.5,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Dominio de Pingus,Flor de Pingus,2010,4.5,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Dominio de Pingus,Flor de Pingus,2015,4.5,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Bodegas El Nido,Clio,2016,4.5,Jumilla,31.75,Tinto,Blend/Other,0,16-18°C,0.142,0,2
+Bodegas El Nido,Clio,2017,4.5,Jumilla,39.5,Tinto,Blend/Other,0,16-18°C,0.114,0,2
+Aalto,PS (Pagos Seleccionados) Ribera del Duero,2011,4.5,Ribera del Duero,64.0,Tinto,Tempranillo,0,16-18°C,0.07,1,7
+Pago de Carraovejas,Tinto,2019,4.5,Ribera del Duero,33.8,Tinto,Tempranillo,0,16-18°C,0.133,0,7
+Benjamin de Rothschild - Vega Sicilia,Macan,2014,4.5,Rioja,58.95,Tinto,Tempranillo,0,16-18°C,0.076,1,7
+Aalto,Tinto,2018,4.5,Ribera del Duero,33.25,Tinto,Tempranillo,0,16-18°C,0.135,0,7
+Bodegas El Nido,Clio,2018,4.5,Jumilla,61.8491765262698,Tinto,Blend/Other,0,16-18°C,0.073,1,2
+Alto Moncayo,Garnacha,2017,4.5,Campo de Borja,44.27,Tinto,Grenache,0,16-18°C,0.102,0,2
+Pago de Los Capellanes,Parcela El Nogal Tinto,2015,4.5,Ribera del Duero,45.9,Tinto,Tempranillo,0,16-18°C,0.098,0,7
+Vega Sicilia,Valbuena 5o,2003,4.5,Ribera del Duero,239.2,Tinto,Tempranillo,0,16-18°C,0.019,1,0
+Benjamin de Rothschild - Vega Sicilia,Macan,2015,4.5,Rioja,68.9,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Alion,Ribera del Duero,2003,4.5,Ribera del Duero,164.0,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Belondrade,Belondrade y Lurton,2018,4.5,Rueda,32.85,Blanco,Verdejo,0,8-10°C,0.137,0,1
+Pago de Los Capellanes,Parcela El Nogal Tinto,2014,4.5,Ribera del Duero,40.95,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Pago de Carraovejas,Reserva,2014,4.5,Ribera del Duero,69.5803235920536,Tinto,Tempranillo,1,16-18°C,0.065,1,6
+Dominio de Pingus,Flor de Pingus,2017,4.5,Ribera del Duero,110.0,Tinto,Tempranillo,0,16-18°C,0.041,1,7
+Remirez de Ganuza,Rioja Reserva,2012,4.5,Rioja,49.75,Tinto,Tempranillo,1,16-18°C,0.09,0,6
+Muga,Prado Enea Gran Reserva,2014,4.5,Rioja,51.0,Tinto,Tempranillo,1,16-18°C,0.088,1,6
+Remirez de Ganuza,Rioja Reserva,2011,4.5,Rioja,59.9,Tinto,Tempranillo,1,16-18°C,0.075,1,6
+La Rioja Alta,Gran Reserva 890,2004,4.5,Rioja,290.7,Tinto,Tempranillo,1,16-18°C,0.015,1,6
+Belondrade,Belondrade y Lurton,2019,4.5,Rueda,37.7,Blanco,Verdejo,0,8-10°C,0.119,0,1
+Clos Mogador,Priorat,2015,4.5,Priorato,146.95,Tinto,Grenache / Carinena,0,16-18°C,0.031,1,7
+Bodegas Tradicion,Pedro Ximenez Tradicion 20 Years Old Vos,2015,4.5,Jerez Pedro Ximenes (PX),68.9,Generoso,Pedro Ximenez,0,12-14°C,0.065,1,4
+Muga,Torre Muga,2016,4.5,Rioja,70.5,Tinto,Tempranillo,0,16-18°C,0.064,1,7
+Benjamin de Rothschild - Vega Sicilia,Macan,2016,4.5,Rioja,64.0,Tinto,Tempranillo,0,16-18°C,0.07,1,7
+Bodega Numanthia,Termanthia,2010,4.5,Toro,168.0,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Emilio Moro,Malleolus de Valderramiro,2011,4.5,Ribera del Duero,173.95,Tinto,Tempranillo,0,16-18°C,0.026,1,0
+Clos Mogador,Priorat,2017,4.5,Priorato,65.0,Tinto,Grenache / Carinena,0,16-18°C,0.069,1,7
+Marques de Murrieta,Dalmau Rioja,2014,4.5,Rioja,67.6,Tinto,Tempranillo,0,16-18°C,0.067,1,7
+Hacienda Monasterio,Reserva,2015,4.5,Ribera del Duero,53.95,Tinto,Tempranillo,1,16-18°C,0.083,1,6
+Pago de Los Capellanes,Parcela El Nogal Tinto,2016,4.5,Ribera del Duero,42.95,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+La Rioja Alta,Gran Reserva 890,1995,4.5,Rioja,127.23,Tinto,Tempranillo,1,16-18°C,0.035,1,6
+Bodegas El Nido,Clio,2019,4.5,Jumilla,47.3,Tinto,Blend/Other,0,16-18°C,0.095,0,2
+Muga,Aro,2015,4.5,Rioja,169.4,Tinto,Tempranillo,0,16-18°C,0.027,1,7
+Remirez de Ganuza,Gran Reserva,2007,4.5,Rioja,121.838963251908,Tinto,Tempranillo,1,16-18°C,0.037,1,6
+Senorio de San Vicente,San Vicente Rioja,2017,4.5,Rioja,34.8,Tinto,Tempranillo,0,16-18°C,0.129,0,7
+Carmelo Rodero,Ribera del Duero TSM,2017,4.5,Ribera del Duero,55.35,Tinto,Tempranillo,0,16-18°C,0.081,1,7
+Vina Sastre,Pago de Santa Cruz,2016,4.5,Ribera del Duero,75.95,Tinto,Tempranillo,0,16-18°C,0.059,1,7
+Bodegas Valduero,Ribera Del Duero Reserva Premium 6 Anos,2011,4.5,Ribera del Duero,48.7,Tinto,Tempranillo,1,16-18°C,0.092,0,6
+Remirez de Ganuza,Trasnocho,2012,4.5,Rioja,118.89,Tinto,Tempranillo,0,16-18°C,0.038,1,7
+Costers del Siurana,Clos de L'Obac,2005,4.5,Priorato,92.8716274104906,Tinto,Grenache / Carinena,0,16-18°C,0.048,1,7
+Vega Sicilia,Valbuena 5o,1996,4.5,Ribera del Duero,290.4,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Arzuaga,Reserva Ribera del Duero,2017,4.5,Ribera del Duero,31.8,Tinto,Tempranillo,1,16-18°C,0.142,0,6
+La Rioja Alta,Gran Reserva 890,2010,4.5,Rioja,149.5,Tinto,Tempranillo,1,16-18°C,0.03,1,6
+Francisco Barona,Ribera Del Duero,2018,4.5,Ribera del Duero,35.85,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Vina Sastre,Pago de Santa Cruz,2015,4.5,Ribera del Duero,82.95,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Bodegas Valduero,Ribera Del Duero Reserva Premium 6 Anos,2012,4.5,Ribera del Duero,59.0,Tinto,Tempranillo,1,16-18°C,0.076,1,6
+Juan Gil,Bruto,2018,4.5,Jumilla,37.7,Tinto,Monastrell,0,16-18°C,0.119,0,2
+Lan,Culmen Reserva Rioja,2015,4.5,Rioja,42.75,Tinto,Tempranillo,1,16-18°C,0.105,0,6
+Bodegas Roda,Cirsion Rioja,2016,4.5,Rioja,175.57,Tinto,Tempranillo,0,16-18°C,0.026,1,7
+Clos Mogador,Priorat,2018,4.5,Priorato,61.64,Tinto,Grenache / Carinena,0,16-18°C,0.073,1,7
+Juan Gil,Bruto,2017,4.5,Jumilla,30.7,Tinto,Monastrell,0,16-18°C,0.147,0,2
+Bodegas Mauro,VS,2017,4.5,Castilla y Leon,56.5,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Bodega Numanthia,Termanthia,2013,4.5,Toro,207.11,Tinto,Tempranillo,0,16-18°C,0.022,1,0
+Remirez de Ganuza,Trasnocho,2011,4.5,Rioja,110.5,Tinto,Tempranillo,0,16-18°C,0.041,1,7
+Hacienda Monasterio,Reserva,2016,4.5,Ribera del Duero,55.95,Tinto,Tempranillo,1,16-18°C,0.08,1,6
+R. Lopez de Heredia,Vina Tondonia Gran Reserva,1995,4.5,Rioja,170.0,Tinto,Tempranillo,1,16-18°C,0.026,1,6
+Abadia Retuerta,Petit Verdot,2015,4.5,Sardon de Duero,107.9,Tinto,Blend/Other,0,16-18°C,0.042,1,2
+Tomas Postigo,5o Ano Ribera del Duero Tinto,2011,4.5,Ribera del Duero,69.9,Tinto,Tempranillo,0,16-18°C,0.064,1,7
+Dominio del Bendito,El Titan del Bendito,2017,4.5,Toro,49.5,Tinto,Tempranillo,0,16-18°C,0.091,0,7
+Abadia Retuerta,Petit Verdot,2014,4.5,Sardon de Duero,176.98,Tinto,Blend/Other,0,16-18°C,0.025,1,2
+Sierra Cantabria,Amancio,2012,4.5,Rioja,90.0,Tinto,Tempranillo,0,16-18°C,0.05,1,7
+Martinet,Clos Martinet,2014,4.5,Priorato,65.0,Tinto,Grenache / Carinena,0,16-18°C,0.069,1,7
+Remirez de Ganuza,Trasnocho,2006,4.5,Rioja,95.0,Tinto,Tempranillo,0,16-18°C,0.047,1,7
+Adama Wines,Tinto,2009,4.5,Ribera del Duero,39.0,Tinto,Tempranillo,0,16-18°C,0.115,0,7
+Alion,Ribera del Duero,1995,4.5,Ribera del Duero,193.0,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Muga,Aro,2016,4.5,Rioja,174.91,Tinto,Tempranillo,0,16-18°C,0.026,1,7
+Vega Sicilia,Valbuena 5o,1987,4.5,Ribera del Duero,312.0,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Milsetentayseis,Tinto,2018,4.5,Ribera del Duero,52.9,Tinto,Tempranillo,0,16-18°C,0.085,1,7
+Vina Sastre,Pago de Santa Cruz,2017,4.5,Ribera del Duero,40.9,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Espectacle del Montsant,Tinto,2013,4.5,Montsant,157.95,Tinto,Blend/Other,0,16-18°C,0.028,1,2
+Tinto Pesquera,Millenium Gran Reserva,2015,4.5,Ribera del Duero,77.5,Tinto,Tempranillo,1,16-18°C,0.058,1,6
+Vina Sastre,Regina Vides Ribera del Duero,2011,4.5,Ribera del Duero,116.0,Tinto,Tempranillo,0,16-18°C,0.039,1,7
+Alvaro Palacios,Finca Dofi,2006,4.5,Priorato,75.0,Tinto,Grenache / Carinena,0,16-18°C,0.06,1,7
+Arzuaga,Gran Reserva Ribera del Duero,2015,4.5,Ribera del Duero,80.98,Tinto,Tempranillo,1,16-18°C,0.056,1,6
+Contino,Vina del Olivo,2017,4.5,Rioja,64.5,Tinto,Tempranillo,0,16-18°C,0.07,1,7
+Dominio de Pingus,Flor de Pingus,2019,4.5,Ribera del Duero,118.5,Tinto,Tempranillo,0,16-18°C,0.038,1,7
+Ferrer Bobet,Seleccio Especial Vinyes Velles,2015,4.5,Priorato,64.0,Tinto,Grenache / Carinena,0,16-18°C,0.07,1,7
+Clos Mogador,Priorat,2003,4.5,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.047,1,7
+Allende,Calvario Rioja,2009,4.5,Rioja,125.97,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Bodegas Valduero,Ribera del Duero Una Cepa I,2017,4.5,Ribera del Duero,26.5,Tinto,Tempranillo,0,16-18°C,0.17,0,7
+Matarromera,Ribera del Duero Prestigio,2015,4.5,Ribera del Duero,54.01,Tinto,Tempranillo,0,16-18°C,0.083,1,7
+Vina Sastre,Regina Vides Ribera del Duero,2014,4.5,Ribera del Duero,104.9,Tinto,Tempranillo,0,16-18°C,0.043,1,7
+Familia Torres,Grans Muralles,2015,4.5,Conca de Barbera,170.5,Tinto,Blend/Other,0,16-18°C,0.026,1,0
+Vina Sastre,Pesus Ribera del Duero,2014,4.5,Ribera del Duero,315.0,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Pazo Barrantes,Gran Vino Albarino,2019,4.5,Rias Baixas,34.9,Blanco,Albarino,0,8-10°C,0.129,0,1
+Arzuaga,Reserva Especial Ribera del Duero,2015,4.5,Ribera del Duero,51.5,Tinto,Tempranillo,1,16-18°C,0.087,1,6
+Tio Pepe,Cuatro Palmas Amontillado,2015,4.5,Jerez Amontillado,112.26,Generoso,Blend/Other,0,12-14°C,0.04,1,4
+Abadia Retuerta,Pago Garduna,2016,4.5,Castilla y Leon,71.85,Tinto,Syrah,0,16-18°C,0.063,1,2
+Belondrade,Belondrade y Lurton,2020,4.5,Rueda,38.9,Blanco,Verdejo,0,8-10°C,0.116,0,1
+Pintia,Toro,2017,4.5,Toro,54.09,Tinto,Tempranillo,0,16-18°C,0.083,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2017,4.5,Rioja,67.9,Tinto,Tempranillo,0,16-18°C,0.066,1,7
+Sierra Cantabria,Finca el Bosque,2016,4.5,Rioja,80.95,Tinto,Tempranillo,0,16-18°C,0.056,1,7
+Alvear,Solera 1830 Pedro Ximenez,2015,4.5,Montilla-Moriles,114.5,Generoso,Pedro Ximenez,0,12-14°C,0.039,1,4
+Bodega Contador (Benjamin Romeo),Que Bonito Cacareaba Blanco,2018,4.5,Rioja,50.34,Blanco,Viura,0,8-10°C,0.089,1,1
+Tomas Postigo,5o Ano Ribera del Duero Tinto,2014,4.5,Ribera del Duero,57.96,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Marques de Riscal,Baron de Chirel Rioja Reserva,2016,4.5,Rioja,73.62,Tinto,Tempranillo,1,16-18°C,0.061,1,6
+Ossian,Capitel,2016,4.5,Castilla y Leon,144.78,Blanco,Verdejo,0,8-10°C,0.031,1,1
+Recaredo,Turo d'en Mota,2005,4.5,Cava,90.0,Espumoso,Blend/Other,0,6-8°C,0.05,1,5
+Sierra Cantabria,Amancio,2015,4.5,Rioja,89.95,Tinto,Tempranillo,0,16-18°C,0.05,1,7
+Vina Sastre,Regina Vides Ribera del Duero,2015,4.5,Ribera del Duero,92.8,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Marques de Grinon,Emeritvs (Emeritus),2013,4.5,Dominio de Valdepusa,48.9,Tinto,Blend/Other,0,16-18°C,0.092,0,2
+Vina Sastre,Regina Vides Ribera del Duero,2016,4.5,Ribera del Duero,70.55,Tinto,Tempranillo,0,16-18°C,0.064,1,7
+Recaredo,Turo d'en Mota,2006,4.5,Cava,110.0,Espumoso,Blend/Other,0,6-8°C,0.041,1,5
+Martinet,Cami Pesseroles,2009,4.5,Priorato,139.3,Tinto,Grenache / Carinena,0,16-18°C,0.032,1,0
+Dominio del Aguila,Reserva,2018,4.5,Ribera del Duero,59.8,Tinto,Tempranillo,1,16-18°C,0.075,1,6
+Sierra Cantabria,Amancio,2014,4.5,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Cruz de Alba,Finca Los Hoyales Ribera del Duero,2015,4.5,Ribera del Duero,57.0,Tinto,Tempranillo,0,16-18°C,0.079,1,7
+Artadi,Vina El Pison,2013,4.5,Vino de Espana,253.47,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Emilio Rojo,Blanco,2017,4.5,Ribeiro,49.95,Blanco,Treixadura,0,8-10°C,0.09,0,1
+Vina Sastre,Pesus Ribera del Duero,2015,4.5,Ribera del Duero,298.0,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Abadia Retuerta,Pago Garduna,2009,4.5,Castilla y Leon,73.6,Tinto,Syrah,0,16-18°C,0.061,1,2
+Bodegas Mas Alta,La Basseta,2013,4.5,Priorato,58.0,Tinto,Grenache / Carinena,0,16-18°C,0.078,1,7
+Territorio Luthier,Territorio Luthier Reserva,2016,4.5,Ribera del Duero,54.0,Tinto,Tempranillo,1,16-18°C,0.083,1,6
+Alion,Ribera del Duero,2018,4.5,Ribera del Duero,78.38,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Vega Sicilia,Valbuena 5o,1988,4.5,Ribera del Duero,228.63,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Anima Negra,Son Negre,2011,4.5,Mallorca,228.9,Tinto,Blend/Other,0,16-18°C,0.02,1,0
+Costers del Siurana,Clos de L'Obac,2010,4.5,Priorato,81.3,Tinto,Grenache / Carinena,0,16-18°C,0.055,1,7
+Dominio de Es,Vinas Viejas de Soria Ribera Del Duero,2018,4.5,Ribera del Duero,165.0,Tinto,Tempranillo,0,16-18°C,0.027,1,7
+Vina Sastre,Pago de Santa Cruz Gran Reserva Ribera del Duero,2014,4.5,Ribera del Duero,54.9,Tinto,Tempranillo,1,16-18°C,0.082,1,6
+Rafael Palacios,As Sortes Val do Bibei Godello,2020,4.5,Valdeorras,55.0,Desconocido,Blend/Other,0,10-14°C,0.082,1,3
+Martinet,Cami Pesseroles,2010,4.5,Priorato,131.85,Tinto,Grenache / Carinena,0,16-18°C,0.034,1,7
+Pago de Los Capellanes,Parcela El Picon Tinto,2015,4.5,Ribera del Duero,148.39,Tinto,Tempranillo,0,16-18°C,0.03,1,7
+Adama Wines,Tinto,2011,4.5,Ribera del Duero,39.0,Tinto,Tempranillo,0,16-18°C,0.115,0,7
+Jesus Madrazo,Seleccion Rioja,2015,4.5,Rioja,67.1,Tinto,Tempranillo,0,16-18°C,0.067,1,7
+Tinto Pesquera,Millenium Reserva,1996,4.5,Ribera del Duero,199.45,Tinto,Tempranillo,1,16-18°C,0.023,1,0
+Bodegas Naluar & Acediano,Acediano,2015,4.5,Ribera del Duero,52.0,Tinto,Tempranillo,0,16-18°C,0.087,1,7
+Marques de Caceres,Gaudium,2016,4.5,Rioja,34.9,Tinto,Tempranillo,0,16-18°C,0.129,0,7
+Dominio de Es,Vinas Viejas de Soria Ribera Del Duero,2017,4.5,Ribera del Duero,75.81,Tinto,Tempranillo,0,16-18°C,0.059,1,7
+Sierra Cantabria,Finca el Bosque,2017,4.5,Rioja,84.36,Tinto,Tempranillo,0,16-18°C,0.053,1,7
+Trus,Pico de Luyas,2016,4.5,Ribera del Duero,47.95,Tinto,Tempranillo,0,16-18°C,0.094,0,7
+Artadi,Grandes Anadas Rioja,2001,4.5,Rioja,391.65,Tinto,Tempranillo,0,16-18°C,0.011,1,0
+Juan Gil,Bruto,2019,4.5,Jumilla,32.5,Tinto,Monastrell,0,16-18°C,0.138,0,2
+Muga,Aro,2004,4.5,Rioja,198.0,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Mestres,Mas Via Gran Reserva Brut,2004,4.5,Cava,40.33,Espumoso,Blend/Other,1,6-8°C,0.112,0,5
+Alvaro Palacios,Les Aubaguetes Priorat,2015,4.5,Priorato,302.5,Tinto,Grenache / Carinena,0,16-18°C,0.015,1,0
+Quinta de la Quietud,La Mula de la Quietud,2016,4.5,Toro,62.0,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Chivite,Navarra Coleccion 125 Blanco,2018,4.5,Navarra,49.1,Blanco,Chardonnay,0,8-10°C,0.092,0,1
+Marques de Murrieta,Dalmau Rioja,2015,4.5,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Enate,Chardonnay Uno,2011,4.5,Somontano,200.13,Blanco,Chardonnay,0,8-10°C,0.022,1,1
+Toro Albala,Don PX Vieja Cosecha,1973,4.5,Montilla-Moriles,113.0,Generoso,Pedro Ximenez,0,12-14°C,0.04,1,4
+Bodega Ribas,Ribas de Cabrera,2018,4.5,Mallorca,68.4059721390231,Tinto,Blend/Other,0,16-18°C,0.066,1,2
+Vinas del Cenit,Cenit,2012,4.5,Tierra del Vino de Zamora,37.5,Tinto,Tempranillo,0,16-18°C,0.12,0,2
+Artadi,El Carretil,2012,4.5,Vino de Espana,165.0,Tinto,Tempranillo,0,16-18°C,0.027,1,0
+Alvaro Palacios,Quinon de Valmira,2016,4.5,Rioja,415.0,Tinto,Tempranillo,0,16-18°C,0.011,1,0
+Bodegas Naluar & Acediano,Acediano,2014,4.5,Ribera del Duero,74.0,Tinto,Tempranillo,0,16-18°C,0.061,1,7
+Mas del Serral,Mas del Serral,2007,4.5,Penedes,192.16,Espumoso,Blend/Other,0,6-8°C,0.023,1,5
+Cervoles,Estrats,2009,4.5,Costers del Segre,59.82,Tinto,Blend/Other,0,16-18°C,0.075,1,2
+Anima Negra,Son Negre,2016,4.5,Mallorca,164.9,Tinto,Blend/Other,0,16-18°C,0.027,1,2
+Diez Merito,Fino Imperial Amontillado 30 Anos,2015,4.5,Jerez Amontillado,94.9,Generoso,Blend/Other,0,12-14°C,0.047,1,4
+Valdespino,Coliseo Amontillado VORS,2015,4.5,Jerez Amontillado,199.0,Generoso,Blend/Other,0,12-14°C,0.023,1,4
+Sierra Cantabria,Finca el Bosque,2018,4.5,Rioja,85.95,Tinto,Tempranillo,0,16-18°C,0.052,1,7
+Familia Torres,Grans Muralles,2000,4.5,Conca de Barbera,125.05,Tinto,Blend/Other,0,16-18°C,0.036,1,0
+Emilio Moro,Malleolus de Valderramiro,2018,4.5,Ribera del Duero,85.55,Tinto,Tempranillo,0,16-18°C,0.053,1,7
+Bodega Contador (Benjamin Romeo),Contador Rioja,2016,4.5,Rioja,317.75,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Adama Wines,Tinto,2010,4.5,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.129,0,7
+R. Lopez de Heredia,Vina Tondonia Gran Reserva Blanco,1981,4.5,Rioja Alta,274.95,Blanco,Blend/Other,1,8-10°C,0.016,1,1
+Martinet,Cami Pesseroles,2014,4.5,Priorato,82.55,Tinto,Grenache / Carinena,0,16-18°C,0.055,1,7
+Clos Mogador,Priorat,2019,4.5,Priorato,63.9,Tinto,Grenache / Carinena,0,16-18°C,0.07,1,7
+Marques de Burgos,8000,2017,4.5,Ribera del Duero,29.95,Tinto,Tempranillo,0,16-18°C,0.15,0,7
+Vina Sastre,Pesus Ribera del Duero,2009,4.5,Ribera del Duero,312.6,Tinto,Tempranillo,0,16-18°C,0.014,1,0
+Bodegas Mas Alta,La Basseta,2017,4.5,Priorato,58.95,Tinto,Grenache / Carinena,0,16-18°C,0.076,1,7
+Artadi,La Poza de Ballesteros,2010,4.5,Vino de Espana,99.35,Tinto,Tempranillo,0,16-18°C,0.045,1,7
+Penafiel,Mironia Black Edition Tempranillo,2015,4.5,Ribera del Duero,49.5,Tinto,Tempranillo,0,16-18°C,0.091,0,7
+Bodegas Mas Alta,La Creu Alta,2015,4.5,Priorato,234.98,Tinto,Grenache / Carinena,0,16-18°C,0.019,1,0
+Costers del Siurana,Miserere,2010,4.5,Priorato,78.5,Tinto,Grenache / Carinena,0,16-18°C,0.057,1,7
+Muga,Prado Enea Gran Reserva,2015,4.5,Rioja,56.95,Tinto,Tempranillo,1,16-18°C,0.079,1,6
+Tobia,Alma Tobia Rioja,2015,4.5,Rioja,40.0,Tinto,Tempranillo,0,16-18°C,0.112,0,7
+Tresmano - Tr3smano,Tm,2016,4.5,Ribera del Duero,100.0,Tinto,Tempranillo,0,16-18°C,0.045,1,7
+Mas Doix,Doix,2017,4.5,Priorato,79.9,Tinto,Grenache / Carinena,0,16-18°C,0.056,1,7
+Sei Solo,Tinto,2012,4.5,Ribera del Duero,63.5,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Miguel Merino,La Loma,2017,4.5,Rioja Alta,38.9,Tinto,Blend/Other,0,16-18°C,0.116,0,2
+Finca Villacreces,Nebro Ribera del Duero,2011,4.5,Ribera del Duero,154.5,Tinto,Tempranillo,0,16-18°C,0.029,1,0
+Clos Erasmus,Priorat,2012,4.5,Priorato,374.66,Tinto,Grenache / Carinena,0,16-18°C,0.012,1,0
+Artadi,El Carretil,2015,4.5,Vino de Espana,143.51,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Virgen de la Asuncion,El Canto del Angel,2014,4.5,Ribera del Duero,59.95,Tinto,Tempranillo,0,16-18°C,0.075,1,7
+Artadi,Grandes Anadas Rioja,1998,4.5,Rioja,467.65,Tinto,Tempranillo,0,16-18°C,0.01,1,0
+Remirez de Ganuza,Rioja Blanco Reserva,2012,4.5,Rioja,65.5,Blanco,Viura,1,8-10°C,0.069,1,1
+Remirez de Ganuza,Gran Reserva,2011,4.5,Rioja,88.5,Tinto,Tempranillo,1,16-18°C,0.051,1,6
+Romate,Cayetano del Pino Viejisimo Palo Cortado,2015,4.5,Jerez Palo Cortado,25.92,Generoso,Blend/Other,0,12-14°C,0.174,0,4
+Allende,Calvario Rioja,2002,4.5,Rioja,95.0,Tinto,Tempranillo,0,16-18°C,0.047,1,7
+Dominio del Aguila,Gran Reserva Penas Aladas,2012,4.5,Ribera del Duero,559.02,Tinto,Tempranillo,1,16-18°C,0.008,1,0
+Martinet,Cami Pesseroles,2012,4.5,Priorato,115.85,Tinto,Grenache / Carinena,0,16-18°C,0.039,1,7
+Vega Sicilia,Unico,1969,4.5,Ribera del Duero,976.83,Tinto,Tempranillo,0,16-18°C,0.005,1,0
+Sara Perez y Rene Barbier,Gratallops Partida Bellvisos,2005,4.5,Priorato,266.81,Tinto,Grenache / Carinena,0,16-18°C,0.017,1,0
+Dehesa del Carrizal,Coleccion Privada,2017,4.5,Dehesa del Carrizal,26.9,Tinto,Blend/Other,0,16-18°C,0.167,0,2
+Tarsus,Finca El Canto,2015,4.5,Ribera del Duero,89.66,Tinto,Tempranillo,0,16-18°C,0.05,1,7
+Hacienda Solano,Finca Cascorrales,2016,4.5,Ribera del Duero,64.3,Tinto,Tempranillo,0,16-18°C,0.07,1,7
+La Rioja Alta,Rioja Gran Reserva 904,1987,4.5,Rioja,190.0,Tinto,Tempranillo,1,16-18°C,0.024,1,6
+Marques de Grinon,AAA,2004,4.5,Dominio de Valdepusa,141.2,Tinto,Blend/Other,0,16-18°C,0.032,1,2
+Adama Wines,Tinto,2007,4.5,Ribera del Duero,32.0,Tinto,Tempranillo,0,16-18°C,0.141,0,7
+Beronia,Rioja Gran Reserva,1994,4.5,Rioja,61.0,Tinto,Tempranillo,1,16-18°C,0.074,1,6
+Monte Real,Gran Reserva,1964,4.5,Rioja,140.0,Tinto,Tempranillo,1,16-18°C,0.032,1,6
+Toro Albala,Marques de Poley Amontillado Seleccion 1951,1951,4.5,Montilla-Moriles,169.95,Generoso,Pedro Ximenez,0,12-14°C,0.026,1,4
+Bodegas Valduero,Ribera Del Duero Reserva Premium 6 Anos,2014,4.5,Ribera del Duero,49.9,Tinto,Tempranillo,1,16-18°C,0.09,0,6
+Enate,Reserva Especial,2006,4.5,Somontano,65.9,Tinto,Blend/Other,1,16-18°C,0.068,1,6
+Divina Proporcion,Platon Tinto,2019,4.5,Toro,25.9,Tinto,Tempranillo,0,16-18°C,0.174,0,7
+Vina al Lado de la Casa,Altos de Las Gateras Monastrell,2013,4.5,Vino de Espana,58.19,Tinto,Monastrell,0,16-18°C,0.077,1,2
+Dominio del Aguila,Canta la Perdiz,2013,4.5,Ribera del Duero,295.0,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Marques de la Concordia,Marques de la Concordia VSG Premium (formerly Hacienda de Susar Rioja),2016,4.5,Rioja,35.5,Tinto,Tempranillo,0,16-18°C,0.127,0,7
+Agusti Torello Mata,Cava Kripta Gran Reserva Brut Nature,2013,4.5,Cava,53.7,Espumoso,Blend/Other,1,6-8°C,0.084,1,5
+Penafiel,Alba de Miros Rueda Verdejo,2019,4.5,Rueda,9.9,Blanco,Verdejo,0,8-10°C,0.455,0,1
+Carmelo Rodero,Ribera del Duero TSM,2006,4.5,Ribera del Duero,40.8333333333333,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Dominio de Cair,Pendon De La Aguilera,2010,4.5,Ribera del Duero,299.286840932831,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Valquejigoso,V2 Tinto,2009,4.5,Madrid,43.6838985,Tinto,Blend/Other,0,16-18°C,0.103,0,2
+Alvaro Palacios,L'Ermita Velles Vinyes Priorat,2003,4.5,Priorato,1372.14,Tinto,Grenache / Carinena,0,16-18°C,0.003,1,0
+Martinet,Cami Pesseroles,2016,4.5,Priorato,79.55,Tinto,Grenache / Carinena,0,16-18°C,0.057,1,7
+Cal Pla,Planots Priorat,2013,4.5,Priorato,57.0,Tinto,Grenache / Carinena,0,16-18°C,0.079,1,7
+Veigamoura,Blanco,2013,4.5,Rias Baixas,14.96,Blanco,Blend/Other,0,8-10°C,0.301,0,1
+Vizcarra,Celia,2011,4.5,Ribera del Duero,60.06,Tinto,Tempranillo,0,16-18°C,0.075,1,7
+Matarromera,Ribera del Duero Prestigio Pago de las Solanas,2010,4.5,Ribera del Duero,237.0,Tinto,Tempranillo,0,16-18°C,0.019,1,0
+Clos Erasmus,Priorat,1998,4.5,Priorato,993.28,Tinto,Grenache / Carinena,0,16-18°C,0.005,1,0
+Legaris,Calmo,2014,4.5,Ribera del Duero,71.9,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Federico Paternina,Gran Reserva,1928,4.5,Rioja,270.0,Tinto,Tempranillo,1,16-18°C,0.017,1,0
+Marques de Murrieta,Dalmau Rioja,2000,4.5,Rioja,48.5,Tinto,Tempranillo,0,16-18°C,0.093,0,7
+Anima Negra,Son Negre,2005,4.5,Mallorca,200.0,Tinto,Blend/Other,0,16-18°C,0.022,1,0
+Vinicola Real,Confesor Rioja,2004,4.5,Rioja,107.5,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Bodegas San Roman,Cartago Paraje de Pozo,2016,4.5,Toro,77.5,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Losada,La Bienquerida,2019,4.5,Bierzo,32.9,Tinto,Mencia,0,16-18°C,0.137,0,7
+Clos d'Agon,Seleccion Especial,2015,4.5,Cataluna,93.51,Tinto,Blend/Other,0,16-18°C,0.048,1,2
+Sacristia AB,Saca Unica,2015,4.5,Jerez-Xeres-Sherry,96.38,Generoso,Blend/Other,0,12-14°C,0.047,1,4
+Huerta de Albala,Taberner No. 1,2011,4.5,Cadiz,75.0,Tinto,Blend/Other,0,16-18°C,0.06,1,2
+Uvaguilera Aguilera,Palomero,2010,4.5,Ribera del Duero,44.95,Tinto,Tempranillo,0,16-18°C,0.1,0,7
+Ysios,Grano a Grano,2017,4.5,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Finca Villacreces,Nebro Ribera del Duero,2015,4.5,Ribera del Duero,143.38,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Vega Sicilia,Valbuena 5o,1976,4.5,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Dehesa del Carrizal,Petit Verdot,2018,4.5,Dehesa del Carrizal,20.15,Tinto,Blend/Other,0,16-18°C,0.223,0,2
+Descendientes de J. Palacios,La Faraona Bierzo (Corullon),2015,4.5,Bierzo,1373.66,Tinto,Blend/Other,0,16-18°C,0.003,1,0
+Emilio Hidalgo,Santa Ana Pedro Ximenez 1861,2015,4.5,Jerez-Xeres-Sherry,320.0,Generoso,Pedro Ximenez,0,12-14°C,0.014,1,4
+Altos del Terral,Cuvee Julia Ribera del Duero,2011,4.5,Ribera del Duero,157.0,Tinto,Tempranillo,0,16-18°C,0.029,1,0
+Toro Albala,Don PX Seleccion,1949,4.5,Montilla-Moriles,295.0,Generoso,Pedro Ximenez,0,12-14°C,0.015,1,4
+Morca,Garnacha,2019,4.5,Campo de Borja,29.95,Tinto,Grenache,0,16-18°C,0.15,0,2
+R. Lopez de Heredia,Vina Tondonia Gran Reserva,2001,4.5,Rioja,187.91,Tinto,Tempranillo,1,16-18°C,0.024,1,6
+Martinet,Cami Pesseroles,2013,4.5,Priorato,113.2,Tinto,Grenache / Carinena,0,16-18°C,0.04,1,7
+Descendientes de J. Palacios,Las Lamas Bierzo (Corullon),2018,4.5,Bierzo,120.0,Tinto,Mencia,0,16-18°C,0.038,1,7
+Castillo Perelada,Finca Garbet,2015,4.5,Emporda,89.9,Tinto,Syrah,0,16-18°C,0.05,1,2
+Vinicola Real,200 Monges Rioja Reserva Seleccion Especial,2006,4.5,Rioja,59.25,Tinto,Tempranillo,1,16-18°C,0.076,1,6
+El Regajal,Galia Clos Santuy,2016,4.5,Castilla y Leon,89.0,Tinto,Blend/Other,0,16-18°C,0.051,1,2
+Valderiz,Tomas Esteban,2011,4.5,Ribera del Duero,71.3,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Jose Pariente,Finca Las Comas Verdejo,2018,4.5,Rueda,34.5,Blanco,Verdejo,0,8-10°C,0.13,0,1
+Vega Sicilia,Valbuena 5o,1975,4.5,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Abadia Retuerta,Petit Verdot,2004,4.5,Sardon de Duero,160.81,Tinto,Blend/Other,0,16-18°C,0.028,1,2
+Amos Baneres,Diables,2018,4.5,Penedes,38.75,Desconocido,Blend/Other,0,10-14°C,0.116,0,3
+Scala Dei,St Antoni de Scala Dei Priorat,2017,4.5,Priorato,75.04,Tinto,Grenache / Carinena,0,16-18°C,0.06,1,7
+Gonzalez-Byass,Anada Palo Cortado 1987,1991,4.5,Jerez Palo Cortado,230.0,Generoso,Blend/Other,0,12-14°C,0.02,1,4
+Artadi,Valdegines,2019,4.5,Vino de Espana,40.0,Tinto,Tempranillo,0,16-18°C,0.112,0,7
+Clos Erasmus,Priorat,2018,4.5,Priorato,225.0,Tinto,Grenache / Carinena,0,16-18°C,0.02,1,0
+Bodegas Valdelana,Seda de Oro Reserva,2016,4.5,Rioja,69.0,Tinto,Tempranillo,1,16-18°C,0.065,1,6
+Abel Mendoza Monge,Grano a Grano Graciano - Garnacha,2016,4.5,Rioja,55.14,Tinto,Grenache,0,16-18°C,0.082,1,2
+Tinto Pesquera,Reserva,1986,4.5,Ribera del Duero,90.0,Tinto,Tempranillo,1,16-18°C,0.05,1,6
+Bodegas Amaren,Carraquintana de Amaren,2017,4.5,Rioja Alavesa,56.5,Tinto,Blend/Other,0,16-18°C,0.08,1,2
+Anayon,Garnacha Parcela 81 Vinas Viejas,2017,4.5,Carinena,54.9,Tinto,Blend/Other,0,16-18°C,0.082,1,2
+Castell d'Encus,Saktih,2016,4.5,Costers del Segre,132.95,Tinto,Blend/Other,0,16-18°C,0.034,1,2
+Gramona,Cava Enoteca Finca de L'Origen Brut Nature,2002,4.5,Cava,142.0,Espumoso,Blend/Other,0,6-8°C,0.032,1,5
+Sierra Salinas,Salinas 1237,2014,4.5,Alicante,53.25,Tinto,Monastrell,0,16-18°C,0.085,1,2
+Dehesa del Carrizal,Cabernet Sauvignon,2019,4.5,Dehesa del Carrizal,16.9,Tinto,Cabernet Sauvignon,0,16-18°C,0.266,0,2
+Vinos Sanz,Finca La Colina Sauvignon Blanc,2021,4.5,Rueda,13.45,Blanco,Sauvignon Blanc,0,8-10°C,0.335,0,1
+Cerro San Cristobal,Dominio del Verso Red Blend,2018,4.5,Condado de Huelva,29.5,Tinto,Blend/Other,0,16-18°C,0.153,0,2
+Altos de Rioja,Altos R Pigeage Nacido en Barrica Blanco,2019,4.4,Rioja,29.9168517,Blanco,Viura,1,8-10°C,0.147,0,1
+Bodegas Celler Francisco Castillo - Clos Dominic,Vinyes Altes Porrera,2007,4.5,Priorato,69.0,Tinto,Grenache / Carinena,0,16-18°C,0.065,1,7
+La Vinya del Vuit,La Vinya del Vuit (8),2015,4.5,Priorato,73.0,Tinto,Grenache / Carinena,0,16-18°C,0.062,1,7
+Venus la Universal,Venus de la Figuera,2017,4.5,Montsant,51.5,Tinto,Blend/Other,0,16-18°C,0.087,1,2
+Pedralonga,Vendetta,2013,4.5,Rias Baixas,38.0,Blanco,Albarino,0,8-10°C,0.118,0,1
+Alion,Ribera del Duero,2009,4.4,Ribera del Duero,189.0,Tinto,Tempranillo,0,16-18°C,0.023,1,7
+Pintia,Toro,2011,4.4,Toro,39.5,Tinto,Tempranillo,0,16-18°C,0.111,0,7
+Pintia,Toro,2012,4.4,Toro,89.9,Tinto,Tempranillo,0,16-18°C,0.049,1,7
+Pintia,Toro,2013,4.4,Toro,76.8,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+La Rioja Alta,Rioja Gran Reserva 904,2009,4.4,Rioja,47.5,Tinto,Tempranillo,1,16-18°C,0.093,0,6
+Matarromera,Ribera del Duero Reserva,2016,4.4,Ribera del Duero,31.5,Tinto,Tempranillo,1,16-18°C,0.14,0,6
+La Rioja Alta,Rioja Gran Reserva 904,2011,4.4,Rioja,47.95,Tinto,Tempranillo,1,16-18°C,0.092,0,6
+La Rioja Alta,Rioja Gran Reserva 904,2007,4.4,Rioja,47.95,Tinto,Tempranillo,1,16-18°C,0.092,0,6
+Emilio Moro,Malleolus,2018,4.4,Ribera del Duero,38.61,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Muga,Seleccion Especial (Reserva),2016,4.4,Rioja,27.9,Tinto,Tempranillo,1,16-18°C,0.158,0,6
+Matarromera,Ribera del Duero Reserva,2017,4.4,Ribera del Duero,37.25,Tinto,Tempranillo,1,16-18°C,0.118,0,6
+Hacienda Monasterio,Cosecha,2016,4.4,Ribera del Duero,37.8,Tinto,Tempranillo,0,16-18°C,0.116,0,7
+La Rioja Alta,Rioja Gran Reserva 904,2010,4.4,Rioja,61.55,Tinto,Tempranillo,1,16-18°C,0.071,1,6
+Muga,Prado Enea Gran Reserva,2011,4.4,Rioja,43.95,Tinto,Tempranillo,1,16-18°C,0.1,0,6
+Bodegas Mauro,Red,2018,4.4,Castilla y Leon,31.95,Tinto,Blend/Other,0,16-18°C,0.138,0,2
+Abadia Retuerta,Seleccion Especial,2017,4.4,Sardon de Duero,25.5,Tinto,Blend/Other,0,16-18°C,0.173,0,2
+Bodegas El Nido,Clio,2014,4.4,Jumilla,35.65,Tinto,Blend/Other,0,16-18°C,0.123,0,2
+Dominio de Pingus,Flor de Pingus,2012,4.4,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+Dominio de Pingus,Flor de Pingus,2013,4.4,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+La Rioja Alta,Vina Ardanza Reserva,2015,4.4,Rioja,23.0,Tinto,Tempranillo,1,16-18°C,0.191,0,6
+Bodegas Roda,Roda I Reserva Rioja,2009,4.4,Rioja,43.5,Tinto,Tempranillo,1,16-18°C,0.101,0,6
+Bodegas Roda,Roda I Reserva Rioja,2010,4.4,Rioja,24.7,Tinto,Tempranillo,1,16-18°C,0.178,0,6
+Tomas Postigo,3er Ano Ribera del Duero Tinto,2017,4.4,Ribera del Duero,27.4,Tinto,Tempranillo,0,16-18°C,0.161,0,7
+Alion,Ribera del Duero,2007,4.4,Ribera del Duero,96.0,Tinto,Tempranillo,0,16-18°C,0.046,1,7
+Benjamin de Rothschild - Vega Sicilia,Macan Clasico,2016,4.4,Rioja,37.52,Tinto,Tempranillo,0,16-18°C,0.117,0,7
+Bodegas Roda,Roda I Reserva Rioja,2011,4.4,Rioja,43.95,Tinto,Tempranillo,1,16-18°C,0.1,0,6
+Atalaya,Alaya Tierra (Old Vines Vieilles Vignes),2017,4.4,Almansa,19.6,Tinto,Grenache,0,16-18°C,0.224,0,2
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,2004,4.4,Rioja,160.0,Tinto,Tempranillo,1,16-18°C,0.028,1,6
+Bodegas Roda,Roda I Reserva Rioja,2012,4.4,Rioja,43.5,Tinto,Tempranillo,1,16-18°C,0.101,0,6
+Tomas Postigo,3er Ano Ribera del Duero Tinto,2018,4.4,Ribera del Duero,27.75,Tinto,Tempranillo,0,16-18°C,0.159,0,7
+Hacienda Monasterio,Cosecha,2018,4.4,Ribera del Duero,32.5,Tinto,Tempranillo,0,16-18°C,0.135,0,7
+Bodegas Mauro,Red,2019,4.4,Castilla y Leon,29.45,Tinto,Blend/Other,0,16-18°C,0.149,0,2
+Aalto,Tinto,2017,4.4,Ribera del Duero,51.526827174062,Tinto,Tempranillo,0,16-18°C,0.085,1,7
+Benjamin de Rothschild - Vega Sicilia,Macan,2010,4.4,Rioja,216.0,Tinto,Tempranillo,0,16-18°C,0.02,1,7
+Alion,Ribera del Duero,2006,4.4,Ribera del Duero,119.7,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Muga,Torre Muga,2006,4.4,Rioja,66.73,Tinto,Tempranillo,0,16-18°C,0.066,1,7
+Bodegas Roda,Roda I Reserva Rioja,2015,4.4,Rioja,39.95,Tinto,Tempranillo,1,16-18°C,0.11,0,6
+Matsu,El Viejo,2018,4.4,Toro,32.01,Tinto,Tempranillo,0,16-18°C,0.137,0,7
+Bodegas Valduero,Ribera del Duero Una Cepa I,2016,4.4,Ribera del Duero,28.9,Tinto,Tempranillo,0,16-18°C,0.152,0,7
+Bodegas San Roman,Tinto,2017,4.4,Toro,36.0,Tinto,Tempranillo,0,16-18°C,0.122,0,7
+Marques de Vargas,Hacienda Pradolagar,2015,4.4,Rioja,105.12,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Agusti Torello Mata,Cava Kripta Gran Reserva Brut Nature,2008,4.4,Cava,52.5,Espumoso,Blend/Other,1,6-8°C,0.084,1,5
+Hacienda Monasterio,Cosecha,2017,4.4,Ribera del Duero,33.31,Tinto,Tempranillo,0,16-18°C,0.132,0,7
+Remirez de Ganuza,Rioja Reserva,2010,4.4,Rioja,73.65,Tinto,Tempranillo,1,16-18°C,0.06,1,6
+Alto Moncayo,Garnacha,2016,4.4,Campo de Borja,33.95,Tinto,Grenache,0,16-18°C,0.13,0,2
+Remirez de Ganuza,Rioja Reserva,2009,4.4,Rioja,74.0,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Alion,Ribera del Duero,2005,4.4,Ribera del Duero,169.0,Tinto,Tempranillo,0,16-18°C,0.026,1,7
+Atalaya,Alaya Tierra (Old Vines Vieilles Vignes),2018,4.4,Almansa,24.8,Tinto,Grenache,0,16-18°C,0.177,0,2
+Alion,Ribera del Duero,2004,4.4,Ribera del Duero,140.840866321332,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Clos Mogador,Priorat,2014,4.4,Priorato,175.5,Tinto,Grenache / Carinena,0,16-18°C,0.025,1,7
+Vinicola Real,200 Monges Rioja Reserva,2011,4.4,Rioja,37.57,Tinto,Tempranillo,1,16-18°C,0.117,0,6
+Arzuaga,Reserva Ribera del Duero,2016,4.4,Ribera del Duero,26.24,Tinto,Tempranillo,1,16-18°C,0.168,0,6
+Emilio Moro,Malleolus,2019,4.4,Ribera del Duero,28.5,Tinto,Tempranillo,0,16-18°C,0.154,0,7
+Bodegas Mauro,VS,2014,4.4,Castilla y Leon,178.0,Tinto,Tempranillo,0,16-18°C,0.025,1,7
+Hacienda Monasterio,Reserva,2011,4.4,Ribera del Duero,78.65,Tinto,Tempranillo,1,16-18°C,0.056,1,6
+Dominio de Pingus,Flor de Pingus,2008,4.4,Ribera del Duero,125.0,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+Bodegas Roda,Roda I Reserva Rioja,2016,4.4,Rioja,35.9,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Pago de Los Capellanes,Reserva Tinto,2017,4.4,Ribera del Duero,35.7,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Aalto,Tinto,2019,4.4,Ribera del Duero,33.0,Tinto,Tempranillo,0,16-18°C,0.133,0,7
+Bodegas Mauro,VS,2015,4.4,Castilla y Leon,60.95,Tinto,Tempranillo,0,16-18°C,0.072,1,7
+Juan Gil,Jumilla Blue Label,2019,4.4,Jumilla,21.95,Tinto,Blend/Other,0,16-18°C,0.2,0,2
+Bodegas Tradicion,Palo Cortado Tradicion Vors 30 Years Sherry,2015,4.4,Jerez Palo Cortado,82.5,Generoso,Blend/Other,0,12-14°C,0.053,1,4
+Hacienda Monasterio,Reserva,2014,4.4,Ribera del Duero,109.9,Tinto,Tempranillo,1,16-18°C,0.04,1,6
+Senorio de San Vicente,San Vicente Rioja,2011,4.4,Rioja,33.5,Tinto,Tempranillo,0,16-18°C,0.131,0,7
+Alto Moncayo,Garnacha,2018,4.4,Campo de Borja,38.95,Tinto,Grenache,0,16-18°C,0.113,0,2
+Volver,Triga,2016,4.4,Alicante,34.9,Tinto,Monastrell,0,16-18°C,0.126,0,2
+Marques de Caceres,Gaudium,2014,4.4,Rioja,37.8,Tinto,Tempranillo,0,16-18°C,0.116,0,7
+Bodegas Tradicion,Amontillado Tradicion Vors 30 Years,2015,4.4,Jerez Amontillado,59.9,Generoso,Blend/Other,0,12-14°C,0.073,1,4
+Teso La Monja,Victorino,2016,4.4,Toro,38.7,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Clos Mogador,Priorat,2011,4.4,Priorato,90.0,Tinto,Grenache / Carinena,0,16-18°C,0.049,1,7
+Clos Mogador,Priorat,2010,4.4,Priorato,69.79,Tinto,Grenache / Carinena,0,16-18°C,0.063,1,7
+Lan,Culmen Reserva Rioja,2011,4.4,Rioja,59.9,Tinto,Tempranillo,1,16-18°C,0.073,1,6
+Atalaya,Alaya Tierra (Old Vines Vieilles Vignes),2019,4.4,Almansa,27.39,Tinto,Grenache,0,16-18°C,0.161,0,2
+Bodegas Roda,Roda I Reserva Rioja,2005,4.4,Rioja,93.0,Tinto,Tempranillo,1,16-18°C,0.047,1,6
+Dominio del Aguila,Reserva,2016,4.4,Ribera del Duero,73.57,Tinto,Tempranillo,1,16-18°C,0.06,1,6
+Marques de Vargas,Reserva Privada Rioja,2015,4.4,Rioja,49.67,Tinto,Tempranillo,1,16-18°C,0.089,0,6
+Abadia Retuerta,Pago Negralada,2014,4.4,Sardon de Duero,91.57,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Clos Mogador,Priorat,2012,4.4,Priorato,90.0,Tinto,Grenache / Carinena,0,16-18°C,0.049,1,7
+Marques de Riscal,Baron de Chirel Rioja Reserva,2015,4.4,Rioja,69.95,Tinto,Tempranillo,1,16-18°C,0.063,1,6
+Alion,Ribera del Duero,2001,4.4,Ribera del Duero,190.0,Tinto,Tempranillo,0,16-18°C,0.023,1,0
+Marques de Riscal,Baron de Chirel Rioja Reserva,2005,4.4,Rioja,140.0,Tinto,Tempranillo,1,16-18°C,0.031,1,6
+Tridente,Rejon Tempranillo,2015,4.4,Castilla y Leon,35.75,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Alvaro Palacios,Finca Dofi,2016,4.4,Priorato,52.5,Tinto,Grenache / Carinena,0,16-18°C,0.084,1,7
+Clos Mogador,Priorat,2007,4.4,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.046,1,7
+Ausas,Interpretacion,2016,4.4,Ribera del Duero,45.15,Tinto,Tempranillo,0,16-18°C,0.097,0,7
+Muga,Torre Muga,2015,4.4,Rioja,58.2142247461506,Tinto,Tempranillo,0,16-18°C,0.076,1,7
+Senorio de San Vicente,San Vicente Rioja,2016,4.4,Rioja,42.7,Tinto,Tempranillo,0,16-18°C,0.103,0,7
+Tresmano - Tr3smano,Vendimia,2017,4.4,Ribera del Duero,28.7315367295517,Tinto,Tempranillo,0,16-18°C,0.153,0,7
+Ferrer Bobet,Priorat Vinyes Velles,2017,4.4,Priorato,32.65,Tinto,Grenache / Carinena,0,16-18°C,0.135,0,7
+Marques de Caceres,Gaudium,2015,4.4,Rioja,43.86,Tinto,Tempranillo,0,16-18°C,0.1,0,7
+Benjamin de Rothschild - Vega Sicilia,Macan Clasico,2017,4.4,Rioja,36.9,Tinto,Tempranillo,0,16-18°C,0.119,0,7
+Remirez de Ganuza,Rioja Reserva,2013,4.4,Rioja,54.83,Tinto,Tempranillo,1,16-18°C,0.08,1,6
+Marques de Murrieta,Dalmau Rioja,2016,4.4,Rioja,55.33,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Bodegas Amaren,Tempranillo Reserva,2010,4.4,Rioja,26.9,Tinto,Tempranillo,1,16-18°C,0.164,0,6
+Bodegas Tradicion,Cream Tradicion Vos 20 Years,2015,4.4,Jerez Cream,57.9,Generoso,Blend/Other,0,12-14°C,0.076,1,4
+Tinto Pesquera,Millenium Reserva,2008,4.4,Ribera del Duero,74.0,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Hacienda Monasterio,Cosecha,2019,4.4,Ribera del Duero,34.35,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Arzuaga,Gran Reserva Ribera del Duero,2009,4.4,Ribera del Duero,76.3,Tinto,Tempranillo,1,16-18°C,0.058,1,6
+Ausas,Interpretacion,2017,4.4,Ribera del Duero,45.3,Tinto,Tempranillo,0,16-18°C,0.097,0,7
+Vega Sicilia,Valbuena 5o,1995,4.4,Ribera del Duero,299.0,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Bodegas Mauro,VS,2016,4.4,Castilla y Leon,56.5,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Vina Sastre,Pago de Santa Cruz,2014,4.4,Ribera del Duero,54.9,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Ordonez,Vatan Tinta de Toro,2017,4.4,Toro,55.31,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Cillar de Silos,Dominio del Pidio,2016,4.4,Ribera del Duero,53.91,Tinto,Tempranillo,0,16-18°C,0.082,1,7
+Marques de Riscal,Rioja Gran Reserva,2015,4.4,Rioja,35.1,Tinto,Tempranillo,1,16-18°C,0.125,0,6
+Teso La Monja,Victorino,2017,4.4,Toro,38.5,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Imperial,Rioja Gran Reserva,2015,4.4,Rioja,49.97,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Carmelo Rodero,Reserva,2016,4.4,Ribera del Duero,32.9,Tinto,Tempranillo,1,16-18°C,0.134,0,6
+Ramos-Paul,Tinto,2006,4.4,Malaga,34.0,Tinto,Blend/Other,0,16-18°C,0.129,0,2
+Artadi,Pagos Viejos,2006,4.4,Vino de Espana,90.5,Tinto,Tempranillo,0,16-18°C,0.049,1,7
+Anima Negra,An,2018,4.4,Mallorca,38.3,Tinto,Blend/Other,0,16-18°C,0.115,0,2
+Matarromera,Ribera del Duero Prestigio,2014,4.4,Ribera del Duero,41.32,Tinto,Tempranillo,0,16-18°C,0.106,0,7
+Bodega Numanthia,Numanthia,2004,4.4,Toro,98.0,Tinto,Tempranillo,0,16-18°C,0.045,1,7
+Rafael Palacios,As Sortes Val do Bibei Godello,2018,4.4,Valdeorras,55.71,Desconocido,Blend/Other,0,10-14°C,0.079,1,3
+Bodega de Bardos,Suprema 30 Meses,2016,4.4,Ribera del Duero,35.2,Tinto,Tempranillo,0,16-18°C,0.125,0,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2015,4.4,Rioja,73.6,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Ausas,Interpretacion,2018,4.4,Ribera del Duero,41.0,Tinto,Tempranillo,0,16-18°C,0.107,0,7
+Morca,Garnacha,2016,4.4,Campo de Borja,31.5,Tinto,Grenache,0,16-18°C,0.14,0,2
+Carmelo Rodero,Ribera del Duero TSM,2015,4.4,Ribera del Duero,56.75,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Rodriguez Sanzo,Whisba Tempranillo Aged 18 Months in Whisky Barrels,2019,4.4,Toro,20.9,Tinto,Tempranillo,1,16-18°C,0.211,0,6
+Lan,A Mano Rioja,2017,4.4,Rioja,30.73,Tinto,Tempranillo,0,16-18°C,0.143,0,7
+Cruz de Alba,Finca Los Hoyales Ribera del Duero,2014,4.4,Ribera del Duero,49.9,Tinto,Tempranillo,0,16-18°C,0.088,0,7
+Vinicola Real,200 Monges Rioja Gran Reserva,2001,4.4,Rioja,52.0,Tinto,Tempranillo,1,16-18°C,0.085,1,6
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2011,4.4,Rioja,90.0,Tinto,Tempranillo,0,16-18°C,0.049,1,7
+Antidoto,La Hormiga de Antidoto,2019,4.4,Ribera del Duero,26.63,Tinto,Tempranillo,0,16-18°C,0.165,0,7
+Abadia Retuerta,Le Domaine Blanco de Guarda,2019,4.4,Sardon de Duero,32.58,Blanco,Blend/Other,0,8-10°C,0.135,0,1
+Rafael Palacios,As Sortes Val do Bibei Godello,2019,4.4,Valdeorras,46.5,Desconocido,Blend/Other,0,10-14°C,0.095,0,3
+Bosque de Matasnos,Edicion Limitada,2015,4.4,Ribera del Duero,32.5811870756681,Tinto,Tempranillo,0,16-18°C,0.135,0,7
+Bodegas 6o Elemento - Vino Sexto Elemento,Tinto,2017,4.4,Valencia,29.95,Tinto,Blend/Other,0,16-18°C,0.147,0,2
+Altanza,Lealtanza Coleccion de Artistas Espanoles Sorolla,2010,4.4,Rioja,34.9,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Remelluri,Granja Gran Reserva Rioja,2011,4.4,Rioja,43.9,Tinto,Tempranillo,1,16-18°C,0.1,0,6
+Perinet,Priorat,2016,4.4,Priorato,65.0,Tinto,Grenache / Carinena,0,16-18°C,0.068,1,7
+Toro Albala,Don PX Pedro Ximenez,1994,4.4,Montilla-Moriles,35.9,Generoso,Pedro Ximenez,0,12-14°C,0.123,0,4
+Vina Pedrosa,Perez Pascuas Gran Reserva Seleccion,2010,4.4,Ribera del Duero,210.5,Tinto,Tempranillo,1,16-18°C,0.021,1,6
+Agusti Torello Mata,Cava Kripta Gran Reserva Brut Nature,2011,4.4,Cava,55.95,Espumoso,Blend/Other,1,6-8°C,0.079,1,5
+Costers del Siurana,Miserere,2005,4.4,Priorato,92.8716274104906,Tinto,Grenache / Carinena,0,16-18°C,0.047,1,7
+Martinet,Clos Martinet,2015,4.4,Priorato,65.4,Tinto,Grenache / Carinena,0,16-18°C,0.067,1,7
+Valquejigoso,V2 Tinto,2008,4.4,Madrid,45.890156,Tinto,Blend/Other,0,16-18°C,0.096,0,2
+Familia Torres,Grans Muralles,2014,4.4,Conca de Barbera,304.0,Tinto,Blend/Other,0,16-18°C,0.014,1,0
+Castillo de Cuzcurrita,Cerrado del Castillo Rioja,2015,4.4,Rioja,47.5,Tinto,Tempranillo,0,16-18°C,0.093,0,7
+Lan,A Mano Rioja,2018,4.4,Rioja,29.9,Tinto,Tempranillo,0,16-18°C,0.147,0,7
+Contino,Rioja Gran Reserva,2016,4.4,Rioja,40.45,Tinto,Tempranillo,1,16-18°C,0.109,0,6
+Vinedos de Paganos,El Puntido Gran Reserva,2007,4.4,Rioja,49.65,Tinto,Tempranillo,1,16-18°C,0.089,0,6
+Artadi,Pagos Viejos,2004,4.4,Vino de Espana,57.11,Tinto,Tempranillo,0,16-18°C,0.077,1,7
+Alion,Ribera del Duero,1996,4.4,Ribera del Duero,141.0,Tinto,Tempranillo,0,16-18°C,0.031,1,0
+Remirez de Ganuza,Trasnocho,2010,4.4,Rioja,133.75,Tinto,Tempranillo,0,16-18°C,0.033,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2016,4.4,Rioja,67.9,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Martinet,Clos Martinet,2011,4.4,Priorato,75.92,Tinto,Grenache / Carinena,0,16-18°C,0.058,1,7
+Agusti Torello Mata,Cava Kripta Gran Reserva Brut Nature,2010,4.4,Cava,47.52,Espumoso,Blend/Other,1,6-8°C,0.093,0,5
+Volver,Triga,2017,4.4,Alicante,29.9,Tinto,Monastrell,0,16-18°C,0.147,0,2
+Volver,Cuvee Old Vines Unfiltered,2017,4.4,Jumilla,19.99,Tinto,Blend/Other,0,16-18°C,0.22,0,2
+La Vicalanda,Gran Reserva,2010,4.4,Rioja,59.25,Tinto,Tempranillo,1,16-18°C,0.074,1,6
+Monovar,Fondillon,1996,4.4,Alicante,73.9,Tinto,Monastrell,0,16-18°C,0.06,1,2
+Alvaro Domecq,1730 Pedro Ximenez,2015,4.4,Jerez Pedro Ximenes (PX),39.35,Generoso,Blend/Other,0,12-14°C,0.112,0,4
+Bodegas Mas Alta,Cirerets,2018,4.4,Priorato,40.3,Tinto,Grenache / Carinena,0,16-18°C,0.109,0,7
+Cillar de Silos,Dominio del Pidio,2018,4.4,Ribera del Duero,42.75,Tinto,Tempranillo,0,16-18°C,0.103,0,7
+Contino,Vina del Olivo,2016,4.4,Rioja,149.5,Tinto,Tempranillo,0,16-18°C,0.029,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2012,4.4,Rioja,76.5,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Martinet,Clos Martinet,2008,4.4,Priorato,113.2,Tinto,Grenache / Carinena,0,16-18°C,0.039,1,7
+Ossian,Vinas Viejas Verdejo,2019,4.4,Castilla y Leon,26.9,Blanco,Verdejo,0,8-10°C,0.164,0,1
+Vega Sicilia,Valbuena 5o,1994,4.4,Ribera del Duero,249.8,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Carmelo Rodero,Reserva,2017,4.4,Ribera del Duero,29.95,Tinto,Tempranillo,1,16-18°C,0.147,0,6
+Los Aguilares,Tadeo Tinto,2014,4.4,Sierras de Malaga,33.0,Tinto,Blend/Other,0,16-18°C,0.133,0,2
+Dominio de Cair,Tierras de Cair Reserva,2014,4.4,Ribera del Duero,37.0,Tinto,Tempranillo,1,16-18°C,0.119,0,6
+Bodega Rento,Tinto,2014,4.4,Ribera del Duero,37.13,Tinto,Tempranillo,0,16-18°C,0.119,0,7
+R. Lopez de Heredia,Gran Reserva Rosado,2011,4.4,Rioja Alta,49.95,Desconocido,Blend/Other,1,10-14°C,0.088,0,3
+Chivite,Navarra Coleccion 125 Blanco,2017,4.4,Navarra,50.9,Blanco,Chardonnay,0,8-10°C,0.086,1,1
+Gramona,Cava Celler Batlle,2006,4.4,Cava,51.95,Espumoso,Blend/Other,0,6-8°C,0.085,1,5
+Remelluri,Rioja Blanco,2017,4.4,Rioja,49.2,Blanco,Viura,0,8-10°C,0.089,0,1
+Castano,Casa Cisca Monastrell,2015,4.4,Yecla,35.2,Tinto,Monastrell,0,16-18°C,0.125,0,2
+Dominio do Bibei,Lapola,2019,4.4,Ribeira Sacra,20.74,Desconocido,Blend/Other,0,10-14°C,0.212,0,3
+Allende,Calvario Rioja,2008,4.4,Rioja,87.3,Tinto,Tempranillo,0,16-18°C,0.05,1,7
+Remelluri,Granja Gran Reserva Rioja,2012,4.4,Rioja,45.95,Tinto,Tempranillo,1,16-18°C,0.096,0,6
+Abadia Retuerta,Pago Negralada,2013,4.4,Sardon de Duero,64.99,Tinto,Tempranillo,0,16-18°C,0.068,1,7
+Mas Doix,Doix,2007,4.4,Priorato,350.03,Tinto,Grenache / Carinena,0,16-18°C,0.013,1,0
+Ferrer Bobet,Seleccio Especial Vinyes Velles,2013,4.4,Priorato,69.9,Tinto,Grenache / Carinena,0,16-18°C,0.063,1,7
+Vall Llach,Idus,2017,4.4,Priorato,36.95,Tinto,Grenache / Carinena,0,16-18°C,0.119,0,7
+Martinet,Clos Martinet,2007,4.4,Priorato,154.37,Tinto,Grenache / Carinena,0,16-18°C,0.029,1,7
+Marco Abella,Clos Abella Seleccion Especial,2014,4.4,Priorato,43.85,Tinto,Grenache / Carinena,0,16-18°C,0.1,0,7
+Casa Castillo,Pie Franco,2017,4.4,Jumilla,77.98,Tinto,Monastrell,0,16-18°C,0.056,1,2
+Sierra Cantabria,Amancio,2013,4.4,Rioja,91.43,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Emilio Moro,Malleolus de Sanchomartin,2007,4.4,Ribera del Duero,195.0,Tinto,Tempranillo,0,16-18°C,0.023,1,7
+Espectacle del Montsant,Tinto,2016,4.4,Montsant,125.84,Tinto,Blend/Other,0,16-18°C,0.035,1,2
+Lan,Culmen Reserva Rioja,2001,4.4,Rioja,69.0,Tinto,Tempranillo,1,16-18°C,0.064,1,6
+Javier Sanz Viticultor,Singular V Malcorta Verdejo,2020,4.4,Rueda,17.49,Blanco,Verdejo,0,8-10°C,0.252,0,1
+Recaredo,Serral del Vell Brut Nature,2014,4.4,Cava,44.41,Espumoso,Blend/Other,0,6-8°C,0.099,0,5
+Espectacle del Montsant,Tinto,2014,4.4,Montsant,149.0,Tinto,Blend/Other,0,16-18°C,0.03,1,2
+Abadia Retuerta,Pago Negralada,2009,4.4,Sardon de Duero,73.6,Tinto,Tempranillo,0,16-18°C,0.06,1,7
+Remirez de Ganuza,Trasnocho,2014,4.4,Rioja,82.75,Tinto,Tempranillo,0,16-18°C,0.053,1,7
+Mas Doix,Doix,2013,4.4,Priorato,78.38,Tinto,Grenache / Carinena,0,16-18°C,0.056,1,7
+Protos,Seleccion Finca el Grajo Viejo,2016,4.4,Ribera del Duero,59.95,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Sierra Cantabria,Finca el Bosque,2014,4.4,Rioja,80.95,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Artadi,La Poza de Ballesteros,2015,4.4,Vino de Espana,95.9,Tinto,Tempranillo,0,16-18°C,0.046,1,7
+Tinto Pesquera,Millenium Reserva,2015,4.4,Ribera del Duero,75.0,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Harveys,30 Years VORS Pedro Ximenez Sherry,2015,4.4,Jerez Pedro Ximenes (PX),58.95,Generoso,Blend/Other,0,12-14°C,0.075,1,4
+Marques de Caceres,Gaudium,1994,4.4,Rioja,125.0,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+Contino,Vina del Olivo,2015,4.4,Rioja,64.0,Tinto,Tempranillo,0,16-18°C,0.069,1,7
+Sierra Cantabria,Finca el Bosque,2012,4.4,Rioja,78.9,Tinto,Tempranillo,0,16-18°C,0.056,1,7
+Orben,Malpuesto,2018,4.4,Rioja,35.5,Tinto,Tempranillo,0,16-18°C,0.124,0,7
+Artadi,Valdegines,2018,4.4,Vino de Espana,42.35,Tinto,Tempranillo,0,16-18°C,0.104,0,7
+Jaro,Chafandin,2018,4.4,Ribera del Duero,28.95,Tinto,Tempranillo,0,16-18°C,0.152,0,7
+Artadi,Vina El Pison,2007,4.4,Vino de Espana,495.0,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Abadia Retuerta,Pago Negralada,2016,4.4,Sardon de Duero,63.95,Tinto,Tempranillo,0,16-18°C,0.069,1,7
+Bodega Contador (Benjamin Romeo),La Vina de Andres Romeo Rioja,2012,4.4,Rioja,99.0,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Vina Sastre,Pesus Ribera del Duero,2012,4.4,Ribera del Duero,379.0,Tinto,Tempranillo,0,16-18°C,0.012,1,0
+Dominio del Aguila,Reserva,2017,4.4,Ribera del Duero,56.95,Tinto,Tempranillo,1,16-18°C,0.077,1,6
+Vina Sastre,Regina Vides Ribera del Duero,2012,4.4,Ribera del Duero,65.34,Tinto,Tempranillo,0,16-18°C,0.067,1,7
+Bodegas Ximenez-Spinola,Delicado Cosecha Pedro Ximenez,2019,4.4,Jerez Pedro Ximenes (PX),22.35,Generoso,Pedro Ximenez,0,12-14°C,0.197,0,4
+Bodegas El Paraguas,Atlantico,2019,4.4,Ribeiro,18.99,Blanco,Treixadura,0,8-10°C,0.232,0,1
+Mustiguillo,Quincha Corral,2016,4.4,El Terrerazo,79.95,Tinto,Bobal,0,16-18°C,0.055,1,2
+Martinet,Els Escurcons,2014,4.4,Priorato,78.49,Tinto,Grenache / Carinena,0,16-18°C,0.056,1,7
+Remirez de Ganuza,Rioja Reserva,2014,4.4,Rioja,49.9,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Vall Llach,Idus,2018,4.4,Priorato,35.5,Tinto,Grenache / Carinena,0,16-18°C,0.124,0,7
+Vina Pomal,Vinos Singulares Tempranillo Blanco Reserva,2014,4.4,Rioja,34.9,Blanco,Viura,1,8-10°C,0.126,0,1
+Astrales,Christina Ribera del Duero,2016,4.4,Ribera del Duero,50.76,Tinto,Tempranillo,0,16-18°C,0.087,1,7
+Merum Priorati,Desti,2018,4.4,Priorato,29.95,Tinto,Grenache / Carinena,0,16-18°C,0.147,0,7
+Hacienda Lopez de Haro,Gran Reserva Classica Tinto,2001,4.4,Rioja,36.75,Tinto,Tempranillo,1,16-18°C,0.12,0,6
+Bodegas Mauro,Godello Blanco,2019,4.4,Bierzo,37.6,Blanco,Blend/Other,0,8-10°C,0.117,0,1
+Alto Moncayo,Aquilon Garnacha,2014,4.4,Campo de Borja,100.0,Tinto,Grenache,0,16-18°C,0.044,1,2
+Cayetano del Pino,Palo Cortado 1/10,2015,4.4,Jerez-Xeres-Sherry,25.0,Generoso,Blend/Other,0,12-14°C,0.176,0,4
+La Unica,Fourth Edition,2015,4.4,Vino de Espana,40.0,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Remelluri,Rioja Blanco,2018,4.4,Rioja,52.0,Blanco,Viura,0,8-10°C,0.085,1,1
+Pazo Senorans,Seleccion de Anada Albarino Rias Baixas,2012,4.4,Rias Baixas,34.25,Blanco,Albarino,0,8-10°C,0.128,0,1
+Fefinanes,Albarino de Fefinanes III Ano,2017,4.4,Rias Baixas,35.4,Blanco,Albarino,0,8-10°C,0.124,0,1
+Arzuaga,Reserva Ribera del Duero,2018,4.4,Ribera del Duero,32.15,Tinto,Tempranillo,1,16-18°C,0.137,0,6
+Familia Torres,Perpetual,2017,4.4,Priorato,62.75,Tinto,Grenache / Carinena,0,16-18°C,0.07,1,7
+Gramona,Cava Celler Batlle,2010,4.4,Cava,58.3,Espumoso,Blend/Other,0,6-8°C,0.075,1,5
+Ferrer Bobet,Seleccio Especial Vinyes Velles,2016,4.4,Priorato,58.9,Tinto,Grenache / Carinena,0,16-18°C,0.075,1,7
+Merum Priorati,El Cel,2015,4.4,Priorato,59.0,Tinto,Grenache / Carinena,0,16-18°C,0.075,1,7
+Gomez Cruzado,Montes Obarenes Seleccion Terroir,2016,4.4,Rioja,42.95,Blanco,Viura,0,8-10°C,0.102,0,1
+Vall Llach,Porrera Vi de Vila,2017,4.4,Priorato,43.95,Tinto,Grenache / Carinena,0,16-18°C,0.1,0,7
+Resalte,Gran Ribera del Duero,2010,4.4,Ribera del Duero,41.9188925,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+Scala Dei,Heretge Priorat,2017,4.4,Priorato,91.03,Tinto,Grenache / Carinena,0,16-18°C,0.048,1,7
+Figuero,Vinas Viejas,2018,4.4,Ribera del Duero,25.1,Tinto,Tempranillo,0,16-18°C,0.175,0,7
+Artadi,La Poza de Ballesteros,2014,4.4,Vino de Espana,104.0,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Artadi,El Carretil,2010,4.4,Vino de Espana,295.3,Tinto,Tempranillo,0,16-18°C,0.015,1,0
+Osborne,Sibarita Oloroso Jerez-Xeres-Sherry 30 Years V.O.R.S,2015,4.4,Jerez Oloroso,79.9,Generoso,Blend/Other,0,12-14°C,0.055,1,4
+Vina Sastre,Pago de Santa Cruz Gran Reserva Ribera del Duero,2015,4.4,Ribera del Duero,71.95,Tinto,Tempranillo,1,16-18°C,0.061,1,6
+Pinea,17,2018,4.4,Ribera del Duero,57.9,Tinto,Tempranillo,0,16-18°C,0.076,1,7
+Vina Sastre,Pesus Ribera del Duero,2011,4.4,Ribera del Duero,465.0,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Mas Doix,Doix,2014,4.4,Priorato,116.0,Tinto,Grenache / Carinena,0,16-18°C,0.038,1,7
+Terroir Al Limit Soc. Lda,Les Tosses,2014,4.4,Priorato,158.88,Tinto,Grenache / Carinena,0,16-18°C,0.028,1,7
+Martinet,Cami Pesseroles,2007,4.4,Priorato,165.85,Tinto,Grenache / Carinena,0,16-18°C,0.027,1,7
+Artadi,La Poza de Ballesteros,2013,4.4,Vino de Espana,101.01,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Portal del Priorat,Clos del Portal Tros de Clos,2016,4.4,Priorato,56.95,Tinto,Grenache / Carinena,0,16-18°C,0.077,1,7
+Vina Sastre,Pago de Santa Cruz,2019,4.4,Ribera del Duero,48.69,Tinto,Tempranillo,0,16-18°C,0.09,0,7
+Bodegas Mas Alta,La Basseta,2016,4.4,Priorato,56.0,Tinto,Grenache / Carinena,0,16-18°C,0.079,1,7
+Cims de Porrera,Classic,1996,4.4,Priorato,217.2,Tinto,Grenache / Carinena,0,16-18°C,0.02,1,0
+Nin-Ortiz,Nit de Nin Mas d'en Cacador,2017,4.4,Priorato,89.9,Tinto,Grenache / Carinena,0,16-18°C,0.049,1,7
+Casa Rojo,Minami,2016,4.4,Jumilla,48.9,Tinto,Monastrell,0,16-18°C,0.09,0,2
+La Rioja Alta,Rioja Gran Reserva 904,1982,4.4,Rioja,145.0,Tinto,Tempranillo,1,16-18°C,0.03,1,6
+Alvaro Palacios,Vi de Vila Gratallops,2019,4.4,Priorato,54.5,Tinto,Grenache / Carinena,0,16-18°C,0.081,1,7
+Bodegas Naluar & Acediano,Acediano,2016,4.4,Ribera del Duero,42.0,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+Gramona,Cava Celler Batlle,2009,4.4,Cava,59.75,Espumoso,Blend/Other,0,6-8°C,0.074,1,5
+Cims de Porrera,Classic,2012,4.4,Priorato,49.95,Tinto,Grenache / Carinena,0,16-18°C,0.088,0,7
+Murua,Veguin de Murua Gran Reserva,2012,4.4,Rioja,36.0,Tinto,Tempranillo,1,16-18°C,0.122,0,6
+Pago de Los Capellanes,O Luar do Sil Valdeorras Godello Sobre Lias,2020,4.4,Valdeorras,16.39,Desconocido,Blend/Other,0,10-14°C,0.268,0,3
+Mas Doix,Doix,2015,4.4,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.046,1,7
+Vinyes Domenech,Teixar,2015,4.4,Montsant,51.05,Tinto,Blend/Other,0,16-18°C,0.086,1,2
+Sei Solo,Tinto,2018,4.4,Ribera del Duero,52.9,Tinto,Tempranillo,0,16-18°C,0.083,1,7
+Bodegas Ximenez-Spinola,Anada Pedro Ximenez,2018,4.4,Jerez-Xeres-Sherry,17.5,Generoso,Pedro Ximenez,0,12-14°C,0.251,0,4
+Abadia Retuerta,Le Domaine Blanco de Guarda,2020,4.4,Sardon de Duero,33.8,Blanco,Blend/Other,0,8-10°C,0.13,0,1
+Artadi,Vina El Pison,1999,4.4,Vino de Espana,419.85,Tinto,Tempranillo,0,16-18°C,0.01,1,0
+Portal del Priorat,Clos del Portal Somni,2016,4.4,Priorato,33.03,Tinto,Grenache / Carinena,0,16-18°C,0.133,0,7
+Terroir Al Limit Soc. Lda,Les Manyes,2015,4.4,Priorato,189.0,Tinto,Grenache / Carinena,0,16-18°C,0.023,1,7
+Castillo Perelada,Emporda Aires de Garbet,2017,4.4,Emporda,39.22,Tinto,Blend/Other,0,16-18°C,0.112,0,2
+Pago de Vallegarcia,Montes de Toledo Syrah,2019,4.4,Castilla,19.5,Tinto,Syrah,0,16-18°C,0.226,0,2
+Finca Torremilanos,Torremilanos Coleccion Ribera del Duero,2014,4.4,Ribera del Duero,44.0,Tinto,Tempranillo,0,16-18°C,0.1,0,7
+Vina Sastre,Regina Vides Ribera del Duero,2010,4.4,Ribera del Duero,101.1,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Eulogio Pomares,Maceracion Con Pieles,2017,4.4,Rias Baixas,36.95,Blanco,Albarino,0,8-10°C,0.119,0,1
+Toro Albala,Don PX Pedro Ximenez,1986,4.4,Montilla-Moriles,225.0,Generoso,Pedro Ximenez,0,12-14°C,0.02,1,4
+Marques de Riscal,Baron de Chirel Rioja Reserva,2003,4.4,Rioja,77.0,Tinto,Tempranillo,1,16-18°C,0.057,1,6
+Casa Castillo,Pie Franco,2018,4.4,Jumilla,69.0,Tinto,Monastrell,0,16-18°C,0.064,1,2
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2004,4.4,Rioja,90.0,Tinto,Tempranillo,0,16-18°C,0.049,1,7
+Sangenis I Vaque,Clos Monlleo,2011,4.4,Priorato,50.0,Tinto,Grenache / Carinena,0,16-18°C,0.088,0,7
+Allende,Calvario Rioja,2010,4.4,Rioja,125.97,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+Delgado Zuleta,B.Rodriguez La-Cave Quo Vadis?,2015,4.4,Jerez Amontillado,87.9,Generoso,Blend/Other,0,12-14°C,0.05,1,4
+Bodegas Mas Alta,La Solana Alta,2017,4.4,Priorato,63.46,Tinto,Grenache / Carinena,0,16-18°C,0.069,1,7
+Vinas del Vero,Blecua Somontano,2004,4.4,Somontano,69.0,Tinto,Blend/Other,0,16-18°C,0.064,1,2
+Merum Priorati,El Cel,2016,4.4,Priorato,64.0,Tinto,Grenache / Carinena,0,16-18°C,0.069,1,7
+VALENCISO,Rioja Reserva 10 Anos Despues Edicion Limitada,2011,4.4,Rioja,57.9,Tinto,Tempranillo,1,16-18°C,0.076,1,6
+Artadi,El Carretil,2014,4.4,Vino de Espana,143.51,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Mas Perinet,Perinet + Plus,2004,4.4,Priorato,54.05,Tinto,Grenache / Carinena,0,16-18°C,0.081,1,7
+Espectacle del Montsant,Tinto,2017,4.4,Montsant,102.0,Tinto,Blend/Other,0,16-18°C,0.043,1,2
+Clos Mogador,Priorat,1999,4.4,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.046,1,7
+Luis A. Rodriguez Vazquez,Vina de Martin Escolma Ribeiro,2016,4.4,Ribeiro,37.65,Blanco,Treixadura,0,8-10°C,0.117,0,1
+Artadi,Vina El Pison,2001,4.4,Vino de Espana,340.0,Tinto,Tempranillo,0,16-18°C,0.013,1,0
+Carmelo Rodero,Reserva,2018,4.4,Ribera del Duero,28.9,Tinto,Tempranillo,1,16-18°C,0.152,0,6
+Alvaro Palacios,Finca Dofi,2019,4.4,Priorato,84.55,Tinto,Grenache / Carinena,0,16-18°C,0.052,1,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1959,4.4,Rioja,940.0,Tinto,Tempranillo,1,16-18°C,0.005,1,0
+Martinet,Cami Pesseroles,2008,4.4,Priorato,152.6,Tinto,Grenache / Carinena,0,16-18°C,0.029,1,7
+Vizcarra,Ribera del Duero Torralvo,2018,4.4,Ribera del Duero,32.45,Tinto,Tempranillo,0,16-18°C,0.136,0,7
+Chozas Carrascal,El Cabernet F - Familiar,2017,4.4,Utiel-Requena,34.9,Tinto,Blend/Other,0,16-18°C,0.126,0,2
+Bodegas Vilano,Premium,2018,4.4,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Pago de Vallegarcia,Hipperia Red Blend,2018,4.4,Castilla,24.9,Tinto,Blend/Other,0,16-18°C,0.177,0,2
+Alonso del Yerro,Maria Ribera del Duero,2016,4.4,Ribera del Duero,53.9,Tinto,Tempranillo,0,16-18°C,0.082,1,7
+Emilio Moro,Vendimia Seleccionada,2019,4.4,Ribera del Duero,21.38,Tinto,Tempranillo,0,16-18°C,0.206,0,7
+Artadi,Vina El Pison,2016,4.4,Vino de Espana,385.0,Tinto,Tempranillo,0,16-18°C,0.011,1,0
+Clos Figueras,Clos Figueres,2017,4.4,Priorato,53.4,Tinto,Grenache / Carinena,0,16-18°C,0.082,1,7
+Bodegas Monte La Reina,Castillo de Monte la Reina Cuvee Privee,2015,4.4,Toro,14.65,Tinto,Tempranillo,0,16-18°C,0.3,0,7
+Alonso del Yerro,Maria Ribera del Duero,2015,4.4,Ribera del Duero,54.9,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Sacristia AB,Amontillado Saca,2015,4.4,Jerez-Xeres-Sherry,62.02,Generoso,Blend/Other,0,12-14°C,0.071,1,4
+Ontanon,Queiron Reserva Vinedos Familiares,2011,4.4,Rioja,26.85,Tinto,Tempranillo,1,16-18°C,0.164,0,6
+Martinet,Cami Pesseroles,2011,4.4,Priorato,126.5,Tinto,Grenache / Carinena,0,16-18°C,0.035,1,7
+Toro Albala,Don PX Gran Reserva,1990,4.4,Montilla-Moriles,35.9,Generoso,Pedro Ximenez,1,12-14°C,0.123,0,4
+Ferrer Bobet,Seleccio Especial Vinyes Velles,2017,4.4,Priorato,64.35,Tinto,Grenache / Carinena,0,16-18°C,0.068,1,7
+Dominio de Atauta,Llanos del Almendro Ribera del Duero,2011,4.4,Ribera del Duero,115.2,Tinto,Tempranillo,0,16-18°C,0.038,1,7
+Alta Alella,Dolc Mataro,2018,4.4,Alella,17.95,Desconocido,Blend/Other,0,10-14°C,0.245,0,3
+Muga,Prado Enea Gran Reserva,1989,4.4,Rioja,140.0,Tinto,Tempranillo,1,16-18°C,0.031,1,6
+Muga,Prado Enea Gran Reserva,1991,4.4,Rioja,167.0,Tinto,Tempranillo,1,16-18°C,0.026,1,6
+Teso La Monja,Victorino,2019,4.4,Toro,33.9,Tinto,Tempranillo,0,16-18°C,0.13,0,7
+Bodegas Roda,Roda I Reserva Rioja,2017,4.4,Rioja,45.95,Tinto,Tempranillo,1,16-18°C,0.096,0,6
+Bodega Elias Mora,Toro 2V Premium,2005,4.4,Toro,44.0,Tinto,Tempranillo,0,16-18°C,0.1,0,7
+Tridente,Rejon Tempranillo,2018,4.4,Castilla y Leon,31.94,Tinto,Tempranillo,0,16-18°C,0.138,0,2
+Joan Simo,Les Eres Vinyes Velles,2015,4.4,Priorato,32.49,Tinto,Grenache / Carinena,0,16-18°C,0.135,0,7
+Hacienda Lopez de Haro,Gran Reserva Classica Blanco,2012,4.4,Rioja,36.75,Blanco,Viura,1,8-10°C,0.12,0,1
+Can Axartell,The Artist,2016,4.4,Mallorca,26.84,Tinto,Blend/Other,0,16-18°C,0.164,0,2
+Juan Pinero,Amontillado 30 Years Old V.O.R.S Sherry,2015,4.4,Jerez Amontillado,36.9,Generoso,Blend/Other,0,12-14°C,0.119,0,4
+Pazo Barrantes,La Comtesse de Pazo Barrantes Albarino,2017,4.4,Rias Baixas,59.95,Blanco,Albarino,0,8-10°C,0.073,1,1
+Sara Perez y Rene Barbier,Gratallops Partida Bellvisos,2007,4.4,Priorato,241.4,Tinto,Grenache / Carinena,0,16-18°C,0.018,1,0
+Abadia Retuerta,Seleccion Especial,2018,4.4,Sardon de Duero,27.6,Tinto,Blend/Other,0,16-18°C,0.159,0,2
+Abel Mendoza Monge,5V Blanco,2019,4.4,Rioja,37.98,Blanco,Viura,0,8-10°C,0.116,0,1
+Mas Llunes,Finca Butaros Vinya Centenaria,2015,4.4,Emporda,32.23,Tinto,Blend/Other,0,16-18°C,0.137,0,2
+Familia Torres,Grans Muralles,2016,4.4,Conca de Barbera,123.76,Tinto,Blend/Other,0,16-18°C,0.036,1,7
+Losada,La Bienquerida,2018,4.4,Bierzo,34.55,Tinto,Mencia,0,16-18°C,0.127,0,7
+Artadi,El Carretil,2016,4.4,Vino de Espana,155.0,Tinto,Tempranillo,0,16-18°C,0.028,1,7
+Marques de Vargas,Seleccion Privada,2011,4.4,Rioja,68.0,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Protos,Seleccion Finca el Grajo Viejo,2017,4.4,Ribera del Duero,59.9,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Bodegas Frontaura,Aponte Winemaker's Private Collection Tempranillo,2008,4.4,Toro,112.0,Tinto,Tempranillo,0,16-18°C,0.039,1,7
+Roig Parals,Cami de Cormes,2018,4.4,Emporda,14.18,Tinto,Blend/Other,0,16-18°C,0.31,0,2
+Oxer Wines,Kalamity Rioja,2017,4.4,Rioja,106.0,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Perinet,1194,2016,4.4,Priorato,105.8121097,Tinto,Grenache / Carinena,0,16-18°C,0.042,1,7
+Cepa 21,Malabrigo Ribera del Duero,2018,4.4,Ribera del Duero,31.5,Tinto,Tempranillo,0,16-18°C,0.14,0,7
+Romate,Old & Plus Pedro Ximenez,2015,4.4,Jerez Pedro Ximenes (PX),42.12,Generoso,Blend/Other,0,12-14°C,0.104,0,4
+Avgvstvs,Reserva Trajanvs,2016,4.4,Penedes,21.5,Tinto,Blend/Other,1,16-18°C,0.205,0,6
+Alvaro Palacios,Finca Dofi,1999,4.4,Priorato,75.0,Tinto,Grenache / Carinena,0,16-18°C,0.059,1,7
+Jorge Ordonez,No. 2 Victoria,2018,4.4,Malaga,15.9,Desconocido,Blend/Other,0,10-14°C,0.277,0,3
+Remelluri,Granja Gran Reserva Rioja,2013,4.4,Rioja,53.9,Tinto,Tempranillo,1,16-18°C,0.082,1,6
+Castillo Perelada,Emporda Gran Claustro,2015,4.4,Emporda,30.86,Tinto,Blend/Other,0,16-18°C,0.143,0,2
+Anima Negra,Son Negre,2010,4.4,Mallorca,235.95,Tinto,Blend/Other,0,16-18°C,0.019,1,2
+Vinicola Real,200 Monges Rioja Reserva,2012,4.4,Rioja,38.5,Tinto,Tempranillo,1,16-18°C,0.114,0,6
+Ramon Bilbao,Lalomba Finca Valhonta,2017,4.4,Rioja,56.75,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Clos Mogador,Manyetes,2017,4.4,Priorato,59.9,Tinto,Grenache / Carinena,0,16-18°C,0.073,1,7
+Vina Pedrosa,Gran Reserva,2014,4.4,Ribera del Duero,122.667917,Tinto,Tempranillo,1,16-18°C,0.036,1,6
+Recaredo,Serral del Vell Brut Nature,2016,4.4,Cava,34.56,Espumoso,Blend/Other,0,6-8°C,0.127,0,5
+Abadia Retuerta,Pago Valdebellon,2016,4.4,Sardon de Duero,65.9,Tinto,Cabernet Sauvignon,0,16-18°C,0.067,1,2
+Gramona,Cava Celler Batlle,2011,4.4,Cava,59.75,Espumoso,Blend/Other,0,6-8°C,0.074,1,5
+Vina Sastre,Pesus Ribera del Duero,2003,4.4,Ribera del Duero,509.25,Tinto,Tempranillo,0,16-18°C,0.009,1,0
+Terroir Al Limit Soc. Lda,Les Tosses,2013,4.4,Priorato,158.88,Tinto,Grenache / Carinena,0,16-18°C,0.028,1,7
+Leda,Guarda de Leda Seleccion Tempranillo,2015,4.4,Castilla y Leon,37.66,Tinto,Tempranillo,0,16-18°C,0.117,0,7
+Enric Soler,Nun Vinya dels Taus,2018,4.4,Penedes,62.7,Desconocido,Blend/Other,0,10-14°C,0.07,1,3
+Bodegas Celler Francisco Castillo - Clos Dominic,Vinyes Altes Porrera,2016,4.4,Priorato,60.73,Tinto,Grenache / Carinena,0,16-18°C,0.072,1,7
+Es Fangar,Lo Cortinelo.Lo Blanc,2017,4.4,Pla i Llevant,27.25,Desconocido,Blend/Other,0,10-14°C,0.161,0,3
+Cal Batllet - Celler Ripoll Sans,5 Partides Gratallops Vi de La Vila,2014,4.4,Priorato,49.6,Tinto,Grenache / Carinena,0,16-18°C,0.089,0,7
+Llopart,Cava Ex-Vite Gran Reserva Brut,2010,4.4,Cava,43.5,Espumoso,Blend/Other,1,6-8°C,0.101,0,5
+Vega Sicilia,Valbuena 5o,1982,4.4,Ribera del Duero,225.0,Tinto,Tempranillo,0,16-18°C,0.02,1,0
+Portia,Summa Edicion Limitada,2015,4.4,Ribera del Duero,89.97,Tinto,Tempranillo,0,16-18°C,0.049,1,7
+Bodegas Mas Alta,Cirerets,2019,4.4,Priorato,37.9,Tinto,Grenache / Carinena,0,16-18°C,0.116,0,7
+Los Aguilares,Pago El Espino,2019,4.4,Sierras de Malaga,18.9,Tinto,Blend/Other,0,16-18°C,0.233,0,2
+La Vicalanda,Gran Reserva,2015,4.4,Rioja,53.8,Tinto,Tempranillo,1,16-18°C,0.082,1,6
+Vina Pedrosa,Perez Pascuas Gran Reserva Seleccion,2015,4.4,Ribera del Duero,55.25,Tinto,Tempranillo,1,16-18°C,0.08,1,6
+Ostatu,Gloria Rioja,2011,4.4,Rioja Alavesa,44.9,Tinto,Blend/Other,0,16-18°C,0.098,0,2
+Finca Valpiedra,Petra de Valpiedra Garnacha,2017,4.4,Rioja,32.9,Tinto,Grenache,0,16-18°C,0.134,0,2
+Vina Pomal,Alto de la Caseta,2015,4.4,Rioja,82.5,Tinto,Tempranillo,0,16-18°C,0.053,1,7
+Recaredo,Serral del Vell Brut Nature,2015,4.4,Cava,33.78,Espumoso,Blend/Other,0,6-8°C,0.13,0,5
+Tridente,Rejon Tempranillo,2017,4.4,Castilla y Leon,34.9,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Vall Llach,Mas de la Rosa,2016,4.4,Priorato,367.39,Tinto,Grenache / Carinena,0,16-18°C,0.012,1,0
+Baigorri,Rioja B70,2014,4.4,Rioja,104.5,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Matarromera,Gran Reserva,2014,4.4,Ribera del Duero,74.55,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Vivaltus,Tinto,2016,4.4,Ribera del Duero,119.0,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Comenge,Don Miguel,2016,4.4,Ribera del Duero,31.9239296995019,Tinto,Tempranillo,0,16-18°C,0.138,0,7
+Collbaix Celler El Moli,Singular Negre,2015,4.4,Pla de Bages,27.35,Tinto,Cabernet Sauvignon,0,16-18°C,0.161,0,2
+Bodegas Celler Francisco Castillo - Clos Dominic,Vinyes Altes Porrera,2017,4.4,Priorato,33.0,Tinto,Grenache / Carinena,0,16-18°C,0.133,0,7
+Martinez Lacuesta,Rioja Reserva Especial,1922,4.4,Rioja Alta,280.0,Tinto,Blend/Other,1,16-18°C,0.016,1,0
+Pujanza,Rioja Cisma,2014,4.4,Rioja,140.0,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Jesus Madrazo,Seleccion Rioja,2018,4.4,Rioja,32.0,Tinto,Tempranillo,0,16-18°C,0.138,0,7
+Allende,Martires Rioja,2015,4.4,Rioja,91.5,Blanco,Viura,0,8-10°C,0.048,1,1
+Llopart,Cava Original Brut (Espumos),2010,4.4,Cava,52.95,Espumoso,Blend/Other,0,6-8°C,0.083,1,5
+Albet i Noya,Marti Reserva Penedes,2015,4.4,Penedes,35.15,Tinto,Blend/Other,1,16-18°C,0.125,0,6
+La Rioja Alta,Vina Ardanza Reserva Seleccion Especial,2015,4.4,Rioja,23.0,Tinto,Tempranillo,1,16-18°C,0.191,0,6
+Juan Pinero,Oloroso 30 Years Old V.O.R.S,2015,4.4,Jerez Oloroso,37.9,Generoso,Blend/Other,0,12-14°C,0.116,0,4
+Olivier Riviere,Pozo Alto,2016,4.4,Rioja,119.95,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Bodegas Amaren,El Cristo de Samaniego,2017,4.4,Rioja Alavesa,42.9,Tinto,Blend/Other,0,16-18°C,0.103,0,2
+Bodegas Tierra,El Belisario,2016,4.4,Rioja,39.9,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Torre de Ona,Baron de Ona Rioja Reserva,1995,4.4,Rioja,50.0,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Clos Erasmus,Priorat,2017,4.4,Priorato,209.31,Tinto,Grenache / Carinena,0,16-18°C,0.021,1,7
+Toro Albala,Don PX Seleccion,1968,4.4,Montilla-Moriles,165.0,Generoso,Pedro Ximenez,0,12-14°C,0.027,1,4
+Monte Real,Gran Reserva,1978,4.4,Rioja,97.0,Tinto,Tempranillo,1,16-18°C,0.045,1,6
+Do Ferreiro (Bodegas Gerardo Mendez),Cepas Vellas Rias Baixas Albarino,2020,4.4,Rias Baixas,26.5,Blanco,Albarino,0,8-10°C,0.166,0,1
+Legaris,La Aguilera,2016,4.4,Ribera del Duero,32.5,Tinto,Tempranillo,0,16-18°C,0.135,0,7
+Bodega Contador (Benjamin Romeo),Pirata,2014,4.4,Rioja,194.0,Blanco,Viura,0,8-10°C,0.023,1,1
+Vinas del Vero,Blecua Somontano,2014,4.4,Somontano,74.95,Tinto,Blend/Other,0,16-18°C,0.059,1,2
+Territorio Luthier,Hispania,2018,4.4,Ribera del Duero,28.9,Tinto,Tempranillo,0,16-18°C,0.152,0,7
+Martin Codax,Arousa,2019,4.4,Vino de Espana,18.99,Blanco,Albarino,0,8-10°C,0.232,0,1
+Vinedos Hermanos Hernaiz,Las Cenizas Tempranillo,2018,4.4,Rioja Alta,19.95,Tinto,Blend/Other,0,16-18°C,0.221,0,2
+Cims de Porrera,Solanes Priorat,2003,4.4,Priorato,38.66,Tinto,Grenache / Carinena,0,16-18°C,0.114,0,7
+Artadi,Grandes Anadas Rioja,1994,4.4,Rioja,180.0,Tinto,Tempranillo,0,16-18°C,0.024,1,0
+Martinet,Cami Pesseroles,2017,4.4,Priorato,75.5,Tinto,Grenache / Carinena,0,16-18°C,0.058,1,7
+Freixenet,Cava Cuvee De Prestige Trepat,2019,4.4,Cava,7.89,Espumoso,Blend/Other,0,6-8°C,0.558,0,5
+Azpilicueta,Felix Azpilicueta Coleccion Privada,2019,4.4,Rioja,18.0,Tinto,Tempranillo,0,16-18°C,0.244,0,2
+Gramona,Savinat Sauvignon Blanc,2019,4.4,Penedes,17.9,Blanco,Sauvignon Blanc,0,8-10°C,0.246,0,1
+Veronica Salgado,Capricho Crianza,2017,4.4,Ribera del Duero,15.4438025,Tinto,Tempranillo,1,16-18°C,0.285,0,6
+Vinedos Hermanos Hernaiz,Finca La Emperatriz Vinedo Singular Tinto,2017,4.4,Rioja Alta,33.55,Tinto,Blend/Other,0,16-18°C,0.131,0,2
+Clos Galena,Galena,2017,4.4,Priorato,19.8,Tinto,Grenache / Carinena,0,16-18°C,0.222,0,7
+Imperial,Rioja Reserva,1982,4.4,Rioja,145.0,Tinto,Tempranillo,1,16-18°C,0.03,1,6
+Osborne,Solera PAP Palo Cortado Rare Sherry,2015,4.4,Jerez-Xeres-Sherry,189.99,Generoso,Blend/Other,0,12-14°C,0.023,1,4
+Bodegas Imperiales - Abadia de San Quirce,Finca Helena,2015,4.4,Ribera del Duero,59.9,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Marta Mate,Primordium,2012,4.4,Ribera del Duero,29.9,Tinto,Tempranillo,0,16-18°C,0.147,0,7
+Albet i Noya,Marti Reserva Penedes,2016,4.4,Penedes,33.8,Tinto,Blend/Other,1,16-18°C,0.13,0,6
+Bodegas Mas Alta,La Solana Alta,2018,4.4,Priorato,43.5,Tinto,Grenache / Carinena,0,16-18°C,0.101,0,7
+Venta Las Vacas,La Cuartilleja Reserva,2016,4.4,Ribera del Duero,39.9,Tinto,Tempranillo,1,16-18°C,0.11,0,6
+Emilio Moro,Malleolus de Sanchomartin,2018,4.4,Ribera del Duero,119.35,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Figuero,Noble,2015,4.4,Ribera del Duero,60.0,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Baigorri,De Garage Rioja,2005,4.4,Rioja,40.0,Tinto,Tempranillo,0,16-18°C,0.11,0,7
+Pago Calzadilla,Gran Calzadilla,2010,4.4,Pago Calzadilla,34.75,Tinto,Blend/Other,0,16-18°C,0.127,0,2
+Vivanco,4 Varietales Coleccion Rioja,2017,4.4,Rioja,24.0,Tinto,Tempranillo,0,16-18°C,0.183,0,7
+Fernandez Gao,Oloroso,2015,4.4,Jerez-Xeres-Sherry,59.9,Generoso,Blend/Other,0,12-14°C,0.073,1,4
+Allende,Aurus,1998,4.4,Rioja,245.25,Tinto,Tempranillo,0,16-18°C,0.018,1,0
+Toro Albala,Don PX Pedro Ximenez,1973,4.4,Montilla-Moriles,109.76,Generoso,Pedro Ximenez,0,12-14°C,0.04,1,4
+Museum,Numerus Clausus,2012,4.4,Cigales,59.9,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Pujanza,Rioja Cisma,2012,4.4,Rioja,130.5,Tinto,Tempranillo,0,16-18°C,0.034,1,7
+Vinicola Real,200 Monges Rioja Seleccion Especial Reserva Blanco,2008,4.4,Rioja,61.5,Blanco,Viura,1,8-10°C,0.072,1,1
+Toro Albala,Don PX Gran Reserva,1994,4.4,Montilla-Moriles,33.23,Generoso,Pedro Ximenez,1,12-14°C,0.132,0,4
+Castillo Perelada,Emporda Aires de Garbet,2018,4.4,Emporda,38.5,Tinto,Blend/Other,0,16-18°C,0.114,0,2
+Marques de Riscal,Rioja Gran Reserva,1996,4.4,Rioja,38.12,Tinto,Tempranillo,1,16-18°C,0.115,0,6
+Harveys,30 Years V.O.R.S Very Old Palo Cortado Blend Medium Sherry,2015,4.4,Jerez Palo Cortado,65.0,Generoso,Blend/Other,0,12-14°C,0.068,1,4
+Farina,Campus Gothorum,2017,4.4,Toro,41.0,Tinto,Tempranillo,0,16-18°C,0.107,0,7
+Tinto Pesquera,Gran Reserva,2015,4.4,Ribera del Duero,74.5,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Enric Soler,Nun Vinya dels Taus,2019,4.4,Penedes,45.39,Desconocido,Blend/Other,0,10-14°C,0.097,0,3
+Galindo San Millan,La Pizca,2016,4.4,Toro,26.0,Tinto,Tempranillo,0,16-18°C,0.169,0,7
+Equipo Navazos,La Bota 90 de Manzanilla Pasada,2015,4.4,Manzanilla,39.75,Generoso,Blend/Other,0,12-14°C,0.111,0,4
+Legaris,Moradillo de Roa,2017,4.4,Ribera del Duero,29.89,Tinto,Tempranillo,0,16-18°C,0.147,0,7
+Bodegas Casa Primicia,Cofradia,2014,4.4,Rioja,38.0,Tinto,Tempranillo,0,16-18°C,0.116,0,7
+Pujanza,Rioja Cisma,2009,4.4,Rioja,132.4,Tinto,Tempranillo,0,16-18°C,0.033,1,7
+Bodegas Celler Francisco Castillo - Clos Dominic,Vinyes Altes Porrera,2009,4.4,Priorato,69.0,Tinto,Grenache / Carinena,0,16-18°C,0.064,1,7
+Castell Miquel,Stairway To Heaven Rosado,2020,4.4,Mallorca,13.99,Desconocido,Blend/Other,0,10-14°C,0.315,0,3
+Barco del Corneta,La Silleria,2017,4.4,Castilla y Leon,24.5,Desconocido,Blend/Other,0,10-14°C,0.18,0,3
+Joan d'Anguera,Planella,2020,4.4,Montsant,16.25,Tinto,Blend/Other,0,16-18°C,0.271,0,2
+Martin Codax,Gallaecia Rias Baixes Albarino,2017,4.4,Rias Baixas,39.95,Blanco,Albarino,0,8-10°C,0.11,0,1
+Tinto Pesquera,Gran Reserva,1994,4.4,Ribera del Duero,138.0,Tinto,Tempranillo,1,16-18°C,0.032,1,6
+Xaloc,Monada,2013,4.4,Mallorca,35.4,Tinto,Blend/Other,0,16-18°C,0.124,0,2
+Bodegas 6o Elemento - Vino Sexto Elemento,Tinto,2019,4.4,Valencia,20.95,Tinto,Blend/Other,0,16-18°C,0.21,0,2
+Scala Dei,Heretge Priorat,2018,4.4,Priorato,39.99,Tinto,Grenache / Carinena,0,16-18°C,0.11,0,7
+Terra Remota,Usted,2009,4.4,Emporda,159.8,Tinto,Blend/Other,0,16-18°C,0.028,1,2
+Allende,Martires Rioja,2017,4.4,Rioja,139.63,Blanco,Viura,0,8-10°C,0.032,1,1
+Bodegas Frontaura,Verdejo,2017,4.4,Toro,19.97,Blanco,Verdejo,0,8-10°C,0.22,0,1
+Carlos Moro,Vina Garugele,2015,4.4,Rioja,75.8,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Bodegas Luis Perez,Petit Verdot,2013,4.4,Andalucia,52.5,Tinto,Blend/Other,0,16-18°C,0.084,1,2
+Ladairo,Barrica,2018,4.4,Monterrei,20.95,Tinto,Blend/Other,1,16-18°C,0.21,0,6
+Conreria d'Scala Dei,Voltons,2017,4.4,Priorato,51.95,Tinto,Grenache / Carinena,0,16-18°C,0.085,1,7
+Castell d'Encus,Ekam Essencia,2015,4.4,Costers del Segre,43.44,Desconocido,Blend/Other,0,10-14°C,0.101,0,3
+Traslascuestas,Valcavado de Traslascuestas,2014,4.4,Ribera del Duero,35.48,Tinto,Tempranillo,0,16-18°C,0.124,0,7
+Tobia,Oscar Tobia Gran Reserva Rioja,2014,4.4,Rioja,28.0,Tinto,Tempranillo,1,16-18°C,0.157,0,6
+Alvaro Palacios,La Baixada,2018,4.4,Priorato,239.5,Tinto,Grenache / Carinena,0,16-18°C,0.018,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2019,4.4,Rioja,60.61,Tinto,Tempranillo,0,16-18°C,0.073,1,7
+Lopez Cristobal,Seleccion,2012,4.4,Ribera del Duero,35.35,Tinto,Tempranillo,0,16-18°C,0.124,0,7
+Codorniu,Cava El Tros Nou Pinot Noir,2009,4.4,Cava,89.9,Espumoso,Blend/Other,0,6-8°C,0.049,1,5
+Clos Mogador,Manyetes,2018,4.4,Priorato,74.56,Tinto,Grenache / Carinena,0,16-18°C,0.059,1,7
+Sota els Angels,Tinto,2007,4.4,Emporda,33.4,Tinto,Blend/Other,0,16-18°C,0.132,0,2
+Berceo,Los Dominios de Berceo Prefiloxerico,2015,4.4,Rioja,29.25,Tinto,Tempranillo,0,16-18°C,0.15,0,7
+Romate,Old & Plus Amontillado,2015,4.4,Jerez Amontillado,15.84,Generoso,Blend/Other,0,12-14°C,0.278,0,4
+Toro Albala,Don PX Convento Seleccion,1968,4.4,Montilla-Moriles,173.0,Generoso,Pedro Ximenez,0,12-14°C,0.025,1,4
+Mas Blanch I Jove,Sao Expressiu,2012,4.4,Costers del Segre,34.5,Tinto,Blend/Other,0,16-18°C,0.128,0,2
+Carlos Serres,Onomastica Rioja Reserva,2014,4.4,Rioja,21.88,Tinto,Tempranillo,1,16-18°C,0.201,0,6
+La Rioja Alta,Vina Arana Gran Reserva,2015,4.4,Rioja,27.9,Tinto,Tempranillo,1,16-18°C,0.158,0,6
+Anayon,Carinena Parcela 15 Vinas Viejas,2017,4.4,Carinena,54.9,Tinto,Blend/Other,0,16-18°C,0.08,1,2
+David Moreno,Vobiscum,2015,4.4,Rioja,31.99,Tinto,Tempranillo,0,16-18°C,0.138,0,7
+Vina Pedrosa,La Navilla,2017,4.4,Ribera del Duero,24.9,Tinto,Tempranillo,0,16-18°C,0.177,0,7
+Edra,Merlot - Syrah,2016,4.4,Ribera del Gallego-Cinco Villas,11.5,Tinto,Blend/Other,0,16-18°C,0.383,0,2
+Bodega Numanthia,Termanthia,2000,4.4,Toro,140.0,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Gutierrez de la Vega,Casta Diva Cosecha Miel Moscatel Dulce,2018,4.4,Alicante,15.5,Tinto,Monastrell,0,16-18°C,0.284,0,2
+Marques de Riscal,Baron de Chirel Rioja Reserva,2017,4.4,Rioja,95.0,Tinto,Tempranillo,1,16-18°C,0.046,1,6
+Valdelosfrailes,Pago de Las Costanas,2005,4.4,Castilla y Leon,40.2,Tinto,Tempranillo,0,16-18°C,0.109,0,7
+Remirez de Ganuza,Rioja Blanco,2019,4.4,Rioja,26.45,Blanco,Viura,0,8-10°C,0.166,0,1
+Briego,Vendimia Seleccionada,2020,4.4,Ribera del Duero,7.9,Tinto,Tempranillo,0,16-18°C,0.557,0,7
+Guillem Carol - Cellers Carol Valles,Cava Gran Reserva Familiar Millenium Brut,2011,4.4,Cava,29.95,Espumoso,Blend/Other,1,6-8°C,0.147,0,5
+Barahonda,Zona Zepa Monastrell,2015,4.4,Yecla,59.9,Tinto,Monastrell,0,16-18°C,0.073,1,2
+Abadia Retuerta,Petit Verdot,2016,4.4,Sardon de Duero,115.9,Tinto,Blend/Other,0,16-18°C,0.038,1,2
+Tobia,Alma Tobia Blanco,2016,4.4,Rioja,33.0,Blanco,Viura,0,8-10°C,0.133,0,1
+Vina Pomal,Reserva,1970,4.4,Rioja,72.0,Tinto,Tempranillo,1,16-18°C,0.061,1,6
+Particular,Garnacha Vinas Centenarias,2015,4.4,Carinena,13.95,Tinto,Grenache,0,16-18°C,0.315,0,2
+Bodegas Frontonio,El Jardin de las Iguales Vinedo Historico Garnacha,2016,4.4,Aragon,195.99,Tinto,Grenache,0,16-18°C,0.022,1,2
+Bodegas Asenjo & Manso,Silvanus Edicion Limitada Ribera del Duero,2015,4.4,Ribera del Duero,46.0,Tinto,Tempranillo,0,16-18°C,0.096,0,7
+La Rioja Alta,Vina Ardanza Reserva,2009,4.3,Rioja,24.38,Tinto,Tempranillo,1,16-18°C,0.176,0,6
+La Rioja Alta,Vina Ardanza Reserva,2012,4.3,Rioja,20.0,Tinto,Tempranillo,1,16-18°C,0.215,0,6
+Familia Torres,San Valentin Parellada,2019,4.3,Cataluna,6.95,Desconocido,Blend/Other,0,10-14°C,0.619,0,3
+Abadia Retuerta,Seleccion Especial,2016,4.3,Sardon de Duero,17.48,Tinto,Blend/Other,0,16-18°C,0.246,0,2
+R. Lopez de Heredia,Vina Tondonia Reserva,2008,4.3,Rioja,37.9,Tinto,Tempranillo,1,16-18°C,0.113,0,6
+Pintia,Toro,2010,4.3,Toro,79.75,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Abadia Retuerta,Seleccion Especial,2015,4.3,Sardon de Duero,24.95,Tinto,Blend/Other,0,16-18°C,0.172,0,2
+La Rioja Alta,Rioja Gran Reserva 904,2004,4.3,Rioja,29.9,Tinto,Tempranillo,1,16-18°C,0.144,0,6
+Dominio de Pingus,PSI,2018,4.3,Ribera del Duero,29.13,Tinto,Tempranillo,0,16-18°C,0.148,0,7
+Dominio de Pingus,PSI,2017,4.3,Ribera del Duero,33.9,Tinto,Tempranillo,0,16-18°C,0.127,0,7
+Muga,Seleccion Especial (Reserva),2015,4.3,Rioja,28.0,Tinto,Tempranillo,1,16-18°C,0.154,0,6
+Pago de Carraovejas,Tinto,2012,4.3,Ribera del Duero,25.8,Tinto,Tempranillo,0,16-18°C,0.167,0,7
+Emilio Moro,Malleolus,2016,4.3,Ribera del Duero,37.86,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Muga,Seleccion Especial (Reserva),2014,4.3,Rioja,34.0,Tinto,Tempranillo,1,16-18°C,0.126,0,6
+Matarromera,Ribera del Duero Reserva,2014,4.3,Ribera del Duero,33.64,Tinto,Tempranillo,1,16-18°C,0.128,0,6
+Matarromera,Ribera del Duero Reserva,2015,4.3,Ribera del Duero,36.35,Tinto,Tempranillo,1,16-18°C,0.118,0,6
+Muga,Prado Enea Gran Reserva,2006,4.3,Rioja,35.5,Tinto,Tempranillo,1,16-18°C,0.121,0,6
+Bodegas Mauro,Red,2017,4.3,Castilla y Leon,66.75,Tinto,Blend/Other,0,16-18°C,0.064,1,2
+Arzuaga,Ribera del Duero Crianza,2018,4.3,Ribera del Duero,19.01,Tinto,Tempranillo,1,16-18°C,0.226,0,6
+Hacienda Monasterio,Cosecha,2014,4.3,Ribera del Duero,75.9,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Emilio Moro,Malleolus,2017,4.3,Ribera del Duero,38.05,Tinto,Tempranillo,0,16-18°C,0.113,0,7
+Muga,Prado Enea Gran Reserva,2009,4.3,Rioja,40.4,Tinto,Tempranillo,1,16-18°C,0.106,0,6
+Familia Torres,Mas La Plana Cabernet Sauvignon,2013,4.3,Penedes,63.33,Tinto,Cabernet Sauvignon,0,16-18°C,0.068,1,2
+Aalto,Tinto,2012,4.3,Ribera del Duero,26.9,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Hacienda Monasterio,Cosecha,2015,4.3,Ribera del Duero,34.95,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Pago de Los Capellanes,Crianza Tinto,2018,4.3,Ribera del Duero,24.5,Tinto,Tempranillo,1,16-18°C,0.176,0,6
+Pintia,Toro,2007,4.3,Toro,93.5,Tinto,Tempranillo,0,16-18°C,0.046,1,7
+Bodega Numanthia,Numanthia,2012,4.3,Toro,99.9,Tinto,Tempranillo,0,16-18°C,0.043,1,7
+R. Lopez de Heredia,Vina Tondonia Reserva,2009,4.3,Rioja,35.09,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Benjamin de Rothschild - Vega Sicilia,Macan Clasico,2014,4.3,Rioja,36.8,Tinto,Tempranillo,0,16-18°C,0.117,0,7
+Pago de Los Capellanes,Reserva Tinto,2015,4.3,Ribera del Duero,80.35,Tinto,Tempranillo,1,16-18°C,0.054,1,6
+Bodega Numanthia,Numanthia,2014,4.3,Toro,46.0,Tinto,Tempranillo,0,16-18°C,0.093,0,7
+Benjamin de Rothschild - Vega Sicilia,Macan Clasico,2015,4.3,Rioja,50.41,Tinto,Tempranillo,0,16-18°C,0.085,1,7
+Pintia,Toro,2009,4.3,Toro,150.0,Tinto,Tempranillo,0,16-18°C,0.029,1,7
+Matsu,El Viejo,2016,4.3,Toro,33.95,Tinto,Tempranillo,0,16-18°C,0.127,0,7
+Pago de Los Capellanes,Reserva Tinto,2014,4.3,Ribera del Duero,48.6377226796774,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Tomas Postigo,3er Ano Ribera del Duero Tinto,2016,4.3,Ribera del Duero,27.29,Tinto,Tempranillo,0,16-18°C,0.158,0,7
+Aalto,Tinto,2016,4.3,Ribera del Duero,65.9,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Bodegas San Roman,Tinto,2015,4.3,Toro,33.66,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Bodegas San Roman,Tinto,2012,4.3,Toro,190.0,Tinto,Tempranillo,0,16-18°C,0.023,1,7
+Familia Torres,Mas La Plana Cabernet Sauvignon,2015,4.3,Penedes,55.0,Tinto,Cabernet Sauvignon,0,16-18°C,0.078,1,2
+Bodegas San Roman,Tinto,2016,4.3,Toro,26.9,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Bodega Numanthia,Numanthia,2015,4.3,Toro,36.9,Tinto,Tempranillo,0,16-18°C,0.117,0,7
+Bodegas Valduero,Ribera del Duero Una Cepa I,2015,4.3,Ribera del Duero,25.95,Tinto,Tempranillo,0,16-18°C,0.166,0,7
+Pago de Los Capellanes,Reserva Tinto,2016,4.3,Ribera del Duero,34.5,Tinto,Tempranillo,1,16-18°C,0.125,0,6
+Imperial,Rioja Gran Reserva,2012,4.3,Rioja,47.9,Tinto,Tempranillo,1,16-18°C,0.09,0,6
+Alto Moncayo,Garnacha,2014,4.3,Campo de Borja,36.94,Tinto,Grenache,0,16-18°C,0.116,0,2
+La Rioja Alta,Rioja Gran Reserva 904,1998,4.3,Rioja,75.0,Tinto,Tempranillo,1,16-18°C,0.057,1,6
+La Rioja Alta,Vina Arana Gran Reserva,2014,4.3,Rioja,24.9,Tinto,Tempranillo,1,16-18°C,0.173,0,6
+Remirez de Ganuza,Rioja Reserva,2006,4.3,Rioja,58.0,Tinto,Tempranillo,1,16-18°C,0.074,1,6
+La Rioja Alta,Vina Arana Gran Reserva,2012,4.3,Rioja,32.55,Tinto,Tempranillo,1,16-18°C,0.132,0,6
+Bosque de Matasnos,Bosque de Matasnos Etiqueta Blanca,2018,4.3,Ribera del Duero,26.9,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Gonzalez-Byass,Matusalem Sherry VORS,2015,4.3,Jerez Oloroso,63.34,Generoso,Blend/Other,0,12-14°C,0.068,1,4
+Marques de Vargas,Reserva Privada Rioja,2014,4.3,Rioja,37.9,Tinto,Tempranillo,1,16-18°C,0.113,0,6
+Bodegas Valduero,Ribera del Duero Una Cepa I,2014,4.3,Ribera del Duero,46.95,Tinto,Tempranillo,0,16-18°C,0.092,0,7
+Bodegas Roda,Roda I Reserva Rioja,2008,4.3,Rioja,39.22,Tinto,Tempranillo,1,16-18°C,0.11,0,6
+Luis Canas,Reserva Seleccion de la Familia,2016,4.3,Rioja,18.5,Tinto,Tempranillo,1,16-18°C,0.232,0,6
+Gonzalez-Byass,Apostoles 30 Years Old Sherry,2015,4.3,Jerez Palo Cortado,74.0,Generoso,Blend/Other,0,12-14°C,0.058,1,4
+Vinicola Real,200 Monges Rioja Reserva,2010,4.3,Rioja,35.0,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Tinto Pesquera,Reserva,2016,4.3,Ribera del Duero,26.7597646010531,Tinto,Tempranillo,1,16-18°C,0.161,0,6
+Belondrade,Belondrade y Lurton,2015,4.3,Rueda,32.7,Blanco,Verdejo,0,8-10°C,0.131,0,1
+Ossian,Vinas Viejas Verdejo,2016,4.3,Castilla y Leon,49.0,Blanco,Verdejo,0,8-10°C,0.088,0,1
+Teso La Monja,Victorino,2014,4.3,Toro,38.0,Tinto,Tempranillo,0,16-18°C,0.113,0,7
+Garmon,Ribera del Duero,2016,4.3,Ribera del Duero,33.59,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Marques de Murrieta,Gran Reserva Rioja (Finca Ygay),2011,4.3,Rioja,94.95,Tinto,Tempranillo,1,16-18°C,0.045,1,6
+Marques de Caceres,Gaudium,2012,4.3,Rioja,36.91,Tinto,Tempranillo,0,16-18°C,0.116,0,7
+Volver,Triga,2014,4.3,Alicante,30.67,Tinto,Monastrell,0,16-18°C,0.14,0,2
+Vinedos de Paganos,El Puntido,2014,4.3,Rioja,86.15,Tinto,Tempranillo,0,16-18°C,0.05,1,7
+Williams & Humbert,Don Guido Pedro Ximenez Solera Especial Aged 20 Years,2015,4.3,Jerez-Xeres-Sherry,32.9,Generoso,Pedro Ximenez,1,12-14°C,0.131,0,4
+Luis Canas,Reserva Seleccion de la Familia,2014,4.3,Rioja,17.07,Tinto,Tempranillo,1,16-18°C,0.252,0,6
+Pago de Los Capellanes,Crianza Tinto,2019,4.3,Ribera del Duero,19.45,Tinto,Tempranillo,1,16-18°C,0.221,0,6
+Marques de Riscal,Rioja Gran Reserva,2013,4.3,Rioja,39.9,Tinto,Tempranillo,1,16-18°C,0.108,0,6
+Tresmano - Tr3smano,Vendimia,2016,4.3,Ribera del Duero,28.65,Tinto,Tempranillo,0,16-18°C,0.15,0,7
+Vinedos de Paganos,El Puntido,2015,4.3,Rioja,33.82,Tinto,Tempranillo,0,16-18°C,0.127,0,7
+Marques de Murrieta,Dalmau Rioja,2012,4.3,Rioja,67.95,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Marques de Murrieta,Dalmau Rioja,2013,4.3,Rioja,60.95,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Marques de Vargas,Gran Reserva Rioja,2011,4.3,Rioja,35.01,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Muga,Torre Muga,2011,4.3,Rioja,69.95,Tinto,Tempranillo,0,16-18°C,0.061,1,7
+Ossian,Vinas Viejas Verdejo,2018,4.3,Castilla y Leon,28.18,Blanco,Verdejo,0,8-10°C,0.153,0,1
+Teso La Monja,Victorino,2013,4.3,Toro,34.22,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Imperial,Rioja Gran Reserva,2014,4.3,Rioja,49.75,Tinto,Tempranillo,1,16-18°C,0.086,0,6
+Ferrer Bobet,Priorat Vinyes Velles,2016,4.3,Priorato,33.95,Tinto,Grenache / Carinena,0,16-18°C,0.127,0,7
+La Vicalanda,Reserva,2014,4.3,Rioja,21.5,Tinto,Tempranillo,1,16-18°C,0.2,0,6
+Alvaro Palacios,Finca Dofi,2012,4.3,Priorato,80.0,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Senorio de San Vicente,San Vicente Rioja,2014,4.3,Rioja,36.0,Tinto,Tempranillo,0,16-18°C,0.119,0,7
+Imperial,Rioja Reserva,2017,4.3,Rioja,25.45,Tinto,Tempranillo,1,16-18°C,0.169,0,6
+La Rioja Alta,Vina Ardanza Reserva,2010,4.3,Rioja,17.16,Tinto,Tempranillo,1,16-18°C,0.251,0,6
+Pintia,Toro,2004,4.3,Toro,116.9,Tinto,Tempranillo,0,16-18°C,0.037,1,7
+Vinicola Real,200 Monges Rioja Reserva,2009,4.3,Rioja,39.5,Tinto,Tempranillo,1,16-18°C,0.109,0,6
+Vinedos de Paganos,El Puntido Gran Reserva,2006,4.3,Rioja,40.0,Tinto,Tempranillo,1,16-18°C,0.108,0,6
+Marques de Murrieta,Gran Reserva Rioja (Finca Ygay),2012,4.3,Rioja,39.78,Tinto,Tempranillo,1,16-18°C,0.108,0,6
+Anima Negra,An,2017,4.3,Mallorca,39.98,Tinto,Blend/Other,0,16-18°C,0.108,0,2
+Muga,Torre Muga,2014,4.3,Rioja,69.9,Tinto,Tempranillo,0,16-18°C,0.062,1,7
+Senorio de San Vicente,San Vicente Rioja,2007,4.3,Rioja,77.7,Tinto,Tempranillo,0,16-18°C,0.055,1,7
+Clos Mogador,Priorat,2009,4.3,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.045,1,7
+Bodegas Vilano,La Baraja,2016,4.3,Ribera del Duero,24.9,Tinto,Tempranillo,0,16-18°C,0.173,0,7
+Bodegas San Roman,Tinto,2018,4.3,Toro,25.9,Tinto,Tempranillo,0,16-18°C,0.166,0,7
+Castillo Perelada,Finca Malaveina,2017,4.3,Emporda,22.5,Tinto,Blend/Other,0,16-18°C,0.191,0,2
+Marques de Murrieta,Gran Reserva Rioja (Finca Ygay),2014,4.3,Rioja,50.0,Tinto,Tempranillo,1,16-18°C,0.086,0,6
+Remelluri,Granja Gran Reserva Rioja,2009,4.3,Rioja,57.8,Tinto,Tempranillo,1,16-18°C,0.074,1,6
+Marques de Riscal,Reserva XR,2016,4.3,Rioja,21.24,Tinto,Tempranillo,1,16-18°C,0.202,0,6
+Condado de Haza,Alenza Ribera del Duero Gran Reserva,2006,4.3,Ribera del Duero,70.0,Tinto,Tempranillo,1,16-18°C,0.061,1,6
+Enate,Chardonnay Fermentado en Barrica,2019,4.3,Somontano,15.75,Blanco,Chardonnay,1,8-10°C,0.273,0,1
+Ordonez,Vatan Tinta de Toro,2016,4.3,Toro,26.0,Tinto,Tempranillo,0,16-18°C,0.165,0,7
+Lan,A Mano Rioja,2016,4.3,Rioja,25.8208254922442,Tinto,Tempranillo,0,16-18°C,0.167,0,7
+Marques de Riscal,Baron de Chirel Rioja Reserva,2014,4.3,Rioja,62.95,Tinto,Tempranillo,1,16-18°C,0.068,1,6
+Volver,Alicante Bouschet by Tarima,2017,4.3,Alicante,17.15,Tinto,Monastrell,0,16-18°C,0.251,0,2
+Arzuaga,Reserva Ribera del Duero,2014,4.3,Ribera del Duero,33.9,Tinto,Tempranillo,1,16-18°C,0.127,0,6
+Alvaro Palacios,Finca Dofi,2011,4.3,Priorato,80.0,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Alvaro Palacios,Finca Dofi,2013,4.3,Priorato,80.0,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Enate,Chardonnay Fermentado en Barrica,2018,4.3,Somontano,16.9,Blanco,Chardonnay,1,8-10°C,0.254,0,1
+Garmon,Ribera del Duero,2017,4.3,Ribera del Duero,40.92,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+Clos Mogador,Priorat,2008,4.3,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.045,1,7
+Bodegas Tradicion,Oloroso Tradicion Vors 30 Years,2015,4.3,Jerez Oloroso,58.9,Generoso,Blend/Other,0,12-14°C,0.073,1,4
+Pazo Senorans,Seleccion de Anada Albarino Rias Baixas,2011,4.3,Rias Baixas,30.887605,Blanco,Albarino,0,8-10°C,0.139,0,1
+Carmelo Rodero,Ribera del Duero TSM,2019,4.3,Ribera del Duero,67.5,Tinto,Tempranillo,0,16-18°C,0.064,1,7
+Abadia Retuerta,Pago Valdebellon,2015,4.3,Sardon de Duero,67.45,Tinto,Cabernet Sauvignon,0,16-18°C,0.064,1,2
+Figuero,Vinas Viejas,2016,4.3,Ribera del Duero,16.5,Tinto,Tempranillo,0,16-18°C,0.261,0,7
+Lan,A Mano Rioja,2012,4.3,Rioja,30.71,Tinto,Tempranillo,0,16-18°C,0.14,0,7
+Dominio de Atauta,Dominio de Atauta,2017,4.3,Ribera del Duero,25.25,Tinto,Tempranillo,0,16-18°C,0.17,0,7
+Protos,Gran Reserva,2014,4.3,Ribera del Duero,41.95,Tinto,Tempranillo,1,16-18°C,0.103,0,6
+Dominio de Cair,Tierras de Cair Reserva,2012,4.3,Ribera del Duero,38.3,Tinto,Tempranillo,1,16-18°C,0.112,0,6
+Carmelo Rodero,Crianza,2019,4.3,Ribera del Duero,19.95,Tinto,Tempranillo,1,16-18°C,0.216,0,6
+Protos,Seleccion Finca el Grajo Viejo,2014,4.3,Ribera del Duero,59.87,Tinto,Tempranillo,0,16-18°C,0.072,1,7
+Familia Torres,Perpetual,2016,4.3,Priorato,63.5,Tinto,Grenache / Carinena,0,16-18°C,0.068,1,7
+Clos Erasmus,Laurel,2017,4.3,Priorato,46.88,Tinto,Grenache / Carinena,0,16-18°C,0.092,0,7
+Clos Mogador,Priorat,2006,4.3,Priorato,95.0,Tinto,Grenache / Carinena,0,16-18°C,0.045,1,7
+Alvaro Palacios,Finca Dofi,2017,4.3,Priorato,99.9,Tinto,Grenache / Carinena,0,16-18°C,0.043,1,7
+Teso La Monja,Victorino,2011,4.3,Toro,47.01,Tinto,Tempranillo,0,16-18°C,0.091,0,7
+Dominio de Cair,Seleccion La Aguilera,2016,4.3,Ribera del Duero,15.9,Tinto,Tempranillo,0,16-18°C,0.27,0,7
+Torre de Ona,Finca Martelo,2015,4.3,Rioja,21.15,Tinto,Tempranillo,0,16-18°C,0.203,0,7
+Ferrer Bobet,Priorat Vinyes Velles,2011,4.3,Priorato,49.9,Tinto,Grenache / Carinena,0,16-18°C,0.086,0,7
+Remirez de Ganuza,Rioja Blanco,2018,4.3,Rioja,23.83,Blanco,Viura,0,8-10°C,0.18,0,1
+Lustau,Pedro Ximenez Murillo Seleccion del Centenario,2015,4.3,Jerez-Xeres-Sherry,40.0,Generoso,Pedro Ximenez,0,12-14°C,0.108,0,4
+Vinedos de Paganos,El Puntido,2016,4.3,Rioja,33.0,Tinto,Tempranillo,0,16-18°C,0.13,0,7
+Abadia Retuerta,Pago Negralada,2015,4.3,Sardon de Duero,67.82,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Ramon Bilbao,Mirto,2014,4.3,Rioja,48.34,Tinto,Tempranillo,0,16-18°C,0.089,0,7
+Muga,Torre Muga,2005,4.3,Rioja,99.9,Tinto,Tempranillo,0,16-18°C,0.043,1,7
+Alvaro Palacios,Vi de Vila Gratallops,2017,4.3,Priorato,54.9,Tinto,Grenache / Carinena,0,16-18°C,0.078,1,7
+Martinet,Clos Martinet,2005,4.3,Priorato,116.05,Tinto,Grenache / Carinena,0,16-18°C,0.037,1,7
+Alvaro Palacios,Vi de Vila Gratallops,2016,4.3,Priorato,48.75,Tinto,Grenache / Carinena,0,16-18°C,0.088,0,7
+Alion,Ribera del Duero,2000,4.3,Ribera del Duero,98.0,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Bodegas Faustino,I Gran Reserva,1964,4.3,Rioja,272.0,Tinto,Tempranillo,1,16-18°C,0.016,1,6
+Contino,Rioja Gran Reserva,2015,4.3,Rioja,40.45,Tinto,Tempranillo,1,16-18°C,0.106,0,6
+Bodegas Roda,Roda Reserva Rioja,2004,4.3,Rioja,81.35,Tinto,Tempranillo,1,16-18°C,0.053,1,6
+Bodegas Faustino,I Gran Reserva,1970,4.3,Rioja,206.91,Tinto,Tempranillo,1,16-18°C,0.021,1,6
+Ossian,Vinas Viejas Verdejo,2017,4.3,Castilla y Leon,42.0,Blanco,Verdejo,0,8-10°C,0.102,0,1
+Monte Real,Gran Reserva,1998,4.3,Rioja,34.9,Tinto,Tempranillo,1,16-18°C,0.123,0,6
+Hacienda Monasterio,Reserva,2013,4.3,Ribera del Duero,53.95,Tinto,Tempranillo,1,16-18°C,0.08,1,6
+Remirez de Ganuza,Rioja Vina Coqueta,2008,4.3,Rioja,56.7603202298046,Tinto,Tempranillo,0,16-18°C,0.076,1,7
+Protos,Seleccion Finca el Grajo Viejo,2010,4.3,Ribera del Duero,62.74,Tinto,Tempranillo,0,16-18°C,0.069,1,7
+St. Petroni,Vermello Vermu,2015,4.3,Galicia,10.89,Desconocido,Blend/Other,0,10-14°C,0.395,0,3
+Pintia,Toro,2003,4.3,Toro,107.0,Tinto,Tempranillo,0,16-18°C,0.04,1,7
+Marques de Murrieta,Capellania Reserva,2016,4.3,Rioja,32.33,Blanco,Viura,1,8-10°C,0.133,0,1
+Llanos Negros,Los Tabaqueros,2006,4.3,La Palma,21.95,Desconocido,Blend/Other,0,10-14°C,0.196,0,3
+Finca Torremilanos,Torre Albeniz Reserva Ribera del Duero,2016,4.3,Ribera del Duero,28.85,Tinto,Tempranillo,1,16-18°C,0.149,0,6
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1998,4.3,Rioja,160.0,Tinto,Tempranillo,1,16-18°C,0.027,1,6
+Aster,Finca El Otero,2016,4.3,Ribera del Duero,26.9,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Comenge,Familia Comenge Reserva,2016,4.3,Ribera del Duero,21.3,Tinto,Tempranillo,1,16-18°C,0.202,0,6
+Marques de Murrieta,Gran Reserva Rioja (Finca Ygay),2013,4.3,Rioja,42.0,Tinto,Tempranillo,1,16-18°C,0.102,0,6
+Bodegas Valduero,Tierra Alta de 2 Cotas Reserva,2014,4.3,Ribera del Duero,30.5,Tinto,Tempranillo,1,16-18°C,0.141,0,6
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1989,4.3,Rioja,160.0,Tinto,Tempranillo,1,16-18°C,0.027,1,6
+Bodegas Aragonesas,Fagus de Coto de Hayas Garnacha,2017,4.3,Aragon,21.02,Tinto,Grenache,0,16-18°C,0.205,0,2
+Mustiguillo,Finca Terrerazo,2018,4.3,El Terrerazo,22.8,Tinto,Bobal,0,16-18°C,0.189,0,2
+Clos Erasmus,Laurel,2018,4.3,Priorato,36.57,Tinto,Grenache / Carinena,0,16-18°C,0.118,0,7
+Alvaro Palacios,Finca Dofi,2009,4.3,Priorato,85.0,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Avancia,Godello,2019,4.3,Valdeorras,23.4,Desconocido,Blend/Other,0,10-14°C,0.184,0,3
+Clos Mogador,Priorat,2005,4.3,Priorato,110.0,Tinto,Grenache / Carinena,0,16-18°C,0.039,1,7
+Cepa 21,Malabrigo Ribera del Duero,2015,4.3,Ribera del Duero,53.5,Tinto,Tempranillo,0,16-18°C,0.08,1,7
+Vinedos de Paganos,El Puntido,2017,4.3,Rioja,35.95,Tinto,Tempranillo,0,16-18°C,0.12,0,7
+Morca,Godina Garnacha,2019,4.3,Campo de Borja,16.25,Tinto,Grenache,0,16-18°C,0.265,0,2
+Vina Pedrosa,Perez Pascuas Gran Reserva Seleccion,2011,4.3,Ribera del Duero,498.614195,Tinto,Tempranillo,1,16-18°C,0.009,1,6
+Marques de Tomares,Rioja Gran Reserva,2010,4.3,Rioja,25.95,Tinto,Tempranillo,1,16-18°C,0.166,0,6
+Sierra Cantabria,Coleccion Privada,2017,4.3,Rioja,29.0132184621944,Tinto,Tempranillo,0,16-18°C,0.148,0,7
+Vall Llach,Porrera Vi de Vila,2012,4.3,Priorato,40.5,Tinto,Grenache / Carinena,0,16-18°C,0.106,0,7
+Quinta Sardonia,QS,2014,4.3,Castilla y Leon,35.85,Tinto,Blend/Other,0,16-18°C,0.12,0,2
+Comenge,Don Miguel Comenge Reserva,2011,4.3,Ribera del Duero,38.4,Tinto,Tempranillo,1,16-18°C,0.112,0,6
+Abadal,3.9,2017,4.3,Pla de Bages,20.65,Tinto,Blend/Other,0,16-18°C,0.208,0,2
+Bodega Numanthia,Numanthia,2016,4.3,Toro,39.53,Tinto,Tempranillo,0,16-18°C,0.109,0,7
+Pago de Vallegarcia,Montes de Toledo Syrah,2018,4.3,Castilla,25.31,Tinto,Syrah,0,16-18°C,0.17,0,2
+Alvaro Palacios,Vi de Vila Gratallops,2018,4.3,Priorato,53.95,Tinto,Grenache / Carinena,0,16-18°C,0.08,1,7
+Hermanos Pecina,Finca Iscorta Gran Reserva,2010,4.3,Rioja,27.0,Tinto,Tempranillo,1,16-18°C,0.159,0,6
+Abadia Retuerta,Le Domaine Blanco de Guarda,2016,4.3,Sardon de Duero,36.95,Blanco,Blend/Other,0,8-10°C,0.116,0,1
+Biniagual,Finca Biniagual Veran,2017,4.3,Binissalem-Mallorca,26.5,Tinto,Blend/Other,0,16-18°C,0.162,0,2
+Breca,Brega Garnacha,2017,4.3,Calatayud,27.9,Tinto,Grenache,0,16-18°C,0.154,0,2
+Pintia,Toro,2001,4.3,Toro,189.45,Tinto,Tempranillo,0,16-18°C,0.023,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2010,4.3,Rioja,90.0,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Abadia Retuerta,Le Domaine Blanco de Guarda,2018,4.3,Sardon de Duero,34.1,Blanco,Blend/Other,0,8-10°C,0.126,0,1
+Pradorey,Elite,2017,4.3,Ribera del Duero,35.51,Tinto,Tempranillo,0,16-18°C,0.121,0,7
+Terras Gauda,La Mar,2018,4.3,Rias Baixas,27.7,Blanco,Albarino,0,8-10°C,0.155,0,1
+Abadia Retuerta,Pago Garduna,2015,4.3,Castilla y Leon,75.0,Tinto,Syrah,0,16-18°C,0.057,1,2
+Bodegas Faustino,I Gran Reserva,1982,4.3,Rioja,425.0,Tinto,Tempranillo,1,16-18°C,0.01,1,6
+Teso La Monja,Victorino,2018,4.3,Toro,35.51,Tinto,Tempranillo,0,16-18°C,0.121,0,7
+Ramon Bilbao,Mirto,2015,4.3,Rioja,33.9,Tinto,Tempranillo,0,16-18°C,0.127,0,7
+Marques de Riscal,Rioja Reserva,1994,4.3,Rioja,65.0,Tinto,Tempranillo,1,16-18°C,0.066,1,6
+Antidoto,La Hormiga de Antidoto,2018,4.3,Ribera del Duero,45.0,Tinto,Tempranillo,0,16-18°C,0.096,0,7
+Alvaro Palacios,Finca Dofi,2018,4.3,Priorato,84.9,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Jaro,Chafandin,2015,4.3,Ribera del Duero,27.85,Tinto,Tempranillo,0,16-18°C,0.154,0,7
+Pago de Los Capellanes,Reserva Tinto,2018,4.3,Ribera del Duero,30.99,Tinto,Tempranillo,1,16-18°C,0.139,0,6
+Clos Mogador,Nelin Priorat,2016,4.3,Priorato,36.5,Tinto,Grenache / Carinena,0,16-18°C,0.118,0,7
+Bodega Tesalia,Arcos de la Frontera,2017,4.3,Andalucia,25.9,Tinto,Blend/Other,0,16-18°C,0.166,0,2
+Pazo de Rubianes,Albarino,2020,4.3,Rias Baixas,13.75,Blanco,Albarino,0,8-10°C,0.313,0,1
+Allende,Calvario Rioja,2006,4.3,Rioja,53.35,Tinto,Tempranillo,0,16-18°C,0.081,1,7
+Mas d'en Gil,Clos Fonta Priorat,2014,4.3,Priorato,54.5,Tinto,Grenache / Carinena,0,16-18°C,0.079,1,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2014,4.3,Rioja,90.15,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Godeval,Cepas Vellas Godello,2019,4.3,Valdeorras,18.48,Desconocido,Blend/Other,0,10-14°C,0.233,0,3
+Contino,Vina del Olivo,2007,4.3,Rioja,92.0,Tinto,Tempranillo,0,16-18°C,0.047,1,7
+Dominio del Bendito,Las Sabias,2017,4.3,Toro,22.55,Tinto,Tempranillo,0,16-18°C,0.191,0,7
+Clos Galena,Galena,2016,4.3,Priorato,17.95,Tinto,Grenache / Carinena,0,16-18°C,0.24,0,7
+Alvaro Palacios,Finca Dofi,2010,4.3,Priorato,85.0,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Bosque de Matasnos,Bosque de Matasnos Etiqueta Blanca,2019,4.3,Ribera del Duero,26.9,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Contino,Vina del Olivo,2011,4.3,Rioja,63.95,Tinto,Tempranillo,0,16-18°C,0.067,1,7
+Bodegas Olarra,Cerro Anon Rioja Gran Reserva,2015,4.3,Rioja,12.9,Tinto,Tempranillo,1,16-18°C,0.333,0,6
+Castell d'Encus,Ekam,2019,4.3,Costers del Segre,24.61,Desconocido,Blend/Other,0,10-14°C,0.175,0,3
+Dominio de Atauta,Llanos del Almendro Ribera del Duero,2009,4.3,Ribera del Duero,107.74,Tinto,Tempranillo,0,16-18°C,0.04,1,7
+Martinet,Clos Martinet,2004,4.3,Priorato,162.5,Tinto,Grenache / Carinena,0,16-18°C,0.026,1,7
+Ordonez,Vatan Tinta de Toro,2018,4.3,Toro,33.6,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Enate,Chardonnay Fermentado en Barrica,2020,4.3,Somontano,16.9,Blanco,Chardonnay,1,8-10°C,0.254,0,1
+Scala Dei,Masdeu,2013,4.3,Priorato,84.9,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Francisco Barona,Ribera Del Duero,2019,4.3,Ribera del Duero,30.9,Tinto,Tempranillo,0,16-18°C,0.139,0,7
+Dominio do Bibei,Lapola,2017,4.3,Ribeira Sacra,21.8,Desconocido,Blend/Other,0,10-14°C,0.197,0,3
+Taron,Pantocrator,2010,4.3,Rioja Alta,19.9,Tinto,Blend/Other,0,16-18°C,0.216,0,2
+Castillo de Cuzcurrita,Senorio de Cuzcurrita Rioja,2017,4.3,Rioja,24.3677926503816,Tinto,Tempranillo,0,16-18°C,0.176,0,7
+Castillo Perelada,Finca Malaveina,2018,4.3,Emporda,18.88,Tinto,Blend/Other,0,16-18°C,0.228,0,2
+Orben,Malpuesto,2017,4.3,Rioja,30.3,Tinto,Tempranillo,0,16-18°C,0.142,0,7
+Penafiel,Silencio de Miros Ribera Del Duero,2015,4.3,Ribera del Duero,42.35,Tinto,Tempranillo,0,16-18°C,0.102,0,7
+Abadia Retuerta,Pago Valdebellon,2014,4.3,Sardon de Duero,64.5,Tinto,Cabernet Sauvignon,0,16-18°C,0.067,1,2
+Clos Figueras,Clos Figueres,2012,4.3,Priorato,49.61,Tinto,Grenache / Carinena,0,16-18°C,0.087,0,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1995,4.3,Rioja,145.0,Tinto,Tempranillo,1,16-18°C,0.03,1,6
+Jorge Ordonez,No. 2 Victoria,2017,4.3,Malaga,21.4,Desconocido,Blend/Other,0,10-14°C,0.201,0,3
+Ontanon,Queiron Mi Lugar,2018,4.3,Rioja,21.5,Tinto,Tempranillo,0,16-18°C,0.2,0,7
+Remelluri,Rioja Blanco,2016,4.3,Rioja,55.0,Blanco,Viura,0,8-10°C,0.078,1,1
+Familia Torres,Purgatori Costers del Segre,2018,4.3,Costers del Segre,27.9,Tinto,Blend/Other,0,16-18°C,0.154,0,2
+Sonsierra,Perfume de Sonsierra,2014,4.3,Rioja Alta,28.5,Tinto,Blend/Other,0,16-18°C,0.151,0,2
+Jaro,Chafandin,2011,4.3,Ribera del Duero,25.65,Tinto,Tempranillo,0,16-18°C,0.168,0,7
+Artadi,Valdegines,2017,4.3,Vino de Espana,43.95,Tinto,Tempranillo,0,16-18°C,0.098,0,7
+Martinet,Clos Martinet,2017,4.3,Priorato,60.45,Tinto,Grenache / Carinena,0,16-18°C,0.071,1,7
+Vins Miquel Gelabert,Chardonnay Roure,2018,4.3,Pla i Llevant,30.3,Blanco,Chardonnay,0,8-10°C,0.142,0,1
+Contino,Rioja Graciano,2015,4.3,Rioja,62.5,Tinto,Tempranillo,0,16-18°C,0.069,1,7
+Clos Figueras,Clos Figueres,2016,4.3,Priorato,57.49,Tinto,Grenache / Carinena,0,16-18°C,0.075,1,7
+Martinet,Clos Martinet,2010,4.3,Priorato,127.2,Tinto,Grenache / Carinena,0,16-18°C,0.034,1,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1994,4.3,Rioja,182.0,Tinto,Tempranillo,1,16-18°C,0.024,1,6
+Tresmano - Tr3smano,Vendimia,2018,4.3,Ribera del Duero,34.25,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Bodega Tesalia,ARX Arcos de la Frontera,2018,4.3,Andalucia,15.9,Tinto,Blend/Other,0,16-18°C,0.27,0,2
+Losada,La Bienquerida,2017,4.3,Bierzo,37.35,Tinto,Mencia,0,16-18°C,0.115,0,7
+Vina Pedrosa,Perez Pascuas Gran Reserva Seleccion,2012,4.3,Ribera del Duero,259.0,Tinto,Tempranillo,1,16-18°C,0.017,1,6
+Chivite,Navarra Reserva Coleccion 125,2015,4.3,Navarra,20.5,Tinto,Blend/Other,1,16-18°C,0.21,0,6
+Bodega de Bardos,Suprema 30 Meses,2012,4.3,Ribera del Duero,24.0,Tinto,Tempranillo,0,16-18°C,0.179,0,7
+Alvaro Palacios,Finca Dofi,2007,4.3,Priorato,80.0,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Venus la Universal,Venus,2009,4.3,Montsant,59.55,Tinto,Blend/Other,0,16-18°C,0.072,1,2
+Vall Llach,Porrera Vi de Vila,2016,4.3,Priorato,50.67,Tinto,Grenache / Carinena,0,16-18°C,0.085,1,7
+Bodegas Roda,Roda I Reserva Rioja,2001,4.3,Rioja,91.0,Tinto,Tempranillo,1,16-18°C,0.047,1,6
+Alvaro Palacios,Finca Dofi,2000,4.3,Priorato,88.0,Tinto,Grenache / Carinena,0,16-18°C,0.049,1,7
+Clos Figueras,Clos Figueres,2015,4.3,Priorato,70.89,Tinto,Grenache / Carinena,0,16-18°C,0.061,1,7
+Casa Castillo,Pie Franco,2016,4.3,Jumilla,59.9,Tinto,Monastrell,0,16-18°C,0.072,1,2
+El Grillo y La Luna,Grillo,2012,4.3,Somontano,32.9,Tinto,Blend/Other,0,16-18°C,0.131,0,2
+Tridente,Prieto Picudo,2016,4.3,Castilla y Leon,21.4,Tinto,Blend/Other,0,16-18°C,0.201,0,2
+Ferrer Bobet,Seleccio Especial Vinyes Velles,2014,4.3,Priorato,64.0,Tinto,Grenache / Carinena,0,16-18°C,0.067,1,7
+Marques de Grinon,Emeritvs (Emeritus),2011,4.3,Dominio de Valdepusa,47.0,Tinto,Blend/Other,0,16-18°C,0.091,0,2
+Remelluri,Rioja Blanco,2014,4.3,Rioja,60.25,Blanco,Viura,0,8-10°C,0.071,1,1
+De Moya,Sofia,2018,4.3,Valencia,15.9,Tinto,Blend/Other,0,16-18°C,0.27,0,2
+Campillo,Finca Cuesta Clara Raro Reserva,2011,4.3,Rioja,32.0,Tinto,Tempranillo,1,16-18°C,0.134,0,6
+Artadi,Pagos Viejos,2013,4.3,Vino de Espana,62.5,Tinto,Tempranillo,0,16-18°C,0.069,1,7
+Tomas Postigo,Fermentado En Barrica Blanco,2017,4.3,Castilla y Leon,24.5,Blanco,Verdejo,1,8-10°C,0.176,0,1
+Martinet,Clos Martinet,2006,4.3,Priorato,110.0,Tinto,Grenache / Carinena,0,16-18°C,0.039,1,7
+Mas Doix,Doix,2012,4.3,Priorato,82.0,Tinto,Grenache / Carinena,0,16-18°C,0.052,1,7
+Abadia Retuerta,Pago Valdebellon,2010,4.3,Sardon de Duero,55.0,Tinto,Cabernet Sauvignon,0,16-18°C,0.078,1,2
+Clos d'Agon,Tinto,2014,4.3,Cataluna,36.5,Tinto,Blend/Other,0,16-18°C,0.118,0,2
+Abadia Retuerta,Le Domaine Blanco de Guarda,2014,4.3,Sardon de Duero,123.82,Blanco,Blend/Other,0,8-10°C,0.035,1,1
+Martinet,Clos Martinet,2013,4.3,Priorato,114.6,Tinto,Grenache / Carinena,0,16-18°C,0.038,1,7
+Artadi,Pagos Viejos,2001,4.3,Vino de Espana,130.0,Tinto,Tempranillo,0,16-18°C,0.033,1,7
+Garmon,Ribera del Duero,2018,4.3,Ribera del Duero,33.5,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Bodegas Valduero,Ribera Del Duero Gran Reserva,2010,4.3,Ribera del Duero,62.8,Tinto,Tempranillo,1,16-18°C,0.068,1,6
+Bodegas Mauro,Godello Blanco,2017,4.3,Bierzo,34.5,Blanco,Blend/Other,0,8-10°C,0.125,0,1
+Dominio de Es,Vinas Viejas de Soria Ribera Del Duero,2014,4.3,Ribera del Duero,92.24,Tinto,Tempranillo,0,16-18°C,0.047,1,7
+Pago de Vallegarcia,Hipperia Red Blend,2016,4.3,Castilla,36.111307180686,Tinto,Blend/Other,0,16-18°C,0.119,0,2
+Clos d'Agon,Tinto,2015,4.3,Cataluna,56.92,Tinto,Blend/Other,0,16-18°C,0.076,1,2
+Martinet,Clos Martinet,2012,4.3,Priorato,117.3,Tinto,Grenache / Carinena,0,16-18°C,0.037,1,7
+Jean Leon,Vinya La Scala Gran Reserva Cabernet Sauvignon,2013,4.3,Penedes,41.9,Tinto,Cabernet Sauvignon,1,16-18°C,0.103,0,6
+Bodegas Ateca,Atteca Armas Garnacha Old Vines,2017,4.3,Calatayud,32.9,Tinto,Grenache,0,16-18°C,0.131,0,2
+Enate,Syrah (Shiraz),2016,4.3,Somontano,23.5,Tinto,Syrah,0,16-18°C,0.183,0,2
+Bodega Campo Eliseo,Campo Eliseo,2009,4.3,Toro,48.5,Tinto,Tempranillo,0,16-18°C,0.089,0,7
+Leda,Vinas Viejas Tempranillo,2017,4.3,Castilla y Leon,28.38,Tinto,Tempranillo,0,16-18°C,0.152,0,2
+Contino,Rioja Graciano,2016,4.3,Rioja,64.75,Tinto,Tempranillo,0,16-18°C,0.066,1,7
+Bodegas Ximenez-Spinola,Delicado Cosecha Pedro Ximenez,2017,4.3,Jerez Pedro Ximenes (PX),19.9,Generoso,Pedro Ximenez,0,12-14°C,0.216,0,4
+Do Ferreiro (Bodegas Gerardo Mendez),Cepas Vellas Rias Baixas Albarino,2019,4.3,Rias Baixas,33.95,Blanco,Albarino,0,8-10°C,0.127,0,1
+Vinyes Domenech,Teixar,2012,4.3,Montsant,42.25,Tinto,Blend/Other,0,16-18°C,0.102,0,2
+Fernandez de Pierola,Vitium Reserva,2010,4.3,Rioja,27.8,Tinto,Tempranillo,1,16-18°C,0.155,0,6
+De Muller,Lo Cabalo Reserva,2015,4.3,Priorato,26.9,Tinto,Grenache / Carinena,1,16-18°C,0.16,0,6
+Vina Pedrosa,Perez Pascuas Gran Reserva Seleccion,2014,4.3,Ribera del Duero,245.53,Tinto,Tempranillo,1,16-18°C,0.018,1,6
+Monteabellon,Finca Matambres,2016,4.3,Ribera del Duero,28.3,Tinto,Tempranillo,0,16-18°C,0.152,0,7
+Oxer Wines,Suzzane Rioja,2016,4.3,Rioja,37.29,Tinto,Tempranillo,0,16-18°C,0.115,0,7
+Pepe Mendoza Casa Agricola,Giro de Abargues,2019,4.3,Alicante,23.5,Tinto,Monastrell,0,16-18°C,0.183,0,2
+De Moya,Sofia,2016,4.3,Valencia,18.9,Tinto,Blend/Other,0,16-18°C,0.228,0,2
+Vinos Guerra,Reserva Vermouth Rojo,2015,4.3,Bierzo,8.95,Desconocido,Blend/Other,1,10-14°C,0.48,0,3
+Neo,Punta Esencia,2011,4.3,Ribera del Duero,32.45,Tinto,Tempranillo,0,16-18°C,0.133,0,7
+Cruz de Alba,Finca Los Hoyales Ribera del Duero,2013,4.3,Ribera del Duero,41.28,Tinto,Tempranillo,0,16-18°C,0.104,0,7
+Castano,Casa Cisca Monastrell,2010,4.3,Yecla,33.77,Tinto,Monastrell,0,16-18°C,0.127,0,2
+Scala Dei,Pla dels Angels Rosado,2019,4.3,Priorato,23.0,Tinto,Grenache / Carinena,0,16-18°C,0.187,0,7
+Vina Pedrosa,Gran Reserva,2009,4.3,Ribera del Duero,67.0,Tinto,Tempranillo,1,16-18°C,0.064,1,6
+Terra d'Uro,Uro,2015,4.3,Toro,31.45,Tinto,Tempranillo,0,16-18°C,0.137,0,7
+Zarate,Tras da Vina Albarino,2018,4.3,Rias Baixas,33.67,Blanco,Albarino,0,8-10°C,0.128,0,1
+Agusti Torello Mata,Cava Kripta Gran Reserva Brut Nature,2006,4.3,Cava,87.39,Espumoso,Blend/Other,1,6-8°C,0.049,1,5
+La Rioja Alta,Rioja Gran Reserva 904,1989,4.3,Rioja,150.0,Tinto,Tempranillo,1,16-18°C,0.029,1,6
+Vizcarra,Ribera del Duero Torralvo,2016,4.3,Ribera del Duero,45.48,Tinto,Tempranillo,0,16-18°C,0.095,0,7
+Mas d'en Gil,Clos Fonta Priorat,2007,4.3,Priorato,125.0,Tinto,Grenache / Carinena,0,16-18°C,0.034,1,7
+Vinyes Domenech,Teixar,2014,4.3,Montsant,39.5,Tinto,Blend/Other,0,16-18°C,0.109,0,2
+Allende,Calvario Rioja,2004,4.3,Rioja,90.0,Tinto,Tempranillo,0,16-18°C,0.048,1,7
+Recaredo,Serral del Vell Brut Nature,2013,4.3,Cava,44.41,Espumoso,Blend/Other,0,6-8°C,0.097,0,5
+Noelia Bebelia,Albarino,2019,4.3,Rias Baixas,21.5,Blanco,Albarino,0,8-10°C,0.2,0,1
+Marti Fabra,Masia Carreras Negre,2018,4.3,Emporda,20.59,Tinto,Blend/Other,0,16-18°C,0.209,0,2
+St. Petroni,Branco Vermu,2015,4.3,Galicia,13.95,Desconocido,Blend/Other,0,10-14°C,0.308,0,3
+Palmeri Sicilia,Palmeri Navalta Garnacha,2016,4.2,Campo de Borja,28.9,Tinto,Grenache,0,16-18°C,0.145,0,2
+Remelluri,Rioja Blanco,2015,4.3,Rioja,56.89,Blanco,Viura,0,8-10°C,0.076,1,1
+Pradorey,Elite,2018,4.3,Ribera del Duero,30.9166666666667,Tinto,Tempranillo,0,16-18°C,0.139,0,7
+Ukan Winery,Tinto,2018,4.3,Rioja Alavesa,39.9,Tinto,Blend/Other,0,16-18°C,0.108,0,2
+Tinto Pesquera,Reserva,2002,4.3,Ribera del Duero,65.0,Tinto,Tempranillo,1,16-18°C,0.066,1,6
+Tinto Pesquera,Gran Reserva,1995,4.3,Ribera del Duero,146.05,Tinto,Tempranillo,1,16-18°C,0.029,1,6
+Mas Que Vinos,La Plazuela,2015,4.3,Castilla,44.05,Tinto,Blend/Other,0,16-18°C,0.098,0,2
+Arzuaga,Gran Reserva Ribera del Duero,2014,4.3,Ribera del Duero,62.56,Tinto,Tempranillo,1,16-18°C,0.069,1,6
+Bodegas Estraunza,Solar de Estraunza Reserva,2014,4.3,Rioja,9.8840336,Tinto,Tempranillo,1,16-18°C,0.435,0,6
+Beronia,III a.C,2011,4.3,Rioja,46.16,Tinto,Tempranillo,0,16-18°C,0.093,0,7
+Valquejigoso,V2 Tinto,2007,4.3,Madrid,48.537665,Tinto,Blend/Other,0,16-18°C,0.089,0,2
+Bodega Contador (Benjamin Romeo),La Vina de Andres Romeo Rioja,2011,4.3,Rioja,97.5,Tinto,Tempranillo,0,16-18°C,0.044,1,7
+Telmo Rodriguez,Matallana,2014,4.3,Ribera del Duero,42.0,Tinto,Tempranillo,0,16-18°C,0.102,0,7
+Pujanza,Rioja Norte,2010,4.3,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Bodegas Roda,Roda I Reserva Rioja,2000,4.3,Rioja,85.0,Tinto,Tempranillo,1,16-18°C,0.051,1,6
+Sei Solo,Tinto,2016,4.3,Ribera del Duero,52.8,Tinto,Tempranillo,0,16-18°C,0.081,1,7
+Bodegas Mas Alta,Artigas,2019,4.3,Priorato,20.4,Tinto,Grenache / Carinena,0,16-18°C,0.211,0,7
+Jaro,Chafandin,2017,4.3,Ribera del Duero,26.2902950466486,Tinto,Tempranillo,0,16-18°C,0.164,0,7
+Bodegas 6o Elemento - Vino Sexto Elemento,Tinto,2018,4.3,Valencia,19.9,Tinto,Blend/Other,0,16-18°C,0.216,0,2
+Bodegas Mauro,Godello Blanco,2015,4.3,Bierzo,92.45,Blanco,Blend/Other,0,8-10°C,0.047,1,1
+De Moya,Julia,2018,4.3,Valencia,17.95,Tinto,Monastrell,0,16-18°C,0.24,0,2
+Martinet,Clos Martinet,2003,4.3,Priorato,130.5,Tinto,Grenache / Carinena,0,16-18°C,0.033,1,7
+Lustau,Jerez-Xeres-Sherry 30 Year Old Oloroso VORS,2015,4.3,Jerez-Xeres-Sherry,39.0,Generoso,Blend/Other,0,12-14°C,0.11,0,4
+Gomez Cruzado,Pancrudo,2019,4.3,Rioja,34.9,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Pittacum,Aurea,2012,4.3,Bierzo,28.5,Tinto,Mencia,0,16-18°C,0.151,0,7
+Bodega Sommos,Coleccion Syrah,2017,4.3,Somontano,25.89,Tinto,Syrah,0,16-18°C,0.166,0,2
+Celler de Capcanes,Flor de Primavera Peraj Ha'abib,2018,4.3,Montsant,27.5,Tinto,Blend/Other,0,16-18°C,0.156,0,2
+Losada,Altos de Losada El Cepon,2017,4.3,Bierzo,35.9,Tinto,Mencia,0,16-18°C,0.12,0,7
+Remelluri,Rioja Blanco,2013,4.3,Rioja,63.53,Blanco,Viura,0,8-10°C,0.068,1,1
+Arinzano,Gran Vino Blanco,2014,4.3,Arinzano,112.76,Blanco,Chardonnay,0,8-10°C,0.038,1,1
+Pago del Vostal,Crianza Vendimia Seleccionada,2018,4.3,Ribera del Duero,18.95,Tinto,Tempranillo,1,16-18°C,0.227,0,6
+De Muller,Vermouth Reserva,2015,4.3,Tarragona,10.45,Desconocido,Blend/Other,1,10-14°C,0.411,0,3
+Vizcarra,Ribera del Duero Torralvo,2015,4.3,Ribera del Duero,40.95,Tinto,Tempranillo,0,16-18°C,0.105,0,7
+Telmo Rodriguez,Matallana,2016,4.3,Ribera del Duero,39.75,Tinto,Tempranillo,0,16-18°C,0.108,0,7
+Bodegas Valduero,Finca Azaya Premium,2015,4.3,Castilla y Leon,23.44,Tinto,Blend/Other,0,16-18°C,0.183,0,2
+Espectacle del Montsant,Tinto,2015,4.3,Montsant,133.34,Tinto,Blend/Other,0,16-18°C,0.032,1,2
+Neo,Ribera del Duero Tinto,2005,4.3,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Martinet,Clos Martinet,2018,4.3,Priorato,57.5,Tinto,Grenache / Carinena,0,16-18°C,0.075,1,7
+Habla,No. 20,2016,4.3,Extremadura,23.95,Tinto,Blend/Other,0,16-18°C,0.18,0,2
+Remelluri,Rioja Blanco,2011,4.3,Rioja,77.9,Blanco,Viura,0,8-10°C,0.055,1,1
+Gomez Cruzado,Montes Obarenes Seleccion Terroir,2015,4.3,Rioja,97.35,Blanco,Viura,0,8-10°C,0.044,1,1
+Martinet,Els Escurcons,2015,4.3,Priorato,84.95,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Mas d'en Gil,Clos Fonta Priorat,2015,4.3,Priorato,53.9,Tinto,Grenache / Carinena,0,16-18°C,0.08,1,7
+Rodriguez de Vera,Tinto,2015,4.3,Almansa,12.19,Tinto,Blend/Other,0,16-18°C,0.353,0,2
+Callejuela,La Casilla Amontillado,2015,4.3,Jerez-Xeres-Sherry,43.95,Generoso,Blend/Other,0,12-14°C,0.098,0,4
+El Maestro Sierra,Palo Cortado,2015,4.3,Jerez Palo Cortado,85.4,Generoso,Blend/Other,0,12-14°C,0.05,1,4
+Torre de Ona,Martelo Reserva,2015,4.3,Rioja,23.43,Tinto,Tempranillo,1,16-18°C,0.184,0,6
+Cims de Porrera,Classic,2010,4.3,Priorato,43.24,Tinto,Grenache / Carinena,0,16-18°C,0.099,0,7
+Bodegas Naluar & Acediano,Acediano,2018,4.3,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Ostatu,Gloria Rioja,2010,4.3,Rioja Alavesa,54.52,Tinto,Blend/Other,0,16-18°C,0.079,1,2
+Paco & Lola,Vintage Albarino,2013,4.3,Rias Baixas,24.0,Blanco,Albarino,0,8-10°C,0.179,0,1
+Valdespino,Cardenal Palo Cortado VORS,2015,4.3,Jerez Palo Cortado,176.5,Generoso,Blend/Other,0,12-14°C,0.024,1,4
+Pago de Vallegarcia,Vallegarcia Viognier,2019,4.3,Castilla,18.5,Desconocido,Blend/Other,0,10-14°C,0.232,0,3
+Valtravieso,Finca la Atalaya Reserva,2017,4.3,Ribera del Duero,23.5,Tinto,Tempranillo,1,16-18°C,0.183,0,6
+Bodegas Amaren,Tempranillo Reserva,2002,4.3,Rioja,28.0,Tinto,Tempranillo,1,16-18°C,0.154,0,6
+Vinas del Vero,Blecua Somontano,2011,4.3,Somontano,73.9,Tinto,Blend/Other,0,16-18°C,0.058,1,2
+Clos Mogador,Priorat,2000,4.3,Priorato,100.0,Tinto,Grenache / Carinena,0,16-18°C,0.043,1,7
+Contino,Rioja Graciano,2017,4.3,Rioja,62.9,Tinto,Tempranillo,0,16-18°C,0.068,1,7
+Artadi,Grandes Anadas Rioja,1999,4.3,Rioja,265.0,Tinto,Tempranillo,0,16-18°C,0.016,1,7
+Costers del Priorat,Clos Cypres Vinyes Velles (Old Vines),2015,4.3,Priorato,49.0,Tinto,Grenache / Carinena,0,16-18°C,0.088,0,7
+Eulogio Pomares,Castineiro Albarino,2017,4.3,Rias Baixas,30.75,Blanco,Albarino,0,8-10°C,0.14,0,1
+Bodegas Urium,Amontillado V.O.R.S,2015,4.3,Jerez Amontillado,50.0,Generoso,Blend/Other,0,12-14°C,0.086,0,4
+Bodega Otazu,Altar,2008,4.3,Navarra,32.18,Tinto,Blend/Other,0,16-18°C,0.134,0,2
+Perez Barquero,Gran Barquero Palo Cortado Solera 25 Anos,2015,4.3,Montilla-Moriles,34.9,Desconocido,Blend/Other,0,10-14°C,0.123,0,3
+Bodega Elias Mora,Toro Gran Elias Mora,2014,4.3,Toro,33.5,Tinto,Tempranillo,0,16-18°C,0.128,0,7
+Dominio de Es,Vinas Viejas de Soria Ribera Del Duero,2015,4.3,Ribera del Duero,92.24,Tinto,Tempranillo,0,16-18°C,0.047,1,7
+Arinzano,Gran Vino Blanco,2004,4.3,Arinzano,52.95,Blanco,Chardonnay,0,8-10°C,0.081,1,1
+Oller del Mas,Arnau Oller Seleccio de la Familia,2016,4.3,Pla de Bages,33.15,Tinto,Blend/Other,0,16-18°C,0.13,0,2
+Bodegas Roda,Roda Reserva Rioja,2018,4.3,Rioja,24.51,Tinto,Tempranillo,1,16-18°C,0.175,0,6
+Finca Villacreces,Nebro Ribera del Duero,2009,4.3,Ribera del Duero,135.95,Tinto,Tempranillo,0,16-18°C,0.032,1,7
+Pujanza,Rioja Norte,2011,4.3,Rioja,46.9,Tinto,Tempranillo,0,16-18°C,0.092,0,7
+Toro Albala,Don PX Gran Reserva,1988,4.3,Montilla-Moriles,19.8,Generoso,Pedro Ximenez,1,12-14°C,0.217,0,4
+Cims de Porrera,Classic,2011,4.3,Priorato,39.51,Tinto,Grenache / Carinena,0,16-18°C,0.109,0,7
+Cims de Porrera,Classic,1997,4.3,Priorato,119.95,Tinto,Grenache / Carinena,0,16-18°C,0.036,1,7
+R. Lopez de Heredia,Vina Tondonia Reserva,1964,4.3,Rioja,249.0,Tinto,Tempranillo,1,16-18°C,0.017,1,6
+Descendientes de J. Palacios,Las Lamas Bierzo (Corullon),2016,4.3,Bierzo,95.25,Tinto,Mencia,0,16-18°C,0.045,1,7
+Alta Alella,Orbus,2016,4.3,Alella,24.95,Tinto,Syrah,0,16-18°C,0.172,0,2
+Losada,La Bienquerida,2015,4.3,Bierzo,36.91,Tinto,Mencia,0,16-18°C,0.116,0,7
+Terroir Al Limit Soc. Lda,Les Manyes,2014,4.3,Priorato,158.88,Tinto,Grenache / Carinena,0,16-18°C,0.027,1,7
+Alvaro Palacios,Finca Dofi,2003,4.3,Priorato,90.6,Tinto,Grenache / Carinena,0,16-18°C,0.047,1,7
+Bodegas Clunia,Malbec,2018,4.3,Castilla y Leon,24.9,Tinto,Blend/Other,0,16-18°C,0.173,0,2
+Losada,Altos de Losada,2019,4.3,Bierzo,18.35,Tinto,Mencia,0,16-18°C,0.234,0,7
+Arinzano,Gran Vino Blanco,2016,4.3,Arinzano,65.25,Blanco,Chardonnay,0,8-10°C,0.066,1,1
+Campillo,Reserva Especial Rioja,2010,4.3,Rioja,23.95,Tinto,Tempranillo,1,16-18°C,0.18,0,6
+Allende,Aurus,2004,4.3,Rioja,148.65,Tinto,Tempranillo,0,16-18°C,0.029,1,7
+Llanos Negros,La Time,2000,4.3,La Palma,21.95,Desconocido,Blend/Other,0,10-14°C,0.196,0,3
+Quinta Sardonia,QS,2017,4.3,Castilla y Leon,37.49,Tinto,Blend/Other,0,16-18°C,0.115,0,2
+Alta Alella,Dolc Mataro,2017,4.3,Alella,16.5,Desconocido,Blend/Other,0,10-14°C,0.261,0,3
+Ferrer Bobet,Priorat Vinyes Velles,2018,4.3,Priorato,33.95,Tinto,Grenache / Carinena,0,16-18°C,0.127,0,7
+Bodegas Ochoa,Vendimia Tardia Moscatel,2019,4.3,Navarra,10.76,Desconocido,Blend/Other,0,10-14°C,0.4,0,3
+Luis Canas,Hiru 3 Rioja Racimos,2005,4.3,Rioja,118.0,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Ca l'Apotecari,Triaca,2013,4.3,Priorato,34.9,Tinto,Grenache / Carinena,0,16-18°C,0.123,0,7
+Muga,Prado Enea Gran Reserva,1982,4.3,Rioja,150.0,Tinto,Tempranillo,1,16-18°C,0.029,1,6
+Osborne,Amontillado 51-1a 30 Years VORS Sherry,2015,4.3,Jerez-Xeres-Sherry,64.8,Generoso,Blend/Other,0,12-14°C,0.066,1,4
+Finca Torremilanos,Cyclo,2018,4.3,Ribera del Duero,35.15,Tinto,Tempranillo,0,16-18°C,0.122,0,7
+Pinea,Tinto,2017,4.3,Ribera del Duero,145.0,Tinto,Tempranillo,0,16-18°C,0.03,1,7
+Josep Grau Viticultor,Maimo Garnatxa,2018,4.3,Montsant,26.9,Tinto,Grenache,0,16-18°C,0.16,0,2
+Gomez Cruzado,Montes Obarenes Seleccion Terroir,2017,4.3,Rioja,42.9,Blanco,Viura,0,8-10°C,0.1,0,1
+La Rioja Alta,Gran Reserva 890,1989,4.3,Rioja,215.34,Tinto,Tempranillo,1,16-18°C,0.02,1,6
+Fos,Fos Baranda,2017,4.3,Rioja,29.9,Tinto,Tempranillo,0,16-18°C,0.144,0,7
+Hacienda Grimon,Finca la Oracion,2017,4.3,Rioja,20.45,Tinto,Tempranillo,0,16-18°C,0.21,0,7
+Pedralonga,Albarino Pedralonga,2019,4.3,Rias Baixas,15.71,Blanco,Albarino,0,8-10°C,0.274,0,1
+Capafons-Osso,Mas de Masos,2006,4.3,Priorato,39.99,Tinto,Grenache / Carinena,0,16-18°C,0.108,0,7
+Clos Mogador,Com Tu,2018,4.3,Montsant,34.95,Tinto,Grenache,0,16-18°C,0.123,0,2
+Can Rafols dels Caus,El Rocallis,2015,4.3,Cataluna,88.0,Desconocido,Blend/Other,0,10-14°C,0.049,1,3
+Conreria d'Scala Dei,Iugiter,2015,4.3,Priorato,25.5,Tinto,Grenache / Carinena,0,16-18°C,0.169,0,7
+Mas Doix,Doix,2016,4.3,Priorato,79.9,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Raul Perez,Ultreia Valtuille Mencia,2019,4.3,Bierzo,45.9,Tinto,Mencia,0,16-18°C,0.094,0,7
+Dominio del Bendito,La Chispa Negra,2011,4.3,Toro,24.0,Tinto,Tempranillo,0,16-18°C,0.179,0,7
+Jose Pariente,Sauvignon Blanc,2021,4.3,Rueda,8.9,Blanco,Sauvignon Blanc,0,8-10°C,0.483,0,1
+Dominio del Aguila,Reserva,2010,4.3,Ribera del Duero,65.0,Tinto,Tempranillo,1,16-18°C,0.066,1,6
+Terra Remota,Clos Adrien,2013,4.3,Emporda,47.0,Tinto,Blend/Other,0,16-18°C,0.091,0,2
+De Moya,Sofia,2017,4.3,Valencia,20.5,Tinto,Blend/Other,0,16-18°C,0.21,0,2
+Llopart,Cava Original Brut (Espumos),2008,4.3,Cava,62.9,Espumoso,Blend/Other,0,6-8°C,0.068,1,5
+Ostatu,Laderas Rioja,2014,4.3,Rioja Alavesa,31.13,Tinto,Blend/Other,0,16-18°C,0.138,0,2
+Tinto Pesquera,Reserva,1995,4.3,Ribera del Duero,73.0,Tinto,Tempranillo,1,16-18°C,0.059,1,6
+Bodegas Mas Alta,La Basseta,2014,4.3,Priorato,58.0,Tinto,Grenache / Carinena,0,16-18°C,0.074,1,7
+Can Rafols dels Caus,El Rocallis,2016,4.3,Cataluna,34.5,Desconocido,Blend/Other,0,10-14°C,0.125,0,3
+Aalto,Blanco de Parcela,2019,4.3,Ribera del Duero,41.9,Blanco,Verdejo,0,8-10°C,0.103,0,1
+Dominio de la Vega,Finca la Beata Bobal,2014,4.3,Utiel-Requena,33.9,Tinto,Blend/Other,0,16-18°C,0.127,0,2
+Resalte,Resalte Expresion,2015,4.3,Ribera del Duero,28.5,Tinto,Tempranillo,0,16-18°C,0.151,0,7
+Juve & Camps,Cava Brut Milesime,2017,4.3,Cava,24.1,Espumoso,Blend/Other,0,6-8°C,0.178,0,5
+Bosque de Matasnos,Syrah de Matasnos,2019,4.3,Vino de Espana,27.9,Tinto,Syrah,0,16-18°C,0.154,0,2
+Sierra Cantabria,Amancio,2016,4.3,Rioja,84.5,Tinto,Tempranillo,0,16-18°C,0.051,1,7
+Scala Dei,Massipa de Scala Dei Garnatxa Blanca - Xenin,2018,4.3,Priorato,36.78,Tinto,Grenache / Carinena,0,16-18°C,0.117,0,7
+Marques de Vargas,Seleccion Privada,2015,4.3,Rioja,54.5,Tinto,Tempranillo,0,16-18°C,0.079,1,7
+Mas de les Pereres,Nunci Negre,2013,4.3,Priorato,21.4,Tinto,Grenache / Carinena,0,16-18°C,0.201,0,7
+El Maestro Sierra,Oloroso Extra Viejo 1/7,2015,4.3,Jerez-Xeres-Sherry,217.8,Generoso,Blend/Other,0,12-14°C,0.02,1,4
+Guilera,Musivari Gran Reserva Brut Nature,2007,4.3,Cava,23.22,Espumoso,Blend/Other,1,6-8°C,0.185,0,5
+Arzuaga,Amaya Arzuaga (Coleccion),2015,4.3,Ribera del Duero,51.2,Tinto,Tempranillo,0,16-18°C,0.084,1,7
+Astrales,Christina Ribera del Duero,2017,4.3,Ribera del Duero,38.0,Tinto,Tempranillo,0,16-18°C,0.113,0,7
+Bodega Contador (Benjamin Romeo),La Cueva del Contador Rioja,2018,4.3,Rioja,67.9,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Senorio de San Vicente,San Vicente Rioja,2018,4.3,Rioja,32.9,Tinto,Tempranillo,0,16-18°C,0.131,0,7
+Bodegas Faustino,Faustino de Autor Reserva Especial,1994,4.3,Rioja,45.0,Tinto,Tempranillo,1,16-18°C,0.096,0,6
+La Rioja Alta,Rioja Gran Reserva 904,1964,4.3,Rioja,260.0,Tinto,Tempranillo,1,16-18°C,0.017,1,6
+l'Infernal Combier Fischer Gerin,Vinas Viejas Aguilera,2010,4.3,Priorato,69.0,Tinto,Grenache / Carinena,0,16-18°C,0.062,1,7
+Muga,Prado Enea Gran Reserva,1985,4.3,Rioja,98.0,Tinto,Tempranillo,1,16-18°C,0.044,1,6
+Terroir Al Limit Soc. Lda,Les Manyes,2013,4.3,Priorato,348.85,Tinto,Grenache / Carinena,0,16-18°C,0.012,1,7
+Scala Dei,Pla dels Angels Rosado,2020,4.3,Priorato,23.95,Tinto,Grenache / Carinena,0,16-18°C,0.18,0,7
+Jorge Piernas,Juan Piernas Finca El Paso Malo Monastrell,2017,4.3,Murcia,27.9,Tinto,Monastrell,0,16-18°C,0.154,0,2
+Pedralonga,Albarino Pedralonga,2020,4.3,Rias Baixas,15.0,Blanco,Albarino,0,8-10°C,0.287,0,1
+Contino,Vina del Olivo,2004,4.3,Rioja,155.0,Tinto,Tempranillo,0,16-18°C,0.028,1,7
+Terroir Al Limit Soc. Lda,Pedra de Guix,2017,4.3,Priorato,57.9,Tinto,Grenache / Carinena,0,16-18°C,0.074,1,7
+Vinyes Domenech,Vinyes Velles de Samso,2016,4.3,Montsant,36.93,Tinto,Blend/Other,0,16-18°C,0.116,0,2
+Territorio Luthier,Hispania,2015,4.3,Ribera del Duero,52.0,Tinto,Tempranillo,0,16-18°C,0.083,1,7
+Abel Mendoza Monge,Malvasia,2017,4.3,Rioja,31.5,Blanco,Viura,0,8-10°C,0.137,0,1
+Clos Erasmus,Priorat,2006,4.3,Priorato,654.31,Tinto,Grenache / Carinena,0,16-18°C,0.007,1,0
+La Rioja Alta,Vina Ardanza Reserva,1985,4.3,Rioja,75.0,Tinto,Tempranillo,1,16-18°C,0.057,1,6
+Equipo Navazos,La Bota 69 de Amontillado,2015,4.3,Jerez-Xeres-Sherry,113.72,Generoso,Blend/Other,0,12-14°C,0.038,1,4
+Avgvstvs,Antigues Reserves,2000,4.3,Penedes,27.45,Tinto,Blend/Other,0,16-18°C,0.157,0,2
+Vina Sastre,Regina Vides Ribera del Duero,2018,4.3,Ribera del Duero,69.9,Tinto,Tempranillo,0,16-18°C,0.062,1,7
+Marques de Riscal,Baron de Chirel Verdejo Vinas Centenarias,2018,4.3,Castilla y Leon,40.5,Blanco,Verdejo,0,8-10°C,0.106,0,1
+Pago Calzadilla,Gran Calzadilla,2009,4.3,Pago Calzadilla,39.95,Tinto,Blend/Other,0,16-18°C,0.108,0,2
+Vina Pomal,Alto de la Caseta,2008,4.3,Rioja,55.45,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Martinet,Clos Martinet,2002,4.3,Priorato,177.45,Tinto,Grenache / Carinena,0,16-18°C,0.024,1,7
+Marti Fabra,Masia Carreras Negre,2019,4.3,Emporda,11.91,Tinto,Blend/Other,0,16-18°C,0.361,0,2
+Sangenis I Vaque,Clos Monlleo,2007,4.3,Priorato,54.95,Tinto,Grenache / Carinena,0,16-18°C,0.078,1,7
+Ferrer Bobet,Priorat,2018,4.3,Priorato,25.88,Tinto,Grenache / Carinena,0,16-18°C,0.166,0,7
+Figuero,Milagros de Figuero,2016,4.3,Ribera del Duero,34.85,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Balandro,Las Botas Palo Cortado Horizontal,2015,4.3,Manzanilla,37.0,Generoso,Blend/Other,0,12-14°C,0.116,0,4
+Pujanza,Rioja Norte,2006,4.3,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+M. Antonio de la Riva,La Riva Fino Balbaina Alta,2015,4.3,Jerez-Xeres-Sherry,47.45,Generoso,Blend/Other,0,12-14°C,0.091,0,4
+Espelt,Coma Bruna,2017,4.3,Emporda,22.8,Tinto,Blend/Other,0,16-18°C,0.189,0,2
+R. Lopez de Heredia,Vina Tondonia Gran Reserva,1981,4.3,Rioja,199.0,Tinto,Tempranillo,1,16-18°C,0.022,1,6
+Bodegas Arfe,Palo Cortado de la Cruz de 1767,2015,4.3,Jerez-Xeres-Sherry,59.9,Generoso,Blend/Other,0,12-14°C,0.072,1,4
+Abel Mendoza Monge,Grano a Grano Tempranillo,2016,4.3,Rioja,120.13,Tinto,Tempranillo,0,16-18°C,0.036,1,7
+Conreria d'Scala Dei,Voltons,2015,4.3,Priorato,47.0,Tinto,Grenache / Carinena,0,16-18°C,0.091,0,7
+Scala Dei,Masdeu,2014,4.3,Priorato,84.9,Tinto,Grenache / Carinena,0,16-18°C,0.051,1,7
+Real de Asua,Tinto,2016,4.3,Rioja,78.95,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Bodegas Vilano,Crianza,2019,4.3,Ribera del Duero,9.99,Tinto,Tempranillo,1,16-18°C,0.43,0,6
+Vinyes dels Aspres,S'Alou,2018,4.3,Emporda,31.5,Tinto,Blend/Other,0,16-18°C,0.137,0,2
+Altos de Rioja,Altos R Pigeage,2016,4.3,Rioja,29.95,Tinto,Tempranillo,0,16-18°C,0.144,0,7
+Scala Dei,Massipa de Scala Dei Garnatxa Blanca - Xenin,2019,4.3,Priorato,36.95,Tinto,Grenache / Carinena,0,16-18°C,0.116,0,7
+Valserrano,Finca Monteviejo,2017,4.3,Rioja,32.0,Tinto,Tempranillo,0,16-18°C,0.134,0,7
+Marques de Tomares,Rioja Gran Reserva,2014,4.3,Rioja,25.95,Tinto,Tempranillo,1,16-18°C,0.166,0,6
+Shaya,Habis,2018,4.3,Rueda,21.5,Blanco,Verdejo,0,8-10°C,0.2,0,1
+Finca Rio Negro,5o Ano,2014,4.3,La Mancha,23.3863295,Tinto,Blend/Other,0,16-18°C,0.184,0,2
+Allende,Gaminde,2016,4.3,Rioja,43.8,Tinto,Tempranillo,0,16-18°C,0.098,0,7
+Enric Soler,Nun Vinya dels Taus,2017,4.3,Penedes,123.75,Desconocido,Blend/Other,0,10-14°C,0.035,1,3
+Martinet,Els Escurcons,2018,4.3,Priorato,75.5,Tinto,Grenache / Carinena,0,16-18°C,0.057,1,7
+Bodegas Ximenez-Spinola,Varietal Fermentacion Lenta,2019,4.3,Jerez-Xeres-Sherry,29.9,Generoso,Pedro Ximenez,0,12-14°C,0.144,0,4
+Loxera,El Cordero y las Virgenes,2016,4.3,Valencia,24.0,Tinto,Blend/Other,0,16-18°C,0.179,0,2
+Mas d'en Gil,Clos Fonta Priorat,2001,4.3,Priorato,150.0,Tinto,Grenache / Carinena,0,16-18°C,0.029,1,7
+Jose Pariente,Finca Las Comas Verdejo,2016,4.3,Rueda,29.4,Blanco,Verdejo,0,8-10°C,0.146,0,1
+Alvaro Palacios,Finca Dofi,1997,4.3,Priorato,170.0,Tinto,Grenache / Carinena,0,16-18°C,0.025,1,7
+Artadi,La Poza de Ballesteros,2016,4.3,Vino de Espana,93.26,Tinto,Tempranillo,0,16-18°C,0.046,1,7
+Dominio de Es,Vinas Viejas de Soria Ribera Del Duero,2019,4.3,Ribera del Duero,75.95,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Dominio Fournier,Reserva,2014,4.3,Ribera del Duero,23.77,Tinto,Tempranillo,1,16-18°C,0.181,0,6
+Bodegas Yzaguirre,Selection 1884 Vermouth Gran Reserva,2015,4.3,Cataluna,27.11,Desconocido,Blend/Other,1,10-14°C,0.159,0,3
+Benjamin de Rothschild - Vega Sicilia,Macan Clasico,2018,4.3,Rioja,42.5,Tinto,Tempranillo,0,16-18°C,0.101,0,7
+Marques de Murrieta,Dalmau Rioja,2002,4.3,Rioja,75.0,Tinto,Tempranillo,0,16-18°C,0.057,1,7
+Valderiz,Tomas Esteban,2010,4.3,Ribera del Duero,68.99,Tinto,Tempranillo,0,16-18°C,0.062,1,7
+Tridente,Prieto Picudo,2018,4.3,Castilla y Leon,21.95,Tinto,Blend/Other,0,16-18°C,0.196,0,2
+Neton,Garnacha Tintorera,2017,4.3,Castilla y Leon,13.237545,Tinto,Blend/Other,0,16-18°C,0.325,0,2
+Finca Torremilanos,Penalba Lopez Blanco,2019,4.3,Castilla y Leon,13.65,Blanco,Blend/Other,0,8-10°C,0.315,0,1
+Enate,Cabernet,2012,4.3,Somontano,23.5,Tinto,Blend/Other,0,16-18°C,0.183,0,2
+Pradorey,El Cuentista,2018,4.3,Ribera del Duero,17.9,Tinto,Tempranillo,0,16-18°C,0.24,0,7
+Vall Llach,Porrera Vi de Vila,2018,4.3,Priorato,49.95,Tinto,Grenache / Carinena,0,16-18°C,0.086,0,7
+Terroir Al Limit Soc. Lda,Les Manyes,2011,4.3,Priorato,348.85,Tinto,Grenache / Carinena,0,16-18°C,0.012,1,7
+Bodega Aida i Luis,Tahulla Moscatel Blanco Seco,2018,4.3,Alicante,11.95,Blanco,Blend/Other,0,8-10°C,0.36,0,1
+Valderiz,Juegabolos,2017,4.3,Ribera del Duero,28.6,Tinto,Tempranillo,0,16-18°C,0.15,0,7
+Abadal,3.9,2018,4.3,Pla de Bages,21.3,Tinto,Blend/Other,0,16-18°C,0.202,0,2
+Raul Perez,Sketch,2019,4.3,Rias Baixas,44.95,Blanco,Albarino,0,8-10°C,0.096,0,1
+Portal del Priorat,Clos del Portal Somni,2008,4.3,Priorato,36.3,Tinto,Grenache / Carinena,0,16-18°C,0.118,0,7
+Baigorri,De Garage Rioja,2017,4.3,Rioja,32.0,Tinto,Tempranillo,0,16-18°C,0.134,0,7
+Cartoixa de Montsalvat,Montsalvat,2007,4.3,Priorato,39.712635,Tinto,Grenache / Carinena,0,16-18°C,0.108,0,7
+Clos Galena,Galena,2018,4.3,Priorato,17.9,Tinto,Grenache / Carinena,0,16-18°C,0.24,0,7
+Bodega Ribas,Sio Negre,2019,4.3,Mallorca,39.9,Tinto,Blend/Other,0,16-18°C,0.108,0,2
+Allende,Aurus,2001,4.3,Rioja,140.0,Tinto,Tempranillo,0,16-18°C,0.031,1,7
+Enate,Chardonnay Uno,2012,4.3,Somontano,249.95,Blanco,Chardonnay,0,8-10°C,0.017,1,1
+El Lagar de Isilla,Vendimia Seleccionada,2015,4.3,Ribera del Duero,28.83,Tinto,Tempranillo,0,16-18°C,0.149,0,7
+Finca Villacreces,Nebro Ribera del Duero,2013,4.3,Ribera del Duero,196.29,Tinto,Tempranillo,0,16-18°C,0.022,1,7
+Bodega Otazu,Pago de Otazu Chardonnay Con Crianza,2018,4.3,Otazu,28.4,Blanco,Chardonnay,1,8-10°C,0.151,0,1
+Jose Pariente,Verdejo Fermentado en Barrica,2020,4.3,Rueda,14.5,Blanco,Verdejo,1,8-10°C,0.297,0,1
+La Rioja Alta,Rioja Gran Reserva 904,1970,4.3,Rioja,260.0,Tinto,Tempranillo,1,16-18°C,0.017,1,6
+Toro Albala,Don PX Pedro Ximenez,1999,4.3,Montilla-Moriles,36.9,Generoso,Pedro Ximenez,0,12-14°C,0.117,0,4
+Cervoles,Vinyes Altes de Les Garrigues Vi Blanc,2019,4.3,Costers del Segre,25.8,Desconocido,Blend/Other,0,10-14°C,0.167,0,3
+Anibal de Otero,Vina Centenaria Mencia,2014,4.3,Bierzo,38.0,Tinto,Mencia,0,16-18°C,0.113,0,7
+Familia Torres,Grans Muralles,2017,4.3,Conca de Barbera,137.75,Tinto,Blend/Other,0,16-18°C,0.031,1,7
+Costers del Siurana,Clos de L'Obac,2009,4.3,Priorato,79.9,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Bodegas San Roman,Malvasia,2017,4.3,Castilla,41.5,Desconocido,Blend/Other,0,10-14°C,0.104,0,3
+Finca Rio Negro,Cerro del Lobo Syrah,2018,4.3,Castilla,24.5,Tinto,Syrah,0,16-18°C,0.176,0,2
+Cervoles,Estrats,2012,4.3,Costers del Segre,68.55,Tinto,Blend/Other,0,16-18°C,0.063,1,2
+Scala Dei,Masdeu,2016,4.3,Priorato,81.35,Tinto,Grenache / Carinena,0,16-18°C,0.053,1,7
+Vina Sastre,Regina Vides Ribera del Duero,2001,4.3,Ribera del Duero,121.5,Tinto,Tempranillo,0,16-18°C,0.035,1,7
+Vizcarra,Celia,2014,4.3,Ribera del Duero,79.98,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Marques de Caceres,Gaudium,1998,4.3,Rioja,60.0,Tinto,Tempranillo,0,16-18°C,0.072,1,7
+Barahonda,Summum Monastrell,2019,4.3,Yecla,13.99,Tinto,Monastrell,0,16-18°C,0.307,0,2
+Mas Doix,Doix,2002,4.3,Priorato,195.52,Tinto,Grenache / Carinena,0,16-18°C,0.022,1,7
+Altos del Enebro,Finca La Herradura,2014,4.3,Ribera del Duero,68.0,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Pago de Larrainzar,Reserva Especial,2014,4.3,Navarra,16.9,Tinto,Blend/Other,1,16-18°C,0.254,0,6
+Albamar,Alma de Mar Albarino,2019,4.3,Rias Baixas,27.5,Blanco,Albarino,0,8-10°C,0.156,0,1
+Williams & Humbert,Canasta 20 Anos Cream,2015,4.3,Jerez-Xeres-Sherry,29.25,Generoso,Pedro Ximenez,0,12-14°C,0.147,0,4
+Pujanza,Rioja Anadas Frias,2016,4.3,Rioja,75.0,Blanco,Viura,0,8-10°C,0.057,1,1
+Finca Rio Negro,5o Ano,2016,4.3,La Mancha,23.9,Tinto,Blend/Other,0,16-18°C,0.18,0,2
+Oxer Wines,Suzzane Rioja,2019,4.3,Rioja,34.9,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Marques de Murrieta,Castillo Ygay Gran Reserva Especial Tinto,1925,4.3,Rioja,532.0,Tinto,Tempranillo,1,16-18°C,0.008,1,0
+Dominio de Atauta,Llanos del Almendro Ribera del Duero,2010,4.3,Ribera del Duero,95.0,Tinto,Tempranillo,0,16-18°C,0.045,1,7
+Can Bas,Monreal,2015,4.3,Penedes,44.1,Tinto,Blend/Other,0,16-18°C,0.098,0,2
+Atlantida,Blanco,2019,4.3,Cadiz,17.7,Blanco,Blend/Other,0,8-10°C,0.243,0,1
+Atlan & Artisan,8 Vents Mallorca,2019,4.3,Mallorca,18.9,Tinto,Blend/Other,0,16-18°C,0.228,0,2
+Venus la Universal,Venus,2017,4.3,Montsant,35.35,Tinto,Blend/Other,0,16-18°C,0.122,0,2
+La Rioja Alta,Gran Reserva 890,1981,4.3,Rioja,270.0,Tinto,Tempranillo,1,16-18°C,0.016,1,6
+Olivardots,Vd'O 1 Samso - Pissarra,2012,4.3,Emporda,34.95,Tinto,Blend/Other,0,16-18°C,0.123,0,2
+Terroir Al Limit Soc. Lda,Les Manyes,2012,4.3,Priorato,348.85,Tinto,Grenache / Carinena,0,16-18°C,0.012,1,7
+Lar de Paula,Tempranillo Reserva,2012,4.3,Rioja,14.9,Tinto,Tempranillo,1,16-18°C,0.289,0,6
+Venta Las Vacas,La Cuartilleja Reserva,2015,4.3,Ribera del Duero,39.7,Tinto,Tempranillo,1,16-18°C,0.108,0,6
+Juve & Camps,Cava Gran Reserva La Capella Brut,2010,4.3,Cava,75.5,Espumoso,Blend/Other,1,6-8°C,0.057,1,5
+Bodega Contador (Benjamin Romeo),Coleccion No. 3 Cosecha,2014,4.3,Rioja,189.9,Tinto,Tempranillo,0,16-18°C,0.023,1,7
+Luis Canas,Rioja Gran Reserva,2016,4.3,Rioja,21.01,Tinto,Tempranillo,1,16-18°C,0.205,0,6
+La Val,Albarino Sobre Lias,2015,4.3,Rias Baixas,23.9,Blanco,Albarino,0,8-10°C,0.18,0,1
+Tres Piedras,Nobbis,2019,4.3,Ribera del Duero,12.8,Tinto,Tempranillo,0,16-18°C,0.336,0,7
+Raul Perez,Rara Avis Prieto Picudo,2013,4.3,Castilla y Leon,39.95,Tinto,Blend/Other,0,16-18°C,0.108,0,2
+Javi Revert,Sensal,2020,4.3,Valencia,22.35,Tinto,Blend/Other,0,16-18°C,0.192,0,2
+Bodega Campo Eliseo,Campo Eliseo Blanco,2018,4.3,Rueda,27.25,Blanco,Verdejo,0,8-10°C,0.158,0,1
+Alta Alella,Blanc de Neu,2016,4.3,Alella,16.99,Espumoso,Blend/Other,0,6-8°C,0.253,0,5
+Contino,Reserva,1995,4.3,Rioja,55.0,Tinto,Tempranillo,1,16-18°C,0.078,1,6
+Terras Gauda,La Mar,2019,4.3,Rias Baixas,21.5,Blanco,Albarino,0,8-10°C,0.2,0,1
+Descendientes de J. Palacios,Las Lamas Bierzo (Corullon),2017,4.3,Bierzo,106.92,Tinto,Mencia,0,16-18°C,0.04,1,7
+Lambuena,Vinas Viejas,2014,4.3,Ribera del Duero,37.065126,Tinto,Tempranillo,0,16-18°C,0.116,0,7
+Tarsus,T3rno Seleccion de 3 Parcelas Ribera del Duero,2017,4.3,Ribera del Duero,38.5,Tinto,Tempranillo,0,16-18°C,0.112,0,7
+Bodegas Luis Perez,Fino La Barajuela,2016,4.3,Andalucia,69.95,Desconocido,Blend/Other,0,10-14°C,0.061,1,3
+Marco Abella,Clos Abella Seleccion Especial,2016,4.3,Priorato,43.5,Tinto,Grenache / Carinena,0,16-18°C,0.099,0,7
+Vivanco,Parcelas de Maturana Tinta Coleccion Rioja,2017,4.3,Rioja,36.5,Tinto,Tempranillo,0,16-18°C,0.118,0,7
+Familia Torres,Reserva Real,1998,4.3,Penedes,213.5,Tinto,Blend/Other,1,16-18°C,0.02,1,6
+Attis,Attis Embaixador Albarino,2018,4.3,Rias Baixas,21.89,Blanco,Albarino,0,8-10°C,0.196,0,1
+Miguel Merino,Vitola Reserva,2016,4.3,Rioja,21.9,Tinto,Tempranillo,1,16-18°C,0.196,0,6
+San Cobate,San Cucufate Monasterio,2017,4.3,Ribera del Duero,33.0,Tinto,Tempranillo,0,16-18°C,0.13,0,7
+Pazo Senorans,Tras Los Muros Albarino,2017,4.3,Rias Baixas,38.0,Blanco,Albarino,0,8-10°C,0.113,0,1
+Avancia,Godello,2020,4.3,Valdeorras,24.77,Desconocido,Blend/Other,0,10-14°C,0.174,0,3
+Carlos Moro,CM Tinto,2017,4.3,Rioja,17.75,Tinto,Tempranillo,0,16-18°C,0.242,0,2
+Bodegas Frontonio,La Loma & Los Santos Garnacha Blanca - Macabeo,2018,4.3,Valdejalon,40.9,Desconocido,Blend/Other,0,10-14°C,0.105,0,3
+Vinicola Real,200 Monges Rioja Gran Reserva,2005,4.3,Rioja,52.5,Tinto,Tempranillo,1,16-18°C,0.082,1,6
+Terra Remota,Clos Adrien,2016,4.3,Emporda,48.91,Tinto,Blend/Other,0,16-18°C,0.088,0,2
+Cal Batllet - Celler Ripoll Sans,Gratallops Escanya-Vella,2018,4.3,Priorato,27.1,Tinto,Grenache / Carinena,0,16-18°C,0.159,0,7
+Ramon Bilbao,Lalomba Finca Ladero,2016,4.3,Rioja,58.25,Tinto,Tempranillo,0,16-18°C,0.074,1,7
+Santa Petronila,Oloroso En Rama,2015,4.3,Jerez-Xeres-Sherry,24.9,Generoso,Blend/Other,0,12-14°C,0.173,0,4
+Jimenez-Landi,El Reventon Cebreros,2016,4.3,Castilla y Leon,67.95,Tinto,Grenache,0,16-18°C,0.063,1,2
+Hidalgo (La Gitana),Amontillado Napoleon Vinos Viejos 30 Year Old Sherry,2015,4.3,Jerez-Xeres-Sherry,74.9,Generoso,Blend/Other,0,12-14°C,0.057,1,4
+Chivite,Navarra Vendimia Tardia Coleccion 125,2018,4.3,Navarra,25.95,Desconocido,Blend/Other,0,10-14°C,0.166,0,3
+Espectacle del Montsant,Tinto,2018,4.3,Montsant,119.0,Tinto,Blend/Other,0,16-18°C,0.036,1,2
+Gallina de Piel,Manar dos Seixas,2019,4.3,Ribeiro,13.5,Blanco,Treixadura,0,8-10°C,0.319,0,1
+Vinicola Real,200 Monges Edicion Exclusiva Blanco Reserva,2010,4.3,Rioja,51.45,Blanco,Viura,1,8-10°C,0.084,1,1
+Cartoixa de Montsalvat,Montsalvat,2005,4.3,Priorato,56.27,Tinto,Grenache / Carinena,0,16-18°C,0.076,1,7
+Arid,Eolic Sauvignon Blanc,2016,4.3,Penedes,11.65,Blanco,Sauvignon Blanc,0,8-10°C,0.369,0,1
+Carlos Moro,Finca Valmediano Tinta de Toro 16 Meses Barrica,2012,4.3,Toro,32.9,Tinto,Tempranillo,1,16-18°C,0.131,0,6
+Jimenez-Landi,Cantos del Diablo,2018,4.3,Mentrida,197.0,Tinto,Grenache,0,16-18°C,0.022,1,2
+Bodegas Reyes,Teofilo Reyes Crianza,2019,4.3,Ribera del Duero,14.71,Tinto,Tempranillo,1,16-18°C,0.292,0,6
+Gutierrez de la Vega,Recondita Armonia Monastrell Dulce,2018,4.3,Alicante,16.45,Tinto,Monastrell,0,16-18°C,0.261,0,2
+Hugas de Batlle,Falguera,2009,4.3,Emporda,53.55,Tinto,Blend/Other,0,16-18°C,0.08,1,2
+Atlan & Artisan,Epistem No. 3,2016,4.3,Yecla,18.9,Tinto,Blend/Other,0,16-18°C,0.228,0,2
+Telmo Rodriguez,Molino Real,2015,4.3,Malaga,53.3,Desconocido,Blend/Other,0,10-14°C,0.081,1,3
+Bodegas Arrocal,Angel Ribera del Duero,2015,4.3,Ribera del Duero,31.9,Tinto,Tempranillo,0,16-18°C,0.135,0,7
+Buil & Gine,Pleret,2012,4.3,Priorato,55.5,Tinto,Grenache / Carinena,0,16-18°C,0.077,1,7
+Luis A. Rodriguez Vazquez,A Torna dos Pasas Escolma Ribeiro,2016,4.3,Ribeiro,40.75,Tinto,Blend/Other,0,16-18°C,0.106,0,2
+Castell del Remei,Costers Del Segre 1780,2017,4.3,Costers del Segre,22.9,Tinto,Blend/Other,0,16-18°C,0.188,0,2
+Vizcarra,Ines,2010,4.3,Ribera del Duero,76.87,Tinto,Tempranillo,0,16-18°C,0.056,1,7
+Vizcarra,Ines,2014,4.3,Ribera del Duero,79.98,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Valdubon,Honoris,2005,4.3,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Emilio Moro,La Revelia Godello,2019,4.3,Bierzo,21.65,Desconocido,Blend/Other,0,10-14°C,0.199,0,3
+Altanza,Club Rioja Reserva,2012,4.3,Rioja,20.95,Tinto,Tempranillo,1,16-18°C,0.205,0,6
+Bodegas Y Vinedos Alilian,Camino del Abuelo Vinas Viejas,2013,4.3,Ribera del Duero,243.8,Tinto,Tempranillo,0,16-18°C,0.018,1,7
+Artadi,La Morera de San Lazaro,2016,4.3,Vino de Espana,80.0,Tinto,Tempranillo,0,16-18°C,0.054,1,7
+Real de Asua,Tinto,2000,4.3,Rioja,60.4,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Artadi,Quintanilla,2016,4.3,Vino de Espana,65.9,Tinto,Tempranillo,0,16-18°C,0.065,1,7
+Taron,Reserva,2014,4.3,Rioja Alta,10.2,Tinto,Blend/Other,1,16-18°C,0.422,0,6
+Sebio,Salvaxe,2018,4.3,Ribeiro,26.75,Blanco,Treixadura,0,8-10°C,0.161,0,1
+R. Lopez de Heredia,Vina Tondonia Reserva,2014,4.3,Rioja,47.95,Tinto,Tempranillo,1,16-18°C,0.09,0,6
+Gramona,Vi De Glass Gewurztraminer,2017,4.3,Cataluna,18.58,Desconocido,Blend/Other,0,10-14°C,0.231,0,3
+Goyo Garcia Viadero,Finca Los Quemados,2016,4.3,Ribera del Duero,27.7,Tinto,Tempranillo,0,16-18°C,0.155,0,7
+Bodegas Reyes,Teofilo Reyes Crianza,2018,4.3,Ribera del Duero,11.94,Tinto,Tempranillo,1,16-18°C,0.36,0,6
+Marques de Caceres,Rioja Reserva,1985,4.3,Rioja,45.0,Tinto,Tempranillo,1,16-18°C,0.096,0,6
+Santiago Ruiz,Albarino (O Rosal),2021,4.3,Rias Baixas,13.45,Blanco,Albarino,0,8-10°C,0.32,0,1
+Terroir Al Limit Soc. Lda,Les Manyes,2017,4.3,Priorato,180.0,Tinto,Grenache / Carinena,0,16-18°C,0.024,1,7
+Pujanza,Rioja,2005,4.3,Rioja,29.0,Tinto,Tempranillo,0,16-18°C,0.148,0,7
+Mauro Estevez,Vino de Autor Ribeiro Blanco,2020,4.3,Ribeiro,15.9,Blanco,Treixadura,0,8-10°C,0.27,0,1
+Finca Valpiedra,Rioja Reserva,1994,4.3,Rioja,65.0,Tinto,Tempranillo,1,16-18°C,0.066,1,6
+Mas Bertran,Argila Reserva 3 Anys Brut Nature,2013,4.3,Penedes,21.6,Espumoso,Blend/Other,1,6-8°C,0.199,0,5
+Bodegas Gama,Octogenarius,2014,4.3,Rioja,46.5,Tinto,Grenache,0,16-18°C,0.092,0,2
+Edetaria,Finca La Pedrissa,2015,4.3,Terra Alta,37.9,Tinto,Blend/Other,0,16-18°C,0.113,0,2
+Hacienda Zorita Natural Reserve,Magister,2017,4.3,Arribes,35.5,Tinto,Blend/Other,0,16-18°C,0.121,0,2
+Valtravieso,Ribera del Duero Vendimia Seleccionada VT,2018,4.3,Ribera del Duero,27.9,Tinto,Tempranillo,0,16-18°C,0.154,0,7
+Ton Rimbau,Porcellanic VI Xarel-lo Sur Lie,2011,4.3,Penedes,110.47,Desconocido,Blend/Other,0,10-14°C,0.039,1,3
+Can Xanet,Sibila,2017,4.3,Mallorca,32.46,Tinto,Blend/Other,0,16-18°C,0.132,0,2
+Castillo Perelada,Emporda Reserva Especial Don Miguel Mateu,2015,4.3,Emporda,15.56,Tinto,Blend/Other,1,16-18°C,0.276,0,6
+A Coroa,200 Cestos Godello,2020,4.3,Valdeorras,23.7,Desconocido,Blend/Other,0,10-14°C,0.181,0,3
+Sebio,Heaven & Hell,2017,4.3,Galicia,18.5,Desconocido,Blend/Other,0,10-14°C,0.232,0,3
+Celler de Capcanes,Cabrida Montsant,2018,4.3,Montsant,36.85,Tinto,Blend/Other,0,16-18°C,0.117,0,2
+Alonso & Pedrajo,Suane Blanco,2017,4.3,Rioja,23.9,Blanco,Viura,0,8-10°C,0.18,0,1
+Bodegas Amaren,Garnacha,2014,4.3,Rioja,38.0,Tinto,Grenache,0,16-18°C,0.113,0,2
+Jimenez-Landi,Cantos del Diablo,2017,4.3,Mentrida,101.01,Tinto,Grenache,0,16-18°C,0.043,1,2
+Bodegas Ochoa,Vendimia Tardia Moscatel,2020,4.3,Navarra,13.75,Desconocido,Blend/Other,0,10-14°C,0.313,0,3
+Mandia Vell,Pinot Noir,2017,4.3,Mallorca,29.38,Tinto,Blend/Other,0,16-18°C,0.146,0,2
+Bodega Juan Carlos Sancha,Cerro La Isa Blanco,2018,4.3,Rioja,44.9,Blanco,Viura,0,8-10°C,0.096,0,1
+Valdecuevas,Cuvee Verdejo,2018,4.3,Rueda,12.0,Blanco,Verdejo,0,8-10°C,0.358,0,1
+Algueira,Anadelia,2015,4.3,Ribeira Sacra,38.5,Desconocido,Blend/Other,0,10-14°C,0.112,0,3
+Sebio,Salvaxe,2017,4.3,Ribeiro,28.35,Blanco,Treixadura,0,8-10°C,0.152,0,1
+Telmo Rodriguez,Tabuerniga,2018,4.3,Rioja,65.22,Tinto,Tempranillo,0,16-18°C,0.066,1,7
+Mocen,Seleccion Especial Verdejo,2021,4.3,Rueda,6.26,Blanco,Verdejo,0,8-10°C,0.687,0,1
+Estones,Coster d'en Fornos,2017,4.3,Montsant,40.55,Tinto,Blend/Other,0,16-18°C,0.106,0,2
+Bodega Tameran,Malvasia Volcanica,2020,4.3,Gran Canaria,31.9,Desconocido,Blend/Other,0,10-14°C,0.135,0,3
+Inurrieta,Laderas de Inurrieta,2017,4.3,Navarra,26.1,Tinto,Blend/Other,0,16-18°C,0.165,0,2
+Telmo Rodriguez,El Velado Tinto,2017,4.3,Rioja,73.95,Tinto,Tempranillo,0,16-18°C,0.058,1,7
+Trus,Pico de Luyas,2018,4.3,Ribera del Duero,48.9,Tinto,Tempranillo,0,16-18°C,0.088,0,7
+Flor de Chasna,Blanco Afrutado,2020,4.3,Abona,11.99,Blanco,Blend/Other,0,8-10°C,0.359,0,1
+Lagar de Sabariz,A Pita Cega,2015,4.3,Galicia,44.8,Desconocido,Blend/Other,0,10-14°C,0.096,0,3
+Mestres,Mas Via Gran Reserva Brut,2002,4.3,Cava,76.17,Espumoso,Blend/Other,1,6-8°C,0.056,1,5
+Muga,Prado Enea Gran Reserva,1970,4.3,Rioja,120.0,Tinto,Tempranillo,1,16-18°C,0.036,1,6
+Campillo,Finca Cuesta Clara Raro Reserva,2016,4.3,Rioja,39.5,Tinto,Tempranillo,1,16-18°C,0.109,0,6
+Naia,Naiades,2018,4.3,Rueda,19.03,Blanco,Verdejo,0,8-10°C,0.226,0,1
+AGE,Fuenmayor Gran Reserva,1959,4.3,Rioja,230.0,Tinto,Tempranillo,1,16-18°C,0.019,1,6
+Marques de Murrieta,Dalmau Rioja,1996,4.3,Rioja,110.0,Tinto,Tempranillo,0,16-18°C,0.039,1,7
+Marques de Riscal,Rioja Reserva,1964,4.3,Rioja,310.0,Tinto,Tempranillo,1,16-18°C,0.014,1,6
+Navajas,Mirador de Navajas Reserva Rioja,2011,4.3,Rioja,28.7550102072719,Tinto,Tempranillo,1,16-18°C,0.15,0,6
+Altanza,Coleccion Roberto Amillo Amontillado,2015,4.3,Jerez Amontillado,39.9,Generoso,Blend/Other,0,12-14°C,0.108,0,4
+Alvaro Domecq,1730 Amontillado,2015,4.3,Jerez Amontillado,34.65,Generoso,Blend/Other,0,12-14°C,0.124,0,4
+Allende,Aurus,2011,4.3,Rioja,211.92,Tinto,Tempranillo,0,16-18°C,0.02,1,7
+Bodega Juan Carlos Sancha,Cerro La Isa Garnacha,2018,4.3,Rioja,43.9,Tinto,Tempranillo,0,16-18°C,0.098,0,7
+Vinyes del Terrer,Nus del Terrer,2016,4.3,Tarragona,25.9,Tinto,Blend/Other,0,16-18°C,0.166,0,2
+Cepas Familiares,Nivel,2018,4.3,Ribera del Duero,35.0,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Bodegas Faustino,I Gran Reserva,1968,4.3,Rioja,160.0,Tinto,Tempranillo,1,16-18°C,0.027,1,6
+Dominio de Loalva,Seleccion Especial,2016,4.3,Ribera del Duero,32.0,Tinto,Tempranillo,0,16-18°C,0.134,0,7
+El Regajal,Galia Clos Santuy,2017,4.3,Castilla y Leon,74.9,Tinto,Blend/Other,0,16-18°C,0.057,1,2
+Ysios,Seleccion,2016,4.3,Rioja,30.0,Tinto,Tempranillo,0,16-18°C,0.143,0,7
+Antidoto,Le Rose,2018,4.3,Ribera del Duero,49.0,Tinto,Tempranillo,0,16-18°C,0.088,0,7
+Zifar,Pago de las Sabinas,2016,4.3,Ribera del Duero,39.55,Tinto,Tempranillo,0,16-18°C,0.109,0,7
+Romate,Old & Plus Oloroso,2015,4.3,Jerez Oloroso,45.0,Generoso,Blend/Other,0,12-14°C,0.096,0,4
+Altanza,Coleccion Roberto Amillo Palo Cortado,2015,4.3,Jerez-Xeres-Sherry,47.7,Generoso,Blend/Other,0,12-14°C,0.09,0,4
+Volver,Alicante Bouschet by Tarima,2018,4.3,Alicante,14.9,Tinto,Monastrell,0,16-18°C,0.289,0,2
+Marques de Riscal,Rioja Gran Reserva,2016,4.3,Rioja,46.45,Tinto,Tempranillo,1,16-18°C,0.093,0,6
+Rodriguez de Vera,Tinto,2017,4.3,Almansa,15.45,Tinto,Blend/Other,0,16-18°C,0.278,0,2
+Bordalas Garcia,Gueta-Lupia,2011,4.3,Priorato,31.75,Tinto,Grenache / Carinena,0,16-18°C,0.135,0,7
+Sierra Cantabria,Amancio,2002,4.3,Rioja,110.0,Tinto,Tempranillo,0,16-18°C,0.039,1,7
+Bodega Tameran,Marmajuelo,2020,4.3,Gran Canaria,29.75,Desconocido,Blend/Other,0,10-14°C,0.145,0,3
+Rimarts,Cava Reserva Especial Chardonnay Brut Nature,2016,4.3,Cava,18.5,Espumoso,Blend/Other,1,6-8°C,0.232,0,5
+Pinna Fidelis,Ribera del Duero Vendimia Seleccionada,2016,4.3,Ribera del Duero,19.8563175,Tinto,Tempranillo,0,16-18°C,0.217,0,7
+Habla,No. 23,2017,4.3,Extremadura,23.1,Tinto,Blend/Other,0,16-18°C,0.186,0,2
+Jimenez-Landi,Las Iruelas El Tiemblo,2018,4.3,Castilla y Leon,97.07,Tinto,Grenache,0,16-18°C,0.044,1,2
+Loess,Tinto,2019,4.3,Ribera del Duero,8.57,Tinto,Tempranillo,0,16-18°C,0.502,0,7
+Jimenez-Landi,Cantos del Diablo,2016,4.3,Mentrida,67.95,Tinto,Grenache,0,16-18°C,0.063,1,2
+Javier Sanz Viticultor,V Dulce de Invierno,2018,4.3,Castilla y Leon,17.74,Desconocido,Blend/Other,0,10-14°C,0.242,0,3
+Dominio de Anza,Diego Magana,2020,4.3,Rioja,37.9,Tinto,Tempranillo,0,16-18°C,0.113,0,7
+Bodegas Amaren,Graciano,2012,4.3,Rioja,68.0,Tinto,Tempranillo,0,16-18°C,0.063,1,7
+Gomez Cruzado,Cerro Las Cuevas Seleccion Terroir,2019,4.3,Rioja,39.89,Tinto,Tempranillo,0,16-18°C,0.108,0,7
+Hacienda Solano,Pena Lobera,2018,4.3,Ribera del Duero,68.9,Tinto,Tempranillo,0,16-18°C,0.062,1,7
+Altos de Rioja,Altos R Pigeage Graciano,2016,4.3,Rioja,35.0,Tinto,Tempranillo,0,16-18°C,0.123,0,7
+Samsara,Ronda,2015,4.3,Sierras de Malaga,32.5,Tinto,Blend/Other,0,16-18°C,0.132,0,2
+Ordonez,Nisia Las Suertes Verdejo Old Vines,2020,4.3,Rueda,16.9,Blanco,Verdejo,0,8-10°C,0.254,0,1
+Josep Grau Viticultor,Territori,2019,4.3,Montsant,23.6,Tinto,Blend/Other,0,16-18°C,0.182,0,2
+Cuentavinas,Alomado,2018,4.3,Rioja,46.95,Tinto,Tempranillo,0,16-18°C,0.092,0,7
+Bodegas Gama,Octogenarius,2015,4.3,Rioja,36.9,Tinto,Grenache,0,16-18°C,0.117,0,2
+Miguel Merino,Gran Reserva,2000,4.3,Rioja,48.81,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Los Aguilares,Pinot Noir,2020,4.3,Sierras de Malaga,33.5,Tinto,Blend/Other,0,16-18°C,0.128,0,2
+Nin-Ortiz,Selma de Nin Blanco,2017,4.3,Cataluna,56.95,Blanco,Blend/Other,0,8-10°C,0.076,1,1
+Zifar,Senda de Los Olivos Roble,2020,4.3,Ribera del Duero,8.9,Tinto,Tempranillo,1,16-18°C,0.483,0,6
+Felix Solis,Mucho Mas Tinto,2015,4.2,Vino de Espana,4.99,Tinto,Blend/Other,0,16-18°C,0.842,0,2
+Marques de Riscal,Rioja Reserva,2016,4.2,Rioja,15.9,Tinto,Tempranillo,1,16-18°C,0.264,0,6
+La Rioja Alta,Vina Ardanza Reserva,2007,4.2,Rioja,23.7,Tinto,Tempranillo,1,16-18°C,0.177,0,6
+Marques de Murrieta,Reserva Rioja (Finca Ygay),2016,4.2,Rioja,23.0,Tinto,Tempranillo,1,16-18°C,0.183,0,6
+Emilio Moro,Ribera del Duero,2018,4.2,Ribera del Duero,19.5,Tinto,Tempranillo,0,16-18°C,0.215,0,7
+Emilio Moro,Ribera del Duero,2017,4.2,Ribera del Duero,21.2,Tinto,Tempranillo,0,16-18°C,0.198,0,7
+Tinto Pesquera,Reserva,2012,4.2,Ribera del Duero,27.0,Tinto,Tempranillo,1,16-18°C,0.156,0,6
+La Rioja Alta,Vina Ardanza Reserva,2008,4.2,Rioja,33.0,Tinto,Tempranillo,1,16-18°C,0.127,0,6
+El Coto,Coto de Imaz Rioja Gran Reserva,2012,4.2,Rioja,16.14,Tinto,Tempranillo,1,16-18°C,0.26,0,6
+Dominio de Pingus,PSI,2016,4.2,Ribera del Duero,37.95,Tinto,Tempranillo,0,16-18°C,0.111,0,7
+La Rioja Alta,Vina Alberdi Reserva,2015,4.2,Rioja,17.02,Tinto,Tempranillo,1,16-18°C,0.247,0,6
+Abadia Retuerta,Seleccion Especial,2014,4.2,Sardon de Duero,49.85,Tinto,Blend/Other,0,16-18°C,0.084,0,2
+Mar de Frades,Rias Baixas Albarino Atlantico,2019,4.2,Rias Baixas,14.95,Blanco,Albarino,0,8-10°C,0.281,0,1
+Matarromera,Crianza,2016,4.2,Ribera del Duero,9.76,Tinto,Tempranillo,1,16-18°C,0.43,0,6
+Arzuaga,Ribera del Duero Crianza,2016,4.2,Ribera del Duero,19.16,Tinto,Tempranillo,1,16-18°C,0.219,0,6
+La Rioja Alta,Vina Alberdi Reserva,2016,4.2,Rioja,15.8,Tinto,Tempranillo,1,16-18°C,0.266,0,6
+Imperial,Rioja Reserva,2015,4.2,Rioja,19.8333333333333,Tinto,Tempranillo,1,16-18°C,0.212,0,6
+Protos,27 Ribera del Duero,2016,4.2,Ribera del Duero,21.0,Tinto,Tempranillo,0,16-18°C,0.2,0,7
+Terras Gauda,Terras Gauda O Rosal,2020,4.2,Rias Baixas,12.29,Blanco,Albarino,0,8-10°C,0.342,0,1
+Protos,27 Ribera del Duero,2017,4.2,Ribera del Duero,23.75,Tinto,Tempranillo,0,16-18°C,0.177,0,7
+Remelluri,Rioja Reserva,2012,4.2,Rioja,15.83,Tinto,Tempranillo,1,16-18°C,0.265,0,6
+Arzuaga,Ribera del Duero Crianza,2017,4.2,Ribera del Duero,15.45,Tinto,Tempranillo,1,16-18°C,0.272,0,6
+Familia Torres,Salmos,2016,4.2,Priorato,24.85,Tinto,Grenache / Carinena,0,16-18°C,0.169,0,7
+Pago de Los Capellanes,Crianza Tinto,2017,4.2,Ribera del Duero,20.95,Tinto,Tempranillo,1,16-18°C,0.2,0,6
+Marques de Riscal,Rioja Gran Reserva,2007,4.2,Rioja,28.43,Tinto,Tempranillo,1,16-18°C,0.148,0,6
+R. Lopez de Heredia,Vina Bosconia Reserva,2008,4.2,Rioja Alta,22.58,Tinto,Blend/Other,1,16-18°C,0.186,0,6
+Bodegas Mauro,Red,2011,4.2,Castilla y Leon,58.26,Tinto,Blend/Other,0,16-18°C,0.072,1,2
+R. Lopez de Heredia,Vina Bosconia Reserva,2007,4.2,Rioja Alta,20.95,Tinto,Blend/Other,1,16-18°C,0.2,0,6
+Familia Torres,Mas La Plana Cabernet Sauvignon,2010,4.2,Penedes,48.4,Tinto,Cabernet Sauvignon,0,16-18°C,0.087,0,2
+Rafael Palacios,Louro Godello,2019,4.2,Valdeorras,19.7,Desconocido,Blend/Other,0,10-14°C,0.213,0,3
+Imperial,Rioja Reserva,2016,4.2,Rioja,24.75,Tinto,Tempranillo,1,16-18°C,0.17,0,6
+Bodegas Roda,Roda Reserva Rioja,2015,4.2,Rioja,55.47,Tinto,Tempranillo,1,16-18°C,0.076,1,6
+Bodegas Roda,Roda Reserva Rioja,2012,4.2,Rioja,28.4,Tinto,Tempranillo,1,16-18°C,0.148,0,6
+Imperial,Rioja Reserva,2014,4.2,Rioja,27.6,Tinto,Tempranillo,1,16-18°C,0.152,0,6
+Juan Gil,Jumilla Blue Label,2015,4.2,Jumilla,24.76,Tinto,Blend/Other,0,16-18°C,0.17,0,2
+Juan Gil,Jumilla Blue Label,2018,4.2,Jumilla,24.6,Tinto,Blend/Other,0,16-18°C,0.171,0,2
+Juan Gil,Jumilla Blue Label,2017,4.2,Jumilla,22.5,Tinto,Blend/Other,0,16-18°C,0.187,0,2
+Bodegas Faustino,I Gran Reserva,1994,4.2,Rioja,124.5,Tinto,Tempranillo,1,16-18°C,0.034,1,6
+Carmelo Rodero,Crianza,2017,4.2,Ribera del Duero,19.99,Tinto,Tempranillo,1,16-18°C,0.21,0,6
+Atalaya,La Atalaya del Camino,2017,4.2,Almansa,11.8,Tinto,Blend/Other,0,16-18°C,0.356,0,2
+Protos,27 Ribera del Duero,2018,4.2,Ribera del Duero,23.74,Tinto,Tempranillo,0,16-18°C,0.177,0,7
+Bodegas Roda,Roda Reserva Rioja,2013,4.2,Rioja,30.35,Tinto,Tempranillo,1,16-18°C,0.138,0,6
+Protos,Gran Reserva,2012,4.2,Ribera del Duero,38.84,Tinto,Tempranillo,1,16-18°C,0.108,0,6
+Remelluri,Rioja Reserva,2013,4.2,Rioja,21.5,Tinto,Tempranillo,1,16-18°C,0.195,0,6
+Tinto Pesquera,Reserva,2015,4.2,Ribera del Duero,29.95,Tinto,Tempranillo,1,16-18°C,0.14,0,6
+Marques de Riscal,Rioja 150 Aniversario,2010,4.2,Rioja,59.0,Tinto,Tempranillo,0,16-18°C,0.071,1,7
+Pintia,Toro,2006,4.2,Toro,98.9,Tinto,Tempranillo,0,16-18°C,0.042,1,7
+Bodegas Roda,Roda Reserva Rioja,2014,4.2,Rioja,59.9,Tinto,Tempranillo,1,16-18°C,0.07,1,6
+Alto Moncayo,Veraton Garnacha,2014,4.2,Campo de Borja,19.94,Tinto,Grenache,0,16-18°C,0.211,0,2
+R. Lopez de Heredia,Vina Bosconia Reserva,2009,4.2,Rioja Alta,23.52,Tinto,Blend/Other,1,16-18°C,0.179,0,6
+Casa Rojo,Alexander vs. The Ham Factory,2016,4.2,Ribera del Duero,33.3733333333333,Tinto,Tempranillo,0,16-18°C,0.126,0,7
+Dominio de Pingus,PSI,2019,4.2,Ribera del Duero,34.5,Tinto,Tempranillo,0,16-18°C,0.122,0,7
+Alto Moncayo,Veraton Garnacha,2018,4.2,Campo de Borja,21.6,Tinto,Grenache,0,16-18°C,0.194,0,2
+La Rioja Alta,Vina Alberdi Crianza,2015,4.2,Rioja,11.2,Tinto,Tempranillo,1,16-18°C,0.375,0,6
+Huerta de Albala,Taberner Tierra de Cadiz,2014,4.2,Cadiz,32.0010770950795,Tinto,Syrah,0,16-18°C,0.131,0,2
+Marques de Riscal,Rioja Gran Reserva,2011,4.2,Rioja,39.5,Tinto,Tempranillo,1,16-18°C,0.106,0,6
+Garmon,Ribera del Duero,2015,4.2,Ribera del Duero,33.59,Tinto,Tempranillo,0,16-18°C,0.125,0,7
+Marques de Murrieta,Capellania Reserva,2015,4.2,Rioja,29.15,Blanco,Viura,1,8-10°C,0.144,0,1
+Aster,Finca El Otero,2014,4.2,Ribera del Duero,28.75,Tinto,Tempranillo,0,16-18°C,0.146,0,7
+Matarromera,Crianza,2017,4.2,Ribera del Duero,16.88,Tinto,Tempranillo,1,16-18°C,0.249,0,6
+Gramona,Gessami,2019,4.2,Penedes,9.95,Desconocido,Blend/Other,0,10-14°C,0.422,0,3
+Dominio de Atauta,Dominio de Atauta,2016,4.2,Ribera del Duero,25.71,Tinto,Tempranillo,0,16-18°C,0.163,0,7
+Bodegas Ximenez-Spinola,Finest Old Harvest Medium,2015,4.2,Jerez-Xeres-Sherry,18.87,Generoso,Pedro Ximenez,0,12-14°C,0.223,0,4
+Huerta de Albala,Taberner Tierra de Cadiz,2015,4.2,Cadiz,17.04,Tinto,Syrah,0,16-18°C,0.246,0,2
+Montecastro,Ribera del Duero Red,2015,4.2,Ribera del Duero,18.9,Tinto,Tempranillo,0,16-18°C,0.222,0,7
+Bosque de Matasnos,Bosque de Matasnos Etiqueta Blanca,2017,4.2,Ribera del Duero,55.75,Tinto,Tempranillo,0,16-18°C,0.075,1,7
+Garmon,Ribera del Duero,2014,4.2,Ribera del Duero,37.9,Tinto,Tempranillo,0,16-18°C,0.111,0,7
+Bodegas La Horra,Corimbo I,2014,4.2,Ribera del Duero,39.0,Tinto,Tempranillo,0,16-18°C,0.108,0,7
+Carmelo Rodero,Crianza,2018,4.2,Ribera del Duero,16.49,Tinto,Tempranillo,1,16-18°C,0.255,0,6
+Lustau,Vermut Rojo,2015,4.2,Jerez-Xeres-Sherry,11.9,Desconocido,Blend/Other,0,10-14°C,0.353,0,3
+Atalaya,La Atalaya del Camino,2019,4.2,Almansa,11.66,Tinto,Blend/Other,0,16-18°C,0.36,0,2
+R. Lopez de Heredia,Vina Tondonia Reserva Blanco,2005,4.2,Rioja Alta,26.9,Blanco,Blend/Other,1,8-10°C,0.156,0,1
+Protos,Reserva 5 Ano,2015,4.2,Ribera del Duero,22.95,Tinto,Tempranillo,1,16-18°C,0.183,0,6
+Emilio Moro,Malleolus,2014,4.2,Ribera del Duero,31.95,Tinto,Tempranillo,0,16-18°C,0.131,0,7
+Gonzalez-Byass,Del Duque Amontillado Sherry VORS,2015,4.2,Jerez Amontillado,77.22,Generoso,Blend/Other,0,12-14°C,0.054,1,4
+Alvaro Palacios,Les Terrasses Velles Vinyes Priorat,2017,4.2,Priorato,85.9,Tinto,Grenache / Carinena,0,16-18°C,0.049,1,7
+Familia Torres,Salmos,2017,4.2,Priorato,20.99,Tinto,Grenache / Carinena,0,16-18°C,0.2,0,7
+Bodega Numanthia,Numanthia,2013,4.2,Toro,51.19,Tinto,Tempranillo,0,16-18°C,0.082,1,7
+Alvaro Palacios,Les Terrasses Laderas de Pizarra,2016,4.2,Priorato,32.25,Tinto,Grenache / Carinena,0,16-18°C,0.13,0,7
+Merum Priorati,Inici,2017,4.2,Priorato,39.0,Tinto,Grenache / Carinena,0,16-18°C,0.108,0,7
+Familia Torres,Mas La Plana Cabernet Sauvignon,2016,4.2,Penedes,56.26,Tinto,Cabernet Sauvignon,0,16-18°C,0.075,1,2
+Bodegas La Horra,Corimbo I,2011,4.2,Ribera del Duero,23.4,Tinto,Tempranillo,0,16-18°C,0.179,0,7
+Castillo Perelada,5 Finques (Fincas) Reserva,2017,4.2,Emporda,11.35,Tinto,Blend/Other,1,16-18°C,0.37,0,6
+Bodegas La Horra,Corimbo I,2013,4.2,Ribera del Duero,37.5,Tinto,Tempranillo,0,16-18°C,0.112,0,7
+Quinta Sardonia,QS,2010,4.2,Castilla y Leon,40.76,Tinto,Blend/Other,0,16-18°C,0.103,0,2
+Martinet,Martinet Bru (Garnatxa - Syrah),2019,4.2,Priorato,21.9,Tinto,Grenache / Carinena,0,16-18°C,0.192,0,7
+La Rioja Alta,Vina Ardanza Reserva,2000,4.2,Rioja,161.0,Tinto,Tempranillo,1,16-18°C,0.026,1,6
+Vinedos de Paganos,El Puntido,2013,4.2,Rioja,34.41,Tinto,Tempranillo,0,16-18°C,0.122,0,7
+Emilio Moro,Ribera del Duero,2019,4.2,Ribera del Duero,16.95,Tinto,Tempranillo,0,16-18°C,0.248,0,7
+Alvaro Palacios,Finca Dofi,2015,4.2,Priorato,52.5,Tinto,Grenache / Carinena,0,16-18°C,0.08,1,7
+Protos,Reserva 5 Ano,2014,4.2,Ribera del Duero,19.53,Tinto,Tempranillo,1,16-18°C,0.215,0,6
+Bodegas Valduero,Ribera Del Duero Reserva,2012,4.2,Ribera del Duero,30.0,Tinto,Tempranillo,1,16-18°C,0.14,0,6
+Baluarte,Muscat,2020,4.2,Navarra,5.5,Desconocido,Blend/Other,0,10-14°C,0.764,0,3
+Marques de Riscal,Rioja Gran Reserva,2014,4.2,Rioja,35.63,Tinto,Tempranillo,1,16-18°C,0.118,0,6
+Bodegas Roda,Roda Reserva Rioja,2017,4.2,Rioja,25.5,Tinto,Tempranillo,1,16-18°C,0.165,0,6
+Bodegas Amaren,Angeles de Amaren Tempranillo - Graciano,2015,4.2,Rioja,19.38,Tinto,Tempranillo,0,16-18°C,0.217,0,7
+Marques de Murrieta,Reserva Rioja (Finca Ygay),2017,4.2,Rioja,20.9,Tinto,Tempranillo,1,16-18°C,0.201,0,6
+Arzuaga,Ribera del Duero Crianza,2019,4.2,Ribera del Duero,18.5,Tinto,Tempranillo,1,16-18°C,0.227,0,6
+Marques de Riscal,Reserva XR,2015,4.2,Rioja,23.0,Tinto,Tempranillo,1,16-18°C,0.183,0,6
+Familia Torres,Purgatori Costers del Segre,2016,4.2,Costers del Segre,38.37,Tinto,Blend/Other,0,16-18°C,0.109,0,2
+Familia Torres,Purgatori Costers del Segre,2017,4.2,Costers del Segre,25.5,Tinto,Blend/Other,0,16-18°C,0.165,0,2
+Ramon Bilbao,Mirto,2012,4.2,Rioja,35.0,Tinto,Tempranillo,0,16-18°C,0.12,0,7
+Ossian,Vinas Viejas Verdejo,2015,4.2,Castilla y Leon,30.0,Blanco,Verdejo,0,8-10°C,0.14,0,1
+Hispano Suizas,Bassus Pinot Noir,2017,4.2,Utiel-Requena,18.95,Tinto,Blend/Other,0,16-18°C,0.222,0,2
+Murviedro,Sericis Cepas Viejas Monastrell,2017,4.2,Valencia,8.95,Tinto,Monastrell,0,16-18°C,0.469,0,2
+Castillo Perelada,Finca Malaveina,2016,4.2,Emporda,25.35,Tinto,Blend/Other,0,16-18°C,0.166,0,2
+Montecastro,Ribera del Duero Red,2018,4.2,Ribera del Duero,18.5,Tinto,Tempranillo,0,16-18°C,0.227,0,7
+Contino,Rioja Gran Reserva,2008,4.2,Rioja,36.0,Tinto,Tempranillo,1,16-18°C,0.117,0,6
+Contino,Rioja Gran Reserva,2009,4.2,Rioja,85.8,Tinto,Tempranillo,1,16-18°C,0.049,1,6
+Hispano Suizas,Bassus Pinot Noir,2018,4.2,Utiel-Requena,19.25,Tinto,Blend/Other,0,16-18°C,0.218,0,2
+Quinta Sardonia,QS,2007,4.2,Castilla y Leon,37.5,Tinto,Blend/Other,0,16-18°C,0.112,0,2
+VALENCISO,Rioja Reserva,2014,4.2,Rioja,19.4,Tinto,Tempranillo,1,16-18°C,0.216,0,6
+Gramona,Gessami,2020,4.2,Penedes,11.2,Desconocido,Blend/Other,0,10-14°C,0.375,0,3
+Remirez de Ganuza,Rioja Reserva Fincas de Ganuza,2014,4.2,Rioja,29.5,Tinto,Tempranillo,1,16-18°C,0.142,0,6
+Barahonda,Summum Monastrell,2017,4.2,Yecla,15.95,Tinto,Monastrell,0,16-18°C,0.263,0,2
+Losada,Altos de Losada,2017,4.2,Bierzo,18.4,Tinto,Mencia,0,16-18°C,0.228,0,7
+Alvaro Palacios,Finca Dofi,2014,4.2,Priorato,59.95,Tinto,Grenache / Carinena,0,16-18°C,0.07,1,7
+El Coto,Coto de Imaz Rioja Gran Reserva,2015,4.2,Rioja,15.88,Tinto,Tempranillo,1,16-18°C,0.264,0,6
+Matsu,El Viejo,2012,4.2,Toro,26.95,Tinto,Tempranillo,0,16-18°C,0.156,0,7
+Recaredo,Corpinnat Terrers Brut Nature,2017,4.2,Cava,25.0,Espumoso,Blend/Other,0,6-8°C,0.168,0,5
+Williams & Humbert,Dos Cortados Palo Cortado Solera Especial Aged 20 Years,2015,4.2,Jerez Palo Cortado,32.16,Generoso,Blend/Other,1,12-14°C,0.131,0,4
+Alvaro Palacios,Vi de Vila Gratallops,2015,4.2,Priorato,60.0,Tinto,Grenache / Carinena,0,16-18°C,0.07,1,7
+Alvaro Palacios,Vi de Vila Gratallops,2014,4.2,Priorato,55.0,Tinto,Grenache / Carinena,0,16-18°C,0.076,1,7
+Marques de Murrieta,Gran Reserva Rioja (Finca Ygay),2010,4.2,Rioja,86.95,Tinto,Tempranillo,1,16-18°C,0.048,1,6
+Tobia,Oscar Tobia Reserva Rioja,2015,4.2,Rioja,20.0,Tinto,Tempranillo,1,16-18°C,0.21,0,6
+Marques de Caceres,Rioja Satinela Blanco Semidulce,2020,4.2,Rioja,6.99,Blanco,Viura,0,8-10°C,0.601,0,1
+Vina Pedrosa,Reserva,2012,4.2,Ribera del Duero,29.93,Tinto,Tempranillo,1,16-18°C,0.14,0,6
+Castillo Perelada,Finca Malaveina,2012,4.2,Emporda,17.84,Tinto,Blend/Other,0,16-18°C,0.235,0,2
+Contino,Rioja Gran Reserva,2014,4.2,Rioja,34.5,Tinto,Tempranillo,1,16-18°C,0.122,0,6
+Bodegas Mauro,Red,2008,4.2,Castilla y Leon,55.0,Tinto,Blend/Other,0,16-18°C,0.076,1,2
+Portal del Priorat,Clos del Portal Negre de Negres,2017,4.2,Priorato,21.85,Tinto,Grenache / Carinena,0,16-18°C,0.192,0,7
+Recaredo,Corpinnat Terrers Brut Nature,2016,4.2,Cava,21.8,Espumoso,Blend/Other,0,6-8°C,0.193,0,5
+Torre de Ona,Martelo Reserva,2014,4.2,Rioja,20.5,Tinto,Tempranillo,1,16-18°C,0.205,0,6
+Tinto Pesquera,Crianza,2019,4.2,Ribera del Duero,17.25,Tinto,Tempranillo,1,16-18°C,0.243,0,6
+Dehesa de Los Canonigos,Solideo,2015,4.2,Ribera del Duero,35.09,Tinto,Tempranillo,0,16-18°C,0.12,0,7
+Sei Solo,Preludio,2017,4.2,Ribera del Duero,24.9,Tinto,Tempranillo,0,16-18°C,0.169,0,7
+Diez Caballero,Reserva Tempranillo,2011,4.2,Rioja,20.4532878069468,Tinto,Tempranillo,1,16-18°C,0.205,0,6
+Mas d'en Gil,Coma Vella Priorat,2014,4.2,Priorato,24.8,Tinto,Grenache / Carinena,0,16-18°C,0.169,0,7
+Chozas Carrascal,Las Ocho (8) Tinto,2017,4.2,Utiel-Requena,16.767557,Tinto,Blend/Other,0,16-18°C,0.25,0,2
+Vegalfaro,Pago de los Balagueses Syrah,2017,4.2,Utiel-Requena,17.7,Tinto,Syrah,0,16-18°C,0.237,0,2
+Lopez Cristobal,Bagus Ribera del Duero,2012,4.2,Ribera del Duero,54.0,Tinto,Tempranillo,0,16-18°C,0.078,1,7
+Clos Galena,Formiga de Vellut,2018,4.2,Priorato,16.2,Tinto,Grenache / Carinena,0,16-18°C,0.259,0,7
+Bodegas Valduero,Tierra Alta En 2 Maderas,2017,4.2,Ribera del Duero,19.9,Tinto,Tempranillo,1,16-18°C,0.211,0,6
+Los Aguilares,Pago El Espino,2017,4.2,Sierras de Malaga,25.35,Tinto,Blend/Other,0,16-18°C,0.166,0,2
+VALENCISO,Rioja Blanco,2018,4.2,Rioja,17.75,Blanco,Viura,0,8-10°C,0.237,0,1
+Dehesa de Los Canonigos,Crianza,2018,4.2,Ribera del Duero,18.9,Tinto,Tempranillo,1,16-18°C,0.222,0,6
+Palacios Remondo,Propiedad  Rioja,2017,4.2,Rioja,25.9,Tinto,Tempranillo,0,16-18°C,0.162,0,7
+Dehesa de Los Canonigos,Crianza,2017,4.2,Ribera del Duero,18.25,Tinto,Tempranillo,1,16-18°C,0.23,0,6
+Bodegas Faustino,Reserva Especial Icon Edition,2014,4.2,Rioja,23.89,Tinto,Tempranillo,1,16-18°C,0.176,0,6
+Fernando de Castilla,Antique Palo Cortado,2015,4.2,Jerez Palo Cortado,36.9,Generoso,Blend/Other,0,12-14°C,0.114,0,4
+Matsu,El Viejo,2017,4.2,Toro,33.9,Tinto,Tempranillo,0,16-18°C,0.124,0,7
+Lan,Vina Lanciano Reserva,2015,4.2,Rioja,14.6,Tinto,Tempranillo,1,16-18°C,0.288,0,6
+Anima Negra,An,2016,4.2,Mallorca,139.9,Tinto,Blend/Other,0,16-18°C,0.03,1,2
+Bodegas Mas Alta,Artigas,2017,4.2,Priorato,20.9,Tinto,Grenache / Carinena,0,16-18°C,0.201,0,7
+Vinicola Real,200 Monges Rioja Reserva,2005,4.2,Rioja,48.0,Tinto,Tempranillo,1,16-18°C,0.088,0,6
+Contino,Rioja Gran Reserva,2011,4.2,Rioja,39.5,Tinto,Tempranillo,1,16-18°C,0.106,0,6
+Sei Solo,Preludio,2018,4.2,Ribera del Duero,24.5,Tinto,Tempranillo,0,16-18°C,0.171,0,7
+Williams & Humbert,Jalifa Amontillado Rare Old Dry Solera Especial Aged 30 Years,2015,4.2,Jerez Amontillado,33.5,Generoso,Blend/Other,1,12-14°C,0.125,0,4
+Tridente,Rejon Tempranillo,2012,4.2,Castilla y Leon,36.97,Tinto,Tempranillo,0,16-18°C,0.114,0,7
+Emilio Moro,La Felisa,2018,4.2,Ribera del Duero,26.3,Tinto,Tempranillo,0,16-18°C,0.16,0,7
+Emilio Moro,La Revelia Godello,2018,4.2,Bierzo,21.95,Desconocido,Blend/Other,0,10-14°C,0.191,0,3
+Valderiz,Tinto,2018,4.2,Ribera del Duero,21.5,Tinto,Tempranillo,0,16-18°C,0.195,0,7
+Lan,A Mano Rioja,2009,4.2,Rioja,28.95,Tinto,Tempranillo,0,16-18°C,0.145,0,7
+Familia Torres,Milmanda,2015,4.2,Conca de Barbera,126.2,Blanco,Chardonnay,0,8-10°C,0.033,1,1
+Terras Gauda,Terras Gauda O Rosal,2021,4.2,Rias Baixas,11.9,Blanco,Albarino,0,8-10°C,0.353,0,1
+Pazo Senorans,Seleccion de Anada Albarino Rias Baixas,2008,4.2,Rias Baixas,37.9,Blanco,Albarino,0,8-10°C,0.111,0,1
+Muga,Seleccion Especial (Reserva),2004,4.2,Rioja,65.0,Tinto,Tempranillo,1,16-18°C,0.065,1,6
+Bohorquez,Reserva,2009,4.2,Ribera del Duero,21.65,Tinto,Tempranillo,1,16-18°C,0.194,0,6
+Abadal,3.9,2016,4.2,Pla de Bages,22.95,Tinto,Blend/Other,0,16-18°C,0.183,0,2
+Mar de Frades,Rias Baixas Albarino Atlantico,2021,4.2,Rias Baixas,14.8,Blanco,Albarino,0,8-10°C,0.284,0,1
+Adega Familiar Eladio Pineiro,Envidiacochina (Tete de Cuvee),2019,4.2,Rias Baixas,18.46,Blanco,Albarino,0,8-10°C,0.228,0,1
+Pradorey,Adaro,2017,4.2,Ribera del Duero,16.45,Tinto,Tempranillo,0,16-18°C,0.255,0,7
+Montecastro,Ribera del Duero Red,2017,4.2,Ribera del Duero,16.9,Tinto,Tempranillo,0,16-18°C,0.249,0,7
+Culebron,Fondillon Gran Reserva,1964,4.2,Alicante,49.95,Tinto,Monastrell,1,16-18°C,0.084,0,6
+Portal del Priorat,Clos del Portal Negre de Negres,2018,4.2,Priorato,21.7,Tinto,Grenache / Carinena,0,16-18°C,0.194,0,7
+Castillo Perelada,Monastrell - Syrah Finca Espolla,2016,4.2,Emporda,13.95,Tinto,Blend/Other,0,16-18°C,0.301,0,2
+Castano,Casa Cisca Monastrell,2011,4.2,Yecla,32.0,Tinto,Monastrell,0,16-18°C,0.131,0,2
+Remirez de Ganuza,Rioja Blanco,2017,4.2,Rioja,29.15,Blanco,Viura,0,8-10°C,0.144,0,1
+La Vicalanda,Reserva,2015,4.2,Rioja,17.5,Tinto,Tempranillo,1,16-18°C,0.24,0,6
+Enrique Mendoza,Santa Rosa,2017,4.2,Alicante,18.9,Tinto,Monastrell,0,16-18°C,0.222,0,2
+Clos Pons,Roc Nu,2011,4.2,Costers del Segre,23.95,Tinto,Blend/Other,0,16-18°C,0.175,0,2
+Sierra Cantabria,Coleccion Privada,2012,4.2,Rioja,28.3,Tinto,Tempranillo,0,16-18°C,0.148,0,7
+Imperial,Rioja Reserva,2004,4.2,Rioja,45.0,Tinto,Tempranillo,1,16-18°C,0.093,0,6
+Losada,Altos de Losada,2018,4.2,Bierzo,17.9,Tinto,Mencia,0,16-18°C,0.235,0,7
+Mar de Frades,Rias Baixas Albarino Finca Valinas,2015,4.2,Rias Baixas,16.78,Blanco,Albarino,0,8-10°C,0.25,0,1
+La Rioja Alta,Vina Alberdi Crianza,2018,4.2,Rioja,13.58,Tinto,Tempranillo,1,16-18°C,0.309,0,6
+Bodegas La Horra,Corimbo I,2015,4.2,Ribera del Duero,37.9,Tinto,Tempranillo,0,16-18°C,0.111,0,7
+Vina Pedrosa,Gran Reserva,2011,4.2,Ribera del Duero,51.35,Tinto,Tempranillo,1,16-18°C,0.082,1,6
+Campillo,Gran Reserva Rioja,2012,4.2,Rioja,22.99,Tinto,Tempranillo,1,16-18°C,0.183,0,6
+Ramon do Casar,Treixadura,2020,4.2,Ribeiro,11.95,Blanco,Treixadura,0,8-10°C,0.351,0,1
+Lustau,Candela Cream Dulce Sweet,2015,4.2,Jerez-Xeres-Sherry,7.1,Generoso,Blend/Other,0,12-14°C,0.592,0,4
+Portal del Priorat,Clos del Portal Somni,2014,4.2,Priorato,77.36,Tinto,Grenache / Carinena,0,16-18°C,0.054,1,7
+Binigrau,Nounat,2020,4.2,Mallorca,19.9,Desconocido,Blend/Other,0,10-14°C,0.211,0,3
+Ramon Bilbao,Mirto,2011,4.2,Rioja,28.53,Tinto,Tempranillo,0,16-18°C,0.147,0,7
+Matsu,El Viejo,2019,4.2,Toro,27.89,Tinto,Tempranillo,0,16-18°C,0.151,0,7
+Artadi,Valdegines,2016,4.2,Vino de Espana,48.96,Tinto,Tempranillo,0,16-18°C,0.086,0,7
+Contino,Rioja Graciano,2011,4.2,Rioja,61.94,Tinto,Tempranillo,0,16-18°C,0.068,1,7
+Contino,Reserva,2016,4.2,Rioja,19.98,Tinto,Tempranillo,1,16-18°C,0.21,0,6
+Conreria d'Scala Dei,Les Brugueres,2018,4.2,Priorato,16.76,Tinto,Grenache / Carinena,0,16-18°C,0.251,0,7
+Mustiguillo,Finca Terrerazo,2017,4.2,El Terrerazo,24.45,Tinto,Bobal,0,16-18°C,0.172,0,2
+Matarromera,Gran Reserva,2011,4.2,Ribera del Duero,64.5,Tinto,Tempranillo,1,16-18°C,0.065,1,6
+Sei Solo,Preludio,2016,4.2,Ribera del Duero,31.63,Tinto,Tempranillo,0,16-18°C,0.133,0,7
+Vinedos de Paganos,El Puntido,2005,4.2,Rioja,73.0,Tinto,Tempranillo,0,16-18°C,0.058,1,7

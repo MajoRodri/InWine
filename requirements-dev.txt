@@ -1,0 +1,12 @@
+# Development dependencies — notebooks, scraper and visualization tools
+# Dependencias de desarrollo — notebooks, scraper y herramientas de visualización
+#
+# Install everything / Instalar todo:
+#   pip install -r requirements-dev.txt
+
+-r requirements.txt
+
+playwright>=1.40.0
+matplotlib>=3.9.0
+seaborn>=0.13.0
+ipykernel>=6.29.0

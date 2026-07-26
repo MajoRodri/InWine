@@ -1,0 +1,563 @@
+{% extends "base.html" %}
+{% from "macros.html" import stars, empty_state, svg_icon %}
+
+{% block title %}Mejor calidad-precio — InWine{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── Multi-select desplegable ────────────────────────────── */
+.ms-wrap { position: relative; display: inline-block; }
+
+.ms-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.6rem;
+  padding: 0.65rem 1rem; min-width: 180px;
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: 8px; color: var(--cream);
+  font-family: var(--font-sans); font-size: 0.88rem;
+  cursor: pointer; transition: border-color 0.25s, box-shadow 0.25s;
+  white-space: nowrap; text-align: left; width: 100%;
+}
+.ms-btn:hover { border-color: var(--gold-dim); }
+.ms-btn.is-open { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(155,112,16,0.12); }
+[data-theme="dark"] .ms-btn.is-open { box-shadow: 0 0 0 3px rgba(201,160,80,0.13); }
+
+.ms-btn-text { flex: 1; overflow: hidden; text-overflow: ellipsis; color: var(--cream-muted); }
+.ms-btn-text.has-sel { color: var(--cream); }
+.ms-badge {
+  background: var(--gold); color: var(--bg);
+  border-radius: 10px; font-size: 0.68rem; font-weight: 700;
+  padding: 1px 7px; line-height: 1.4; flex-shrink: 0;
+}
+.ms-caret { font-size: 0.6rem; color: var(--cream-muted); flex-shrink: 0; transition: transform 0.22s; }
+.ms-btn.is-open .ms-caret { transform: rotate(180deg); }
+
+.ms-panel {
+  position: absolute; top: calc(100% + 5px); left: 0; z-index: 300;
+  min-width: 100%; max-width: 300px;
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: 10px; box-shadow: 0 12px 36px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+.ms-search-wrap {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+.ms-search-wrap input {
+  width: 100%; padding: 0.35rem 0.65rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--cream);
+  font-family: var(--font-sans); font-size: 0.8rem; outline: none;
+}
+.ms-search-wrap input:focus { border-color: var(--gold-dim); }
+.ms-search-wrap input::placeholder { color: var(--cream-dim); }
+
+.ms-list {
+  max-height: 240px; overflow-y: auto;
+  padding: 0.3rem 0;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
+.ms-list::-webkit-scrollbar       { width: 4px; }
+.ms-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.ms-item {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.42rem 0.85rem; cursor: pointer;
+  font-size: 0.85rem; color: var(--cream-muted); user-select: none;
+  transition: background 0.18s, color 0.18s;
+}
+.ms-item:hover { background: var(--bg-elevated); color: var(--cream); }
+.ms-item input { display: none; }
+
+.ms-box {
+  width: 15px; height: 15px; flex-shrink: 0;
+  border: 1.5px solid var(--border-light); border-radius: 3px;
+  background: transparent; transition: all 0.18s;
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-item input:checked ~ .ms-box { background: var(--gold); border-color: var(--gold); }
+.ms-item input:checked ~ .ms-box::after { content: "✓"; font-size: 0.6rem; color: var(--bg); font-weight: 900; }
+.ms-item input:checked ~ .ms-name { color: var(--gold); font-weight: 600; }
+
+.ms-empty { padding: 0.65rem 0.85rem; font-size: 0.8rem; color: var(--cream-dim); font-style: italic; }
+
+.ms-footer {
+  padding: 0.38rem 0.75rem;
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
+.ms-footer button {
+  font-size: 0.72rem; color: var(--cream-muted); background: none; border: none;
+  cursor: pointer; padding: 0.15rem 0.35rem; border-radius: 4px; transition: color 0.18s;
+}
+.ms-footer button:hover { color: var(--vino); }
+
+/* Selects de filtro con el mismo aspecto que ms-btn */
+.filter-group select.form-control {
+  padding: 0.65rem 2rem 0.65rem 1rem;
+  font-size: 0.88rem;
+  min-width: 0;
+  color: var(--cream-muted);
+  background-color: var(--bg-card);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23CCAA7A'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  cursor: pointer;
+}
+
+/* Tags activos */
+.filter-tag {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(155,112,16,0.1); border: 1px solid var(--gold-dim);
+  border-radius: 20px; padding: 2px 10px;
+  font-size: 0.75rem; color: var(--gold);
+}
+
+/* ── Paginación ─────────────────────────────────────────── */
+.pagination {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.pagination-info {
+  font-size: 0.82rem; color: var(--cream-muted);
+}
+.pagination-controls {
+  display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+}
+.pg-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 2.2rem; height: 2.2rem; padding: 0 0.7rem;
+  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card); color: var(--cream-muted);
+  text-decoration: none; transition: all 0.2s;
+  cursor: pointer;
+}
+.pg-btn:hover { border-color: var(--gold-dim); color: var(--cream); }
+.pg-btn.pg-active {
+  background: var(--gold); border-color: var(--gold);
+  color: var(--bg); cursor: default;
+}
+.pg-btn.pg-disabled {
+  opacity: 0.35; pointer-events: none;
+}
+.pg-ellipsis {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.2rem; height: 2.2rem;
+  font-size: 0.85rem; color: var(--cream-dim);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-icon">{{ svg_icon("gem") }}</span>
+    <h1>Mejor <span class="text-gold">calidad-precio</span></h1>
+    <p>Los vinos con mejor ratio calidad-precio dentro de tu presupuesto, ordenados por puntuación.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {# ── Filtros ─────────────────────────────────────────── #}
+    <form action="/valor" method="GET" id="valueFilterForm">
+      <div class="value-filters" style="flex-wrap:nowrap;gap:0.65rem;align-items:flex-end">
+
+        {# Precio máximo #}
+        <div class="filter-group">
+          <label class="filter-label" for="maxBudget">Precio máximo</label>
+          <input type="range" id="maxBudget"
+            min="0" max="100" step="1" value="0"
+            class="form-range" style="width:140px">
+          <input type="hidden" id="maxBudgetValue" name="max_price" value="{{ max_price }}">
+          <div style="text-align:center;color:var(--gold);font-family:var(--font-serif);font-size:1.1rem;margin-top:0.15rem"
+               id="maxBudgetDisplay">{{ max_price }}€</div>
+        </div>
+
+        {# Valoración mínima #}
+        <div class="filter-group">
+          <label class="filter-label" for="minRating">Valoración mínima</label>
+          <select name="min_rating" id="minRating" class="form-control" style="width:145px">
+            {% for val, lbl in [(4.0,"4.0 ★ o más"),(4.2,"4.2 ★ o más"),(4.4,"4.4 ★ o más"),(4.6,"4.6 ★ o más"),(4.8,"4.8 ★ o más")] %}
+            <option value="{{ val }}" {% if min_rating == val %}selected{% endif %}>{{ lbl }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        {# Ordenar por #}
+        <div class="filter-group">
+          <label class="filter-label" for="sortBy">Ordenar por</label>
+          <select name="sort_by" id="sortBy" class="form-control" style="width:165px">
+            <option value="ratio"      {% if sort_by == 'ratio'      %}selected{% endif %}>Calidad/Precio</option>
+            <option value="price_asc"  {% if sort_by == 'price_asc'  %}selected{% endif %}>Precio ascendente</option>
+            <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Precio descendente</option>
+          </select>
+        </div>
+
+        {# Tipo de vino #}
+        <div class="filter-group">
+          <label class="filter-label">Tipo de vino</label>
+          <div class="ms-wrap">
+            <button type="button" class="ms-btn" data-ms="ms-tipos" style="min-width:145px">
+              <span class="ms-btn-text {% if sel_wine_types %}has-sel{% endif %}"
+                    data-placeholder="Todos los tipos">
+                {% if sel_wine_types %}{{ sel_wine_types | join(", ") }}
+                {% else %}Todos los tipos{% endif %}
+              </span>
+              {% if sel_wine_types %}<span class="ms-badge">{{ sel_wine_types | length }}</span>{% endif %}
+              <span class="ms-caret">▾</span>
+            </button>
+            <div id="ms-tipos" class="ms-panel" style="display:none">
+              <div class="ms-list">
+                {% for vt in vine_types %}
+                <label class="ms-item">
+                  <input type="checkbox" name="wine_types" value="{{ vt }}"
+                    {% if vt in sel_wine_types %}checked{% endif %}>
+                  <span class="ms-box"></span>
+                  <span class="ms-name">{{ vt }}</span>
+                </label>
+                {% endfor %}
+              </div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-tipos">Limpiar selección</button></div>
+            </div>
+          </div>
+        </div>
+
+        {# Región #}
+        <div class="filter-group">
+          <label class="filter-label">Región</label>
+          <div class="ms-wrap">
+            <button type="button" class="ms-btn" data-ms="ms-regions" style="min-width:155px">
+              <span class="ms-btn-text {% if sel_regions %}has-sel{% endif %}"
+                    data-placeholder="Todas las regiones">
+                {% if sel_regions %}{{ sel_regions | join(", ") }}
+                {% else %}Todas las regiones{% endif %}
+              </span>
+              {% if sel_regions %}<span class="ms-badge">{{ sel_regions | length }}</span>{% endif %}
+              <span class="ms-caret">▾</span>
+            </button>
+            <div id="ms-regions" class="ms-panel" style="display:none;min-width:230px">
+              <div class="ms-search-wrap">
+                <input type="text" placeholder="Buscar región..." data-ms="ms-regions">
+              </div>
+              <div class="ms-list">
+                {% for r in regions %}
+                <label class="ms-item">
+                  <input type="checkbox" name="regions" value="{{ r }}"
+                    {% if r in sel_regions %}checked{% endif %}>
+                  <span class="ms-box"></span>
+                  <span class="ms-name">{{ r }}</span>
+                </label>
+                {% endfor %}
+              </div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-regions">Limpiar selección</button></div>
+            </div>
+          </div>
+        </div>
+
+        {# Variedad de uva #}
+        <div class="filter-group">
+          <label class="filter-label">Variedad de uva</label>
+          <div class="ms-wrap">
+            <button type="button" class="ms-btn" data-ms="ms-grapes" style="min-width:155px">
+              <span class="ms-btn-text {% if sel_grape_varieties %}has-sel{% endif %}"
+                    data-placeholder="Todas las variedades">
+                {% if sel_grape_varieties %}{{ sel_grape_varieties | join(", ") }}
+                {% else %}Todas las variedades{% endif %}
+              </span>
+              {% if sel_grape_varieties %}<span class="ms-badge">{{ sel_grape_varieties | length }}</span>{% endif %}
+              <span class="ms-caret">▾</span>
+            </button>
+            <div id="ms-grapes" class="ms-panel" style="display:none;min-width:220px">
+              <div class="ms-search-wrap">
+                <input type="text" placeholder="Buscar uva..." data-ms="ms-grapes">
+              </div>
+              <div class="ms-list">
+                {% for g in grapes %}
+                <label class="ms-item">
+                  <input type="checkbox" name="grape_varieties" value="{{ g }}"
+                    {% if g in sel_grape_varieties %}checked{% endif %}>
+                  <span class="ms-box"></span>
+                  <span class="ms-name">{{ g }}</span>
+                </label>
+                {% endfor %}
+              </div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-grapes">Limpiar selección</button></div>
+            </div>
+          </div>
+        </div>
+
+        {# Acciones #}
+        <div class="filter-group" style="flex-direction:row;align-items:flex-end;gap:0.5rem">
+          <button type="submit" class="btn btn-gold btn-sm">Filtrar</button>
+          {% if sel_wine_types or sel_regions or sel_grape_varieties or max_price != 50 or min_rating != 4.2 or sort_by != 'ratio' %}
+          <a href="/valor" class="btn btn-sm"
+             style="background:transparent;border:1px solid var(--border-light);color:var(--cream-muted)">
+            Limpiar todo
+          </a>
+          {% endif %}
+        </div>
+
+      </div>
+
+      {# Tags de filtros activos #}
+      {% set active = sel_wine_types + sel_regions + sel_grape_varieties %}
+      {% if active %}
+      <div style="margin-top:0.8rem;display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center">
+        <span style="font-size:0.77rem;color:var(--cream-muted)">Filtrando por:</span>
+        {% for tag in active %}
+        <span class="filter-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </form>
+
+    {# ── Tabla de resultados ──────────────────────────────── #}
+    {% if wines %}
+    <div style="margin:1.2rem 0 0.5rem;color:var(--cream-muted);font-size:0.83rem">
+      {{ total }} vino{{ 's' if total != 1 else '' }} encontrado{{ 's' if total != 1 else '' }}
+    </div>
+    <table class="value-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Vino</th><th>Tipo</th><th>Región</th><th>Uva</th>
+          <th>Valoración</th><th>Precio</th><th>Ratio C/P</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for wine in wines %}
+        <tr style="cursor:pointer" onclick="window.location='/vino/{{ wine.id }}'">
+          <td><span class="rank-num">{{ (page - 1) * per_page + loop.index }}</span></td>
+          <td>
+            <div style="font-family:var(--font-serif);color:var(--cream);font-size:0.95rem">{{ wine.wine_name }}</div>
+            <div style="font-size:0.78rem;color:var(--gold)">{{ wine.winery }}</div>
+          </td>
+          <td><span class="wine-badge badge-{{ wine.vine_type | lower }}">{{ wine.vine_type }}</span></td>
+          <td>{{ wine.region }}</td>
+          <td style="font-size:0.82rem;color:var(--cream-muted)">{{ wine.grape_variety }}</td>
+          <td>
+            <div class="wine-rating">
+              {{ stars(wine.rating) }}
+              <span>{{ "%.1f" | format(wine.rating) }}</span>
+            </div>
+          </td>
+          <td style="font-family:var(--font-serif);color:var(--gold);font-size:1.05rem">{{ "%.0f" | format(wine.price_euros) }}€</td>
+          <td><span class="qpr-badge">{{ "%.2f" | format(wine.quality_price_ratio) }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {# ── Paginación ─────────────────────────────────────── #}
+    {% if total_pages > 1 %}
+    {% set first_item = (page - 1) * per_page + 1 %}
+    {% set last_item = [page * per_page, total] | min %}
+    <div class="pagination">
+      <span class="pagination-info">
+        Mostrando {{ first_item }}–{{ last_item }} de {{ total }} vinos
+      </span>
+      <div class="pagination-controls">
+
+        {# Anterior #}
+        {% if page > 1 %}
+        <a href="/valor?{{ filter_qs }}&page={{ page - 1 }}" class="pg-btn">← Anterior</a>
+        {% else %}
+        <span class="pg-btn pg-disabled">← Anterior</span>
+        {% endif %}
+
+        {# Números de página con elipsis #}
+        {% set ns = namespace(prev=0) %}
+        {% for p in range(1, total_pages + 1) %}
+          {% if p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
+            {% if ns.prev > 0 and p > ns.prev + 1 %}
+            <span class="pg-ellipsis">…</span>
+            {% endif %}
+            {% if p == page %}
+            <span class="pg-btn pg-active">{{ p }}</span>
+            {% else %}
+            <a href="/valor?{{ filter_qs }}&page={{ p }}" class="pg-btn">{{ p }}</a>
+            {% endif %}
+            {% set ns.prev = p %}
+          {% endif %}
+        {% endfor %}
+
+        {# Siguiente #}
+        {% if page < total_pages %}
+        <a href="/valor?{{ filter_qs }}&page={{ page + 1 }}" class="pg-btn">Siguiente →</a>
+        {% else %}
+        <span class="pg-btn pg-disabled">Siguiente →</span>
+        {% endif %}
+
+      </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+      {{ empty_state("wine-bottle", "No hay vinos que cumplan estos criterios. Prueba a ampliar los filtros.") }}
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  "use strict";
+
+  var openPanel = null;
+
+  function closeAll() {
+    document.querySelectorAll(".ms-panel").forEach(function (p) {
+      p.style.display = "none";
+    });
+    document.querySelectorAll(".ms-btn").forEach(function (b) {
+      b.classList.remove("is-open");
+    });
+    openPanel = null;
+  }
+
+  // Toggle desplegable al pulsar el botón
+  document.querySelectorAll(".ms-btn[data-ms]").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var panelId = btn.getAttribute("data-ms");
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+
+      var isOpen = panel.style.display !== "none";
+      closeAll();
+      if (!isOpen) {
+        panel.style.display = "block";
+        btn.classList.add("is-open");
+        openPanel = panel;
+        var si = panel.querySelector("input[type=text]");
+        if (si) si.focus();
+      }
+    });
+  });
+
+  // Evitar que clics dentro del panel lo cierren
+  document.querySelectorAll(".ms-panel").forEach(function (p) {
+    p.addEventListener("click", function (e) { e.stopPropagation(); });
+  });
+
+  // Cerrar al hacer clic fuera
+  document.addEventListener("click", closeAll);
+
+  // Actualizar etiqueta del botón cuando cambia un checkbox
+  document.querySelectorAll(".ms-item input[type=checkbox]").forEach(function (cb) {
+    cb.addEventListener("change", function () {
+      var panel = cb.closest(".ms-panel");
+      if (!panel) return;
+      var btn = document.querySelector('.ms-btn[data-ms="' + panel.id + '"]');
+      if (!btn) return;
+      refreshLabel(btn, panel);
+    });
+  });
+
+  // Botón "Limpiar selección"
+  document.querySelectorAll(".ms-clear[data-ms]").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var panelId = btn.getAttribute("data-ms");
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      panel.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
+        cb.checked = false;
+      });
+      var triggerBtn = document.querySelector('.ms-btn[data-ms="' + panelId + '"]');
+      if (triggerBtn) refreshLabel(triggerBtn, panel);
+    });
+  });
+
+  // Buscador dentro del panel
+  document.querySelectorAll(".ms-search-wrap input[data-ms]").forEach(function (input) {
+    input.addEventListener("input", function (e) {
+      e.stopPropagation();
+      var panelId = input.getAttribute("data-ms");
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      var q = input.value.toLowerCase();
+      var visible = 0;
+      panel.querySelectorAll(".ms-item").forEach(function (item) {
+        var name = item.querySelector(".ms-name").textContent.toLowerCase();
+        var show = !q || name.includes(q);
+        item.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+      var empty = panel.querySelector(".ms-empty");
+      if (!empty) {
+        empty = document.createElement("div");
+        empty.className = "ms-empty";
+        empty.textContent = "Sin resultados";
+        empty.style.display = "none";
+        panel.querySelector(".ms-list").appendChild(empty);
+      }
+      empty.style.display = visible === 0 ? "" : "none";
+    });
+  });
+
+  function refreshLabel(btn, panel) {
+    var checked = panel.querySelectorAll("input[type=checkbox]:checked");
+    var textEl = btn.querySelector(".ms-btn-text");
+    var placeholder = textEl ? textEl.getAttribute("data-placeholder") : "";
+
+    // Eliminar badge anterior
+    var oldBadge = btn.querySelector(".ms-badge");
+    if (oldBadge) oldBadge.remove();
+
+    if (checked.length === 0) {
+      if (textEl) { textEl.textContent = placeholder; textEl.classList.remove("has-sel"); }
+    } else {
+      var names = Array.from(checked).map(function (c) { return c.value; }).join(", ");
+      if (textEl) { textEl.textContent = names; textEl.classList.add("has-sel"); }
+      var badge = document.createElement("span");
+      badge.className = "ms-badge";
+      badge.textContent = checked.length;
+      var caret = btn.querySelector(".ms-caret");
+      if (caret) btn.insertBefore(badge, caret);
+      else btn.appendChild(badge);
+    }
+  }
+
+  // Slider logarítmico de precio (5€ – 3200€)
+  var PRICE_MIN = 5, PRICE_MAX = 3200;
+
+  function sliderToPrice(s) {
+    if (s >= 100) return PRICE_MAX;
+    var raw = PRICE_MIN * Math.pow(PRICE_MAX / PRICE_MIN, s / 100);
+    if (raw < 50)   return Math.round(raw / 5) * 5;
+    if (raw < 200)  return Math.round(raw / 10) * 10;
+    if (raw < 500)  return Math.round(raw / 25) * 25;
+    if (raw < 1000) return Math.round(raw / 50) * 50;
+    return Math.round(raw / 100) * 100;
+  }
+
+  function priceToSlider(p) {
+    if (p >= PRICE_MAX) return 100;
+    return Math.round(100 * Math.log(Math.max(p, PRICE_MIN) / PRICE_MIN) / Math.log(PRICE_MAX / PRICE_MIN));
+  }
+
+  var budgetSlider  = document.getElementById("maxBudget");
+  var budgetHidden  = document.getElementById("maxBudgetValue");
+  var budgetDisplay = document.getElementById("maxBudgetDisplay");
+
+  if (budgetSlider && budgetHidden && budgetDisplay) {
+    var initPrice = parseInt(budgetHidden.value, 10) || PRICE_MIN;
+    budgetSlider.value = priceToSlider(initPrice);
+
+    budgetSlider.addEventListener("input", function () {
+      var price = sliderToPrice(parseInt(this.value, 10));
+      budgetHidden.value = price;
+      budgetDisplay.textContent = price >= PRICE_MAX ? price + "€+" : price + "€";
+    });
+  }
+})();
+</script>
+{% endblock %}
