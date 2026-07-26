@@ -1,3 +1,7 @@
+
+
+
+
 <img src="app/static/img/border2.png" width="100%" style="display:block;margin:0;padding:0;"/>
 
 <br>
@@ -103,7 +107,10 @@
 
 <br>
 
-<!-- RECORDAR PONER EL VIDEO AQUI -->
+
+https://github.com/user-attachments/assets/a3f644f1-d2b5-44e0-b1f9-925f5b96f1d4
+
+
 
 <br>
 
@@ -789,23 +796,6 @@ cd preprocessing && python preprocessing.py
 
 </div>
 
-<br>
-
-<details>
-<summary><strong>English</strong></summary>
-<br>
-
-<div align="center">
-
-| [**Mariajose Alvarez**](https://github.com/MajoRodri) | [**María Roldán**](https://github.com/Mary1922) | [**Adrianna Aránguez**](https://github.com/adrianaarang) | [**Gema Villanueva**](https://github.com/Gema-Villanueva) |
-| :---: | :---: | :---: | :---: |
-| Scrum Master | Product Owner | Developer | Developer |
-
-</div>
-
-</details>
-
-<br>
 <br>
 
 <img src="app/static/img/border_v2.png" width="100%" style="display:block;margin:0;padding:0;"/>
