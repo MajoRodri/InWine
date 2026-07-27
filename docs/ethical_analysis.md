@@ -485,22 +485,11 @@ Para mantener la transparencia, las explicaciones deberían diferenciar entre:
 
 Una explicación comprensible no garantiza por sí sola que el proceso sea completamente explicable. Su contenido debe poder relacionarse con la lógica real ejecutada por la aplicación.
 
-### 6.8. Falta de medición de los resultados generados
+### 6.8. Evaluación limitada de los resultados generados
 
-El desequilibrio del dataset permite identificar riesgos potenciales, pero no demuestra por sí solo con qué frecuencia aparece cada tipo de vino en las recomendaciones.
+El proyecto incluye tests que comprueban el funcionamiento técnico de las recomendaciones en casos concretos. Sin embargo, todavía no se realiza un análisis global que mida qué vinos, tipos, regiones, variedades o clústeres aparecen con mayor frecuencia en el conjunto de resultados.
 
-Para evaluar el comportamiento real del sistema sería necesario ejecutar un conjunto amplio y controlado de consultas y medir, entre otros aspectos:
-
-- La frecuencia de recomendación por tipo de vino.
-- La presencia de cada región y denominación de origen.
-- La representación de las variedades de uva.
-- La distribución de precios.
-- La frecuencia con la que el quiz recurre a otros clústeres.
-- El número de veces que se relajan los filtros.
-- La repetición de vinos, bodegas o perfiles.
-- La diversidad de las alternativas ofrecidas.
-
-Sin estas pruebas, es más preciso hablar de riesgos de sobrerrepresentación o infrarrepresentación que afirmar que la aplicación favorece sistemáticamente a un grupo concreto de vinos.
+Esta evaluación permitiría detectar si determinados grupos reciben más visibilidad y comprobar la diversidad real de las recomendaciones.
 
 ## 7. Medidas de mitigación incorporadas
 
@@ -756,42 +745,15 @@ Esta información permitiría evaluar el sistema con experiencias reales y no ú
 
 La recogida de datos debería ser voluntaria, limitada a la información necesaria y acompañada de una explicación clara sobre su uso.
 
-### 8.11. Crear pruebas periódicas de sesgo
+### 8.11. Incorporar pruebas periódicas de sesgo
 
-Se podría preparar un conjunto controlado de consultas para ejecutar después de cada actualización del sistema.
+Como mejora futura, se podría crear un conjunto fijo de consultas para repetirlo cada vez que se actualicen los datos, el modelo o el sistema de recomendación.
 
-Estas pruebas permitirían medir:
+Estas pruebas permitirían comparar versiones y detectar cambios importantes en la frecuencia con la que aparecen determinados tipos de vino, regiones, variedades, rangos de precio o clústeres. También ayudarían a identificar resultados excesivamente repetidos o perfiles con pocas alternativas.
 
-- Qué tipos de vino aparecen con mayor frecuencia.
-- Qué regiones y variedades reciben más visibilidad.
-- Qué rangos de precio predominan.
-- Cuántas veces se relajan los filtros.
-- Con qué frecuencia el quiz utiliza vinos de otros clústeres.
-- Cuántos resultados se repiten.
-- Qué clústeres ofrecen más o menos alternativas.
-- Si las explicaciones coinciden con los criterios realmente aplicados.
+Estas comprobaciones complementarían los tests técnicos actuales, ya que no evaluarían únicamente si la aplicación funciona correctamente, sino también la diversidad y el equilibrio de las recomendaciones que genera.
 
-Los resultados podrían compararse entre versiones para comprobar si una modificación mejora o empeora la diversidad y la coherencia de las recomendaciones.
-
-### 8.12. Incorporar control de versiones y seguimiento del modelo
-
-El flujo de MLOps podría ampliarse registrando para cada versión:
-
-- Dataset utilizado.
-- Fecha de entrenamiento.
-- Variables y orden de entrada.
-- Transformaciones aplicadas.
-- Parámetros de PCA y K-Means.
-- Semilla utilizada.
-- Métricas obtenidas.
-- Tamaño y características de cada clúster.
-- Cambios respecto a la versión anterior.
-
-Antes de sustituir un modelo, sería conveniente comparar sus resultados con los de la versión utilizada hasta ese momento.
-
-Esto facilitaría detectar cambios inesperados y permitiría recuperar una versión anterior si el nuevo modelo produjera resultados menos adecuados.
-
-### 8.13. Prioridades de mejora
+### 8.12. Prioridades de mejora
 
 Tras revisar el estado actual del repositorio, se han identificado cuatro mejoras principales para futuras versiones.
 
