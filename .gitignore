@@ -42,9 +42,10 @@ ms-playwright/
 # wines_SPA_enriched.csv IS committed — the app requires it at runtime
 # wines_SPA_enriched.csv SÍ se sube — la app lo necesita en ejecución
 
-# Models — large model files not tracked
-# Modelos — archivos de modelo grandes no rastreados
+# Models — generated artifacts not tracked (regenerate with: python -m src.train_pipeline)
+# Modelos — artefactos generados no rastreados (regenerar con: python -m src.train_pipeline)
 models/*.pkl
+models/*.joblib
 
 # Logs
 *.log
