@@ -489,6 +489,11 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
   async function handleType(value, label, iconName) {
     state.wineType=value; disableChips(); userMsg(iconName,label);
     await new Promise(function(r){ setTimeout(r,350); });
+    if (value === 'Sin preferencia') {
+      state.ageing = 'Indiferente';
+      botMsg('¡Perfecto, yo me encargo del resto! Solo dime, ¿qué presupuesto tienes?'+chipsHtml(BUDGETS));
+      return;
+    }
     botMsg('¿Qué carácter buscas?'+chipsHtml(AGEINGS));
   }
   async function handleAgeing(value, label, iconName) {
