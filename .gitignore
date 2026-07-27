@@ -33,10 +33,17 @@ htmlcov/
 playwright-browsers/
 ms-playwright/
 
-# Data — no upload datasets
-data/
+# Data — raw datasets and intermediate files not tracked
+# Datos brutos y archivos intermedios no rastreados
+/data/raw/
+/data/processed/wines_SPA_clean.csv
+/data/processed/wines_SPA_model_ready.csv
+/data/processed/wines_SPA_enriched_FINAL.csv
+# wines_SPA_enriched.csv IS committed — the app requires it at runtime
+# wines_SPA_enriched.csv SÍ se sube — la app lo necesita en ejecución
 
-# Models — no upload large model files
+# Models — large model files not tracked
+# Modelos — archivos de modelo grandes no rastreados
 models/*.pkl
 
 # Logs
@@ -56,3 +63,9 @@ desktop.ini
 # Secrets
 *.pem
 *.key
+
+# Preprocessing-generated files (not needed for the web app)
+# Archivos generados por el preprocesamiento (no necesarios para la app web)
+preprocessing/*.csv
+preprocessing/*.pkl
+

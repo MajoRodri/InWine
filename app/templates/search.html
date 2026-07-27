@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% from "macros.html" import wine_card, empty_state, svg_icon %}
+
+{% block title %}Buscar vino — InWine{% endblock %}
+
+{% block extra_head %}
+<style>
+.ac-wrap { position: relative; }
+
+.ac-dropdown {
+  display: none;
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 400;
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+.ac-dropdown.is-open { display: block; }
+
+.ac-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.7rem 1.1rem; cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+}
+.ac-item:last-child { border-bottom: none; }
+.ac-item:hover, .ac-item.is-active { background: var(--bg-elevated); }
+
+.ac-item-text { flex: 1; min-width: 0; }
+.ac-item-label {
+  font-family: var(--font-serif); font-size: 0.93rem;
+  color: var(--cream); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ac-item-sub {
+  font-size: 0.75rem; color: var(--cream-muted); margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ac-pill {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 10px; flex-shrink: 0;
+}
+.ac-pill-vino    { background: rgba(155,112,16,0.15); color: var(--gold); }
+.ac-pill-bodega  { background: rgba(139,78,78,0.15);  color: var(--vino); }
+.ac-pill-region  { background: rgba(100,120,100,0.12); color: #8aaa8a; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+{# ── Buscador / Search box ─────────────────────────────────── #}
+<div class="search-hero">
+  <div class="container">
+    <div class="section-header">
+      <span class="page-hero-icon">{{ svg_icon("search") }}</span>
+      <h1>Buscar un <span class="text-gold">vino</span></h1>
+      <span class="gold-line"></span>
+      <p>Escribe el nombre, bodega, región o variedad de uva</p>
+    </div>
+
+    <form action="/buscar" method="GET" id="searchForm">
+      <div class="search-box-wrap ac-wrap">
+        <span class="search-icon-el">{{ svg_icon("search") }}</span>
+        <input
+          type="text"
+          name="q"
+          id="searchInput"
+          class="search-input"
+          placeholder="Ej: Ribera del Duero, Albariño, Vega Sicilia…"
+          value="{{ query }}"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="acDropdown"
+        >
+        <button type="submit" class="search-submit">Buscar</button>
+        <div id="acDropdown" class="ac-dropdown" role="listbox"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{# ── Resultados / Results ──────────────────────────────────── #}
+<section class="results-section">
+  <div class="container">
+
+    {% if query %}
+      {# Contador de resultados / Results count #}
+      <p class="results-count">
+        {% if result_count > 0 %}
+          <strong class="text-gold">{{ result_count }}</strong> vino{{ 's' if result_count != 1 }} encontrado{{ 's' if result_count != 1 }} para "<em>{{ query }}</em>"
+        {% else %}
+          No se encontraron vinos para "<em>{{ query }}</em>"
+        {% endif %}
+      </p>
+
+      {% if results %}
+        <div class="wines-grid">
+          {% for wine in results %}
+            {{ wine_card(wine) }}
+          {% endfor %}
+        </div>
+      {% else %}
+        {{ empty_state("wine-bottle", "Prueba con otro término: bodega, región o variedad de uva.") }}
+      {% endif %}
+
+    {% else %}
+      {# Estado inicial / Initial state #}
+      {{ empty_state("wine-glass", "Usa el buscador para encontrar el vino que buscas.") }}
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  var input    = document.getElementById("searchInput");
+  var dropdown = document.getElementById("acDropdown");
+  if (!input || !dropdown) return;
+
+  var activeIdx = -1;
+  var timer     = null;
+
+  function pillClass(type) {
+    return type === "vino" ? "ac-pill-vino" : type === "bodega" ? "ac-pill-bodega" : "ac-pill-region";
+  }
+
+  function render(suggestions) {
+    activeIdx = -1;
+    if (!suggestions.length) { close(); return; }
+
+    dropdown.innerHTML = suggestions.map(function (s, i) {
+      var href = s.type === "vino" ? "/vino/" + s.id : "/buscar?q=" + encodeURIComponent(s.label);
+      var sub  = s.sublabel ? '<div class="ac-item-sub">' + s.sublabel + '</div>' : "";
+      return '<a role="option" class="ac-item" href="' + href + '" data-idx="' + i + '">'
+        + '<div class="ac-item-text">'
+        + '<div class="ac-item-label">' + s.label + '</div>' + sub
+        + '</div>'
+        + '<span class="ac-pill ' + pillClass(s.type) + '">' + s.type + '</span>'
+        + '</a>';
+    }).join("");
+
+    dropdown.classList.add("is-open");
+  }
+
+  function close() {
+    dropdown.classList.remove("is-open");
+    dropdown.innerHTML = "";
+    activeIdx = -1;
+  }
+
+  function setActive(idx) {
+    var els = dropdown.querySelectorAll(".ac-item");
+    els.forEach(function (el) { el.classList.remove("is-active"); });
+    if (idx >= 0 && idx < els.length) {
+      els[idx].classList.add("is-active");
+      activeIdx = idx;
+    } else {
+      activeIdx = -1;
+    }
+  }
+
+  input.addEventListener("input", function () {
+    clearTimeout(timer);
+    var q = input.value.trim();
+    if (q.length < 2) { close(); return; }
+    timer = setTimeout(function () {
+      window.fetch("/api/sugerencias?q=" + encodeURIComponent(q))
+        .then(function (r) { return r.json(); })
+        .then(render)
+        .catch(close);
+    }, 250);
+  });
+
+  input.addEventListener("keydown", function (e) {
+    if (!dropdown.classList.contains("is-open")) return;
+    var els = dropdown.querySelectorAll(".ac-item");
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActive(Math.min(activeIdx + 1, els.length - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActive(Math.max(activeIdx - 1, -1));
+    } else if (e.key === "Enter" && activeIdx >= 0) {
+      e.preventDefault();
+      els[activeIdx].click();
+    } else if (e.key === "Escape") {
+      close();
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target) && e.target !== input) close();
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,747 @@
+{% extends "base.html" %}
+{% from "macros.html" import svg_icon %}
+
+{% block title %}Sobre Nosotros — InWine{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-icon">{{ svg_icon("ai-circuit") }}</span>
+    <h1>Sobre <span class="text-gold">Nosotros</span></h1>
+    <p>Cómo construimos InWine y qué hay detrás de cada recomendación.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {# ── Equipo ── #}
+    <div class="about-team">
+      <a class="team-card" href="https://github.com/MajoRodri" target="_blank" rel="noopener">
+        <img class="team-avatar" src="https://github.com/MajoRodri.png" alt="Mariajose Alvarez"/>
+        <div class="team-name">Mariajose Alvarez</div>
+        <div class="team-role">Scrum Master</div>
+      </a>
+      <a class="team-card" href="https://github.com/Mary1922" target="_blank" rel="noopener">
+        <img class="team-avatar" src="https://github.com/Mary1922.png" alt="María Roldán"/>
+        <div class="team-name">María Roldán</div>
+        <div class="team-role">Product Owner</div>
+      </a>
+      <a class="team-card" href="https://github.com/adrianaarang" target="_blank" rel="noopener">
+        <img class="team-avatar" src="https://github.com/adrianaarang.png" alt="Adrianna Aránguez"/>
+        <div class="team-name">Adrianna Aránguez</div>
+        <div class="team-role">Developer</div>
+      </a>
+      <a class="team-card" href="https://github.com/Gema-Villanueva" target="_blank" rel="noopener">
+        <img class="team-avatar" src="https://github.com/Gema-Villanueva.png" alt="Gema Villanueva"/>
+        <div class="team-name">Gema Villanueva</div>
+        <div class="team-role">Developer</div>
+      </a>
+    </div>
+
+    {# ── Quiénes somos ── #}
+    <div class="about-intro">
+      <p>
+        En InWine partimos de más de <strong>7.500 vinos españoles</strong>, los completamos con
+        información real de Vivinos y los analizamos a fondo para construir un sommelier virtual
+        accesible a cualquier persona, sin que necesite saber nada de vinos.
+      </p>
+    </div>
+
+
+    {# ── Fuentes de datos ── #}
+    <div class="section-header">
+      <h2>De dónde viene la <span class="text-gold">información</span></h2>
+    </div>
+    <div class="about-sources">
+      <div class="source-card">
+        <div class="source-badge">Kaggle</div>
+        <div class="source-body">
+          <h3 class="source-title">Spanish Wine Quality Dataset</h3>
+          <p>Un catálogo con <strong>7.500 vinos españoles</strong> precio, puntuación, región,
+          bodega y año de cosecha. Fue nuestro punto de partida.</p>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">Vivinos</div>
+        <div class="source-body">
+          <h3 class="source-title">Vivinos · datos reales de sabor</h3>
+          <p>Visitamos la web de Vivinos con un robot para añadir a cada vino
+          su tipo, su uva y sus notas de cata, información que el catálogo original no tenía.</p>
+        </div>
+      </div>
+    </div>
+
+    {# ── Fases del estudio ── #}
+    <div class="section-header" style="margin-top:3rem;">
+      <h2>Cómo lo <span class="text-gold">construimos</span></h2>
+    </div>
+    <div class="study-phases">
+
+      {# 01 — Scraping #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">01</span>
+          <div>
+            <h2 class="study-card-title">Recogida de datos</h2>
+            <p class="study-card-lead">Completar la ficha de cada vino con información real</p>
+          </div>
+        </div>
+        <div class="study-body">
+          <div class="study-text">
+            <p>
+              El catálogo de partida tenía mucha información sobre precio y puntuaciones, pero le
+              faltaba lo más importante para recomendar un vino: a qué sabe, qué tipo es y con qué uva
+              está hecho. Programamos un robot que visitó Vivinos vino a vino y añadió esos datos.
+            </p>
+            <ul class="study-findings">
+              <li>Se procesaron <strong>6.956 vinos</strong> automáticamente</li>
+              <li>Datos añadidos: <strong>tipo</strong> (tinto, blanco…), <strong>uva</strong> y <strong>notas de sabor</strong></li>
+              <li>Más de 51 descriptores de sabor agrupados en 5 familias (frutal, especiado…)</li>
+              <li>El robot se comportaba como un usuario real para no ser bloqueado</li>
+            </ul>
+          </div>
+          {# Antes / Después #}
+          <div class="scraping-diff">
+            <div class="scraping-diff-col scraping-diff-col--before">
+              <div class="scraping-diff-header">Antes → catálogo original</div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">categoría</span>
+                <span class="scraping-diff-value">"Rioja Red"</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">tipo de vino</span>
+                <span class="scraping-diff-value scraping-diff-value--empty">—</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">uva</span>
+                <span class="scraping-diff-value scraping-diff-value--empty">—</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">sabores</span>
+                <span class="scraping-diff-value scraping-diff-value--empty">—</span>
+              </div>
+            </div>
+            <div class="scraping-diff-arrow">→</div>
+            <div class="scraping-diff-col scraping-diff-col--after">
+              <div class="scraping-diff-header">Después → con Vivinos</div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">categoría</span>
+                <span class="scraping-diff-value scraping-diff-value--gone">eliminado</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">tipo de vino</span>
+                <span class="scraping-diff-value scraping-diff-value--new">"Tinto"</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">uva</span>
+                <span class="scraping-diff-value scraping-diff-value--new">"Tempranillo"</span>
+              </div>
+              <div class="scraping-diff-row">
+                <span class="scraping-diff-field">sabores</span>
+                <span class="scraping-diff-value scraping-diff-value--new">"Cereza, Roble, Vainilla…"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      {# 02 — Limpieza #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">02</span>
+          <div>
+            <h2 class="study-card-title">Ordenar los datos</h2>
+            <p class="study-card-lead">Quedarnos solo con los vinos de verdad, sin repetidos ni errores</p>
+          </div>
+        </div>
+        <div class="study-body study-body--reverse">
+          {# Funnel de deduplicación #}
+          <div class="cleaning-funnel">
+            <div class="funnel-step funnel-step--raw">
+              <span class="funnel-n">7.500</span>
+              <span class="funnel-label">vinos en bruto (con muchos repetidos)</span>
+            </div>
+            <div class="funnel-drop">
+              <span class="funnel-drop-n">−5.452</span>
+              <span class="funnel-drop-label">vinos repetidos eliminados</span>
+            </div>
+            <div class="funnel-step">
+              <span class="funnel-n">2.048</span>
+              <span class="funnel-label">vinos distintos (primera pasada)</span>
+            </div>
+            <div class="funnel-drop">
+              <span class="funnel-drop-n">−24</span>
+              <span class="funnel-drop-label">repetidos adicionales detectados</span>
+            </div>
+            <div class="funnel-step funnel-step--final">
+              <span class="funnel-n">2.024</span>
+              <span class="funnel-label">vinos únicos y limpios</span>
+            </div>
+          </div>
+          <div class="study-text">
+            <p>
+              El catálogo original tenía un 72,7&nbsp;% de vinos repetidos.
+              Algunos, como <em>Contino Reserva 2016</em>, aparecían más de 200 veces.
+              Los eliminamos todos antes de empezar a analizar para que los resultados
+              fueran honestos.
+            </p>
+            <ul class="study-findings">
+              <li><strong>5.476 vinos repetidos</strong> eliminados en total, el 72,7&nbsp;% del catálogo</li>
+              <li>De 7.500 entradas a <strong>2.024 vinos únicos</strong></li>
+              <li>Separamos el tipo de vino y la uva, que venían mezclados en un mismo campo</li>
+              <li>Añadimos si el vino tiene crianza y una puntuación de calidad-precio</li>
+              <li><strong>Sin datos vacíos</strong> en el resultado final (los sabores cubrían el 94,7&nbsp;% de los vinos)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {# 03 — EDA #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">03</span>
+          <div>
+            <h2 class="study-card-title">¿Qué encontramos?</h2>
+            <p class="study-card-lead">Explorar los datos para entender qué teníamos antes de empezar</p>
+          </div>
+        </div>
+        <div class="study-body study-body--wide-chart">
+          <div class="study-text">
+            <p>
+              Antes de construir el recomendador, miramos los datos con detalle para entender cómo
+              son los vinos que tenemos. Esos descubrimientos guiaron todas las decisiones siguientes.
+            </p>
+            <ul class="study-findings">
+              <li>Los precios van de <strong>4,99&nbsp;€ a 3.119&nbsp;€</strong>, la mayoría son económicos y muy pocos son de lujo</li>
+              <li>Las puntuaciones de los vinos apenas varían, casi todos tienen entre <strong>4,2 y 4,9</strong> sobre 5</li>
+              <li>Hay <strong>76 regiones</strong> distintas, pero Ribera del Duero y Rioja suman la mitad de los vinos</li>
+              <li><strong>Tempranillo</strong> es la uva del 55&nbsp;% de los vinos; el 20&nbsp;% es mezcla de variedades</li>
+              <li>El <strong>20,6&nbsp;%</strong> de los vinos tiene crianza, suelen ser más caros, pero no siempre</li>
+              <li>Muchos vinos son el mismo pero de diferentes añadas, algo a tener en cuenta al entrenar el modelo</li>
+            </ul>
+          </div>
+          {# Donut SVG — distribución por tipo de vino #}
+          <div class="vine-donut-wrap">
+            <svg class="vine-donut-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+              {# Tinto 83.7% #}
+              <path class="donut-seg" fill="#8B1A2E"
+                    data-label="Tinto" data-count="1.694" data-pct="83,7 %"
+                    d="M110 15 A95 95 0 1 1 28.9 60.6 L58.8 78.8 A60 60 0 1 0 110 50 Z"/>
+              {# Blanco 6.8% #}
+              <path class="donut-seg" fill="#C9A050"
+                    data-label="Blanco" data-count="137" data-pct="6,8 %"
+                    d="M28.9 60.6 A95 95 0 0 1 56.6 31.4 L76.3 60.4 A60 60 0 0 0 58.8 78.8 Z"/>
+              {# Generoso 4.4% #}
+              <path class="donut-seg" fill="#6B3510"
+                    data-label="Generoso" data-count="90" data-pct="4,4 %"
+                    d="M56.6 31.4 A95 95 0 0 1 80.1 19.8 L91.1 53.1 A60 60 0 0 0 76.3 60.4 Z"/>
+              {# Desconocido 3.2% #}
+              <path class="donut-seg" fill="#4a4a4a"
+                    data-label="Desconocido" data-count="65" data-pct="3,2 %"
+                    d="M80.1 19.8 A95 95 0 0 1 98.7 15.7 L102.9 50.4 A60 60 0 0 0 91.1 53.1 Z"/>
+              {# Espumoso 1.9% #}
+              <path class="donut-seg" fill="#666"
+                    data-label="Espumoso" data-count="38" data-pct="1,9 %"
+                    d="M98.7 15.7 A95 95 0 0 1 110 15 L110 50 A60 60 0 0 0 102.9 50.4 Z"/>
+              {# Hueco central #}
+              <circle cx="110" cy="110" r="60" fill="var(--bg-card)" class="donut-hole-circle"/>
+              <text id="donut-center-n" x="110" y="106" text-anchor="middle"
+                    font-family="Georgia,serif" font-size="22" font-weight="700" fill="var(--cream-raw, #F0E4CC)">2.024</text>
+              <text id="donut-center-lbl" x="110" y="124" text-anchor="middle"
+                    font-size="10" fill="#9E8E78" letter-spacing="2">VINOS</text>
+            </svg>
+            <ul class="vine-donut-legend">
+              <li data-seg="0"><span style="background:#8B1A2E"></span>Tinto <strong>83,7 %</strong></li>
+              <li data-seg="1"><span style="background:#C9A050"></span>Blanco <strong>6,8 %</strong></li>
+              <li data-seg="2"><span style="background:#6B3510"></span>Generoso <strong>4,4 %</strong></li>
+              <li data-seg="3"><span style="background:#4a4a4a"></span>Desconocido <strong>3,2 %</strong></li>
+              <li data-seg="4"><span style="background:#666"></span>Espumoso <strong>1,9 %</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {# 04 — Preprocesamiento #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">04</span>
+          <div>
+            <h2 class="study-card-title">Preparar los datos</h2>
+            <p class="study-card-lead">Poner todos los datos en el mismo idioma para poder compararlos</p>
+          </div>
+        </div>
+        <div class="study-body study-body--reverse study-body--wide-chart">
+          {# SVG — precio original vs log transformado #}
+          <div class="price-svg-wrap">
+            <div class="price-svg-panel">
+              <div class="price-svg-title">Precio <em>sin ajustar</em></div>
+              <svg class="price-svg" viewBox="0 0 240 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad-before" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#8B1A2E" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#8B1A2E" stop-opacity="0.15"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,80 L0,62 C8,40 16,8 28,6 C40,4 52,32 70,54 C100,72 150,77 240,79 L240,80 Z"
+                      fill="url(#grad-before)" stroke="#8B1A2E" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <div class="price-svg-caption">Mayoría económicos, muy pocos muy caros</div>
+            </div>
+            <div class="price-svg-arrow">→<br><small>ajuste</small></div>
+            <div class="price-svg-panel price-svg-panel--after">
+              <div class="price-svg-title">Precio <em>ajustado</em></div>
+              <svg class="price-svg" viewBox="0 0 240 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad-after" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#C9A050" stop-opacity="0.85"/>
+                    <stop offset="100%" stop-color="#C9A050" stop-opacity="0.1"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,80 L0,74 C20,68 45,40 80,12 C100,4 120,4 140,12 C175,32 205,65 240,74 L240,80 Z"
+                      fill="url(#grad-after)" stroke="#C9A050" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <div class="price-svg-caption">Los precios quedan equilibrados y fáciles de comparar</div>
+            </div>
+          </div>
+          <div class="study-text">
+            <p>
+              Para que el recomendador pueda comparar vinos de forma justa, necesitamos que todos
+              los datos hablen el mismo idioma. Un vino de 5&nbsp;€ y uno de 500&nbsp;€ no pueden
+              pesar igual en bruto, hay que equilibrarlos primero.
+            </p>
+            <ul class="study-findings">
+              <li>El precio se ajusta matemáticamente para que los vinos caros no distorsionen las comparaciones</li>
+              <li>El tipo de vino (tinto, blanco…) se convierte en valores numéricos para que el modelo lo entienda</li>
+              <li>La región y la uva se sustituyen por su precio y puntuación medios, lo que es más útil que solo su nombre</li>
+              <li>Evitamos contar el precio tres veces, algo que habría dado demasiado peso al dinero</li>
+              <li>Normalizamos todos los números para que ningún dato domine sobre los demás por su escala</li>
+              <li>Cuidamos que bodegas completas no acabaran a la vez en el entrenamiento y en la prueba</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {# 05 — Clustering #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">05</span>
+          <div>
+            <h2 class="study-card-title">Agrupando los vinos</h2>
+            <p class="study-card-lead">Familias de vinos descubiertas automáticamente con k-means</p>
+          </div>
+        </div>
+        <div class="study-body">
+          <div class="study-text">
+            <p>
+              Con todos los datos preparados, aplicamos el algoritmo <strong>k-means</strong> para
+              agrupar los 2.024 vinos según sus similitudes de precio, tipo, uva y región.
+              El resultado son <strong>8 perfiles distintos</strong> que sirven de base a las
+              recomendaciones de InWine.
+            </p>
+            <ul class="study-findings" id="km-list">
+              <li class="km-item" data-cid="0" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Iconos de Guarda</strong> → 315 tintos de muy alta gama: Ribera del Duero, Priorato, Rioja</li>
+              <li class="km-item" data-cid="7" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Tintos Jóvenes Premium</strong> → 758 vinos, el grupo más numeroso: Ribera del Duero, Priorato</li>
+              <li class="km-item" data-cid="6" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Tintos Crianza Clásicos</strong> → 333 tintos con barrica al 100&nbsp;%: Rioja y Ribera del Duero</li>
+              <li class="km-item" data-cid="2" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Tintos Jóvenes de Autor</strong> → 288 tintos sin crianza de regiones emergentes</li>
+              <li class="km-item" data-cid="1" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Blancos Selectos</strong> → 137 blancos de gama media-alta: Rias Baixas, Rueda, Rioja</li>
+              <li class="km-item" data-cid="4" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Generosos y Jerez</strong> → 90 vinos de Jerez y Montilla-Moriles</li>
+              <li class="km-item" data-cid="5" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Espumosos Premium</strong> → 38 cavas con crianza prolongada</li>
+              <li class="km-item" data-cid="3" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Vinos Singulares</strong> → 65 vinos de perfil no convencional</li>
+            </ul>
+          </div>
+          <div class="study-chart-slot">
+            <div id="km-bars" style="display:flex;flex-direction:column;gap:0.5rem;width:100%">
+              {% for cid, name, n, color in [
+                (7, 'Tintos Jóvenes Premium',  758, '#8B1A2E'),
+                (6, 'Tintos Crianza Clásicos', 333, '#A83040'),
+                (0, 'Iconos de Guarda',        315, '#701828'),
+                (2, 'Tintos Jóvenes de Autor', 288, '#C04050'),
+                (1, 'Blancos Selectos',        137, '#C9A050'),
+                (4, 'Generosos y Jerez',        90, '#6B3510'),
+                (3, 'Vinos Singulares',         65, '#888888'),
+                (5, 'Espumosos Premium',        38, '#555555')
+              ] %}
+              <div class="km-bar" data-cid="{{ cid }}"
+                   style="display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;
+                          transition:opacity 0.18s;cursor:pointer">
+                <span class="km-bar-label"
+                      style="width:9rem;color:var(--cream-muted);white-space:nowrap;
+                             overflow:hidden;text-overflow:ellipsis;flex-shrink:0;
+                             transition:color 0.18s">{{ name }}</span>
+                <div style="flex:1;background:var(--bg-elevated);border-radius:3px;
+                            height:14px;position:relative;overflow:hidden">
+                  <div class="km-fill" data-w="{{ ((n / 758) * 100) | int }}"
+                       style="background:{{ color }};height:100%;width:0;border-radius:3px;
+                              opacity:0.85;transition:width 0.7s cubic-bezier(.22,.68,0,1.2),
+                                                      opacity 0.18s"></div>
+                </div>
+                <span style="color:var(--gold);font-family:var(--font-serif);
+                             width:2.5rem;text-align:right;flex-shrink:0">{{ n }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      (function () {
+        var bars  = document.querySelectorAll('.km-bar');
+        var items = document.querySelectorAll('.km-item');
+        var lockedCid = null;
+
+        var fills    = document.querySelectorAll('.km-fill');
+        var animated = false;
+        function animateBars() {
+          if (animated) return;
+          animated = true;
+          fills.forEach(function(f, i) {
+            setTimeout(function() { f.style.width = f.dataset.w + '%'; }, i * 70);
+          });
+        }
+        var ob = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) { animateBars(); ob.disconnect(); }
+        }, { threshold: 0.25 });
+        ob.observe(document.getElementById('km-bars'));
+
+        function activate(cid) {
+          bars.forEach(function(b) {
+            var on = b.dataset.cid == cid;
+            b.style.opacity = on ? '1' : '0.18';
+            b.querySelector('.km-bar-label').style.color = on ? 'var(--cream)' : '';
+          });
+          items.forEach(function(li) {
+            var on = li.dataset.cid == cid;
+            li.style.opacity   = on ? '1' : '0.15';
+            li.style.transform = on ? 'translateX(5px)' : '';
+          });
+        }
+
+        function deactivate() {
+          bars.forEach(function(b) {
+            b.style.opacity = '';
+            b.querySelector('.km-bar-label').style.color = '';
+          });
+          items.forEach(function(li) {
+            li.style.opacity   = '';
+            li.style.transform = '';
+          });
+        }
+
+        bars.forEach(function(b) {
+          b.addEventListener('mouseenter', function() { if (!lockedCid) activate(b.dataset.cid); });
+          b.addEventListener('mouseleave', function() { if (!lockedCid) deactivate(); });
+          b.addEventListener('click', function() {
+            if (lockedCid === b.dataset.cid) { lockedCid = null; deactivate(); }
+            else { lockedCid = b.dataset.cid; activate(lockedCid); }
+          });
+        });
+        items.forEach(function(li) {
+          li.addEventListener('mouseenter', function() { if (!lockedCid) activate(li.dataset.cid); });
+          li.addEventListener('mouseleave', function() { if (!lockedCid) deactivate(); });
+          li.addEventListener('click', function() {
+            if (lockedCid === li.dataset.cid) { lockedCid = null; deactivate(); }
+            else { lockedCid = li.dataset.cid; activate(lockedCid); }
+          });
+        });
+      })();
+      </script>
+
+      {# 06 — PCA 3D #}
+      <div class="study-card">
+        <div class="study-card-meta">
+          <span class="study-badge">06</span>
+          <div>
+            <h2 class="study-card-title">Ver los grupos en el espacio</h2>
+            <p class="study-card-lead">Mapa 3D animado de los 2.024 vinos proyectados con PCA</p>
+          </div>
+        </div>
+        <div class="study-body study-body--reverse">
+
+          <div class="study-chart-slot">
+            <div style="display:flex;flex-direction:column;gap:0.55rem;width:100%;padding:0.75rem">
+
+              <canvas id="pca-3d" style="display:block;border-radius:8px;cursor:grab"></canvas>
+              <p style="font-size:0.67rem;color:var(--cream-muted);text-align:center;margin:0;opacity:0.6">
+                Arrastra para rotar &middot; pasa el cursor sobre los grupos
+              </p>
+
+              {# ── Panel de información (se rellena al hacer hover) ── #}
+              <div id="pca-info"
+                   style="min-height:3.2rem;padding:0.55rem 0.8rem;border-radius:8px;
+                          background:var(--bg-elevated);border:1px solid var(--border-light);
+                          transition:opacity 0.2s;opacity:0.45">
+                <span id="pca-info-hint"
+                      style="font-size:0.76rem;color:var(--cream-muted);font-style:italic">
+                  Pasa el cursor sobre un grupo o sobre la leyenda para ver detalles
+                </span>
+                <div id="pca-info-detail" style="display:none">
+                  <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap">
+                    <strong id="pca-info-name" style="font-size:0.82rem;color:var(--cream)"></strong>
+                    <span id="pca-info-count"
+                          style="font-family:var(--font-serif);font-size:0.8rem;color:var(--gold)"></span>
+                  </div>
+                  <p id="pca-info-desc"
+                     style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--cream-muted);line-height:1.45"></p>
+                </div>
+              </div>
+
+              {# ── Leyenda interactiva ── #}
+              <div style="display:flex;flex-wrap:wrap;gap:0.3rem 0.45rem">
+                {% for cid, name, color in [
+                  (7, 'Tintos Jóvenes Premium', '#8B1A2E'),
+                  (6, 'Tintos Crianza Clásicos', '#A83040'),
+                  (0, 'Iconos de Guarda',        '#701828'),
+                  (2, 'Tintos Jóvenes de Autor', '#C04050'),
+                  (1, 'Blancos Selectos',         '#C9A050'),
+                  (4, 'Generosos y Jerez',        '#6B3510'),
+                  (3, 'Vinos Singulares',         '#888888'),
+                  (5, 'Espumosos Premium',        '#666666')
+                ] %}
+                <button class="pca-leg" data-cid="{{ cid }}"
+                  style="display:inline-flex;align-items:center;gap:0.35rem;
+                         font-size:0.72rem;color:var(--cream-muted);
+                         background:none;border:1px solid transparent;
+                         border-radius:20px;padding:0.22rem 0.55rem;
+                         cursor:pointer;transition:all 0.18s;font-family:inherit">
+                  <span style="width:9px;height:9px;border-radius:50%;
+                               background:{{ color }};flex-shrink:0;display:inline-block"></span>
+                  {{ name }}
+                </button>
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>{# /study-chart-slot #}
+
+          <div class="study-text">
+            <p>
+              Los 2.024 vinos existen en un espacio de 18 dimensiones. El PCA los proyecta
+              en tres ejes que juntos conservan el <strong>58&nbsp;% de la varianza</strong>,
+              suficiente para ver que los 8 grupos forman zonas propias en el mapa.
+            </p>
+            <ul class="study-findings">
+              <li><strong>PC1 (31,2&nbsp;%)</strong> → separa tintos de no-tintos: a la derecha, temperatura alta y uva tinta; a la izquierda, blancos, generosos y espumosos</li>
+              <li><strong>PC2 (17,6&nbsp;%)</strong> → separa por precio y valoración: arriba los más caros y mejor puntuados, abajo mejor relación calidad-precio</li>
+              <li><strong>PC3 (9,5&nbsp;%)</strong> → refleja la crianza y elaboración: cavas y espumosos en positivo, tintos jóvenes sin barrica en negativo</li>
+              <li>Con solo <strong>6 componentes</strong> se supera el <strong>80&nbsp;%</strong> de varianza; a partir del componente 12 la aportación es prácticamente nula</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+      (function () {
+        var CL = [
+          { id:'0', name:'Iconos de Guarda',        color:'#701828', cx:[ 2.8,  2.2,  1.5], n:28, sp:0.65 },
+          { id:'1', name:'Blancos Selectos',         color:'#C9A050', cx:[-2.5,  0.7,  0.0], n:15, sp:0.75 },
+          { id:'2', name:'Tintos Jóvenes de Autor',  color:'#C04050', cx:[ 0.5, -1.5, -1.0], n:25, sp:0.85 },
+          { id:'3', name:'Vinos Singulares',         color:'#909090', cx:[-0.5, -0.5, -0.2], n:8,  sp:0.90 },
+          { id:'4', name:'Generosos y Jerez',        color:'#6B3510', cx:[-3.5,  1.5,  0.3], n:10, sp:0.65 },
+          { id:'5', name:'Espumosos Premium',        color:'#808080', cx:[-2.0,  2.5,  1.8], n:5,  sp:0.55 },
+          { id:'6', name:'Tintos Crianza Clásicos',  color:'#A83040', cx:[ 1.8,  0.3,  0.8], n:30, sp:0.85 },
+          { id:'7', name:'Tintos Jóvenes Premium',   color:'#8B1A2E', cx:[ 1.2, -0.8, -0.5], n:60, sp:1.05 }
+        ];
+        var INFO = {
+          '0':{ c:'315 vinos', d:'Los más caros y mejor puntuados. Grandes crianzas de Priorato, Rioja y Ribera del Duero.' },
+          '1':{ c:'137 vinos', d:'Blancos de gama media-alta. Rias Baixas, Rueda y Rioja Blanco.' },
+          '2':{ c:'288 vinos', d:'Tintos jóvenes de regiones emergentes con uvas poco habituales.' },
+          '3':{ c:'65 vinos',  d:'Perfil poco convencional. Difíciles de encuadrar en las demás familias.' },
+          '4':{ c:'90 vinos',  d:'Vinos fortificados de Jerez y Montilla-Moriles.' },
+          '5':{ c:'38 vinos',  d:'Cavas de alta gama con crianza prolongada. El grupo más pequeño.' },
+          '6':{ c:'333 vinos', d:'Tintos con 100 % de barrica. Los clásicos de Rioja y Ribera del Duero.' },
+          '7':{ c:'758 vinos', d:'El grupo más grande. Tintos sin barrica de alta puntuación.' }
+        };
+
+        var SEED = 42;
+        function rng() { SEED = (SEED * 1664525 + 1013904223) & 0xffffffff; return (SEED >>> 0) / 0xffffffff; }
+        function gauss() {
+          var u = rng() || 1e-9, v = rng();
+          return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+        }
+
+        var pts = [];
+        CL.forEach(function(cl) {
+          for (var i = 0; i < cl.n; i++) {
+            pts.push({ x: cl.cx[0] + gauss() * cl.sp,
+                       y: cl.cx[1] + gauss() * cl.sp,
+                       z: cl.cx[2] + gauss() * cl.sp,
+                       color: cl.color, id: cl.id });
+          }
+        });
+
+        var cv  = document.getElementById('pca-3d');
+        var ctx = cv.getContext('2d');
+        var ang = 0.4, TILT = 0.22;
+        var drag = false, lastX = 0;
+        var activeId = null;
+        var lockedId = null;
+
+        function resize() {
+          var w = cv.parentElement.clientWidth - 24;
+          cv.width  = w;
+          cv.height = Math.round(w * 0.62);
+        }
+
+        function proj(x, y, z) {
+          var cosA = Math.cos(ang), sinA = Math.sin(ang);
+          var rx  = x * cosA + z * sinA;
+          var rz  = -x * sinA + z * cosA;
+          var ry  = y * Math.cos(TILT) - rz * Math.sin(TILT);
+          var rz2 = y * Math.sin(TILT) + rz * Math.cos(TILT);
+          var f = cv.width / 9;
+          var d = f / (f + rz2 + 4);
+          return { sx: cv.width/2  + rx * f * d,
+                   sy: cv.height/2 - ry * f * d,
+                   d:  rz2 };
+        }
+
+        function hexToRgb(h) {
+          var r = parseInt(h.slice(1,3),16), g = parseInt(h.slice(3,5),16), b = parseInt(h.slice(5,7),16);
+          return r+','+g+','+b;
+        }
+
+        function draw() {
+          var W = cv.width, H = cv.height;
+          ctx.clearRect(0, 0, W, H);
+
+          ctx.strokeStyle = 'rgba(158,142,120,0.18)';
+          ctx.lineWidth = 1;
+          var axPts = [[-4,0,0],[4,0,0],[0,-3,0],[0,3,0],[0,0,-3],[0,0,3]];
+          axPts.forEach(function(p) {
+            var o = proj(0,0,0), e = proj(p[0],p[1],p[2]);
+            ctx.beginPath(); ctx.moveTo(o.sx,o.sy); ctx.lineTo(e.sx,e.sy); ctx.stroke();
+          });
+
+          var axLabels = [
+            { p:[4.6,0,0],   t:'PC1  31,2 %' },
+            { p:[0,3.6,0],   t:'PC2  17,6 %' },
+            { p:[0,0,3.6],   t:'PC3  9,5 %'  }
+          ];
+          ctx.font = '10px sans-serif';
+          ctx.fillStyle = 'rgba(158,142,120,0.55)';
+          ctx.textAlign = 'center';
+          axLabels.forEach(function(a) {
+            var p = proj(a.p[0],a.p[1],a.p[2]);
+            ctx.fillText(a.t, p.sx, p.sy);
+          });
+
+          var sorted = pts.map(function(p) {
+            var s = proj(p.x, p.y, p.z);
+            return { sx:s.sx, sy:s.sy, d:s.d, color:p.color, id:p.id };
+          }).sort(function(a,b) { return b.d - a.d; });
+
+          sorted.forEach(function(p) {
+            var r     = activeId ? (p.id === activeId ? 5.5 : 2.5) : 4;
+            var alpha = activeId ? (p.id === activeId ? 0.92 : 0.08) : 0.78;
+            var rgb   = hexToRgb(p.color);
+            var grd   = ctx.createRadialGradient(p.sx-r*0.3, p.sy-r*0.35, r*0.1, p.sx, p.sy, r);
+            grd.addColorStop(0,    'rgba(255,240,220,'+Math.min(1,alpha*1.4)+')');
+            grd.addColorStop(0.45, 'rgba('+rgb+','+alpha+')');
+            grd.addColorStop(1,    'rgba('+rgb+',0)');
+            ctx.beginPath();
+            ctx.arc(p.sx, p.sy, r, 0, Math.PI*2);
+            ctx.fillStyle = grd;
+            ctx.fill();
+          });
+
+          if (activeId) {
+            var cl = CL.find(function(c) { return c.id === activeId; });
+            if (cl) {
+              var cp = proj(cl.cx[0], cl.cx[1], cl.cx[2]);
+              ctx.font = 'bold 12px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.strokeStyle = 'rgba(20,10,5,0.8)';
+              ctx.lineWidth = 3;
+              ctx.strokeText(cl.name, cp.sx, cp.sy - 12);
+              ctx.fillStyle = cl.color;
+              ctx.fillText(cl.name, cp.sx, cp.sy - 12);
+            }
+          }
+        }
+
+        function loop() {
+          if (!drag) ang += 0.006;
+          draw();
+          requestAnimationFrame(loop);
+        }
+
+        function show(id) {
+          activeId = id;
+          var d  = INFO[id] || {};
+          var cl = CL.find(function(c) { return c.id === id; });
+          document.getElementById('pca-info-name').textContent  = cl ? cl.name : '';
+          document.getElementById('pca-info-count').textContent = d.c || '';
+          document.getElementById('pca-info-desc').textContent  = d.d || '';
+          document.getElementById('pca-info-hint').style.display   = 'none';
+          document.getElementById('pca-info-detail').style.display = 'block';
+          document.getElementById('pca-info').style.opacity = '1';
+          document.querySelectorAll('.pca-leg').forEach(function(l) {
+            var on      = l.dataset.cid == id;
+            var isLock  = l.dataset.cid == lockedId;
+            l.style.borderColor = on ? 'var(--border-light)' : 'transparent';
+            l.style.background  = on ? 'var(--bg-elevated)'  : 'none';
+            l.style.color       = on ? 'var(--cream)'        : '';
+            l.style.boxShadow   = isLock ? 'inset 0 0 0 1.5px var(--gold)' : 'none';
+            l.style.fontWeight  = isLock ? '700' : '';
+          });
+        }
+
+        function hide() {
+          activeId = null;
+          document.getElementById('pca-info-hint').style.display   = 'block';
+          document.getElementById('pca-info-detail').style.display = 'none';
+          document.getElementById('pca-info').style.opacity = '0.45';
+          document.querySelectorAll('.pca-leg').forEach(function(l) {
+            l.style.borderColor = 'transparent';
+            l.style.background  = 'none';
+            l.style.color       = '';
+            l.style.boxShadow   = 'none';
+            l.style.fontWeight  = '';
+          });
+        }
+
+        cv.addEventListener('mousedown', function(e) {
+          drag = true; lastX = e.clientX; cv.style.cursor = 'grabbing';
+        });
+        window.addEventListener('mousemove', function(e) {
+          if (drag) { ang += (e.clientX - lastX) * 0.008; lastX = e.clientX; return; }
+          if (lockedId) return;
+          var rect = cv.getBoundingClientRect();
+          var mx = e.clientX - rect.left, my = e.clientY - rect.top;
+          var best = null, bestD = 50 * 50;
+          CL.forEach(function(cl) {
+            var p  = proj(cl.cx[0], cl.cx[1], cl.cx[2]);
+            var d2 = (p.sx-mx)*(p.sx-mx) + (p.sy-my)*(p.sy-my);
+            if (d2 < bestD) { bestD = d2; best = cl.id; }
+          });
+          if (best !== activeId) { best ? show(best) : hide(); }
+        });
+        window.addEventListener('mouseup', function() { drag = false; cv.style.cursor = 'grab'; });
+
+        document.querySelectorAll('.pca-leg').forEach(function(l) {
+          l.addEventListener('mouseenter', function() { if (!lockedId) show(l.dataset.cid); });
+          l.addEventListener('mouseleave', function() { if (!lockedId) hide(); });
+          l.addEventListener('click', function() {
+            if (lockedId === l.dataset.cid) { lockedId = null; hide(); }
+            else { lockedId = l.dataset.cid; show(lockedId); }
+          });
+        });
+
+        resize();
+        new ResizeObserver(function() { resize(); }).observe(cv.parentElement);
+        loop();
+      })();
+      </script>
+
+    </div>{# /study-phases #}
+
+  </div>
+</section>
+
+{% endblock %}
