@@ -499,6 +499,170 @@ Web app built with **FastAPI + Jinja2**. Luxury design: burgundy background, ser
 
 <br>
 
+## ✦ &nbsp; MLOps — Pipeline reutilizable
+
+<br>
+
+El pipeline de MLOps permite **entrenar el modelo una sola vez** y aplicarlo a vinos nuevos sin volver a ejecutar los notebooks. Los objetos entrenados (StandardScaler, K-Means y PCA) se guardan juntos en un único archivo `models/inwine_pipeline.joblib`.
+
+<br>
+
+### Paso 0 — Solo la primera vez: entrenar y guardar el artefacto
+
+Ejecuta esto **una única vez** (o cuando el dataset base cambie). Procesa `wines_SPA_clean.csv`, entrena los tres modelos y los guarda en disco:
+
+```bash
+python -m src.train_pipeline
+```
+
+Verás en la terminal:
+```
+Dataset cargado: (2024, 13)
+Preprocesamiento completado: (2024, 43)
+Features para clustering/PCA: 15 columnas
+K-Means entrenado (K=8). Distribución: {0: 315, 1: 137, ...}
+PCA entrenado — PC1: 31.2%, PC2: 17.6% de varianza explicada
+Artefacto guardado en: models/inwine_pipeline.joblib
+```
+
+<br>
+
+### Paso 1 — Añadir un vino nuevo (script interactivo)
+
+Una vez que el artefacto existe, usa este script para añadir un vino nuevo al catálogo de la app preguntando campo por campo:
+
+```bash
+python -m src.add_wine
+```
+
+El script te guía así:
+
+```
+═══════════════════════════════════════
+   InWine · Añadir vino nuevo
+═══════════════════════════════════════
+
+  Bodega: Bodega Torres
+  Nombre del vino: Gran Coronas
+  Añada: 2021
+  Rating (1.0 – 5.0): 4.3
+  Región (D.O.): Penedès
+  Precio (€): 35
+  Tipo de vino:
+    1. Tinto  2. Blanco  3. Rosado  4. Espumoso  5. Generoso
+  Elige: 1
+  Variedad de uva [Blend/Other]: Cabernet Sauvignon
+  Crianza [0/1]: 0
+  Temperatura de servicio:
+    1. 6-8°C  ...  6. 16-18°C
+  Elige: 6
+
+─── Resumen ───────────────────────────
+  Bodega:       Bodega Torres
+  Vino:         Gran Coronas (2021)
+  ...
+───────────────────────────────────────
+
+  ¿Añadir al catálogo? [s/n]: s
+
+Procesando...
+  → Cluster asignado: 6  ·  PC1: 1.2  ·  PC2: -0.8
+1 vino(s) añadido(s) a data/processed/wines_SPA_enriched.csv
+Reinicia la app para que cargue el catálogo actualizado.
+```
+
+Después de esto, **reinicia la app** y el vino nuevo aparecerá en el catálogo:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+<br>
+
+### Alternativa — Añadir varios vinos desde CSV
+
+Si tienes varios vinos en un archivo CSV con las mismas columnas que el catálogo:
+
+```bash
+# Solo procesar y ver el resultado en pantalla
+python -m src.predict_pipeline --input data/new_wines.csv
+
+# Guardar el resultado en un archivo nuevo
+python -m src.predict_pipeline --input data/new_wines.csv --output resultado.csv
+
+# Añadir directamente al catálogo de la app
+python -m src.predict_pipeline --input data/new_wines.csv --append
+```
+
+<br>
+
+### Cuándo volver a ejecutar `train_pipeline.py`
+
+| Situación | ¿Re-entrenar? |
+| :--- | :---: |
+| Añadir un vino nuevo | ✗ No — usar `add_wine.py` |
+| El dataset base cambia (nuevos vinos en limpieza) | ✓ Sí |
+| Se modifica la lógica de preprocesamiento | ✓ Sí |
+| Se quiere cambiar el número de clusters | ✓ Sí |
+
+<br>
+
+### Tests del pipeline
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+Comprueba que: el artefacto se guarda y carga correctamente · cada vino nuevo recibe un `cluster_id` · se generan `PC1` y `PC2` · el número de filas no cambia · las regiones o uvas desconocidas no bloquean el proceso · no se re-entrena ningún objeto durante la predicción.
+
+<br>
+
+<details>
+<summary><strong>English</strong></summary>
+<br>
+
+The MLOps pipeline allows **training the model once** and applying it to new wines without re-running the notebooks. The trained objects (StandardScaler, K-Means and PCA) are saved together in a single file `models/inwine_pipeline.joblib`.
+
+<br>
+
+**Step 0 — First time only: train and save the artifact**
+
+Run this **once** (or when the base dataset changes):
+
+```bash
+python -m src.train_pipeline
+```
+
+**Step 1 — Add a new wine (interactive script)**
+
+Once the artifact exists, use this script to add a new wine to the app catalog field by field:
+
+```bash
+python -m src.add_wine
+```
+
+Then restart the app: `uvicorn app.main:app --reload`
+
+**Alternative — Add multiple wines from CSV**
+
+```bash
+python -m src.predict_pipeline --input data/new_wines.csv --append
+```
+
+**Run pipeline tests**
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+</details>
+
+<br>
+
+---
+
+<br>
+
 ## ✦ &nbsp; Sesgos éticos
 
 <br>
@@ -635,10 +799,16 @@ InWine/
 │   └── 05_pca.ipynb
 ├── preprocessing/                # Scripts de transformación y mappings
 ├── scrapper/                     # Scraper Playwright sobre Vivinos
+├── src/                          # Scripts MLOps reutilizables
+│   ├── train_pipeline.py         # Entrena y guarda todos los objetos del modelo
+│   ├── predict_pipeline.py       # Aplica el pipeline guardado a vinos nuevos
+│   └── add_wine.py               # Script interactivo para añadir un vino nuevo
+├── models/                       # Artefacto entrenado (generado por train_pipeline.py)
+│   └── inwine_pipeline.joblib
 ├── data/
 │   ├── raw/                      # Dataset original de Kaggle
 │   └── processed/                # CSVs generados por el pipeline
-├── tests/                        # Tests unitarios (loader + services)
+├── tests/                        # Tests unitarios (loader + services + pipeline MLOps)
 ├── requirements.txt              # Dependencias de producción
 └── requirements-dev.txt          # Dependencias de desarrollo
 ```
@@ -665,10 +835,16 @@ InWine/
 │   └── 05_pca.ipynb
 ├── preprocessing/                # Transformation scripts and mappings
 ├── scrapper/                     # Playwright scraper for Vivinos
+├── src/                          # Reusable MLOps scripts
+│   ├── train_pipeline.py         # Trains and saves all model objects
+│   ├── predict_pipeline.py       # Applies the saved pipeline to new wines
+│   └── add_wine.py               # Interactive script to add a new wine
+├── models/                       # Trained artifact (generated by train_pipeline.py)
+│   └── inwine_pipeline.joblib
 ├── data/
 │   ├── raw/                      # Original Kaggle dataset
 │   └── processed/                # CSVs generated by the pipeline
-├── tests/                        # Unit tests (loader + services)
+├── tests/                        # Unit tests (loader + services + MLOps pipeline)
 ├── requirements.txt              # Production dependencies
 └── requirements-dev.txt          # Development dependencies
 ```
@@ -716,6 +892,22 @@ python scrapper/scrapper_enriched.py
 cd preprocessing && python preprocessing.py
 ```
 
+**MLOps — entrenar el artefacto** *(solo la primera vez o al cambiar el dataset)*
+```bash
+python -m src.train_pipeline
+```
+
+**MLOps — añadir un vino nuevo**
+```bash
+python -m src.add_wine
+```
+
+**Tests**
+```bash
+pytest                          # todos los tests
+pytest tests/test_pipeline.py   # solo el pipeline MLOps
+```
+
 <br>
 
 <details>
@@ -751,6 +943,22 @@ python scrapper/scrapper_enriched.py
 ```bash
 # Run notebooks in order: 01 → 02 → 03 → 04 → 05
 cd preprocessing && python preprocessing.py
+```
+
+**MLOps — train the artifact** *(first time only, or when the dataset changes)*
+```bash
+python -m src.train_pipeline
+```
+
+**MLOps — add a new wine**
+```bash
+python -m src.add_wine
+```
+
+**Tests**
+```bash
+pytest                          # all tests
+pytest tests/test_pipeline.py   # MLOps pipeline only
 ```
 
 </details>
