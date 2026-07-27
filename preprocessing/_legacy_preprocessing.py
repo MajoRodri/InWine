@@ -1,6 +1,15 @@
 """
-preprocessing.py
-================
+_legacy_preprocessing.py
+========================
+ARCHIVO LEGACY — NO SE USA EN PRODUCCION.
+
+El preprocesamiento real lo realizan los notebooks (03_preprocessing.ipynb),
+que generan data/processed/wines_SPA_model_ready.csv y
+preprocessing/preprocessing_objects.pkl (scaler + mapeos).
+
+src/train_pipeline.py lee esos artefactos directamente; no importa este script.
+Se conserva solo como referencia histórica de las decisiones de diseño.
+
 Preprocesamiento final para el motor de recomendación de Sommelier IA.
 
 Entrada:  wines_SPA_enriched_FINAL.csv (1918 filas, validado: 0 nulos,

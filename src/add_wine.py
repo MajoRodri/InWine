@@ -35,8 +35,9 @@ import joblib  # Para cargar el artefacto desde disco / To load the artifact fro
 # Lists of valid values for multiple-choice fields
 # ──────────────────────────────────────────────────────────────────────────────
 
-# Tipos de vino permitidos en el catálogo / Wine types allowed in the catalog
-VINE_TYPES = ["Tinto", "Blanco", "Rosado", "Espumoso", "Generoso"]
+# Tipos de vino permitidos en el catálogo — solo los 5 presentes en el entrenamiento del modelo
+# Wine types allowed in the catalog — only the 5 present in model training
+VINE_TYPES = ["Tinto", "Blanco", "Espumoso", "Generoso", "Desconocido"]
 
 # Rangos de temperatura de servicio reconocidos por el pipeline
 # Service temperature ranges recognized by the pipeline

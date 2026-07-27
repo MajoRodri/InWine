@@ -230,7 +230,9 @@ def get_wine_recommendation(
     if not candidates:
         return None
 
-    best = max(candidates, key=lambda w: w["rating"])
+    sorted_candidates = sorted(candidates, key=lambda w: w["rating"], reverse=True)
+    top_pool = sorted_candidates[:min(5, len(sorted_candidates))]
+    best = random.choice(top_pool)
 
     food_label = _FOOD_LABELS.get(food, food)
     explanation = (
