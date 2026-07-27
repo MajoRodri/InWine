@@ -711,6 +711,22 @@ Después reinicia la app: `uvicorn app.main:app --reload`
 
 <br>
 
+**Paso 2 — Subir el vino nuevo a la demo en vivo (Railway)**
+
+La app **nunca ejecuta el modelo en tiempo real**. Solo lee el CSV. Cuando `add_wine.py` termina, el `cluster_id` ya está calculado y guardado en la fila del CSV — la app simplemente lo lee para hacer las recomendaciones. Por eso el único paso para que el vino aparezca en Railway es subir el CSV actualizado:
+
+```bash
+git add data/processed/wines_SPA_enriched.csv
+git commit -m "data: add wine [nombre del vino]"
+git push
+```
+
+Railway detecta el push y redespliega automáticamente.
+
+> El CSV no se sube con el push de código porque cada persona puede añadir vinos distintos localmente. Solo se sube cuando lo decides explícitamente.
+
+<br>
+
 **Tests del pipeline**
 
 ```bash
@@ -738,6 +754,18 @@ python -m src.add_wine
 # asks field by field · shows summary · appends to catalog
 # then restart: uvicorn app.main:app --reload
 ```
+
+**Step 2 — Push the new wine to the live demo (Railway)**
+
+The app **never runs the model in real time** — it only reads the CSV. When `add_wine.py` finishes, the `cluster_id` is already calculated and saved in the CSV row. The app just reads it to make recommendations. So the only step to make the wine appear on Railway is to push the updated CSV:
+
+```bash
+git add data/processed/wines_SPA_enriched.csv
+git commit -m "data: add wine [wine name]"
+git push
+```
+
+Railway detects the push and redeploys automatically.
 
 **Run pipeline tests**
 

@@ -26,9 +26,9 @@ sys.path.insert(0, str(ROOT / "preprocessing"))
 # DEFAULT_MODEL_PATH   → ruta al artefacto .joblib / path to the .joblib artifact
 # append_to_catalog    → añade el vino procesado al CSV del catálogo / adds the processed wine to the catalog CSV
 # predict_from_artifacts → aplica el pipeline a un DataFrame sin reentrenar / applies the pipeline to a DataFrame without retraining
-from src.predict_pipeline import DEFAULT_MODEL_PATH, append_to_catalog, predict_from_artifacts  # noqa: E402
+from src.predict_pipeline import DEFAULT_MODEL_PATH, append_to_catalog, predict_from_artifacts  
 
-import joblib  # Para cargar el artefacto desde disco / To load the artifact from disk  # noqa: E402
+import joblib  # Para cargar el artefacto desde disco / To load the artifact from disk  
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Listas de valores válidos para los campos de elección múltiple
@@ -172,32 +172,62 @@ def main() -> None:
             print("    ✗ El nombre no puede estar vacío.")
             wine_name = _ask("Nombre del vino")
 
-        # min_val y max_val limitan el rango aceptado / min_val and max_val limit the accepted range
-        year = _ask_int("Añada", min_val=1900, max_val=2100)
+        # Añada: año de vendimia que aparece en la etiqueta o en Vivino / Vintage year shown on the label or on Vivino
+        year = _ask_int("Añada  (año de vendimia, ej: 2023)", min_val=1900, max_val=2100)
+
+        # Rating: escala 1.0–5.0, el mismo número que muestra Vivino/Vivinos
+        # Rating: 1.0–5.0 scale, the same number shown on Vivino/Vivinos
+        print("  Rating — usa la puntuación de Vivino (escala 1.0 a 5.0)")
+        print("           Se ve bajo el nombre del vino, ej: 3.9 / 4.2")
         rating = _ask_float("Rating (1.0 – 5.0)", min_val=1.0, max_val=5.0)
 
+        # Región: solo el nombre de la D.O., no el país ni la comunidad
+        # Region: only the D.O. name, not the country or region path
+        print("  Región — escribe solo el nombre de la D.O.")
+        print("           En Vivino aparece como 'España / Castilla y León / Toro' → escribe solo 'Toro'")
+        print("           Ejemplos válidos: Rioja, Ribera del Duero, Priorat, Rías Baixas, Toro")
         region = _ask("Región (D.O.)")
         while not region:
             print("    ✗ La región no puede estar vacía.")
             region = _ask("Región (D.O.)")
 
-        price = _ask_float("Precio (€)", min_val=0.01)  # No permite precio 0 o negativo / Doesn't allow 0 or negative price
+        # Precio por botella en euros / Price per bottle in euros
+        print("  Precio — precio por botella en euros (sin el símbolo €)")
+        price = _ask_float("Precio (€)", min_val=0.01)
 
-        print("  Tipo de vino:")
-        vine_type = _ask_choice("  Elige (número o nombre)", VINE_TYPES)  # Solo acepta las 5 opciones válidas / Only accepts the 5 valid options
+        print("  Tipo de vino — elige el que corresponda:")
+        vine_type = _ask_choice("  Elige (número o nombre)", VINE_TYPES)
 
-        # default="Blend/Other" si el usuario no escribe nada / default="Blend/Other" if user doesn't type anything
+        # Variedad de uva: si hay varias o no se sabe, dejar el valor por defecto
+        # Grape variety: if multiple or unknown, keep the default value
+        print("  Variedad de uva — escribe la uva principal (ej: Tempranillo, Garnacha)")
+        print("                    Si el vino mezcla varias uvas o no aparece, pulsa Enter")
         grape_variety = _ask("Variedad de uva", default="Blend/Other")
 
-        print("  ¿Tiene crianza?  (0 = Joven, 1 = Crianza)")
+        # Crianza: se deduce del nombre y del estilo, no siempre aparece explícito
+        # Ageing: inferred from the name and style, not always stated explicitly
+        print("  ¿Tiene crianza?")
+        print("    0 = Joven   → sin barrica o menos de 6 meses")
+        print("                  pistas: añada reciente, precio bajo, nombre sin palabras clave")
+        print("    1 = Crianza → barrica mínimo 12 meses")
+        print("                  pistas: 'Crianza', 'Reserva' o 'Gran Reserva' en el nombre,")
+        print("                          precio más alto, añada más antigua")
         while True:
-            raw_ageing = _ask("Crianza [0/1]", default="0").lower()  # .lower() para aceptar "SI", "Si", "si"
-            if raw_ageing in AGEING_OPTIONS:  # Comprueba si está en el diccionario de opciones válidas / Checks if it's in the valid options dictionary
-                wine_ageing = AGEING_OPTIONS[raw_ageing]  # Convierte el texto al valor numérico (0 o 1) / Converts text to numeric value (0 or 1)
-                break  # Valor válido, sale del bucle / Valid value, exits the loop
+            raw_ageing = _ask("Crianza [0/1]", default="0").lower()
+            if raw_ageing in AGEING_OPTIONS:
+                wine_ageing = AGEING_OPTIONS[raw_ageing]
+                break
             print("    ✗ Escribe 0 (Joven) o 1 (Crianza).")
 
-        print("  Temperatura de servicio:")
+        # Temperatura de servicio: guía por tipo de vino para no inventarse el valor
+        # Service temperature: guide by wine type so the value is not made up
+        print("  Temperatura de servicio — elige la que corresponde al tipo de vino:")
+        print("    1. 6-8°C    → Espumosos (Cava, Champagne, Prosecco)")
+        print("    2. 8-10°C   → Blancos jóvenes y ligeros (Albariño, Verdejo joven)")
+        print("    3. 10-12°C  → Blancos con cuerpo o barrica (Chardonnay, Rioja Blanco)")
+        print("    4. 10-14°C  → Rosados")
+        print("    5. 12-14°C  → Tintos ligeros (Beaujolais, Pinot Noir)")
+        print("    6. 16-18°C  → Tintos con cuerpo, Crianzas y Generosos (Rioja, Toro, Jerez)")
         service_temperature = _ask_choice("  Elige (número o valor)", TEMPERATURES)
 
     except KeyboardInterrupt:  # El usuario pulsó Ctrl+C / User pressed Ctrl+C
@@ -271,11 +301,20 @@ def main() -> None:
 
     print(f"  → Cluster asignado: {cluster_id}  ·  PC1: {pc1}  ·  PC2: {pc2}")
 
-    # Añade el vino al CSV del catálogo que usa la app
-    # Adds the wine to the catalog CSV that the app uses
+    # Añade el vino al CSV del catálogo que usa la app.
+    # El modelo ya hizo su trabajo aquí: calculó el cluster_id y lo guardó en la fila.
+    # La app nunca ejecuta el modelo — solo lee el CSV con los cluster_id ya asignados.
+    # Adds the wine to the catalog CSV that the app uses.
+    # The model has already done its job here: it calculated the cluster_id and saved it in the row.
+    # The app never runs the model — it only reads the CSV with the already-assigned cluster_ids.
     append_to_catalog(df_result)
-    print(f"\n✓ '{wine_name}' añadido al catálogo.")
-    print("  Reinicia la app para verlo reflejado.\n")
+    print(f"\n✓ '{wine_name}' añadido al catálogo local.")
+    print("  El cluster_id ya está calculado y guardado en el CSV.\n")
+    print("  Para que aparezca en la demo de Railway, sube el CSV a git:")
+    print("    git add data/processed/wines_SPA_enriched.csv")
+    print(f"   git commit -m \"data: add wine {wine_name}\"")
+    print("    git push")
+    print("  Railway lo desplegará automáticamente.\n")
 
 
 # Solo ejecuta main() si este archivo se llama directamente
