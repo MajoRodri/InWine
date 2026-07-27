@@ -22,7 +22,7 @@ jobs:
           cache: "pip"
 
       - name: Instalar dependencias
-        run: pip install -r requirements.txt -r requirements-dev.txt
+        run: pip install -r requirements.txt pytest
 
       - name: Ejecutar tests
         run: pytest tests/ -v --tb=short
