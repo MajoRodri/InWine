@@ -522,7 +522,14 @@ Un modelo de clustering no es neutral. Las decisiones de preprocesamiento y la c
 
 <br>
 
-**Medidas ya aplicadas:** filtro duro de presupuesto · dual scoring calidad-precio · sección `/valor` con ranking por ratio · transparencia al usuario en cada recomendación.
+**Medidas ya aplicadas:**
+
+| Medida | Sesgo que mitiga |
+| :--- | :--- |
+| Filtro duro de presupuesto | Económico → excluye vinos de lujo fuera del rango del usuario |
+| Dual scoring calidad-precio | Económico → puntúa el ratio, no solo el rating ni el precio |
+| Sección `/valor` con ranking por ratio | Geográfico / Económico → visibiliza vinos buenos y baratos de D.O. pequeñas |
+| Explicación en cada recomendación | Rating de críticos → el usuario entiende por qué se eligió ese vino |
 
 <br>
 
@@ -548,7 +555,14 @@ A clustering model is not neutral. Preprocessing decisions and the dataset compo
 
 <br>
 
-**Mitigations already applied:** hard budget filter · dual quality-price scoring · `/valor` section with ratio ranking · transparent explanations shown to the user on every recommendation.
+**Mitigations already applied:**
+
+| Measure | Bias it mitigates |
+| :--- | :--- |
+| Hard budget filter | Economic → excludes luxury wines outside the user's range |
+| Dual quality-price scoring | Economic → scores the ratio, not just the rating or the price |
+| `/valor` section with ratio ranking | Geographic / Economic → surfaces good cheap wines from small D.O. regions |
+| Explanation on every recommendation | Critic ratings → the user understands why that wine was chosen |
 
 > Detailed analysis with interactive visualisations → [`docs/ethical_bias.html`](docs/ethical_bias.html)
 
