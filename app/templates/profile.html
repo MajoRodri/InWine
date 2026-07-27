@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% from "macros.html" import wine_card, svg_icon %}
+
+{% block title %}Tu perfil vinícola — InWine{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-icon">{{ svg_icon("heart") }}</span>
+    <h1>Descubre tu <span class="text-gold">perfil vinícola</span></h1>
+    <p>5 preguntas rápidas sobre tus gustos. Te diremos qué tipo de vino eres.</p>
+  </div>
+</div>
+
+{% if user_profile %}
+{# ════════════════════════════════════════════════════════════
+   RESULTADO: rueda de perfiles + vinos recomendados
+   ════════════════════════════════════════════════════════════ #}
+<section class="profiles-result-section">
+  <div class="container" style="max-width:940px">
+
+    {# ── Subtítulo ── #}
+    <p class="profiles-wheel-sub">
+      Explora todos los perfiles vinícolas — el tuyo aparece resaltado
+    </p>
+
+    {# ── Rueda de círculos ── #}
+    <div class="profiles-wheel" id="profilesWheel">
+      {% for p in all_profiles %}
+      <button class="profile-circle-btn {% if p.id == user_profile.id %}is-match{% endif %}"
+              data-pid="{{ p.id }}"
+              style="--pc-l:{{ p.color }};--pc-bg-l:{{ p.bg }};--pc-bdr-l:{{ p.border }};--pc-d:{{ p.color_dark }};--pc-bg-d:{{ p.bg_dark }};--pc-bdr-d:{{ p.border_dark }}">
+        <div class="pc-medallion">
+          {{ svg_icon(p.icon_name) }}
+        </div>
+        <div class="pc-label">{{ p.name }}</div>
+        {% if p.id == user_profile.id %}
+        <span class="pc-yours">Tu perfil</span>
+        {% endif %}
+      </button>
+      {% endfor %}
+    </div>
+
+    {# ── Panel de detalle (uno por perfil, visible sólo el activo) ── #}
+    <div class="profile-panels">
+      {% for p in all_profiles %}
+      <div class="profile-panel {% if p.id == user_profile.id %}active{% endif %}"
+           id="pp-{{ p.id }}"
+           style="--pc-l:{{ p.color }};--pc-bg-l:{{ p.bg }};--pc-bdr-l:{{ p.border }};--pc-d:{{ p.color_dark }};--pc-bg-d:{{ p.bg_dark }};--pc-bdr-d:{{ p.border_dark }}">
+
+        <div class="pp-head">
+          <div class="pp-icon-ring">
+            {{ svg_icon(p.icon_name) }}
+          </div>
+          <div>
+            <div class="pp-name">{{ p.name }}</div>
+            {% if p.id == user_profile.id %}
+            <span class="pp-match-badge">Tu perfil vinícola</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <p class="pp-desc">{{ p.description }}</p>
+
+        <div class="pp-tags">
+          {% for tag in p.characteristics %}
+          <span class="flavor-tag pp-flavor-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="pp-temp">
+          {{ svg_icon("thermometer") }}
+          Temperatura de servicio: <strong class="text-gold">{{ p.temp }}</strong>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+    {# ── Vinos recomendados ── #}
+    {% if recommended_wines %}
+    <div class="profiles-wines-block">
+      <h3 class="profiles-wines-title">Vinos para tu perfil</h3>
+      <div class="wines-grid">
+        {% for wine in recommended_wines %}
+          {{ wine_card(wine) }}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="text-center" style="margin-top:2.5rem">
+      <a href="/perfil" class="btn btn-outline">Repetir el test</a>
+    </div>
+
+  </div>
+</section>
+
+{% else %}
+{# ════════════════════════════════════════════════════════════
+   QUIZ — 8 preguntas
+   ════════════════════════════════════════════════════════════ #}
+<div class="quiz-wrap">
+
+  {# Barra de progreso #}
+  <div class="quiz-progress">
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" style="width: 0%"></div>
+    </div>
+    <div class="quiz-counter">1 / 8</div>
+  </div>
+
+  {# Formulario con inputs ocultos #}
+  <form action="/perfil" method="POST" id="quizForm">
+    <input type="hidden" name="q1" value="frutas_frescas">
+    <input type="hidden" name="q2" value="ligero">
+    <input type="hidden" name="q3" value="menos_10">
+    <input type="hidden" name="q4" value="fines_semana">
+    <input type="hidden" name="q5" value="variada">
+    <input type="hidden" name="q6" value="pref_sin_pref">
+    <input type="hidden" name="q7" value="car_joven">
+    <input type="hidden" name="q8" value="criterio_precio">
+  </form>
+
+  {# ── Pregunta 1 ─────────────────────────── #}
+  <div class="quiz-step active">
+    <h2 class="quiz-q">¿Qué sabores te <span class="text-gold">atraen</span> más?</h2>
+    <p class="quiz-hint">Piensa en el sabor que más disfrutas en general.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="frutas_frescas"><span class="quiz-option-icon">{{ svg_icon("berry") }}</span>Frutas frescas</div>
+      <div class="quiz-option" data-value="frutas_secas"><span class="quiz-option-icon">{{ svg_icon("grapes") }}</span>Frutas secas</div>
+      <div class="quiz-option" data-value="especias"><span class="quiz-option-icon">{{ svg_icon("chili") }}</span>Especias</div>
+      <div class="quiz-option" data-value="hierbas"><span class="quiz-option-icon">{{ svg_icon("leaf") }}</span>Hierbas y flores</div>
+      <div class="quiz-option" data-value="maderas"><span class="quiz-option-icon">{{ svg_icon("mountain") }}</span>Maderas y tostados</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Frutas frescas</strong> — Fresas, cerezas, manzana: sensaciones jugosas y aromáticas, vinos ligeros y afrutados</li>
+        <li><strong>Frutas secas</strong> — Pasas, higos, dátiles: sabores más concentrados e intensos, propios de vinos generosos o con crianza</li>
+        <li><strong>Especias</strong> — Pimienta, clavo, canela: notas cálidas y complejas que dan carácter a tintos con barrica</li>
+        <li><strong>Hierbas y flores</strong> — Hierba fresca, anís, flores blancas: aromas delicados, habituales en blancos y vinos jóvenes</li>
+        <li><strong>Maderas y tostados</strong> — Vainilla, café, roble: notas que vienen de la crianza en barrica, profundas y envolventes</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 2 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Qué <span class="text-gold">cuerpo</span> prefieres en boca?</h2>
+    <p class="quiz-hint">La sensación al beber, no el sabor.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="ligero"><span class="quiz-option-icon">{{ svg_icon("wave") }}</span>Ligero y suave</div>
+      <div class="quiz-option" data-value="estructura"><span class="quiz-option-icon">{{ svg_icon("strength") }}</span>Con estructura y cuerpo</div>
+      <div class="quiz-option" data-value="cremoso"><span class="quiz-option-icon">{{ svg_icon("flower") }}</span>Cremoso y redondo</div>
+      <div class="quiz-option" data-value="burbujas"><span class="quiz-option-icon">{{ svg_icon("wine-glass-bubbles") }}</span>Con burbujas</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Ligero y suave</strong> — Poca resistencia en boca, fácil de beber, sin sensación de peso ni astringencia</li>
+        <li><strong>Con estructura y cuerpo</strong> — Presencia de taninos y volumen, da una sensación de peso y permanencia en el paladar</li>
+        <li><strong>Cremoso y redondo</strong> — Textura sedosa y sin aristas, generalmente de vinos con fermentación en barrica o larga crianza</li>
+        <li><strong>Con burbujas</strong> — Efervescencia que refresca y alegra el paladar, característica de cavas y espumosos</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 3 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Cuánto sueles <span class="text-gold">gastar</span> por botella?</h2>
+    <p class="quiz-hint">Tu rango habitual, sin contar ocasiones especiales.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="menos_10"><span class="quiz-option-icon">{{ svg_icon("leaf") }}</span>Menos de 10€</div>
+      <div class="quiz-option" data-value="10_20"><span class="quiz-option-icon">{{ svg_icon("star") }}</span>Entre 10 y 20€</div>
+      <div class="quiz-option" data-value="20_40"><span class="quiz-option-icon">{{ svg_icon("gem") }}</span>Entre 20 y 40€</div>
+      <div class="quiz-option" data-value="mas_40"><span class="quiz-option-icon">{{ svg_icon("trophy") }}</span>Más de 40€</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Menos de 10€</strong> — Vino de todos los días, accesible y sin pretensiones, perfecto para la mesa diaria</li>
+        <li><strong>Entre 10 y 20€</strong> — El rango de mejor relación calidad-precio: aquí se encuentran muchos de los grandes vinos españoles</li>
+        <li><strong>Entre 20 y 40€</strong> — Gama media-alta, con carácter, personalidad y frecuentemente crianza en barrica</li>
+        <li><strong>Más de 40€</strong> — Alta gama: grandes reservas, añadas históricas y vinos de colección de las mejores D.O.</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 4 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Con qué <span class="text-gold">frecuencia</span> bebes vino?</h2>
+    <p class="quiz-hint">Aproximadamente.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="celebraciones"><span class="quiz-option-icon">{{ svg_icon("celebrate") }}</span>Solo en celebraciones</div>
+      <div class="quiz-option" data-value="fines_semana"><span class="quiz-option-icon">{{ svg_icon("calendar") }}</span>Algún fin de semana</div>
+      <div class="quiz-option" data-value="frecuente"><span class="quiz-option-icon">{{ svg_icon("wine-glass") }}</span>Frecuentemente</div>
+      <div class="quiz-option" data-value="siempre"><span class="quiz-option-icon">{{ svg_icon("heart") }}</span>Casi todos los días</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Solo en celebraciones</strong> — Cumpleaños, bodas, Navidades: el vino como símbolo de un momento especial</li>
+        <li><strong>Algún fin de semana</strong> — Una copa tranquila el sábado o acompañando la comida del domingo</li>
+        <li><strong>Frecuentemente</strong> — Varias veces a la semana, forma parte habitual de tus comidas o cenas</li>
+        <li><strong>Casi todos los días</strong> — El vino es parte de tu rutina y tu mesa, lo disfrutas como un placer cotidiano</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 5 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Qué tipo de <span class="text-gold">cocina</span> prefieres?</h2>
+    <p class="quiz-hint">Tu estilo culinario habitual.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="mediterranea"><span class="quiz-option-icon">{{ svg_icon("leaf") }}</span>Mediterránea</div>
+      <div class="quiz-option" data-value="carnes"><span class="quiz-option-icon">{{ svg_icon("steak") }}</span>Carnes y asados</div>
+      <div class="quiz-option" data-value="mariscos"><span class="quiz-option-icon">{{ svg_icon("anchor") }}</span>Pescados y mariscos</div>
+      <div class="quiz-option" data-value="variada"><span class="quiz-option-icon">{{ svg_icon("plate") }}</span>Variada / Internacional</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Mediterránea</strong> — Verduras, legumbres, aceite de oliva, pasta y pescado fresco: cocina ligera y sabrosa</li>
+        <li><strong>Carnes y asados</strong> — Chuletón, cordero, cocido, embutidos: cocina contundente que pide tintos con cuerpo</li>
+        <li><strong>Pescados y mariscos</strong> — Gambas, mejillones, lubina, almejas: sabores del mar que casan con blancos frescos</li>
+        <li><strong>Variada / Internacional</strong> — Sin una preferencia fija: un poco de todo según el día y el apetito</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 6 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Qué tipo de vino sueles <span class="text-gold">elegir</span>?</h2>
+    <p class="quiz-hint">Tu primera opción cuando tienes donde elegir.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="pref_tinto"><span class="quiz-option-icon">{{ svg_icon("wine-glass") }}</span>Tinto</div>
+      <div class="quiz-option" data-value="pref_blanco"><span class="quiz-option-icon">{{ svg_icon("wave") }}</span>Blanco</div>
+      <div class="quiz-option" data-value="pref_espumoso"><span class="quiz-option-icon">{{ svg_icon("wine-glass-bubbles") }}</span>Espumoso / Cava</div>
+      <div class="quiz-option" data-value="pref_generoso"><span class="quiz-option-icon">{{ svg_icon("celebrate") }}</span>Generoso / Jerez</div>
+      <div class="quiz-option" data-value="pref_sin_pref"><span class="quiz-option-icon">{{ svg_icon("compass") }}</span>Depende del momento</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Tinto</strong> — Elaborado con uvas tintas, suele tener más cuerpo, taninos y aromas complejos. El más consumido en España</li>
+        <li><strong>Blanco</strong> — Con uvas blancas, es fresco, aromático y ligero. Ideal con pescados, mariscos y aperitivos</li>
+        <li><strong>Espumoso / Cava</strong> — Vino con burbujas de dióxido de carbono. En España destacan los cavas de Penedès</li>
+        <li><strong>Generoso / Jerez</strong> — Vinos únicos del sur con crianza especial: Fino, Manzanilla, Amontillado, Oloroso, Pedro Ximénez</li>
+        <li><strong>Depende del momento</strong> — Sin preferencia fija; eliges según la comida, la temperatura o el estado de ánimo</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 7 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Cómo prefieres el <span class="text-gold">carácter</span> del vino?</h2>
+    <p class="quiz-hint">La personalidad que más te atrae en una copa.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="car_joven"><span class="quiz-option-icon">{{ svg_icon("berry") }}</span>Joven y frutal</div>
+      <div class="quiz-option" data-value="car_barrica"><span class="quiz-option-icon">{{ svg_icon("mountain") }}</span>Con toque de roble</div>
+      <div class="quiz-option" data-value="car_reserva"><span class="quiz-option-icon">{{ svg_icon("trophy") }}</span>Muy evolucionado y complejo</div>
+      <div class="quiz-option" data-value="car_espumoso"><span class="quiz-option-icon">{{ svg_icon("wine-glass-bubbles") }}</span>Con burbujas naturales</div>
+      <div class="quiz-option" data-value="car_indiferente"><span class="quiz-option-icon">{{ svg_icon("compass") }}</span>Sin preferencia clara</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Joven y frutal</strong> — Sin paso por madera, conserva la fruta fresca y la vivacidad de la uva. Fácil, directo y muy bebible</li>
+        <li><strong>Con toque de roble</strong> — Ha reposado en barrica de roble, lo que añade notas de vainilla, especias y una textura más sedosa</li>
+        <li><strong>Muy evolucionado y complejo</strong> — Gran Reserva o similar: años de crianza que dan profundidad, terciarios y una elegancia inconfundible</li>
+        <li><strong>Con burbujas naturales</strong> — Segunda fermentación en botella que crea efervescencia fina y persistente, como en los cavas premium</li>
+        <li><strong>Sin preferencia clara</strong> — Te adaptás a lo que hay o dependés completamente del contexto; te atraen todo tipo de vinos</li>
+      </ul>
+    </div>
+  </div>
+
+  {# ── Pregunta 8 ─────────────────────────── #}
+  <div class="quiz-step">
+    <h2 class="quiz-q">¿Qué te importa más al <span class="text-gold">elegir</span> un vino?</h2>
+    <p class="quiz-hint">Lo que primero miras en la estantería o en la carta.</p>
+    <div class="quiz-options">
+      <div class="quiz-option" data-value="criterio_tradicion"><span class="quiz-option-icon">{{ svg_icon("strength") }}</span>Tradición y reputación</div>
+      <div class="quiz-option" data-value="criterio_sorpresa"><span class="quiz-option-icon">{{ svg_icon("berry") }}</span>Sorpresa y originalidad</div>
+      <div class="quiz-option" data-value="criterio_precio"><span class="quiz-option-icon">{{ svg_icon("gem") }}</span>Relación calidad-precio</div>
+      <div class="quiz-option" data-value="criterio_exclusividad"><span class="quiz-option-icon">{{ svg_icon("trophy") }}</span>Exclusividad y colección</div>
+    </div>
+    <div class="quiz-legend">
+      <p class="quiz-legend-title">¿Qué significa cada opción?</p>
+      <ul class="quiz-legend-list">
+        <li><strong>Tradición y reputación</strong> — Bodegas con historia, regiones clásicas como Rioja o Ribera del Duero, etiquetas de confianza</li>
+        <li><strong>Sorpresa y originalidad</strong> — Algo inesperado: una D.O. poco conocida, una uva autóctona rara o una bodega emergente</li>
+        <li><strong>Relación calidad-precio</strong> — Que el precio sea justo y la calidad compense, sin necesidad de gastar mucho</li>
+        <li><strong>Exclusividad y colección</strong> — Vinos limitados, difíciles de encontrar, que representan algo único y especial</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+{% endif %}
+
+{% endblock %}

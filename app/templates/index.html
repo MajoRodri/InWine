@@ -1,0 +1,656 @@
+{% extends "base.html" %}
+{% from "macros.html" import wine_card, stars, svg_icon %}
+
+{% block title %}InWine{% endblock %}
+
+{% block content %}
+
+{# ════════════════════════════════════════════════════════════
+   HERO — El Flujo Curado · Luxury redesign
+   ════════════════════════════════════════════════════════════ #}
+<section class="hero-curated">
+
+  {# Orbs de ambiente burdeos #}
+  <div class="hc-orb hc-orb-l" aria-hidden="true"></div>
+  <div class="hc-orb hc-orb-r" aria-hidden="true"></div>
+
+  <div class="hc-panel-wrap">
+    <div class="hc-panel">
+
+      {# Filigrana sobre el cobre #}
+      <div class="hc-filigree" aria-hidden="true"></div>
+
+      <div class="hc-body">
+
+        {# Badge #}
+        <div class="hc-badge">
+          <img src="/static/img/logosinfondo.png" alt="InWine" class="hc-badge-logo">
+        </div>
+
+        {# Titular serif lujoso #}
+        <h1 class="hc-title">
+          Descubre el <em>Vino Español</em> Perfecto
+        </h1>
+
+        {# Subtítulo #}
+        <p class="hc-subtitle">
+          InWine analiza más de {{ total_wines }} vinos españoles con inteligencia
+          artificial para recomendarte la botella ideal según tu paladar, comida y presupuesto.
+        </p>
+
+        {# ── Gráfico central: Joya IA (esfera molecular en vaso) ── #}
+        <div class="hc-jewel-panel">
+          <div class="hc-jewel-inner">
+            <svg class="hc-jewel-svg" viewBox="0 0 100 120" fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              {# Copa de vino #}
+              <path d="M28 8 L72 8 Q80 28 76 46 Q72 60 50 65 Q28 60 24 46 Q20 28 28 8 Z"
+                    stroke-width="1.5" stroke-opacity="0.65" fill="rgba(212,160,80,0.04)"/>
+              {# Nivel de vino dentro de la copa #}
+              <path d="M25 50 Q50 58 75 50 Q75 60 50 65 Q25 60 25 50Z"
+                    fill="rgba(160,45,60,0.09)" stroke="none"/>
+              {# Tallo #}
+              <line x1="50" y1="65" x2="50" y2="92" stroke-width="1.5" stroke-opacity="0.6"/>
+              {# Base #}
+              <path d="M34 92 Q50 97 66 92" stroke-width="1.5" stroke-opacity="0.6"/>
+              {# Esfera molecular dentro (centrada en 50, 36) #}
+              {# Órbitas elípticas #}
+              <ellipse cx="50" cy="36" rx="22" ry="9"
+                       stroke-width="0.9" stroke-opacity="0.55"
+                       transform="rotate(-35 50 36)"/>
+              <ellipse cx="50" cy="36" rx="22" ry="9"
+                       stroke-width="0.9" stroke-opacity="0.55"
+                       transform="rotate(85 50 36)"/>
+              <ellipse cx="50" cy="36" rx="22" ry="9"
+                       stroke-width="0.9" stroke-opacity="0.55"
+                       transform="rotate(155 50 36)"/>
+              {# Anillo interior #}
+              <circle cx="50" cy="36" r="13" stroke-width="1.1" stroke-opacity="0.6"/>
+              {# Nodos orbitales #}
+              <circle cx="50" cy="13" r="3" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              <circle cx="70" cy="25" r="2.5" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              <circle cx="70" cy="47" r="2.5" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              <circle cx="50" cy="59" r="3" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              <circle cx="30" cy="47" r="2.5" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              <circle cx="30" cy="25" r="2.5" fill="currentColor" fill-opacity="0.65" stroke-width="1"/>
+              {# Núcleo de la joya #}
+              <circle cx="50" cy="36" r="5.5" stroke-width="1.4" fill="currentColor" fill-opacity="0.15"/>
+              <circle cx="50" cy="36" r="2.5" fill="currentColor" fill-opacity="0.8"/>
+              {# Destellos de faceta #}
+              <line x1="50" y1="30" x2="50" y2="33.5" stroke-width="0.9" stroke-opacity="0.4"/>
+              <line x1="46.5" y1="33" x2="53.5" y2="39" stroke-width="0.7" stroke-opacity="0.25"/>
+              <line x1="53.5" y1="33" x2="46.5" y2="39" stroke-width="0.7" stroke-opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="hc-jewel-text">
+            <strong>Inteligencia Artificial Sumiller</strong>
+            <span>Tecnología de aprendizaje automático al servicio de tu paladar</span>
+          </div>
+        </div>
+
+        {# ── Tres tarjetas de flujo narrativo ── #}
+        <div class="hc-cards">
+
+          {# Tarjeta 1: Descubrimiento Personalizado #}
+          <div class="hc-card">
+            <div class="hc-card-icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor"
+                   stroke-linecap="round" stroke-linejoin="round">
+                {# Marco circular decorativo #}
+                <circle cx="40" cy="40" r="33" stroke-width="0.7"
+                        stroke-opacity="0.28" stroke-dasharray="3 2.2"/>
+                {# Hub central #}
+                <circle cx="40" cy="40" r="5.5" stroke-width="1.3"/>
+                {# 6 nodos hexagonales #}
+                <circle cx="40" cy="22" r="3.5" stroke-width="1.1"/>
+                <circle cx="55.6" cy="31" r="3.5" stroke-width="1.1"/>
+                <circle cx="55.6" cy="49" r="3.5" stroke-width="1.1"/>
+                <circle cx="40" cy="58" r="3.5" stroke-width="1.1"/>
+                <circle cx="24.4" cy="49" r="3.5" stroke-width="1.1"/>
+                <circle cx="24.4" cy="31" r="3.5" stroke-width="1.1"/>
+                {# Radios desde el centro #}
+                <line x1="40" y1="34.5" x2="40" y2="25.5" stroke-width="0.9"/>
+                <line x1="44.8" y1="37.2" x2="52.1" y2="33" stroke-width="0.9"/>
+                <line x1="44.8" y1="42.8" x2="52.1" y2="47" stroke-width="0.9"/>
+                <line x1="40" y1="45.5" x2="40" y2="54.5" stroke-width="0.9"/>
+                <line x1="35.2" y1="42.8" x2="27.9" y2="47" stroke-width="0.9"/>
+                <line x1="35.2" y1="37.2" x2="27.9" y2="33" stroke-width="0.9"/>
+                {# Hexágono exterior tenue #}
+                <polygon points="40,15 57,24.5 57,43.5 40,53 23,43.5 23,24.5"
+                         stroke-width="0.6" stroke-opacity="0.3" fill="none"/>
+                {# Micro-nodos exteriores #}
+                <circle cx="40" cy="10" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                <circle cx="62" cy="23" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                <circle cx="62" cy="57" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                <circle cx="40" cy="70" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                <circle cx="18" cy="57" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                <circle cx="18" cy="23" r="1.8" stroke-width="1"
+                        fill="currentColor" fill-opacity="0.22"/>
+                {# Destellos de grabado #}
+                <line x1="40" y1="40" x2="44" y2="36" stroke-width="0.6"
+                      stroke-opacity="0.35"/>
+                <line x1="40" y1="40" x2="36" y2="36" stroke-width="0.6"
+                      stroke-opacity="0.35"/>
+              </svg>
+            </div>
+            <span class="hc-card-num">01 · Perfiles</span>
+            <h3 class="hc-card-title">Tu Perfil de Paladar</h3>
+            <p class="hc-card-tagline">Encuentra el vino que encaja contigo</p>
+            <p class="hc-card-desc">Responde unas preguntas y te situamos en uno de los 8 perfiles de vino que hemos descubierto en más de 2.000 vinos españoles. Luego te recomendamos botellas de tu estilo.</p>
+          </div>
+
+          {# Tarjeta 2: Perfiles de Sabor — Destacada #}
+          <div class="hc-card hc-card-featured">
+            <div class="hc-card-icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor"
+                   stroke-linecap="round" stroke-linejoin="round">
+                {# Marco circular #}
+                <circle cx="40" cy="40" r="33" stroke-width="0.7"
+                        stroke-opacity="0.28" stroke-dasharray="3 2.2"/>
+                {# Botella de vino (grabado fino) #}
+                <path d="M38 10 L38 19 Q34 24 34 30 L34 63 Q34 66 37.5 66 L42.5 66 Q46 66 46 63 L46 30 Q46 24 42 19 L42 10 Z"
+                      stroke-width="1.4"/>
+                <line x1="38" y1="10" x2="42" y2="10" stroke-width="2.2"/>
+                <line x1="37.5" y1="14" x2="42.5" y2="14" stroke-width="0.7" stroke-opacity="0.5"/>
+                {# Etiqueta en la botella #}
+                <rect x="36" y="36" width="8" height="12" rx="0.5"
+                      stroke-width="0.9" stroke-opacity="0.65"/>
+                <line x1="37.5" y1="40" x2="42.5" y2="40" stroke-width="0.5" stroke-opacity="0.5"/>
+                <line x1="37.5" y1="43" x2="42.5" y2="43" stroke-width="0.5" stroke-opacity="0.5"/>
+                <line x1="37.5" y1="46" x2="41.5" y2="46" stroke-width="0.5" stroke-opacity="0.5"/>
+                {# Relleno sutil de vino #}
+                <path d="M34.5 46 L34.5 63 Q34.5 65.8 37.5 65.8 L42.5 65.8 Q45.5 65.8 45.5 63 L45.5 46 Z"
+                      fill="currentColor" fill-opacity="0.06" stroke="none"/>
+                {# Contorno de mapa de España (muy sutil) #}
+                <path d="M11 38 Q14 20 28 18 Q38 15 52 20 Q65 24 68 37 Q70 50 60 58 Q50 66 36 63 Q21 60 13 50 Q9 44 11 38Z"
+                      stroke-width="0.55" stroke-opacity="0.2" fill="none" stroke-dasharray="2 1.5"/>
+                {# Puntos de región vinícola #}
+                <circle cx="21" cy="35" r="2.5" stroke-width="1.1"/>
+                <circle cx="22" cy="52" r="2" stroke-width="1"/>
+                <circle cx="58" cy="30" r="2.5" stroke-width="1.1"/>
+                <circle cx="59" cy="52" r="2" stroke-width="1"/>
+                {# Caminos entre regiones #}
+                <path d="M21 35 Q30 38 34 38" stroke-width="0.6"
+                      stroke-opacity="0.3" stroke-dasharray="1.5 1.5"/>
+                <path d="M46 32 Q52 30 58 30" stroke-width="0.6"
+                      stroke-opacity="0.3" stroke-dasharray="1.5 1.5"/>
+                {# Racimo de uvas decorativo #}
+                <circle cx="16" cy="66" r="3" stroke-width="0.9" stroke-opacity="0.5"/>
+                <circle cx="13" cy="71" r="2.5" stroke-width="0.9" stroke-opacity="0.5"/>
+                <circle cx="19" cy="71" r="2.5" stroke-width="0.9" stroke-opacity="0.5"/>
+                <line x1="16" y1="63" x2="16" y2="60" stroke-width="0.8" stroke-opacity="0.4"/>
+                {# Hoja de vid #}
+                <path d="M62 66 Q67 58 72 62 Q68 68 62 66Z"
+                      stroke-width="0.9" stroke-opacity="0.5"/>
+                <line x1="62" y1="66" x2="68" y2="59" stroke-width="0.7" stroke-opacity="0.4"/>
+              </svg>
+            </div>
+            <span class="hc-card-num">02 · Exploración</span>
+            <h3 class="hc-card-title">Explora el Catálogo</h3>
+            <p class="hc-card-tagline">2.024 vinos españoles a tu alcance</p>
+            <p class="hc-card-desc">Busca un vino por nombre, filtra por región, uva o precio, o navega por las 8 familias de sabor que hemos descubierto: Tintos Crianza Clásicos, Blancos Selectos, Espumosos Premium y más.</p>
+          </div>
+
+          {# Tarjeta 3: Maridajes Expertos #}
+          <div class="hc-card">
+            <div class="hc-card-icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor"
+                   stroke-linecap="round" stroke-linejoin="round">
+                {# Marco circular #}
+                <circle cx="40" cy="40" r="33" stroke-width="0.7"
+                        stroke-opacity="0.28" stroke-dasharray="3 2.2"/>
+                {# Copa de vino (izquierda) #}
+                <path d="M22 10 Q14 24 14 34 Q14 44 22 46 Q30 44 30 34 Q30 24 22 10 Z"
+                      stroke-width="1.35"/>
+                <line x1="22" y1="46" x2="22" y2="62" stroke-width="1.35"/>
+                <path d="M15 62 Q22 65.5 29 62" stroke-width="1.35"/>
+                {# Nivel de vino en copa #}
+                <path d="M15.5 38 Q22 42 28.5 38" stroke-width="0.8" stroke-opacity="0.5"/>
+                {# Plato con campana (derecha) #}
+                <ellipse cx="56" cy="57" rx="19" ry="5.5" stroke-width="1.2"/>
+                <ellipse cx="56" cy="57" rx="13" ry="3.5" stroke-width="0.8" stroke-opacity="0.6"/>
+                {# Cúpula / campana de plato #}
+                <path d="M37 57 Q37 38 56 38 Q75 38 75 57"
+                      stroke-width="1.2"/>
+                {# Asa de la campana #}
+                <path d="M52.5 38 Q56 32.5 59.5 38" stroke-width="1"/>
+                <circle cx="56" cy="31.5" r="2.2" stroke-width="1.1"/>
+                {# Detalle decorativo en la cúpula #}
+                <line x1="56" y1="46" x2="56" y2="50" stroke-width="0.65" stroke-opacity="0.4"/>
+                <line x1="54" y1="48" x2="58" y2="48" stroke-width="0.65" stroke-opacity="0.4"/>
+                {# Tenedor (entre copa y plato) #}
+                <line x1="33" y1="48" x2="33" y2="64" stroke-width="1"/>
+                <line x1="31" y1="48" x2="31" y2="54" stroke-width="0.8"/>
+                <line x1="35" y1="48" x2="35" y2="54" stroke-width="0.8"/>
+                <path d="M31 48 Q33 44.5 35 48" stroke-width="0.8"/>
+                {# Destellos ornamentales #}
+                <line x1="10" y1="16" x2="10" y2="20" stroke-width="0.9" stroke-opacity="0.32"/>
+                <line x1="8" y1="18" x2="12" y2="18" stroke-width="0.9" stroke-opacity="0.32"/>
+                <line x1="68" y1="13" x2="68" y2="17" stroke-width="0.9" stroke-opacity="0.32"/>
+                <line x1="66" y1="15" x2="70" y2="15" stroke-width="0.9" stroke-opacity="0.32"/>
+              </svg>
+            </div>
+            <span class="hc-card-num">03 · Maridaje</span>
+            <h3 class="hc-card-title">El Vino para tu Plato</h3>
+            <p class="hc-card-tagline">La copa perfecta en segundos</p>
+            <p class="hc-card-desc">Dinos qué tienes en la mesa y MrSommi, nuestro sommelier virtual, te recomienda el vino ideal. Sin saber nada de vinos, sin complicaciones.</p>
+          </div>
+
+        </div>{# /hc-cards #}
+
+
+      </div>{# /hc-body #}
+    </div>{# /hc-panel #}
+  </div>{# /hc-panel-wrap #}
+
+</section>
+
+{# ════════════════════════════════════════════════════════════
+   GUÍA DEL VINO — Conceptos básicos para todo el mundo
+   ════════════════════════════════════════════════════════════ #}
+
+{# ── ¿Qué es un sommelier? ── #}
+<section class="section" id="sommelier">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿Qué es un <span class="text-gold">sommelier</span>?</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="about-intro">
+      <p>
+        Un <em>sommelier</em> es un experto en vinos que ayuda a elegir la botella que mejor se adapta
+        a tu comida, tu ocasión y tus gustos. No juzga si sabes o no de vinos:
+        pone su conocimiento al servicio de tu disfrute.
+      </p>
+      <p>
+        En los restaurantes recomienda maridajes, descorcha la botella y explica sus características.
+        En InWine, ese papel lo cumple nuestra inteligencia artificial: sin pretensiones ni jerga innecesaria,
+        solo la botella correcta para ti.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════════
+   CÓMO FUNCIONA — Explicación simple para todo el mundo
+   ════════════════════════════════════════════════════════════ #}
+<section class="section how-section" id="como-funciona">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Tu sommelier personal, <span class="text-gold">gratis</span></h2>
+      <span class="gold-line"></span>
+      <p>No hace falta saber nada de vinos. Responde 7 preguntas rápidas y tendrás la botella perfecta para esta noche.</p>
+    </div>
+
+    <div class="how-steps">
+
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h3>Dinos qué vas a comer</h3>
+        <p>Carne, pescado, pasta, queso... Solo elige el plato del menú. No necesitas saber nada más.</p>
+      </div>
+
+      <div class="how-step-arrow" aria-hidden="true">→</div>
+
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h3>Elige tu presupuesto</h3>
+        <p>¿Cuánto quieres gastar? Desde una cena de diario hasta una ocasión especial. Sin sorpresas.</p>
+      </div>
+
+      <div class="how-step-arrow" aria-hidden="true">→</div>
+
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h3>Recibe tu recomendación</h3>
+        <p>InWine analiza más de {{ total_wines }} vinos y te dice exactamente cuál comprar, y por qué ese y no otro.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════════
+   QUÉ PUEDES HACER — Features en lenguaje humano
+   ════════════════════════════════════════════════════════════ #}
+<section class="features-section section" id="funcionalidades">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿En qué te puede ayudar <span class="text-gold">InWine</span>?</h2>
+      <span class="gold-line"></span>
+      <p>Elige la que más se parezca a tu situación de ahora mismo</p>
+    </div>
+
+    <div class="features-grid">
+      <a href="/comida" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("plate") }}</div>
+        <div class="feature-card-title">Tengo la cena hecha, ¿qué vino pido?</div>
+        <p class="feature-card-desc">Dinos el plato y te decimos el vino que mejor le va. Sin necesitar saber nada de maridajes.</p>
+      </a>
+      <a href="/recomendar" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("wine-glass") }}</div>
+        <div class="feature-card-title">Recomiéndame un vino</div>
+        <p class="feature-card-desc">Filtra por presupuesto, tipo de vino y crianza. Te devolvemos el que mejor encaja con tus criterios.</p>
+      </a>
+      <a href="/buscar" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("search") }}</div>
+        <div class="feature-card-title">Buscar un vino que ya conozco</div>
+        <p class="feature-card-desc">Escribe el nombre y consulta su región, uva, notas de cata y precio en un solo clic.</p>
+      </a>
+      <a href="/perfil" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("heart") }}</div>
+        <div class="feature-card-title">¿Qué tipo de vino me gusta?</div>
+        <p class="feature-card-desc">Responde unas preguntas sobre tus gustos y descubre tu perfil vinícola con vinos seleccionados para ti.</p>
+      </a>
+      <a href="/explorar" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("compass") }}</div>
+        <div class="feature-card-title">Quiero explorar sin saber por dónde</div>
+        <p class="feature-card-desc">Navega por las 8 familias de vinos españoles agrupadas por estilo. Encuentra la tuya sin necesitar un experto.</p>
+      </a>
+      <a href="/valor" class="feature-card">
+        <div class="feature-card-icon">{{ svg_icon("gem") }}</div>
+        <div class="feature-card-title">Quiero un buen vino sin gastar mucho</div>
+        <p class="feature-card-desc">Los vinos con mejor relación calidad-precio de nuestro catálogo. Para acertar sin rascarte el bolsillo.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ── Tipos de vino ── #}
+<section class="section" id="tipos-vino">
+  <div class="container">
+    <div class="section-header">
+      <h2>Los tipos de <span class="text-gold">vino</span></h2>
+      <span class="gold-line"></span>
+      <p>Cuatro grandes familias, cada una con su propio carácter.</p>
+    </div>
+
+    <div class="guide-types">
+
+      <div class="guide-type-card">
+        <div class="guide-type-swatch guide-swatch--blanco"></div>
+        <div class="guide-type-body">
+          <div class="guide-type-icon guide-icon--blanco">{{ svg_icon("wine-glass") }}</div>
+          <h3>Blanco</h3>
+          <p>Sin contacto con la piel de la uva. Fresco, ligero y aromático. Del seco y mineral al afrutado y dulce.</p>
+          <p class="guide-type-pair"><strong>Marida con:</strong> Pescado, mariscos, ensaladas, quesos frescos</p>
+        </div>
+      </div>
+
+      <div class="guide-type-card">
+        <div class="guide-type-swatch guide-swatch--rosado"></div>
+        <div class="guide-type-body">
+          <div class="guide-type-icon guide-icon--rosado">{{ svg_icon("flower") }}</div>
+          <h3>Rosado</h3>
+          <p>Uvas tintas con poco tiempo de contacto con la piel. Fresco como un blanco, con algo del carácter de un tinto.</p>
+          <p class="guide-type-pair"><strong>Marida con:</strong> Tapas, embutidos, arroces, comida veraniega</p>
+        </div>
+      </div>
+
+      <div class="guide-type-card">
+        <div class="guide-type-swatch guide-swatch--tinto"></div>
+        <div class="guide-type-body">
+          <div class="guide-type-icon guide-icon--tinto">{{ svg_icon("wine-bottle") }}</div>
+          <h3>Tinto</h3>
+          <p>El más complejo. Fermentado con la piel de la uva, aporta color, taninos y estructura. Joven y frutal o envejecido y profundo.</p>
+          <p class="guide-type-pair"><strong>Marida con:</strong> Carnes rojas, guisos, quesos curados, legumbres</p>
+        </div>
+      </div>
+
+      <div class="guide-type-card">
+        <div class="guide-type-swatch guide-swatch--espumoso"></div>
+        <div class="guide-type-body">
+          <div class="guide-type-icon guide-icon--espumoso">{{ svg_icon("bubbles") }}</div>
+          <h3>Espumoso</h3>
+          <p>Con burbujas gracias a una segunda fermentación. El Cava es el espumoso español por excelencia. Más versátil de lo que parece.</p>
+          <p class="guide-type-pair"><strong>Marida con:</strong> Celebraciones, mariscos, frituras, aperitivos</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ── Las uvas principales ── #}
+<section class="section" id="uvas">
+  <div class="container">
+    <div class="section-header">
+      <h2>Las uvas que debes <span class="text-gold">conocer</span></h2>
+      <span class="gold-line"></span>
+      <p>España tiene más de 400 variedades autóctonas. Aquí van las que aparecen más en tu copa.</p>
+    </div>
+
+    <div class="guide-grapes">
+
+      <div class="guide-grape-group">
+        <h3 class="guide-grape-type">Uvas tintas</h3>
+        <div class="guide-grape-pills">
+          <div class="guide-grape-pill guide-pill--tinta">
+            <span class="guide-grape-name">Tempranillo</span>
+            <span class="guide-grape-note">La reina de Rioja y Ribera del Duero. Fruta roja, especias y elegancia.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--tinta">
+            <span class="guide-grape-name">Garnacha</span>
+            <span class="guide-grape-note">Redonda, afrutada y de graduación alta. Protagonista en Priorat y Aragón.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--tinta">
+            <span class="guide-grape-name">Monastrell</span>
+            <span class="guide-grape-note">Potente y especiada. La uva de Jumilla y Murcia.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--tinta">
+            <span class="guide-grape-name">Mencía</span>
+            <span class="guide-grape-note">Ligera, floral y fresca. Estrella del Bierzo y Galicia.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--tinta">
+            <span class="guide-grape-name">Bobal</span>
+            <span class="guide-grape-note">Intensa y con acidez natural. La uva de Utiel-Requena.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-grape-group">
+        <h3 class="guide-grape-type">Uvas blancas</h3>
+        <div class="guide-grape-pills">
+          <div class="guide-grape-pill guide-pill--blanca">
+            <span class="guide-grape-name">Albariño</span>
+            <span class="guide-grape-note">Aromático, cítrico y mineral. El vino de las Rías Baixas gallegas.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--blanca">
+            <span class="guide-grape-name">Verdejo</span>
+            <span class="guide-grape-note">Herbáceo y fresco. El alma de la D.O. Rueda.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--blanca">
+            <span class="guide-grape-name">Macabeo</span>
+            <span class="guide-grape-note">Suave y floral. Base del Cava y los blancos de Rioja.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--blanca">
+            <span class="guide-grape-name">Godello</span>
+            <span class="guide-grape-note">Con cuerpo y mineralidad. La gran blanca del noroeste.</span>
+          </div>
+          <div class="guide-grape-pill guide-pill--blanca">
+            <span class="guide-grape-name">Airén</span>
+            <span class="guide-grape-note">Neutra y resistente. La variedad más plantada de España.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ── Cómo catar un vino ── #}
+<section class="section" id="cata">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Cómo <span class="text-gold">catar</span> un vino</h2>
+      <span class="gold-line"></span>
+      <p>No se trata de acertar la uva ni de demostrar conocimientos. Se trata de observar, oler y probar con atención.</p>
+    </div>
+
+    <div class="guide-tip-banner">
+      Sirve <strong>un cuarto de copa</strong> &nbsp;·&nbsp; Sujétala por el tallo &nbsp;·&nbsp;
+      Haz inhalaciones cortas &nbsp;·&nbsp; Entre vinos, agua o pan
+    </div>
+
+    {# Fase 1: Visual #}
+    <div class="guide-phase">
+      <div class="guide-phase-header">
+        <span class="guide-phase-num">01</span>
+        <div>
+          <h3>Fase Visual &mdash; Mirar el vino</h3>
+          <p>Coloca la copa sobre papel blanco e inclínala ligeramente. Observa el color del centro y de los bordes.</p>
+        </div>
+      </div>
+      <div class="guide-phase-body">
+        <div class="guide-phase-col">
+          <p class="guide-col-title">Qué observar</p>
+          <ul class="guide-checklist">
+            <li><strong>Limpidez:</strong> ¿Está limpio o turbio?</li>
+            <li><strong>Brillo:</strong> ¿Refleja bien la luz o aparece apagado?</li>
+            <li><strong>Burbujas:</strong> ¿Suben de forma continua? Normal en espumosos; a revisar en vinos tranquilos.</li>
+            <li><strong>Lágrimas:</strong> Gira la copa y observa las gotas. Más espesas indican más cuerpo o alcohol.</li>
+          </ul>
+        </div>
+        <div class="guide-phase-col">
+          <p class="guide-col-title">El color te habla</p>
+          <div class="guide-color-guide">
+            <div class="guide-color-row">
+              <span class="guide-color-label">Blanco</span>
+              <div class="guide-color-dots">
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#cfe88a"></span><span>Verdoso</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#f0e890"></span><span>Pajizo</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#d4a843"></span><span>Dorado</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#c07830"></span><span>Ámbar</span></span>
+              </div>
+            </div>
+            <div class="guide-color-row">
+              <span class="guide-color-label">Rosado</span>
+              <div class="guide-color-dots">
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#f5a8b8"></span><span>Rosa</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#f0906a"></span><span>Salmón</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#d87040"></span><span>Anaranjado</span></span>
+              </div>
+            </div>
+            <div class="guide-color-row">
+              <span class="guide-color-label">Tinto</span>
+              <div class="guide-color-dots">
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#7030a0"></span><span>Violáceo</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#a82040"></span><span>Rubí</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#701828"></span><span>Granate</span></span>
+                <span class="guide-cdot-item"><span class="guide-cdot" style="background:#b07038"></span><span>Teja</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Fase 2: Olfativa #}
+    <div class="guide-phase">
+      <div class="guide-phase-header">
+        <span class="guide-phase-num">02</span>
+        <div>
+          <h3>Fase Olfativa &mdash; Oler el vino</h3>
+          <p>Primero huele sin mover la copa. Luego gírala suavemente y vuelve a oler. Haz inhalaciones cortas.</p>
+        </div>
+      </div>
+      <div class="guide-phase-aromas">
+        <div class="guide-aroma-group">
+          <p class="guide-aroma-title">Aromas primarios <span class="guide-aroma-sub">— de la uva</span></p>
+          <div class="guide-tags">
+            <span class="guide-tag">{{ svg_icon("flower") }} Flores</span>
+            <span class="guide-tag">{{ svg_icon("berry") }} Frutas</span>
+            <span class="guide-tag">{{ svg_icon("sun") }} Cítricos</span>
+            <span class="guide-tag">{{ svg_icon("leaf") }} Hierbas</span>
+            <span class="guide-tag">{{ svg_icon("mountain") }} Mineral</span>
+          </div>
+        </div>
+        <div class="guide-aroma-group">
+          <p class="guide-aroma-title">Aromas secundarios <span class="guide-aroma-sub">— de la fermentación</span></p>
+          <div class="guide-tags">
+            <span class="guide-tag">{{ svg_icon("cake") }} Levadura o pan</span>
+            <span class="guide-tag">{{ svg_icon("wave") }} Mantequilla</span>
+            <span class="guide-tag">{{ svg_icon("bowl") }} Lácteo</span>
+          </div>
+        </div>
+        <div class="guide-aroma-group">
+          <p class="guide-aroma-title">Aromas de crianza <span class="guide-aroma-sub">— de la madera y el tiempo</span></p>
+          <div class="guide-tags">
+            <span class="guide-tag">{{ svg_icon("aroma") }} Vainilla</span>
+            <span class="guide-tag">{{ svg_icon("thermometer") }} Tostado o café</span>
+            <span class="guide-tag">{{ svg_icon("cheese") }} Frutos secos</span>
+            <span class="guide-tag">{{ svg_icon("feather") }} Cuero o tabaco</span>
+            <span class="guide-tag">{{ svg_icon("gem") }} Miel o caramelo</span>
+          </div>
+        </div>
+        <p class="guide-tip-inline">No es obligatorio identificar todos los aromas. Es mejor marcar pocos con convicción que muchos sin certeza.</p>
+      </div>
+    </div>
+
+    {# Fase 3: Gustativa #}
+    <div class="guide-phase">
+      <div class="guide-phase-header">
+        <span class="guide-phase-num">03</span>
+        <div>
+          <h3>Fase Gustativa &mdash; Probar el vino</h3>
+          <p>Toma un sorbo pequeño y muévelo por toda la boca. Observa lo que sientes en boca y después de tragar.</p>
+        </div>
+      </div>
+      <div class="guide-phase-body">
+        <div class="guide-phase-col">
+          <p class="guide-col-title">Sabores básicos</p>
+          <ul class="guide-checklist">
+            <li><strong>Dulce:</strong> Se nota en la punta de la lengua. Viene del azúcar residual.</li>
+            <li><strong>Ácido:</strong> Hace salivar y aporta frescura al vino.</li>
+            <li><strong>Amargo:</strong> Se nota al fondo. Relacionado con los taninos.</li>
+            <li><strong>Salado:</strong> Poco frecuente, pero presente en algunos vinos costeros.</li>
+          </ul>
+        </div>
+        <div class="guide-phase-col">
+          <p class="guide-col-title">Sensaciones y textura</p>
+          <ul class="guide-checklist">
+            <li><strong>Cuerpo:</strong> ¿Es ligero como el agua o denso como la leche?</li>
+            <li><strong>Taninos:</strong> Sensación de sequedad en encías y lengua. Típico en tintos con crianza.</li>
+            <li><strong>Alcohol:</strong> Calor en la garganta. Cuanto más calor, más graduación.</li>
+            <li><strong>Retrogusto:</strong> ¿Cuánto duran los sabores tras tragar? Más tiempo significa mejor vino.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════════
+   VINOS DESTACADOS
+   ════════════════════════════════════════════════════════════ #}
+<section class="section section-featured-wines">
+  <div class="container">
+    <div class="section-header">
+      <h2>Algunos vinos que te <span class="text-gold">esperan</span></h2>
+      <span class="gold-line"></span>
+      <p>Una pequeña muestra del catálogo. Hay más de {{ total_wines }} en total.</p>
+    </div>
+
+    <div class="wines-grid">
+      {% for wine in featured_wines %}
+        {{ wine_card(wine) }}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/buscar" class="btn btn-outline">Buscar vino concreto →</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

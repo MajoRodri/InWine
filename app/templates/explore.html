@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% from "macros.html" import wine_card, empty_state, svg_icon %}
+
+{% block title %}Explorar perfiles de vino — InWine{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── Hero ───────────────────────────────────────────────── */
+.explore-page-hero {
+  background: var(--bg-elevated);
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+}
+
+/* ── Franja CTA full-width ─────────────────────────────── */
+.explore-cta-stripe {
+  background: linear-gradient(135deg,
+    rgba(139, 26, 46, 0.09) 0%,
+    rgba(155, 112, 16, 0.07) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 3.8rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+}
+[data-theme="dark"] .explore-cta-stripe {
+  background: linear-gradient(135deg,
+    rgba(192, 51, 80, 0.15) 0%,
+    rgba(212, 168, 67, 0.07) 100%);
+  border-color: rgba(107, 46, 24, 0.7);
+}
+
+.explore-cta-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+}
+.explore-cta-dot {
+  width: 2.9rem; height: 2.9rem;
+  border-radius: 50%; border: 1.5px solid;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.explore-cta-dot:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.explore-cta-dot .ico-svg { width: 1.25rem; height: 1.25rem; }
+
+.explore-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--cream); margin-bottom: 0.6rem;
+}
+.explore-cta-desc {
+  max-width: 480px; margin: 0 auto 1.9rem;
+  color: var(--cream-muted); font-size: 0.92rem; line-height: 1.75;
+}
+
+/* ── Sección de perfiles ────────────────────────────────── */
+.explore-profiles-section { padding-top: 3rem; padding-bottom: 4rem; }
+
+.explore-profiles-heading {
+  display: flex; align-items: center; gap: 1.2rem; margin-bottom: 2.2rem;
+}
+.explore-profiles-label {
+  font-family: var(--font-sans); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cream-dim); white-space: nowrap;
+}
+.explore-divider { flex: 1; height: 1px; background: var(--border); }
+
+@media (max-width: 640px) {
+  .explore-cta-stripe { padding: 2.5rem 1.2rem 3rem; }
+  .explore-cta-dot { width: 2.4rem; height: 2.4rem; }
+  .explore-cta-dot .ico-svg { width: 1rem; height: 1rem; }
+}
+@media (max-width: 420px) {
+  .explore-cta-stripe { padding: 2rem 1rem 2.5rem; }
+  .explore-cta-dot { width: 2rem; height: 2rem; }
+  .explore-cta-dot .ico-svg { width: 0.85rem; height: 0.85rem; }
+  .explore-profiles-heading { flex-wrap: wrap; gap: 0.6rem; }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+{# ── Hero ──────────────────────────────────────────────── #}
+<div class="explore-page-hero">
+  <div class="container">
+    <span class="page-hero-icon">{{ svg_icon("compass") }}</span>
+    <h1>Explorar <span class="text-gold">perfiles de vino</span></h1>
+    <p>
+      Nuestro modelo de clustering descubrió {{ profiles | length }} perfiles naturales en el dataset.
+      Cada uno tiene su propio carácter, temperatura y maridaje.
+    </p>
+  </div>
+</div>
+
+{# ── Franja CTA ────────────────────────────────────────── #}
+<div class="explore-cta-stripe">
+  <div class="explore-cta-icons">
+    {% for p in profiles %}
+    <span class="explore-cta-dot"
+          style="--cc-l:{{ p.color }};--cc-bg-l:{{ p.bg }};--cc-bdr-l:{{ p.border }};--cc-d:{{ p.color_dark }};--cc-bg-d:{{ p.bg_dark }};--cc-bdr-d:{{ p.border_dark }}">
+      {{ svg_icon(p.icon_name) }}
+    </span>
+    {% endfor %}
+  </div>
+  <h2 class="explore-cta-title">¿Cuál de estos perfiles eres tú?</h2>
+  <p class="explore-cta-desc">
+    Responde 5 preguntas rápidas y nuestro sommelier IA identificará el perfil
+    vinícola que mejor encaja con tu paladar.
+  </p>
+  <a href="/perfil" class="btn btn-gold" style="padding: 0.9rem 2.6rem; font-size: 0.95rem;">
+    Descubre tu perfil →
+  </a>
+</div>
+
+{# ── Perfiles ──────────────────────────────────────────── #}
+<section class="section explore-profiles-section">
+  <div class="container">
+
+    <div class="explore-profiles-heading">
+      <div class="explore-divider"></div>
+      <span class="explore-profiles-label">Los {{ profiles | length }} perfiles vinícolas</span>
+      <div class="explore-divider"></div>
+    </div>
+
+    {# ── Rueda de medallones ── #}
+    <div class="clusters-fan" id="profilesFan">
+      {% for p in profiles %}
+      <button class="cluster-card {% if selected_profile and selected_profile.id == p.id %}card-active{% endif %}"
+              data-cluster-id="{{ p.id }}"
+              style="--cc-l:{{ p.color }};--cc-bg-l:{{ p.bg }};--cc-bdr-l:{{ p.border }};--cc-d:{{ p.color_dark }};--cc-bg-d:{{ p.bg_dark }};--cc-bdr-d:{{ p.border_dark }}">
+        <div class="cc-medallion">{{ svg_icon(p.icon_name) }}</div>
+        <div class="cc-name">{{ p.name }}</div>
+        <div class="cc-count">
+          {% if p.wine_count > 0 %}{{ p.wine_count }} vinos{% else %}Próximamente{% endif %}
+        </div>
+      </button>
+      {% endfor %}
+    </div>
+
+    {# ── Paneles de detalle (uno por perfil) ── #}
+    <div class="cluster-panels" id="clusterPanels">
+      {% for p in profiles %}
+      <div class="cluster-panel {% if selected_profile and selected_profile.id == p.id %}active{% endif %}"
+           id="cpanel-{{ p.id }}"
+           style="--cc-l:{{ p.color }};--cc-bg-l:{{ p.bg }};--cc-bdr-l:{{ p.border }};--cc-d:{{ p.color_dark }};--cc-bg-d:{{ p.bg_dark }};--cc-bdr-d:{{ p.border_dark }}">
+
+        <div class="cp-head">
+          <div class="cp-icon-ring">
+            {{ svg_icon(p.icon_name) }}
+          </div>
+          <div>
+            <div class="cp-name">{{ p.name }}</div>
+            <div class="cp-count">
+              {% if p.wine_count > 0 %}{{ p.wine_count }} vinos{% else %}Próximamente{% endif %}
+            </div>
+          </div>
+        </div>
+
+        <p class="cp-desc">{{ p.description }}</p>
+
+        <div class="cp-tags">
+          {% for tag in p.characteristics %}
+          <span class="cluster-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+
+        {% if top_wines[p.id] %}
+        <div class="cp-top-wines">
+          {% for w in top_wines[p.id] %}
+          <a href="/vino/{{ w.id }}" class="cp-top-wine">
+            <div class="cp-tw-rank">#{{ loop.index }}</div>
+            <div class="cp-tw-name">{{ w.wine_name }}</div>
+            <div class="cp-tw-meta">{{ w.winery }} · {{ "%.1f" | format(w.rating) }}★ · {{ "%.0f" | format(w.price_euros) }}€</div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="cp-footer">
+          <div class="temp-badge">{{ svg_icon("thermometer") }} {{ p.temp }}</div>
+          <a href="/explorar?cluster={{ p.id }}" class="btn btn-outline btn-sm">
+            Ver todos los vinos →
+          </a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+    {# ── Vinos del perfil seleccionado (vía URL ?cluster=X) ── #}
+    {% if selected_profile and cluster_wines %}
+    <div class="cluster-detail-header" style="margin-top:2.5rem">
+      <div class="cluster-detail-icon"
+           style="--cc-l:{{ selected_profile.color }};--cc-d:{{ selected_profile.color_dark }}">{{ svg_icon(selected_profile.icon_name) }}</div>
+      <div>
+        <h2 style="margin-bottom:0.3rem">{{ selected_profile.name }}</h2>
+        <p style="margin:0">{{ selected_profile.description }}</p>
+      </div>
+    </div>
+    <div class="wines-grid" style="margin-top:1.5rem">
+      {% for wine in cluster_wines %}
+        {{ wine_card(wine) }}
+      {% endfor %}
+    </div>
+    {% elif selected_profile %}
+      {{ empty_state("ai-circuit", "Los vinos de este perfil estarán disponibles cuando se integre el modelo ML.") }}
+    {% endif %}
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var fan = document.getElementById('profilesFan');
+  if (!fan) return;
+
+  var cards = fan.querySelectorAll('.cluster-card');
+  var panels = document.querySelectorAll('.cluster-panel');
+
+  function activate(id) {
+    cards.forEach(function (c) { c.classList.toggle('card-active', c.dataset.clusterId === id); });
+    panels.forEach(function (p) { p.classList.toggle('active', p.id === 'cpanel-' + id); });
+  }
+
+  function deactivateAll() {
+    cards.forEach(function (c) { c.classList.remove('card-active'); });
+    panels.forEach(function (p) { p.classList.remove('active'); });
+  }
+
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      if (this.classList.contains('card-active')) {
+        deactivateAll();
+      } else {
+        activate(this.dataset.clusterId);
+      }
+    });
+  });
+
+  // Hover en desktop con latencia corta
+  var hoverTimer;
+  cards.forEach(function (card) {
+    card.addEventListener('mouseenter', function () {
+      if (window.innerWidth > 700) {
+        clearTimeout(hoverTimer);
+        var id = this.dataset.clusterId;
+        hoverTimer = setTimeout(function () { activate(id); }, 170);
+      }
+    });
+    card.addEventListener('mouseleave', function () { clearTimeout(hoverTimer); });
+  });
+
+  // Auto-activar el perfil seleccionado vía URL
+  var active = fan.querySelector('.cluster-card.card-active');
+  if (active) activate(active.dataset.clusterId);
+})();
+</script>
+
+{% endblock %}
