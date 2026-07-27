@@ -165,14 +165,14 @@
 
     {# ── Filtros ─────────────────────────────────────────── #}
     <form action="/valor" method="GET" id="valueFilterForm">
-      <div class="value-filters" style="flex-wrap:nowrap;gap:0.65rem;align-items:flex-end">
+      <div class="value-filters value-filters--form">
 
         {# Precio máximo #}
         <div class="filter-group">
           <label class="filter-label" for="maxBudget">Precio máximo</label>
           <input type="range" id="maxBudget"
             min="0" max="100" step="1" value="0"
-            class="form-range" style="width:140px">
+            class="form-range value-range">
           <input type="hidden" id="maxBudgetValue" name="max_price" value="{{ max_price }}">
           <div style="text-align:center;color:var(--gold);font-family:var(--font-serif);font-size:1.1rem;margin-top:0.15rem"
                id="maxBudgetDisplay">{{ max_price }}€</div>
@@ -181,7 +181,7 @@
         {# Valoración mínima #}
         <div class="filter-group">
           <label class="filter-label" for="minRating">Valoración mínima</label>
-          <select name="min_rating" id="minRating" class="form-control" style="width:145px">
+          <select name="min_rating" id="minRating" class="form-control value-select">
             {% for val, lbl in [(4.0,"4.0 ★ o más"),(4.2,"4.2 ★ o más"),(4.4,"4.4 ★ o más"),(4.6,"4.6 ★ o más"),(4.8,"4.8 ★ o más")] %}
             <option value="{{ val }}" {% if min_rating == val %}selected{% endif %}>{{ lbl }}</option>
             {% endfor %}
@@ -191,7 +191,7 @@
         {# Ordenar por #}
         <div class="filter-group">
           <label class="filter-label" for="sortBy">Ordenar por</label>
-          <select name="sort_by" id="sortBy" class="form-control" style="width:165px">
+          <select name="sort_by" id="sortBy" class="form-control value-select">
             <option value="ratio"      {% if sort_by == 'ratio'      %}selected{% endif %}>Calidad/Precio</option>
             <option value="price_asc"  {% if sort_by == 'price_asc'  %}selected{% endif %}>Precio ascendente</option>
             <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Precio descendente</option>
@@ -202,7 +202,7 @@
         <div class="filter-group">
           <label class="filter-label">Tipo de vino</label>
           <div class="ms-wrap">
-            <button type="button" class="ms-btn" data-ms="ms-tipos" style="min-width:145px">
+            <button type="button" class="ms-btn" data-ms="ms-tipos">
               <span class="ms-btn-text {% if sel_wine_types %}has-sel{% endif %}"
                     data-placeholder="Todos los tipos">
                 {% if sel_wine_types %}{{ sel_wine_types | join(", ") }}
@@ -231,7 +231,7 @@
         <div class="filter-group">
           <label class="filter-label">Región</label>
           <div class="ms-wrap">
-            <button type="button" class="ms-btn" data-ms="ms-regions" style="min-width:155px">
+            <button type="button" class="ms-btn" data-ms="ms-regions">
               <span class="ms-btn-text {% if sel_regions %}has-sel{% endif %}"
                     data-placeholder="Todas las regiones">
                 {% if sel_regions %}{{ sel_regions | join(", ") }}
@@ -321,10 +321,12 @@
     <div style="margin:1.2rem 0 0.5rem;color:var(--cream-muted);font-size:0.83rem">
       {{ total }} vino{{ 's' if total != 1 else '' }} encontrado{{ 's' if total != 1 else '' }}
     </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
     <table class="value-table">
       <thead>
         <tr>
-          <th>#</th><th>Vino</th><th>Tipo</th><th>Región</th><th>Uva</th>
+          <th>#</th><th>Vino</th><th>Tipo</th>
+          <th class="col-hide-sm">Región</th><th class="col-hide-sm">Uva</th>
           <th>Valoración</th><th>Precio</th><th>Ratio C/P</th>
         </tr>
       </thead>
@@ -337,8 +339,8 @@
             <div style="font-size:0.78rem;color:var(--gold)">{{ wine.winery }}</div>
           </td>
           <td><span class="wine-badge badge-{{ wine.vine_type | lower }}">{{ wine.vine_type }}</span></td>
-          <td>{{ wine.region }}</td>
-          <td style="font-size:0.82rem;color:var(--cream-muted)">{{ wine.grape_variety }}</td>
+          <td class="col-hide-sm">{{ wine.region }}</td>
+          <td class="col-hide-sm" style="font-size:0.82rem;color:var(--cream-muted)">{{ wine.grape_variety }}</td>
           <td>
             <div class="wine-rating">
               {{ stars(wine.rating) }}
@@ -351,6 +353,7 @@
         {% endfor %}
       </tbody>
     </table>
+    </div>{# /overflow-x wrapper #}
 
     {# ── Paginación ─────────────────────────────────────── #}
     {% if total_pages > 1 %}
