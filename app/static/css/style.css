@@ -177,7 +177,7 @@ p:last-child { margin-bottom: 0; }
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 1.1rem 2rem;
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
   background: transparent;
   border-bottom: 1px solid transparent;
   transition: all var(--t-slow);
@@ -231,6 +231,34 @@ p:last-child { margin-bottom: 0; }
 .nav-cta:hover { background: var(--vino-hover) !important; }
 .nav-cta::after { display: none !important; }
 
+/* Navbar controls group (right side) */
+.navbar-controls {
+  display: flex; align-items: center; gap: 0.5rem; justify-self: end;
+}
+
+/* Language toggle button */
+.lang-toggle {
+  background: none; border: 1px solid var(--border-light);
+  border-radius: 20px; padding: 0.28rem 0.75rem;
+  cursor: pointer; color: var(--cream-muted);
+  font-size: 0.72rem; font-family: var(--ff-sans); letter-spacing: 0.08em; font-weight: 700;
+  line-height: 1; transition: all var(--t); display: flex; align-items: center; gap: 0.25rem;
+  flex-shrink: 0;
+}
+.lang-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.lang-sep { color: var(--cream-muted); opacity: 0.45; }
+.lang-es, .lang-en { transition: color var(--t); }
+.lang-toggle .lang-active { color: var(--gold); }
+html[data-lang="en"] .lang-toggle .lang-es { color: var(--cream-muted); }
+html[data-lang="en"] .lang-toggle .lang-en { color: var(--gold); }
+html:not([data-lang="en"]) .lang-toggle .lang-es { color: var(--gold); }
+html:not([data-lang="en"]) .lang-toggle .lang-en { color: var(--cream-muted); }
+
+/* i18n visibility helpers — works for both block and inline elements */
+.i18n-en-only { display: none; }
+html[data-lang="en"] .i18n-es-only { display: none; }
+html[data-lang="en"] .i18n-en-only { display: revert; }
+
 /* Theme toggle button */
 .theme-toggle {
   background: none; border: 1px solid var(--border-light);
@@ -238,7 +266,7 @@ p:last-child { margin-bottom: 0; }
   cursor: pointer; color: var(--cream-muted);
   font-size: 1rem; line-height: 1;
   transition: all var(--t); display: flex; align-items: center;
-  margin-left: 0.4rem; flex-shrink: 0;
+  flex-shrink: 0;
 }
 .theme-toggle:hover { border-color: var(--gold); color: var(--gold); transform: scale(1.08); }
 .theme-icon-dark { display: none; }
@@ -1102,6 +1130,33 @@ p:last-child { margin-bottom: 0; }
 }
 .chat-pairing-group-label .ico-svg { width: 12px; height: 12px; }
 
+/* Maridaje de vino — lista elegante */
+.chat-pairing-foods {
+  display: flex; flex-direction: column;
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+.chat-food-item {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.chat-food-icon {
+  display: flex; align-items: center;
+  flex-shrink: 0; margin-top: 0.1rem;
+  color: var(--gold);
+}
+.chat-food-icon .ico-svg { width: 16px; height: 16px; }
+.chat-food-info {
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.chat-food-info strong {
+  display: block; font-size: 0.9rem; color: var(--cream); font-weight: 600;
+}
+.chat-food-info span {
+  display: block; font-size: 0.78rem; color: var(--cream-muted); font-style: italic;
+}
+
 /* Texto de continuación dentro de burbujas del bot */
 .chat-followup {
   margin-top: 0.85rem;
@@ -1338,6 +1393,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (max-width: 768px) {
+  .navbar { grid-template-columns: 1fr auto; }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     background: var(--mobile-nav-bg); padding: 1.5rem 2rem;
@@ -1528,6 +1584,26 @@ p:last-child { margin-bottom: 0; }
 }
 .study-chart-slot img {
   width: 100%; height: auto; display: block; border-radius: 12px;
+}
+
+/* PCA 3D dark mode overrides */
+[data-theme="dark"] #pca-info {
+  background: var(--bg-surface) !important;
+  border-color: var(--border-light) !important;
+  opacity: 0.9 !important;
+}
+[data-theme="dark"] #pca-info-hint {
+  color: var(--cream-muted) !important;
+  opacity: 1;
+}
+[data-theme="dark"] .pca-leg {
+  color: var(--cream) !important;
+  border-color: rgba(220,190,140,0.2) !important;
+}
+[data-theme="dark"] .pca-leg:hover {
+  background: rgba(220,190,140,0.1) !important;
+  border-color: var(--gold) !important;
+  color: var(--gold-light) !important;
 }
 .chart-placeholder {
   display: flex;
@@ -2155,6 +2231,12 @@ p:last-child { margin-bottom: 0; }
   color: #B8703A !important;
 }
 .theme-toggle:hover { border-color: #D4A050 !important; color: #D4A050 !important; }
+
+.lang-toggle {
+  border-color: rgba(180, 95, 35, 0.45) !important;
+  color: #B8703A !important;
+}
+.lang-toggle:hover { border-color: #D4A050 !important; }
 
 .hamburger span { background: #C07A3A !important; }
 
@@ -3986,4 +4068,9 @@ p:last-child { margin-bottom: 0; }
   .bar-counter-chips { right: 33%; }
   .bar-counter-chips .chat-chip { font-size: 0.7rem; padding: 0.35rem 0.7rem; }
 }
+
+/* ── Bilingual show/hide ─────────────────────────────────── */
+html:not([data-lang="en"]) .i18n-en-only { display: none; }
+html[data-lang="en"] .i18n-es-only { display: none; }
+
 

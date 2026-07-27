@@ -9,8 +9,8 @@
 <div class="page-hero">
   <div class="container">
     <span class="page-hero-icon">{{ svg_icon("wine-glass") }}</span>
-    <h1>Recomiéndame un <span class="text-gold">vino</span></h1>
-    <p>Responde 7 preguntas rápidas y nuestro Sommelier IA elige la botella perfecta para ti.</p>
+    <h1 data-i18n-html="rec_title_html">Recomiéndame un <span class="text-gold">vino</span></h1>
+    <p data-i18n="rec_subtitle">Responde 7 preguntas rápidas y nuestro Sommelier IA elige la botella perfecta para ti.</p>
   </div>
 </div>
 
@@ -22,10 +22,10 @@
   <div class="container">
     <div class="form-wrap">
 
-      <a href="/recomendar" class="back-link">← Nueva recomendación</a>
+      <a href="/recomendar" class="back-link" data-i18n="rec_new_link">← Nueva recomendación</a>
 
       <div class="result-card">
-        <div class="result-label">{{ svg_icon("ai-circuit") }} Sommelier IA — Recomendación</div>
+        <div class="result-label">{{ svg_icon("ai-circuit") }} <span data-i18n="rec_result_label">Sommelier IA — Recomendación</span></div>
 
         <span class="wine-badge badge-{{ recommendation.vine_type | lower }}">{{ recommendation.vine_type }}</span>
         <h2 class="result-wine-name">{{ recommendation.wine_name }}</h2>
@@ -34,27 +34,27 @@
         {# Grid de detalles / Details grid #}
         <div class="result-details">
           <div class="result-detail">
-            <div class="rd-label">Precio</div>
+            <div class="rd-label" data-i18n="detail_price_lbl">Precio</div>
             <div class="rd-value">{{ "%.0f" | format(recommendation.price_euros) }}€</div>
           </div>
           <div class="result-detail">
-            <div class="rd-label">Valoración</div>
+            <div class="rd-label" data-i18n="detail_rating_lbl2">Valoración</div>
             <div class="rd-value">{{ "%.1f" | format(recommendation.rating) }} / 5</div>
           </div>
           <div class="result-detail">
-            <div class="rd-label">Temperatura</div>
+            <div class="rd-label" data-i18n="detail_temp_lbl">Temperatura</div>
             <div class="rd-value">{{ recommendation.service_temperature }}</div>
           </div>
           <div class="result-detail">
-            <div class="rd-label">Región</div>
+            <div class="rd-label" data-i18n="spec_do2">Región</div>
             <div class="rd-value">{{ recommendation.region }}</div>
           </div>
           <div class="result-detail">
-            <div class="rd-label">Uva principal</div>
+            <div class="rd-label" data-i18n="spec_grape_main">Uva principal</div>
             <div class="rd-value">{{ recommendation.grape_variety.split('/')[0].strip() }}</div>
           </div>
           <div class="result-detail">
-            <div class="rd-label">Crianza</div>
+            <div class="rd-label" data-i18n="spec_ageing">Crianza</div>
             <div class="rd-value">{{ recommendation.wine_ageing }}</div>
           </div>
         </div>
@@ -68,13 +68,13 @@
 
         {# Explicación del sommelier / Sommelier explanation #}
         <div class="ai-box mt-3">
-          <div class="ai-box-label">{{ svg_icon("sparkle") }} Por qué este vino</div>
+          <div class="ai-box-label">{{ svg_icon("sparkle") }} <span data-i18n="rec_why">Por qué este vino</span></div>
           <p>{{ recommendation.explanation }}</p>
         </div>
 
         <div class="flex gap-2 mt-4 flex-wrap">
-          <a href="/vino/{{ recommendation.id }}" class="btn btn-gold">Ver ficha completa</a>
-          <a href="/recomendar" class="btn btn-outline">Nueva recomendación</a>
+          <a href="/vino/{{ recommendation.id }}" class="btn btn-gold" data-i18n="rec_view_full">Ver ficha completa</a>
+          <a href="/recomendar" class="btn btn-outline" data-i18n="rec_new_link">Nueva recomendación</a>
         </div>
       </div>
 
@@ -111,33 +111,37 @@
 
         {# ── Paso 1: Comida ───────────────────────────── #}
         <div class="form-step active" id="step-0">
-          <h2 class="mb-2">¿Qué vas a <span class="text-gold">comer</span>?</h2>
-          <p class="text-muted mb-4">Elige el plato o tipo de comida que acompañará al vino.</p>
+          <h2 class="mb-2" data-i18n-html="step1_title_html">¿Qué vas a <span class="text-gold">comer</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step1_desc">Elige el plato o tipo de comida que acompañará al vino.</p>
 
           <div class="options-grid" style="grid-template-columns: repeat(4, 1fr);">
-            {% for key, icon, label in [
-              ("carne_roja","steak","Carne roja"),("pescado","fish","Pescado"),
-              ("marisco","anchor","Marisco"),("aves","feather","Aves"),
-              ("pasta","bowl","Pasta / Arroz"),("quesos","cheese","Quesos"),
-              ("postres","cake","Postres"),("aperitivo","wine-glass-bubbles","Aperitivo")
+            {% for key, icon, label, i18n_key in [
+              ("carne_roja","steak","Carne roja","food_carne_roja"),
+              ("pescado","fish","Pescado","food_pescado"),
+              ("marisco","anchor","Marisco","food_marisco"),
+              ("aves","feather","Aves","food_aves"),
+              ("pasta","bowl","Pasta / Arroz","food_pasta"),
+              ("quesos","cheese","Quesos","food_quesos"),
+              ("postres","cake","Postres","food_postres"),
+              ("aperitivo","wine-glass-bubbles","Aperitivo","food_aperitivo")
             ] %}
             <input type="radio" name="food" id="food_{{ key }}" value="{{ key }}" class="opt-item" required>
             <label for="food_{{ key }}" class="opt-label">
               <span class="opt-icon">{{ svg_icon(icon) }}</span>
-              <span class="opt-text">{{ label }}</span>
+              <span class="opt-text" data-i18n="{{ i18n_key }}">{{ label }}</span>
             </label>
             {% endfor %}
           </div>
 
           <div class="mt-4" style="text-align:right">
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 2: Presupuesto ──────────────────────── #}
         <div class="form-step" id="step-1">
-          <h2 class="mb-2">¿Cuál es tu <span class="text-gold">presupuesto</span>?</h2>
-          <p class="text-muted mb-4">Precio máximo por botella. Siempre encontraremos algo bueno.</p>
+          <h2 class="mb-2" data-i18n-html="step2_title_html">¿Cuál es tu <span class="text-gold">presupuesto</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step2_desc">Precio máximo por botella. Siempre encontraremos algo bueno.</p>
 
           <div class="range-wrap">
             <input type="range" class="form-range" name="budget" id="budget" min="5" max="150" value="30" step="5">
@@ -146,46 +150,50 @@
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 3: Tipo de vino ─────────────────────── #}
         <div class="form-step" id="step-2">
-          <h2 class="mb-2">¿Qué tipo de <span class="text-gold">vino</span>?</h2>
-          <p class="text-muted mb-4">Puedes elegir "sin preferencia" y dejarte sorprender.</p>
+          <h2 class="mb-2" data-i18n-html="step3_title_html">¿Qué tipo de <span class="text-gold">vino</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step3_desc">Puedes elegir "sin preferencia" y dejarte sorprender.</p>
 
           <div class="options-grid">
-            {% for val, icon in [
-              ("Tinto","wine-glass"),("Blanco","wine-glass"),("Rosado","flower"),
-              ("Espumoso","wine-glass-bubbles"),("Generoso","wine-bottle"),("Sin preferencia","dice")
+            {% for val, icon, i18n_key in [
+              ("Tinto","wine-glass","wtype_red"),
+              ("Blanco","wine-glass","wtype_white"),
+              ("Rosado","flower","wtype_rose"),
+              ("Espumoso","wine-glass-bubbles","wtype_sparkling"),
+              ("Generoso","wine-bottle","wtype_fortified"),
+              ("Sin preferencia","dice","wtype_any")
             ] %}
             <input type="radio" name="wine_type" id="wt_{{ loop.index }}" value="{{ val }}" class="opt-item"
               {% if val == "Sin preferencia" %}checked{% endif %}>
             <label for="wt_{{ loop.index }}" class="opt-label">
               <span class="opt-icon">{{ svg_icon(icon) }}</span>
-              <span class="opt-text">{{ val }}</span>
+              <span class="opt-text" data-i18n="{{ i18n_key }}">{{ val }}</span>
             </label>
             {% endfor %}
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 4: Región ───────────────────────────── #}
         <div class="form-step" id="step-3">
-          <h2 class="mb-2">¿De qué <span class="text-gold">región</span>?</h2>
-          <p class="text-muted mb-4">Elige la región vinícola o déjalo en manos del sommelier.</p>
+          <h2 class="mb-2" data-i18n-html="step4_title_html">¿De qué <span class="text-gold">región</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step4_desc">Elige la región vinícola o déjalo en manos del sommelier.</p>
 
           <div class="options-grid" style="grid-template-columns: repeat(3, 1fr);">
             <input type="radio" name="region" id="reg_any" value="Sin preferencia" class="opt-item" checked>
             <label for="reg_any" class="opt-label">
               <span class="opt-icon">{{ svg_icon("dice") }}</span>
-              <span class="opt-text">Sin preferencia</span>
+              <span class="opt-text" data-i18n="no_pref">Sin preferencia</span>
             </label>
             {% for r in filter_opts.regions %}
             <input type="radio" name="region" id="reg_{{ loop.index }}" value="{{ r }}" class="opt-item">
@@ -197,21 +205,21 @@
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 5: Uva ──────────────────────────────── #}
         <div class="form-step" id="step-4">
-          <h2 class="mb-2">¿Variedad de <span class="text-gold">uva</span>?</h2>
-          <p class="text-muted mb-4">Escoge tu variedad favorita o déjalo en manos del sommelier.</p>
+          <h2 class="mb-2" data-i18n-html="step5_title_html">¿Variedad de <span class="text-gold">uva</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step5_desc">Escoge tu variedad favorita o déjalo en manos del sommelier.</p>
 
           <div class="options-grid" style="grid-template-columns: repeat(3, 1fr);">
             <input type="radio" name="grape_variety" id="gr_any" value="Sin preferencia" class="opt-item" checked>
             <label for="gr_any" class="opt-label">
               <span class="opt-icon">{{ svg_icon("dice") }}</span>
-              <span class="opt-text">Sin preferencia</span>
+              <span class="opt-text" data-i18n="no_pref">Sin preferencia</span>
             </label>
             {% for g in filter_opts.grapes %}
             <input type="radio" name="grape_variety" id="gr_{{ loop.index }}" value="{{ g }}" class="opt-item">
@@ -223,58 +231,65 @@
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 6: Ocasión ──────────────────────────── #}
         <div class="form-step" id="step-5">
-          <h2 class="mb-2">¿Cuál es la <span class="text-gold">ocasión</span>?</h2>
-          <p class="text-muted mb-4">El contexto nos ayuda a afinar la recomendación.</p>
+          <h2 class="mb-2" data-i18n-html="step6_title_html">¿Cuál es la <span class="text-gold">ocasión</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step6_desc">El contexto nos ayuda a afinar la recomendación.</p>
 
           <div class="options-grid">
-            {% for val, icon in [
-              ("Cena romántica","romantic"),("Con amigos","people"),("Regalo","gift"),
-              ("Celebración","celebrate"),("Día a día","sun")
+            {% for val, icon, i18n_key in [
+              ("Cena romántica","romantic","occ_romantic"),
+              ("Con amigos","people","occ_friends"),
+              ("Regalo","gift","occ_gift"),
+              ("Celebración","celebrate","occ_celebration"),
+              ("Día a día","sun","occ_everyday")
             ] %}
             <input type="radio" name="occasion" id="occ_{{ loop.index }}" value="{{ val }}" class="opt-item"
               {% if loop.first %}checked{% endif %}>
             <label for="occ_{{ loop.index }}" class="opt-label">
               <span class="opt-icon">{{ svg_icon(icon) }}</span>
-              <span class="opt-text">{{ val }}</span>
+              <span class="opt-text" data-i18n="{{ i18n_key }}">{{ val }}</span>
             </label>
             {% endfor %}
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="button" class="btn btn-gold btn-next">Siguiente →</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="button" class="btn btn-gold btn-next" data-i18n="btn_next">Siguiente →</button>
           </div>
         </div>
 
         {# ── Paso 7: Sabor ────────────────────────────── #}
         <div class="form-step" id="step-6">
-          <h2 class="mb-2">¿Qué sabores te <span class="text-gold">gustan</span>?</h2>
-          <p class="text-muted mb-4">Elige tu perfil de sabor preferido.</p>
+          <h2 class="mb-2" data-i18n-html="step7_title_html">¿Qué sabores te <span class="text-gold">gustan</span>?</h2>
+          <p class="text-muted mb-4" data-i18n="step7_desc">Elige tu perfil de sabor preferido.</p>
 
           <div class="options-grid">
-            {% for val, icon in [
-              ("Afrutado","berry"),("Seco","mountain"),("Especiado","chili"),
-              ("Suave","wave"),("Robusto","strength"),("Sin preferencia","dice")
+            {% for val, icon, i18n_key in [
+              ("Afrutado","berry","flv_fruity"),
+              ("Seco","mountain","flv_dry"),
+              ("Especiado","chili","flv_spicy"),
+              ("Suave","wave","flv_smooth"),
+              ("Robusto","strength","flv_bold"),
+              ("Sin preferencia","dice","no_pref")
             ] %}
             <input type="radio" name="flavor" id="flv_{{ loop.index }}" value="{{ val }}" class="opt-item"
               {% if val == "Sin preferencia" %}checked{% endif %}>
             <label for="flv_{{ loop.index }}" class="opt-label">
               <span class="opt-icon">{{ svg_icon(icon) }}</span>
-              <span class="opt-text">{{ val }}</span>
+              <span class="opt-text" data-i18n="{{ i18n_key }}">{{ val }}</span>
             </label>
             {% endfor %}
           </div>
 
           <div class="flex-between mt-4">
-            <button type="button" class="btn btn-outline btn-prev">← Anterior</button>
-            <button type="submit" class="btn btn-gold btn-lg">{{ svg_icon("wine-glass") }} Recomiéndame un vino</button>
+            <button type="button" class="btn btn-outline btn-prev" data-i18n="btn_prev">← Anterior</button>
+            <button type="submit" class="btn btn-gold btn-lg">{{ svg_icon("wine-glass") }} <span data-i18n="rec_submit_btn">Recomiéndame un vino</span></button>
           </div>
         </div>
 

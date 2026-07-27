@@ -2,9 +2,10 @@
 Wine recommendation service / Servicio de recomendación de vinos.
 """
 
+import random
+
 from app.data.loader import WINES
 from app.data import WINE_PROFILES
-from app.data.food_options import FOOD_OPTIONS
 from app.data.user_profiles import USER_PROFILES, USER_PROFILES_BY_ID
 
 _VALID_WINE_TYPES = {"Tinto", "Blanco", "Rosado", "Espumoso", "Generoso", "Sin preferencia"}
@@ -56,7 +57,60 @@ _AGEING_LABELS = {
     "Joven":   "estilo joven y fresco",
 }
 
-# Razones de maridaje por plato 
+_FOOD_LABELS_EN = {
+    "carne_roja": "red meat",
+    "pescado":    "fish",
+    "marisco":    "seafood",
+    "aves":       "poultry",
+    "pasta":      "pasta or rice",
+    "quesos":     "cheese",
+    "postres":    "dessert",
+    "aperitivo":  "appetizers",
+}
+
+_AGEING_LABELS_EN = {
+    "Crianza":     "oak-aged",
+    "Joven":       "young and fresh",
+    "Reserva":     "long barrel-aged",
+    "Gran Reserva":"extended barrel-aged",
+}
+
+_FOOD_PAIRING_REASONS_EN = {
+    "carne_roja": (
+        "Red meat calls for a red with character: its tannins soften with the proteins and fat of the meat, "
+        "creating that balance where every bite is better than the last."
+    ),
+    "pescado": (
+        "Fish has a delicate texture that is beautifully enhanced by a fresh white — "
+        "its acidity cleanses the palate between bites without overpowering the flavour of the sea."
+    ),
+    "marisco": (
+        "Seafood has that briny, iodine quality that pairs wonderfully with the mineral acidity of a good white. "
+        "Each enhances the other and the result is simply delicious."
+    ),
+    "aves": (
+        "Poultry is versatile: its tender meat welcomes both full-bodied whites and light-character reds. "
+        "This one in particular hits just the right note to achieve that perfect balance."
+    ),
+    "pasta": (
+        "Pasta and rice appreciate a wine with its own personality that accompanies without overpowering the dish — "
+        "not too timid, not too bold. Simply the ideal companion."
+    ),
+    "quesos": (
+        "Cheese is one of the most rewarding pairings: its fat and salt contrast with the structure of the wine "
+        "and enhance each other. Together they are more than the sum of their parts."
+    ),
+    "postres": (
+        "Desserts call for a wine with a sweet or effervescent personality that doesn't compete with the dish but celebrates it. "
+        "The golden finish that every good meal deserves."
+    ),
+    "aperitivo": (
+        "For aperitifs the ideal choice is something festive and light that opens the appetite without tiring the palate — "
+        "a wine that invites conversation and sets the mood from the very first sip."
+    ),
+}
+
+# Razones de maridaje por plato
 _FOOD_PAIRING_REASONS = {
     "carne_roja": (
         "Las carnes rojas piden un tinto con carácter: sus taninos se ablandan con las proteínas y la grasa de la carne, "
@@ -132,36 +186,37 @@ def get_wine_recommendation(
     if wine_type not in _VALID_WINE_TYPES:
         wine_type = _NO_PREF
 
-    # 1. Filtro de presupuesto 
+    # 1. Budget filter / Filtro de presupuesto
     in_budget = [w for w in WINES if w["price_euros"] <= budget]
     if not in_budget:
         return None
     candidates = in_budget
 
-    # 2. Tipo de vino (duro cuando el usuario elige uno)
+    # 2. Wine type — hard filter when the user picks one / Tipo de vino — filtro duro si el usuario elige uno
     if wine_type != _NO_PREF:
         candidates = [w for w in candidates if w["vine_type"] == wine_type]
 
-    # 3. Región 
+    # 3. Region — soft filter (kept only if it yields results) / Región — filtro suave (solo si hay resultados)
     if region != _NO_PREF:
         region_match = [w for w in candidates if w["region"] == region]
         if region_match:
             candidates = region_match
 
-    # 4. Variedad de uva 
+    # 4. Grape variety — soft filter / Variedad de uva — filtro suave
     if grape_variety != _NO_PREF:
         grape_match = [w for w in candidates if grape_variety in w["grape_variety"]]
         if grape_match:
             candidates = grape_match
 
-    # 5. Maridaje por comida 
+    # 5. Food pairing — only applied when no explicit wine type was chosen
+    # Maridaje por comida — solo si el usuario no eligió tipo de vino
     preferred_types = _FOOD_WINE_MAP.get(food, [])
     if preferred_types and wine_type == _NO_PREF:
         food_match = [w for w in candidates if w["vine_type"] in preferred_types]
         if food_match:
             candidates = food_match
 
-    # 6. Sabor 
+    # 6. Flavor profile — soft filter / Perfil de sabor — filtro suave
     if flavor != _NO_PREF:
         keyword = _FLAVOR_MAP.get(flavor, "")
         if keyword:
@@ -204,30 +259,30 @@ def get_wine_recommendation_chat(
     ageing = _clean(ageing) or "Indiferente"
     budget = max(1, int(budget))
 
-    # 1. Filtro de presupuesto 
+    # 1. Budget filter / Filtro de presupuesto
     in_budget = [w for w in WINES if w["price_euros"] <= budget]
     if not in_budget:
         return None
     candidates = in_budget
 
-    # 2. Filtro de tipo de vino
+    # 2. Wine type: hard filter when chosen; otherwise guided by food pairing
+    # Tipo de vino: filtro duro si se eligió; si no, guiado por maridaje con la comida
     if wine_type != _NO_PREF and wine_type in _VALID_WINE_TYPES:
         type_match = [w for w in candidates if w["vine_type"] == wine_type]
         if type_match:
             candidates = type_match
     else:
-        # Sin preferencia → guiar por maridaje con la comida
         preferred = _FOOD_WINE_MAP.get(food, [])
         if preferred:
             food_match = [w for w in candidates if w["vine_type"] in preferred]
             if food_match:
                 candidates = food_match
 
-    # Guardar pool post-tipo para poder relajar crianza en "Dame otra opción"
-    # Save post-type pool so ageing can be relaxed when "Dame otra opción" runs out
+    # Snapshot post-type pool so ageing filter can be relaxed in "Dame otra opción" fallback
+    # Instantánea del pool post-tipo para relajar crianza en el fallback de "Dame otra opción"
     pool_after_type = candidates
 
-    # 3. Filtro de crianza 
+    # 3. Ageing — soft filter / Crianza — filtro suave
     if ageing != "Indiferente":
         ageing_match = [w for w in candidates if w.get("wine_ageing") == ageing]
         if ageing_match:
@@ -235,14 +290,16 @@ def get_wine_recommendation_chat(
 
     if exclude_ids:
         after_exclude = [w for w in candidates if w["id"] not in exclude_ids]
-        # Si no quedan candidatos, relajar crianza y volver al pool de tipo
-        # If empty after excluding, relax ageing and fall back to type pool
+        # If excluding empties the list, relax ageing and fall back to the type pool
+        # Si excluir vacía la lista, relajar crianza y volver al pool de tipo
         if not after_exclude:
             after_exclude = [w for w in pool_after_type if w["id"] not in exclude_ids]
         candidates = after_exclude
 
-    # Si hay vino de referencia, restringir al mismo cluster (estilo similar)
-    # Only apply cluster filter when there are enough candidates to avoid emptying the list
+    # Restrict to the same style cluster as the reference wine (used by "Dame otra opción")
+    # Guard: only when >1 candidate, to avoid emptying the list
+    # Restringe al mismo cluster de estilo que el vino de referencia (usado en "Dame otra opción")
+    # Protección: solo cuando hay más de 1 candidato, para no vaciar la lista
     if reference_id and len(candidates) > 1:
         ref = next((w for w in WINES if w["id"] == reference_id), None)
         if ref:
@@ -253,22 +310,25 @@ def get_wine_recommendation_chat(
     if not candidates:
         return None
 
-    # 4. Scoring multi-factor (todos los candidatos ya están dentro del presupuesto)
+    # 4. Multi-factor scoring (all candidates already within budget)
+    # Puntuación multi-factor (todos los candidatos ya están dentro del presupuesto)
     preferred_types = _FOOD_WINE_MAP.get(food, [])
 
     def score(w: dict) -> float:
         s = 0.0
-        # Valoración real
-        s += (w["rating"] - 4.0) * 5.0
-        # Ratio calidad-precio real
+        s += (w["rating"] - 4.0) * 5.0            # real user rating / valoración real
         if w.get("quality_price_ratio", 0) > 0.08:
-            s += 1.0
-        # Maridaje comida-tipo real
+            s += 1.0                               # quality-price bonus / bonus calidad-precio
         if preferred_types and w["vine_type"] in preferred_types:
-            s += 2.0
+            s += 2.0                               # food pairing bonus / bonus maridaje
         return s
 
-    best = max(candidates, key=score)
+    # Pick randomly from the top-5 so consecutive sessions get variety without
+    # permanently excluding any wine. / Elige al azar entre el top-5 para dar variedad
+    # entre sesiones sin descartar ningún vino de forma permanente.
+    sorted_candidates = sorted(candidates, key=score, reverse=True)
+    top_pool = sorted_candidates[:min(5, len(sorted_candidates))]
+    best = random.choice(top_pool)
 
     # 5. Explicación con campos reales del dataset
     food_label = _FOOD_LABELS.get(food, food)
@@ -292,7 +352,22 @@ def get_wine_recommendation_chat(
         f"Y a {best['price_euros']:.0f}€ es una opción que cumple de sobra con las expectativas."
     )
 
-    return {**best, "explanation": explanation}
+    # English explanation
+    food_label_en = _FOOD_LABELS_EN.get(food, food)
+    grape_part_en = f", made from <em>{grape}</em>," if grape else ""
+    ageing_desc_en = _AGEING_LABELS_EN.get(wine_ageing, "")
+    ageing_part_en = f" It is a {ageing_desc_en} wine," if ageing_desc_en else ""
+    pairing_reason_en = _FOOD_PAIRING_REASONS_EN.get(food, f"which pairs perfectly with {food_label_en}")
+
+    explanation_en = (
+        f"My choice is <strong>{best['wine_name']}</strong>, from {best['winery']}, "
+        f"a {vine} from {region}{grape_part_en} with a rating of {best['rating']:.1f} out of 5, "
+        f"placing it among the best in its category.{ageing_part_en} "
+        f"{pairing_reason_en} "
+        f"And at {best['price_euros']:.0f}€ it is an option that more than meets expectations."
+    )
+
+    return {**best, "explanation": explanation, "explanation_en": explanation_en}
 
 
 def get_wine_by_id(wine_id: int) -> dict | None:

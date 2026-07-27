@@ -279,7 +279,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       nEl.textContent      = seg.dataset.count;
       nEl.setAttribute("fill", seg.getAttribute("fill"));
       lblEl.textContent    = seg.dataset.label;
-      // atenúa los demás segmentos
+      // Dim all other segments / Atenúa los demás segmentos
       segs.forEach((s, j) => { s.style.opacity = j === i ? "1" : "0.35"; });
       legend.forEach((li, j) => li.classList.toggle("active", j === i));
     });

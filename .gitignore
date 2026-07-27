@@ -45,6 +45,7 @@ ms-playwright/
 # Models — large model files not tracked
 # Modelos — archivos de modelo grandes no rastreados
 models/*.pkl
+models/*.joblib
 
 # Logs
 *.log

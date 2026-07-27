@@ -48,6 +48,8 @@ async def profile_result(
     if len(cluster_wines) >= 4 or max_price is None:
         recommended = cluster_wines[:4]
     else:
+        # Cluster too small for this budget → pad with top-rated wines from the full catalogue
+        # El cluster tiene pocos vinos para este presupuesto → completar con los mejor valorados del catálogo
         seen = {w["id"] for w in cluster_wines}
         extras = get_wines_by_budget(max_price, exclude_ids=seen)
         recommended = (cluster_wines + extras)[:4]

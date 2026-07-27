@@ -8,12 +8,14 @@
   <link rel="icon" type="image/png" href="/static/img/logosinfondo.png">
   <meta name="description" content="{% block description %}Tu sumiller virtual de vinos españoles. Descubre, comprende y disfruta el vino perfecto con inteligencia artificial.{% endblock %}">
 
-  {# Anti-flash: aplica tema guardado antes de renderizar — default: dark (luxury mode) #}
+  {# Anti-flash: aplica tema y idioma guardados antes de renderizar #}
   <script>
     (function(){
       var t = localStorage.getItem('inwine-theme');
       if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
       else document.documentElement.setAttribute('data-theme', 'dark');
+      var l = localStorage.getItem('inwine-lang');
+      if (l === 'en') document.documentElement.setAttribute('data-lang', 'en');
     })();
   </script>
 
@@ -35,21 +37,29 @@
   </a>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="/"         {% if request.url.path == '/'         %}class="active"{% endif %}>Inicio</a></li>
-    <li><a href="/buscar"   {% if request.url.path == '/buscar'   %}class="active"{% endif %}>Buscar</a></li>
-    <li><a href="/explorar" {% if request.url.path == '/explorar' %}class="active"{% endif %}>Perfiles</a></li>
-    <li><a href="/valor"    {% if request.url.path == '/valor'    %}class="active"{% endif %}>Calidad-Precio</a></li>
-    <li><a href="/nosotros" {% if request.url.path == '/nosotros' %}class="active"{% endif %}>Sobre Nosotros</a></li>
+    <li><a href="/"         {% if request.url.path == '/'         %}class="active"{% endif %} data-i18n="nav_home">Inicio</a></li>
+    <li><a href="/buscar"   {% if request.url.path == '/buscar'   %}class="active"{% endif %} data-i18n="nav_search">Buscar</a></li>
+    <li><a href="/explorar" {% if request.url.path == '/explorar' %}class="active"{% endif %} data-i18n="nav_profiles">Perfiles</a></li>
+    <li><a href="/valor"    {% if request.url.path == '/valor'    %}class="active"{% endif %} data-i18n="nav_value">Calidad-Precio</a></li>
+    <li><a href="/nosotros" {% if request.url.path == '/nosotros' %}class="active"{% endif %} data-i18n="nav_about">Sobre Nosotros</a></li>
   </ul>
 
-  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-    <span class="theme-icon-light">🌙</span>
-    <span class="theme-icon-dark">☀️</span>
-  </button>
+  <div class="navbar-controls">
+    <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">
+      <span class="lang-es lang-active">ES</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-en">EN</span>
+    </button>
 
-  <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-    <span></span><span></span><span></span>
-  </button>
+    <button class="theme-toggle" id="themeToggle" data-i18n-aria="theme_toggle" aria-label="Cambiar tema">
+      <span class="theme-icon-light">🌙</span>
+      <span class="theme-icon-dark">☀️</span>
+    </button>
+
+    <button class="hamburger" id="hamburger" data-i18n-aria="hamburger_label" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
 </nav>
 
@@ -67,13 +77,13 @@
         <img src="/static/img/logosinfondo.png" alt="InWine" class="footer-logo-img">
         In<span>Wine</span>
       </div>
-      <div class="footer-tagline">Descubre · Comprende · Disfruta</div>
+      <div class="footer-tagline" data-i18n="footer_tagline">Descubre · Comprende · Disfruta</div>
       <div class="footer-gold-line"><span class="footer-dot">●</span></div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2025 InWine — Sommelier IA. Proyecto de Data Science.</span>
-      <span>Vinos españoles · Machine Learning · FastAPI</span>
+      <span data-i18n="footer_copy">© 2025 InWine — Sommelier IA. Proyecto de Data Science.</span>
+      <span data-i18n="footer_tech">Vinos españoles · Machine Learning · FastAPI</span>
     </div>
 
   </div>
@@ -81,11 +91,12 @@
 
 {# ── CHATBOT FAB → navega a la página completa (oculto dentro del chat) ── #}
 {% if request.url.path != '/comida' %}
-<a class="fchat-fab" href="/comida" aria-label="Abrir MrSommi">
+<a class="fchat-fab" href="/comida" data-i18n-aria="fab_aria" aria-label="Abrir MrSommi">
   <img src="/static/img/chatbot.png" alt="MrSommi" class="fchat-fab-img">
 </a>
 {% endif %}
 
+<script src="/static/js/i18n.js"></script>
 <script src="/static/js/main.js"></script>
 {% block extra_scripts %}{% endblock %}
 

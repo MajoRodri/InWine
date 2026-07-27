@@ -8,8 +8,8 @@
 <div class="page-hero">
   <div class="container">
     <span class="page-hero-icon">{{ svg_icon("ai-circuit") }}</span>
-    <h1>Sobre <span class="text-gold">Nosotros</span></h1>
-    <p>Cómo construimos InWine y qué hay detrás de cada recomendación.</p>
+    <h1 data-i18n-html="about_title_html">Sobre <span class="text-gold">Nosotros</span></h1>
+    <p data-i18n="about_subtitle">Cómo construimos InWine y qué hay detrás de cada recomendación.</p>
   </div>
 </div>
 
@@ -42,7 +42,7 @@
 
     {# ── Quiénes somos ── #}
     <div class="about-intro">
-      <p>
+      <p data-i18n-html="about_intro_html">
         En InWine partimos de más de <strong>7.500 vinos españoles</strong>, los completamos con
         información real de Vivinos y los analizamos a fondo para construir un sommelier virtual
         accesible a cualquier persona, sin que necesite saber nada de vinos.
@@ -52,22 +52,22 @@
 
     {# ── Fuentes de datos ── #}
     <div class="section-header">
-      <h2>De dónde viene la <span class="text-gold">información</span></h2>
+      <h2 data-i18n-html="about_sources_html">De dónde viene la <span class="text-gold">información</span></h2>
     </div>
     <div class="about-sources">
       <div class="source-card">
         <div class="source-badge">Kaggle</div>
         <div class="source-body">
           <h3 class="source-title">Spanish Wine Quality Dataset</h3>
-          <p>Un catálogo con <strong>7.500 vinos españoles</strong> precio, puntuación, región,
+          <p data-i18n-html="about_kaggle_desc">Un catálogo con <strong>7.500 vinos españoles</strong> precio, puntuación, región,
           bodega y año de cosecha. Fue nuestro punto de partida.</p>
         </div>
       </div>
       <div class="source-card">
         <div class="source-badge">Vivinos</div>
         <div class="source-body">
-          <h3 class="source-title">Vivinos · datos reales de sabor</h3>
-          <p>Visitamos la web de Vivinos con un robot para añadir a cada vino
+          <h3 class="source-title" data-i18n="about_vivinos_title">Vivinos · datos reales de sabor</h3>
+          <p data-i18n="about_vivinos_desc">Visitamos la web de Vivinos con un robot para añadir a cada vino
           su tipo, su uva y sus notas de cata, información que el catálogo original no tenía.</p>
         </div>
       </div>
@@ -75,7 +75,7 @@
 
     {# ── Fases del estudio ── #}
     <div class="section-header" style="margin-top:3rem;">
-      <h2>Cómo lo <span class="text-gold">construimos</span></h2>
+      <h2 data-i18n-html="about_built_html">Cómo lo <span class="text-gold">construimos</span></h2>
     </div>
     <div class="study-phases">
 
@@ -84,62 +84,73 @@
         <div class="study-card-meta">
           <span class="study-badge">01</span>
           <div>
-            <h2 class="study-card-title">Recogida de datos</h2>
-            <p class="study-card-lead">Completar la ficha de cada vino con información real</p>
+            <h2 class="study-card-title" data-i18n="about_s01_title">Recogida de datos</h2>
+            <p class="study-card-lead" data-i18n="about_s01_lead">Completar la ficha de cada vino con información real</p>
           </div>
         </div>
         <div class="study-body">
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               El catálogo de partida tenía mucha información sobre precio y puntuaciones, pero le
               faltaba lo más importante para recomendar un vino: a qué sabe, qué tipo es y con qué uva
               está hecho. Programamos un robot que visitó Vivinos vino a vino y añadió esos datos.
             </p>
-            <ul class="study-findings">
+            <p class="i18n-en-only">
+              The starting catalogue had plenty of price and rating information, but lacked what
+              matters most for recommending a wine: what it tastes like, what type it is and which
+              grape it's made from. We built a bot that visited Vivinos wine by wine and added that data.
+            </p>
+            <ul class="study-findings i18n-es-only">
               <li>Se procesaron <strong>6.956 vinos</strong> automáticamente</li>
               <li>Datos añadidos: <strong>tipo</strong> (tinto, blanco…), <strong>uva</strong> y <strong>notas de sabor</strong></li>
               <li>Más de 51 descriptores de sabor agrupados en 5 familias (frutal, especiado…)</li>
               <li>El robot se comportaba como un usuario real para no ser bloqueado</li>
             </ul>
+            <ul class="study-findings i18n-en-only">
+              <li><strong>6,956 wines</strong> were processed automatically</li>
+              <li>Data added: <strong>type</strong> (red, white…), <strong>grape</strong> and <strong>flavour notes</strong></li>
+              <li>Over 51 flavour descriptors grouped into 5 families (fruity, spiced…)</li>
+              <li>The bot behaved like a real user to avoid being blocked</li>
+            </ul>
           </div>
           {# Antes / Después #}
           <div class="scraping-diff">
             <div class="scraping-diff-col scraping-diff-col--before">
-              <div class="scraping-diff-header">Antes → catálogo original</div>
+              <div class="scraping-diff-header" data-i18n="about_before_lbl">Antes → catálogo original</div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">categoría</span>
+                <span class="scraping-diff-field" data-i18n="about_cat_field">categoría</span>
                 <span class="scraping-diff-value">"Rioja Red"</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">tipo de vino</span>
+                <span class="scraping-diff-field" data-i18n="about_type_field">tipo de vino</span>
                 <span class="scraping-diff-value scraping-diff-value--empty">—</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">uva</span>
+                <span class="scraping-diff-field" data-i18n="about_grape_field">uva</span>
                 <span class="scraping-diff-value scraping-diff-value--empty">—</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">sabores</span>
+                <span class="scraping-diff-field" data-i18n="about_flavor_field">sabores</span>
                 <span class="scraping-diff-value scraping-diff-value--empty">—</span>
               </div>
             </div>
             <div class="scraping-diff-arrow">→</div>
             <div class="scraping-diff-col scraping-diff-col--after">
-              <div class="scraping-diff-header">Después → con Vivinos</div>
+              <div class="scraping-diff-header" data-i18n="about_after_lbl">Después → con Vivinos</div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">categoría</span>
-                <span class="scraping-diff-value scraping-diff-value--gone">eliminado</span>
+                <span class="scraping-diff-field" data-i18n="about_cat_field">categoría</span>
+                <span class="scraping-diff-value scraping-diff-value--gone" data-i18n="about_eliminated">eliminado</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">tipo de vino</span>
+                <span class="scraping-diff-field" data-i18n="about_type_field">tipo de vino</span>
                 <span class="scraping-diff-value scraping-diff-value--new">"Tinto"</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">uva</span>
+                <span class="scraping-diff-field" data-i18n="about_grape_field">uva</span>
                 <span class="scraping-diff-value scraping-diff-value--new">"Tempranillo"</span>
               </div>
               <div class="scraping-diff-row">
-                <span class="scraping-diff-field">sabores</span>
+                <span class="scraping-diff-field" data-i18n="about_flavor_field">sabores</span>
                 <span class="scraping-diff-value scraping-diff-value--new">"Cereza, Roble, Vainilla…"</span>
               </div>
             </div>
@@ -154,8 +165,8 @@
         <div class="study-card-meta">
           <span class="study-badge">02</span>
           <div>
-            <h2 class="study-card-title">Ordenar los datos</h2>
-            <p class="study-card-lead">Quedarnos solo con los vinos de verdad, sin repetidos ni errores</p>
+            <h2 class="study-card-title" data-i18n="about_s02_title">Ordenar los datos</h2>
+            <p class="study-card-lead" data-i18n="about_s02_lead">Quedarnos solo con los vinos de verdad, sin repetidos ni errores</p>
           </div>
         </div>
         <div class="study-body study-body--reverse">
@@ -163,38 +174,50 @@
           <div class="cleaning-funnel">
             <div class="funnel-step funnel-step--raw">
               <span class="funnel-n">7.500</span>
-              <span class="funnel-label">vinos en bruto (con muchos repetidos)</span>
+              <span class="funnel-label" data-i18n="about_raw_wines">vinos en bruto (con muchos repetidos)</span>
             </div>
             <div class="funnel-drop">
               <span class="funnel-drop-n">−5.452</span>
-              <span class="funnel-drop-label">vinos repetidos eliminados</span>
+              <span class="funnel-drop-label" data-i18n="about_dup_removed">vinos repetidos eliminados</span>
             </div>
             <div class="funnel-step">
               <span class="funnel-n">2.048</span>
-              <span class="funnel-label">vinos distintos (primera pasada)</span>
+              <span class="funnel-label" data-i18n="about_distinct">vinos distintos (primera pasada)</span>
             </div>
             <div class="funnel-drop">
               <span class="funnel-drop-n">−24</span>
-              <span class="funnel-drop-label">repetidos adicionales detectados</span>
+              <span class="funnel-drop-label" data-i18n="about_extra_dup">repetidos adicionales detectados</span>
             </div>
             <div class="funnel-step funnel-step--final">
               <span class="funnel-n">2.024</span>
-              <span class="funnel-label">vinos únicos y limpios</span>
+              <span class="funnel-label" data-i18n="about_unique">vinos únicos y limpios</span>
             </div>
           </div>
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               El catálogo original tenía un 72,7&nbsp;% de vinos repetidos.
               Algunos, como <em>Contino Reserva 2016</em>, aparecían más de 200 veces.
               Los eliminamos todos antes de empezar a analizar para que los resultados
               fueran honestos.
             </p>
-            <ul class="study-findings">
+            <p class="i18n-en-only">
+              The original catalogue had 72.7% duplicate wines. Some, like
+              <em>Contino Reserva 2016</em>, appeared more than 200 times. We removed
+              them all before starting the analysis so the results would be honest.
+            </p>
+            <ul class="study-findings i18n-es-only">
               <li><strong>5.476 vinos repetidos</strong> eliminados en total, el 72,7&nbsp;% del catálogo</li>
               <li>De 7.500 entradas a <strong>2.024 vinos únicos</strong></li>
               <li>Separamos el tipo de vino y la uva, que venían mezclados en un mismo campo</li>
               <li>Añadimos si el vino tiene crianza y una puntuación de calidad-precio</li>
               <li><strong>Sin datos vacíos</strong> en el resultado final (los sabores cubrían el 94,7&nbsp;% de los vinos)</li>
+            </ul>
+            <ul class="study-findings i18n-en-only">
+              <li><strong>5,476 duplicate wines</strong> removed in total — 72.7% of the catalogue</li>
+              <li>From 7,500 entries to <strong>2,024 unique wines</strong></li>
+              <li>We separated wine type and grape variety, which were mixed in the same field</li>
+              <li>We added whether the wine is aged and a quality-price score</li>
+              <li><strong>No empty data</strong> in the final result (flavours covered 94.7% of wines)</li>
             </ul>
           </div>
         </div>
@@ -205,23 +228,35 @@
         <div class="study-card-meta">
           <span class="study-badge">03</span>
           <div>
-            <h2 class="study-card-title">¿Qué encontramos?</h2>
-            <p class="study-card-lead">Explorar los datos para entender qué teníamos antes de empezar</p>
+            <h2 class="study-card-title" data-i18n="about_s03_title">¿Qué encontramos?</h2>
+            <p class="study-card-lead" data-i18n="about_s03_lead">Explorar los datos para entender qué teníamos antes de empezar</p>
           </div>
         </div>
         <div class="study-body study-body--wide-chart">
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               Antes de construir el recomendador, miramos los datos con detalle para entender cómo
               son los vinos que tenemos. Esos descubrimientos guiaron todas las decisiones siguientes.
             </p>
-            <ul class="study-findings">
+            <p class="i18n-en-only">
+              Before building the recommender, we looked at the data in detail to understand what
+              wines we had. Those discoveries guided all subsequent decisions.
+            </p>
+            <ul class="study-findings i18n-es-only">
               <li>Los precios van de <strong>4,99&nbsp;€ a 3.119&nbsp;€</strong>, la mayoría son económicos y muy pocos son de lujo</li>
               <li>Las puntuaciones de los vinos apenas varían, casi todos tienen entre <strong>4,2 y 4,9</strong> sobre 5</li>
               <li>Hay <strong>76 regiones</strong> distintas, pero Ribera del Duero y Rioja suman la mitad de los vinos</li>
               <li><strong>Tempranillo</strong> es la uva del 55&nbsp;% de los vinos; el 20&nbsp;% es mezcla de variedades</li>
               <li>El <strong>20,6&nbsp;%</strong> de los vinos tiene crianza, suelen ser más caros, pero no siempre</li>
               <li>Muchos vinos son el mismo pero de diferentes añadas, algo a tener en cuenta al entrenar el modelo</li>
+            </ul>
+            <ul class="study-findings i18n-en-only">
+              <li>Prices range from <strong>€4.99 to €3,119</strong> — most are affordable and very few are luxury</li>
+              <li>Wine ratings barely vary — almost all fall between <strong>4.2 and 4.9</strong> out of 5</li>
+              <li>There are <strong>76 different regions</strong>, but Ribera del Duero and Rioja account for half the wines</li>
+              <li><strong>Tempranillo</strong> is the grape in 55% of wines; 20% are blends</li>
+              <li><strong>20.6%</strong> of wines are aged — they tend to be pricier, but not always</li>
+              <li>Many wines are the same but from different vintages — something to keep in mind when training the model</li>
             </ul>
           </div>
           {# Donut SVG — distribución por tipo de vino #}
@@ -252,14 +287,14 @@
               <text id="donut-center-n" x="110" y="106" text-anchor="middle"
                     font-family="Georgia,serif" font-size="22" font-weight="700" fill="var(--cream-raw, #F0E4CC)">2.024</text>
               <text id="donut-center-lbl" x="110" y="124" text-anchor="middle"
-                    font-size="10" fill="#9E8E78" letter-spacing="2">VINOS</text>
+                    font-size="10" fill="#9E8E78" letter-spacing="2" data-i18n="about_donut_center">VINOS</text>
             </svg>
             <ul class="vine-donut-legend">
-              <li data-seg="0"><span style="background:#8B1A2E"></span>Tinto <strong>83,7 %</strong></li>
-              <li data-seg="1"><span style="background:#C9A050"></span>Blanco <strong>6,8 %</strong></li>
-              <li data-seg="2"><span style="background:#6B3510"></span>Generoso <strong>4,4 %</strong></li>
-              <li data-seg="3"><span style="background:#4a4a4a"></span>Desconocido <strong>3,2 %</strong></li>
-              <li data-seg="4"><span style="background:#666"></span>Espumoso <strong>1,9 %</strong></li>
+              <li data-seg="0"><span style="background:#8B1A2E"></span><span data-i18n="about_leg_tinto">Tinto</span> <strong>83,7 %</strong></li>
+              <li data-seg="1"><span style="background:#C9A050"></span><span data-i18n="about_leg_blanco">Blanco</span> <strong>6,8 %</strong></li>
+              <li data-seg="2"><span style="background:#6B3510"></span><span data-i18n="about_leg_generoso">Generoso</span> <strong>4,4 %</strong></li>
+              <li data-seg="3"><span style="background:#4a4a4a"></span><span data-i18n="about_leg_unknown">Desconocido</span> <strong>3,2 %</strong></li>
+              <li data-seg="4"><span style="background:#666"></span><span data-i18n="about_leg_espumoso">Espumoso</span> <strong>1,9 %</strong></li>
             </ul>
           </div>
         </div>
@@ -270,15 +305,15 @@
         <div class="study-card-meta">
           <span class="study-badge">04</span>
           <div>
-            <h2 class="study-card-title">Preparar los datos</h2>
-            <p class="study-card-lead">Poner todos los datos en el mismo idioma para poder compararlos</p>
+            <h2 class="study-card-title" data-i18n="about_s04_title">Preparar los datos</h2>
+            <p class="study-card-lead" data-i18n="about_s04_lead">Poner todos los datos en el mismo idioma para poder compararlos</p>
           </div>
         </div>
         <div class="study-body study-body--reverse study-body--wide-chart">
           {# SVG — precio original vs log transformado #}
           <div class="price-svg-wrap">
             <div class="price-svg-panel">
-              <div class="price-svg-title">Precio <em>sin ajustar</em></div>
+              <div class="price-svg-title" data-i18n="about_price_before">Precio sin ajustar</div>
               <svg class="price-svg" viewBox="0 0 240 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="grad-before" x1="0" y1="0" x2="0" y2="1">
@@ -289,11 +324,11 @@
                 <path d="M0,80 L0,62 C8,40 16,8 28,6 C40,4 52,32 70,54 C100,72 150,77 240,79 L240,80 Z"
                       fill="url(#grad-before)" stroke="#8B1A2E" stroke-width="1.5" stroke-linejoin="round"/>
               </svg>
-              <div class="price-svg-caption">Mayoría económicos, muy pocos muy caros</div>
+              <div class="price-svg-caption" data-i18n="about_price_caption1">Mayoría económicos, muy pocos muy caros</div>
             </div>
-            <div class="price-svg-arrow">→<br><small>ajuste</small></div>
+            <div class="price-svg-arrow">→<br><small data-i18n="about_price_adj">ajuste</small></div>
             <div class="price-svg-panel price-svg-panel--after">
-              <div class="price-svg-title">Precio <em>ajustado</em></div>
+              <div class="price-svg-title" data-i18n="about_price_after">Precio ajustado</div>
               <svg class="price-svg" viewBox="0 0 240 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="grad-after" x1="0" y1="0" x2="0" y2="1">
@@ -304,22 +339,35 @@
                 <path d="M0,80 L0,74 C20,68 45,40 80,12 C100,4 120,4 140,12 C175,32 205,65 240,74 L240,80 Z"
                       fill="url(#grad-after)" stroke="#C9A050" stroke-width="1.5" stroke-linejoin="round"/>
               </svg>
-              <div class="price-svg-caption">Los precios quedan equilibrados y fáciles de comparar</div>
+              <div class="price-svg-caption" data-i18n="about_price_caption2">Los precios quedan equilibrados y fáciles de comparar</div>
             </div>
           </div>
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               Para que el recomendador pueda comparar vinos de forma justa, necesitamos que todos
               los datos hablen el mismo idioma. Un vino de 5&nbsp;€ y uno de 500&nbsp;€ no pueden
               pesar igual en bruto, hay que equilibrarlos primero.
             </p>
-            <ul class="study-findings">
+            <p class="i18n-en-only">
+              For the recommender to compare wines fairly, we need all data to speak the same
+              language. A €5 wine and a €500 wine can't carry equal raw weight — they need to be
+              balanced first.
+            </p>
+            <ul class="study-findings i18n-es-only">
               <li>El precio se ajusta matemáticamente para que los vinos caros no distorsionen las comparaciones</li>
               <li>El tipo de vino (tinto, blanco…) se convierte en valores numéricos para que el modelo lo entienda</li>
               <li>La región y la uva se sustituyen por su precio y puntuación medios, lo que es más útil que solo su nombre</li>
               <li>Evitamos contar el precio tres veces, algo que habría dado demasiado peso al dinero</li>
               <li>Normalizamos todos los números para que ningún dato domine sobre los demás por su escala</li>
               <li>Cuidamos que bodegas completas no acabaran a la vez en el entrenamiento y en la prueba</li>
+            </ul>
+            <ul class="study-findings i18n-en-only">
+              <li>Prices are mathematically adjusted so expensive wines don't distort comparisons</li>
+              <li>Wine type (red, white…) is converted to numeric values so the model can understand it</li>
+              <li>Region and grape are replaced by their average price and rating — more useful than just their name</li>
+              <li>We avoided counting price three times, which would have given money too much weight</li>
+              <li>We normalised all numbers so no single data point dominates others due to its scale</li>
+              <li>We ensured entire wineries didn't end up simultaneously in training and test sets</li>
             </ul>
           </div>
         </div>
@@ -330,19 +378,24 @@
         <div class="study-card-meta">
           <span class="study-badge">05</span>
           <div>
-            <h2 class="study-card-title">Agrupando los vinos</h2>
-            <p class="study-card-lead">Familias de vinos descubiertas automáticamente con k-means</p>
+            <h2 class="study-card-title" data-i18n="about_s05_title">Agrupando los vinos</h2>
+            <p class="study-card-lead" data-i18n="about_s05_lead">Familias de vinos descubiertas automáticamente con k-means</p>
           </div>
         </div>
         <div class="study-body">
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               Con todos los datos preparados, aplicamos el algoritmo <strong>k-means</strong> para
               agrupar los 2.024 vinos según sus similitudes de precio, tipo, uva y región.
               El resultado son <strong>8 perfiles distintos</strong> que sirven de base a las
               recomendaciones de InWine.
             </p>
-            <ul class="study-findings" id="km-list">
+            <p class="i18n-en-only">
+              With all the data prepared, we applied the <strong>k-means</strong> algorithm to group
+              the 2,024 wines by their similarities in price, type, grape and region. The result is
+              <strong>8 distinct profiles</strong> that form the foundation of InWine's recommendations.
+            </p>
+            <ul class="study-findings i18n-es-only" id="km-list">
               <li class="km-item" data-cid="0" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Iconos de Guarda</strong> → 315 tintos de muy alta gama: Ribera del Duero, Priorato, Rioja</li>
               <li class="km-item" data-cid="7" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Tintos Jóvenes Premium</strong> → 758 vinos, el grupo más numeroso: Ribera del Duero, Priorato</li>
               <li class="km-item" data-cid="6" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Tintos Crianza Clásicos</strong> → 333 tintos con barrica al 100&nbsp;%: Rioja y Ribera del Duero</li>
@@ -352,18 +405,28 @@
               <li class="km-item" data-cid="5" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Espumosos Premium</strong> → 38 cavas con crianza prolongada</li>
               <li class="km-item" data-cid="3" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Vinos Singulares</strong> → 65 vinos de perfil no convencional</li>
             </ul>
+            <ul class="study-findings i18n-en-only" id="km-list-en">
+              <li class="km-item" data-cid="0" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Signature Reserve</strong> → 315 premium reds: Ribera del Duero, Priorat, Rioja</li>
+              <li class="km-item" data-cid="7" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Everyday Red</strong> → 758 wines, the largest group: Ribera del Duero, Priorat</li>
+              <li class="km-item" data-cid="6" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Oak &amp; Time</strong> → 333 reds, 100% barrel-aged: Rioja and Ribera del Duero</li>
+              <li class="km-item" data-cid="2" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Fresh &amp; Easy</strong> → 288 unoaked reds from emerging regions</li>
+              <li class="km-item" data-cid="1" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Elegant Whites</strong> → 137 mid-premium whites: Rias Baixas, Rueda, Rioja</li>
+              <li class="km-item" data-cid="4" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Mediterranean Soul</strong> → 90 wines from Jerez and Montilla-Moriles</li>
+              <li class="km-item" data-cid="5" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Bubble &amp; Celebration</strong> → 38 long-aged Cavas</li>
+              <li class="km-item" data-cid="3" style="transition:opacity 0.18s,transform 0.18s;cursor:pointer"><strong>Wild Terroir</strong> → 65 wines with an unconventional profile</li>
+            </ul>
           </div>
           <div class="study-chart-slot">
             <div id="km-bars" style="display:flex;flex-direction:column;gap:0.5rem;width:100%">
-              {% for cid, name, n, color in [
-                (7, 'Tintos Jóvenes Premium',  758, '#8B1A2E'),
-                (6, 'Tintos Crianza Clásicos', 333, '#A83040'),
-                (0, 'Iconos de Guarda',        315, '#701828'),
-                (2, 'Tintos Jóvenes de Autor', 288, '#C04050'),
-                (1, 'Blancos Selectos',        137, '#C9A050'),
-                (4, 'Generosos y Jerez',        90, '#6B3510'),
-                (3, 'Vinos Singulares',         65, '#888888'),
-                (5, 'Espumosos Premium',        38, '#555555')
+              {% for cid, name_es, name_en, n, color in [
+                (7, 'Tintos Jóvenes Premium',  'Everyday Red',         758, '#8B1A2E'),
+                (6, 'Tintos Crianza Clásicos', 'Oak & Time',           333, '#A83040'),
+                (0, 'Iconos de Guarda',        'Signature Reserve',    315, '#701828'),
+                (2, 'Tintos Jóvenes de Autor', 'Fresh & Easy',         288, '#C04050'),
+                (1, 'Blancos Selectos',        'Elegant Whites',       137, '#C9A050'),
+                (4, 'Generosos y Jerez',       'Mediterranean Soul',    90, '#6B3510'),
+                (3, 'Vinos Singulares',        'Wild Terroir',          65, '#888888'),
+                (5, 'Espumosos Premium',       'Bubble & Celebration',  38, '#555555')
               ] %}
               <div class="km-bar" data-cid="{{ cid }}"
                    style="display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;
@@ -371,7 +434,10 @@
                 <span class="km-bar-label"
                       style="width:9rem;color:var(--cream-muted);white-space:nowrap;
                              overflow:hidden;text-overflow:ellipsis;flex-shrink:0;
-                             transition:color 0.18s">{{ name }}</span>
+                             transition:color 0.18s">
+                  <span class="i18n-es-only">{{ name_es }}</span>
+                  <span class="i18n-en-only">{{ name_en }}</span>
+                </span>
                 <div style="flex:1;background:var(--bg-elevated);border-radius:3px;
                             height:14px;position:relative;overflow:hidden">
                   <div class="km-fill" data-w="{{ ((n / 758) * 100) | int }}"
@@ -456,8 +522,8 @@
         <div class="study-card-meta">
           <span class="study-badge">06</span>
           <div>
-            <h2 class="study-card-title">Ver los grupos en el espacio</h2>
-            <p class="study-card-lead">Mapa 3D animado de los 2.024 vinos proyectados con PCA</p>
+            <h2 class="study-card-title" data-i18n="about_s06_title">Ver los grupos en el espacio</h2>
+            <p class="study-card-lead" data-i18n="about_s06_lead">Mapa 3D animado de los 2.024 vinos proyectados con PCA</p>
           </div>
         </div>
         <div class="study-body study-body--reverse">
@@ -466,8 +532,8 @@
             <div style="display:flex;flex-direction:column;gap:0.55rem;width:100%;padding:0.75rem">
 
               <canvas id="pca-3d" style="display:block;border-radius:8px;cursor:grab"></canvas>
-              <p style="font-size:0.67rem;color:var(--cream-muted);text-align:center;margin:0;opacity:0.6">
-                Arrastra para rotar &middot; pasa el cursor sobre los grupos
+              <p style="font-size:0.67rem;color:var(--cream-muted);text-align:center;margin:0;opacity:0.6" data-i18n="about_pca_interact">
+                Arrastra para rotar · pasa el cursor sobre los grupos
               </p>
 
               {# ── Panel de información (se rellena al hacer hover) ── #}
@@ -476,7 +542,8 @@
                           background:var(--bg-elevated);border:1px solid var(--border-light);
                           transition:opacity 0.2s;opacity:0.45">
                 <span id="pca-info-hint"
-                      style="font-size:0.76rem;color:var(--cream-muted);font-style:italic">
+                      style="font-size:0.76rem;color:var(--cream-muted);font-style:italic"
+                      data-i18n="about_pca_hint">
                   Pasa el cursor sobre un grupo o sobre la leyenda para ver detalles
                 </span>
                 <div id="pca-info-detail" style="display:none">
@@ -492,15 +559,15 @@
 
               {# ── Leyenda interactiva ── #}
               <div style="display:flex;flex-wrap:wrap;gap:0.3rem 0.45rem">
-                {% for cid, name, color in [
-                  (7, 'Tintos Jóvenes Premium', '#8B1A2E'),
-                  (6, 'Tintos Crianza Clásicos', '#A83040'),
-                  (0, 'Iconos de Guarda',        '#701828'),
-                  (2, 'Tintos Jóvenes de Autor', '#C04050'),
-                  (1, 'Blancos Selectos',         '#C9A050'),
-                  (4, 'Generosos y Jerez',        '#6B3510'),
-                  (3, 'Vinos Singulares',         '#888888'),
-                  (5, 'Espumosos Premium',        '#666666')
+                {% for cid, name_es, name_en, color in [
+                  (7, 'Tintos Jóvenes Premium', 'Everyday Red',        '#8B1A2E'),
+                  (6, 'Tintos Crianza Clásicos', 'Oak & Time',         '#A83040'),
+                  (0, 'Iconos de Guarda',        'Signature Reserve',  '#701828'),
+                  (2, 'Tintos Jóvenes de Autor', 'Fresh & Easy',       '#C04050'),
+                  (1, 'Blancos Selectos',        'Elegant Whites',     '#C9A050'),
+                  (4, 'Generosos y Jerez',       'Mediterranean Soul', '#6B3510'),
+                  (3, 'Vinos Singulares',        'Wild Terroir',       '#888888'),
+                  (5, 'Espumosos Premium',       'Bubble & Celebration','#666666')
                 ] %}
                 <button class="pca-leg" data-cid="{{ cid }}"
                   style="display:inline-flex;align-items:center;gap:0.35rem;
@@ -510,7 +577,8 @@
                          cursor:pointer;transition:all 0.18s;font-family:inherit">
                   <span style="width:9px;height:9px;border-radius:50%;
                                background:{{ color }};flex-shrink:0;display:inline-block"></span>
-                  {{ name }}
+                  <span class="i18n-es-only">{{ name_es }}</span>
+                  <span class="i18n-en-only">{{ name_en }}</span>
                 </button>
                 {% endfor %}
               </div>
@@ -519,16 +587,27 @@
           </div>{# /study-chart-slot #}
 
           <div class="study-text">
-            <p>
+            <p class="i18n-es-only">
               Los 2.024 vinos existen en un espacio de 18 dimensiones. El PCA los proyecta
               en tres ejes que juntos conservan el <strong>58&nbsp;% de la varianza</strong>,
               suficiente para ver que los 8 grupos forman zonas propias en el mapa.
             </p>
-            <ul class="study-findings">
+            <p class="i18n-en-only">
+              The 2,024 wines exist in an 18-dimensional space. PCA projects them onto three
+              axes that together preserve <strong>58% of the variance</strong> — enough to see
+              that the 8 groups form distinct zones on the map.
+            </p>
+            <ul class="study-findings i18n-es-only">
               <li><strong>PC1 (31,2&nbsp;%)</strong> → separa tintos de no-tintos: a la derecha, temperatura alta y uva tinta; a la izquierda, blancos, generosos y espumosos</li>
               <li><strong>PC2 (17,6&nbsp;%)</strong> → separa por precio y valoración: arriba los más caros y mejor puntuados, abajo mejor relación calidad-precio</li>
               <li><strong>PC3 (9,5&nbsp;%)</strong> → refleja la crianza y elaboración: cavas y espumosos en positivo, tintos jóvenes sin barrica en negativo</li>
               <li>Con solo <strong>6 componentes</strong> se supera el <strong>80&nbsp;%</strong> de varianza; a partir del componente 12 la aportación es prácticamente nula</li>
+            </ul>
+            <ul class="study-findings i18n-en-only">
+              <li><strong>PC1 (31.2%)</strong> → separates reds from non-reds: right side has high-temperature red-grape wines; left has whites, fortified and sparkling</li>
+              <li><strong>PC2 (17.6%)</strong> → separates by price and rating: top has most expensive and highest-rated, bottom has best value</li>
+              <li><strong>PC3 (9.5%)</strong> → reflects ageing and production: Cavas and sparkling positive, young unoaked reds negative</li>
+              <li>With just <strong>6 components</strong> we exceed <strong>80%</strong> variance; from component 12 onwards the contribution is practically zero</li>
             </ul>
           </div>
 
@@ -537,26 +616,53 @@
 
       <script>
       (function () {
-        var CL = [
-          { id:'0', name:'Iconos de Guarda',        color:'#701828', cx:[ 2.8,  2.2,  1.5], n:28, sp:0.65 },
-          { id:'1', name:'Blancos Selectos',         color:'#C9A050', cx:[-2.5,  0.7,  0.0], n:15, sp:0.75 },
-          { id:'2', name:'Tintos Jóvenes de Autor',  color:'#C04050', cx:[ 0.5, -1.5, -1.0], n:25, sp:0.85 },
-          { id:'3', name:'Vinos Singulares',         color:'#909090', cx:[-0.5, -0.5, -0.2], n:8,  sp:0.90 },
-          { id:'4', name:'Generosos y Jerez',        color:'#6B3510', cx:[-3.5,  1.5,  0.3], n:10, sp:0.65 },
-          { id:'5', name:'Espumosos Premium',        color:'#808080', cx:[-2.0,  2.5,  1.8], n:5,  sp:0.55 },
-          { id:'6', name:'Tintos Crianza Clásicos',  color:'#A83040', cx:[ 1.8,  0.3,  0.8], n:30, sp:0.85 },
-          { id:'7', name:'Tintos Jóvenes Premium',   color:'#8B1A2E', cx:[ 1.2, -0.8, -0.5], n:60, sp:1.05 }
-        ];
-        var INFO = {
-          '0':{ c:'315 vinos', d:'Los más caros y mejor puntuados. Grandes crianzas de Priorato, Rioja y Ribera del Duero.' },
-          '1':{ c:'137 vinos', d:'Blancos de gama media-alta. Rias Baixas, Rueda y Rioja Blanco.' },
-          '2':{ c:'288 vinos', d:'Tintos jóvenes de regiones emergentes con uvas poco habituales.' },
-          '3':{ c:'65 vinos',  d:'Perfil poco convencional. Difíciles de encuadrar en las demás familias.' },
-          '4':{ c:'90 vinos',  d:'Vinos fortificados de Jerez y Montilla-Moriles.' },
-          '5':{ c:'38 vinos',  d:'Cavas de alta gama con crianza prolongada. El grupo más pequeño.' },
-          '6':{ c:'333 vinos', d:'Tintos con 100 % de barrica. Los clásicos de Rioja y Ribera del Duero.' },
-          '7':{ c:'758 vinos', d:'El grupo más grande. Tintos sin barrica de alta puntuación.' }
+        var _lang = (typeof getLang === 'function') ? getLang() : (localStorage.getItem('inwine-lang') || 'es');
+        var CL_DATA = {
+          es: [
+            { id:'0', name:'Iconos de Guarda',        color:'#701828', cx:[ 2.8,  2.2,  1.5], n:28, sp:0.65 },
+            { id:'1', name:'Blancos Selectos',         color:'#C9A050', cx:[-2.5,  0.7,  0.0], n:15, sp:0.75 },
+            { id:'2', name:'Tintos Jóvenes de Autor',  color:'#C04050', cx:[ 0.5, -1.5, -1.0], n:25, sp:0.85 },
+            { id:'3', name:'Vinos Singulares',         color:'#909090', cx:[-0.5, -0.5, -0.2], n:8,  sp:0.90 },
+            { id:'4', name:'Generosos y Jerez',        color:'#6B3510', cx:[-3.5,  1.5,  0.3], n:10, sp:0.65 },
+            { id:'5', name:'Espumosos Premium',        color:'#808080', cx:[-2.0,  2.5,  1.8], n:5,  sp:0.55 },
+            { id:'6', name:'Tintos Crianza Clásicos',  color:'#A83040', cx:[ 1.8,  0.3,  0.8], n:30, sp:0.85 },
+            { id:'7', name:'Tintos Jóvenes Premium',   color:'#8B1A2E', cx:[ 1.2, -0.8, -0.5], n:60, sp:1.05 }
+          ],
+          en: [
+            { id:'0', name:'Signature Reserve',    color:'#701828', cx:[ 2.8,  2.2,  1.5], n:28, sp:0.65 },
+            { id:'1', name:'Elegant Whites',        color:'#C9A050', cx:[-2.5,  0.7,  0.0], n:15, sp:0.75 },
+            { id:'2', name:'Fresh & Easy',          color:'#C04050', cx:[ 0.5, -1.5, -1.0], n:25, sp:0.85 },
+            { id:'3', name:'Wild Terroir',          color:'#909090', cx:[-0.5, -0.5, -0.2], n:8,  sp:0.90 },
+            { id:'4', name:'Mediterranean Soul',    color:'#6B3510', cx:[-3.5,  1.5,  0.3], n:10, sp:0.65 },
+            { id:'5', name:'Bubble & Celebration',  color:'#808080', cx:[-2.0,  2.5,  1.8], n:5,  sp:0.55 },
+            { id:'6', name:'Oak & Time',            color:'#A83040', cx:[ 1.8,  0.3,  0.8], n:30, sp:0.85 },
+            { id:'7', name:'Everyday Red',          color:'#8B1A2E', cx:[ 1.2, -0.8, -0.5], n:60, sp:1.05 }
+          ]
         };
+        var CL = CL_DATA[_lang] || CL_DATA.es;
+        var INFO_DATA = {
+          es: {
+            '0':{ c:'315 vinos', d:'Los más caros y mejor puntuados. Grandes crianzas de Priorato, Rioja y Ribera del Duero.' },
+            '1':{ c:'137 vinos', d:'Blancos de gama media-alta. Rias Baixas, Rueda y Rioja Blanco.' },
+            '2':{ c:'288 vinos', d:'Tintos jóvenes de regiones emergentes con uvas poco habituales.' },
+            '3':{ c:'65 vinos',  d:'Perfil poco convencional. Difíciles de encuadrar en las demás familias.' },
+            '4':{ c:'90 vinos',  d:'Vinos fortificados de Jerez y Montilla-Moriles.' },
+            '5':{ c:'38 vinos',  d:'Cavas de alta gama con crianza prolongada. El grupo más pequeño.' },
+            '6':{ c:'333 vinos', d:'Tintos con 100 % de barrica. Los clásicos de Rioja y Ribera del Duero.' },
+            '7':{ c:'758 vinos', d:'El grupo más grande. Tintos sin barrica de alta puntuación.' }
+          },
+          en: {
+            '0':{ c:'315 wines', d:'The most expensive and highest-rated. Great aged wines from Priorat, Rioja and Ribera del Duero.' },
+            '1':{ c:'137 wines', d:'Mid-premium whites. Rias Baixas, Rueda and white Rioja.' },
+            '2':{ c:'288 wines', d:'Young reds from emerging regions with unusual grape varieties.' },
+            '3':{ c:'65 wines',  d:'Unconventional profile. Hard to fit into the other families.' },
+            '4':{ c:'90 wines',  d:'Fortified wines from Jerez and Montilla-Moriles.' },
+            '5':{ c:'38 wines',  d:'Premium Cavas with extended ageing. The smallest group.' },
+            '6':{ c:'333 wines', d:'Reds with 100% barrel ageing. The classics of Rioja and Ribera del Duero.' },
+            '7':{ c:'758 wines', d:'The largest group. High-scoring unoaked reds.' }
+          }
+        };
+        var INFO = INFO_DATA[_lang] || INFO_DATA.es;
 
         var SEED = 42;
         function rng() { SEED = (SEED * 1664525 + 1013904223) & 0xffffffff; return (SEED >>> 0) / 0xffffffff; }
@@ -606,11 +712,22 @@
           return r+','+g+','+b;
         }
 
+        function isDark() {
+          return document.documentElement.getAttribute('data-theme') === 'dark';
+        }
+
         function draw() {
           var W = cv.width, H = cv.height;
+          var dark = isDark();
+
           ctx.clearRect(0, 0, W, H);
 
-          ctx.strokeStyle = 'rgba(158,142,120,0.18)';
+          if (dark) {
+            ctx.fillStyle = 'rgba(22,10,13,0.55)';
+            ctx.fillRect(0, 0, W, H);
+          }
+
+          ctx.strokeStyle = dark ? 'rgba(220,190,140,0.28)' : 'rgba(158,142,120,0.18)';
           ctx.lineWidth = 1;
           var axPts = [[-4,0,0],[4,0,0],[0,-3,0],[0,3,0],[0,0,-3],[0,0,3]];
           axPts.forEach(function(p) {
@@ -624,7 +741,7 @@
             { p:[0,0,3.6],   t:'PC3  9,5 %'  }
           ];
           ctx.font = '10px sans-serif';
-          ctx.fillStyle = 'rgba(158,142,120,0.55)';
+          ctx.fillStyle = dark ? 'rgba(220,190,140,0.80)' : 'rgba(158,142,120,0.55)';
           ctx.textAlign = 'center';
           axLabels.forEach(function(a) {
             var p = proj(a.p[0],a.p[1],a.p[2]);

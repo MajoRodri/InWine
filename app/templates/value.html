@@ -155,8 +155,8 @@
 <div class="page-hero">
   <div class="container">
     <span class="page-hero-icon">{{ svg_icon("gem") }}</span>
-    <h1>Mejor <span class="text-gold">calidad-precio</span></h1>
-    <p>Los vinos con mejor ratio calidad-precio dentro de tu presupuesto, ordenados por puntuación.</p>
+    <h1 data-i18n-html="value_title_html">Mejor <span class="text-gold">calidad-precio</span></h1>
+    <p data-i18n="value_subtitle">Los vinos con mejor ratio calidad-precio dentro de tu presupuesto, ordenados por puntuación.</p>
   </div>
 </div>
 
@@ -169,7 +169,7 @@
 
         {# Precio máximo #}
         <div class="filter-group">
-          <label class="filter-label" for="maxBudget">Precio máximo</label>
+          <label class="filter-label" for="maxBudget" data-i18n="filter_max_price">Precio máximo</label>
           <input type="range" id="maxBudget"
             min="0" max="100" step="1" value="0"
             class="form-range value-range">
@@ -180,7 +180,7 @@
 
         {# Valoración mínima #}
         <div class="filter-group">
-          <label class="filter-label" for="minRating">Valoración mínima</label>
+          <label class="filter-label" for="minRating" data-i18n="filter_min_rating">Valoración mínima</label>
           <select name="min_rating" id="minRating" class="form-control value-select">
             {% for val, lbl in [(4.0,"4.0 ★ o más"),(4.2,"4.2 ★ o más"),(4.4,"4.4 ★ o más"),(4.6,"4.6 ★ o más"),(4.8,"4.8 ★ o más")] %}
             <option value="{{ val }}" {% if min_rating == val %}selected{% endif %}>{{ lbl }}</option>
@@ -190,23 +190,23 @@
 
         {# Ordenar por #}
         <div class="filter-group">
-          <label class="filter-label" for="sortBy">Ordenar por</label>
+          <label class="filter-label" for="sortBy" data-i18n="filter_sort_by">Ordenar por</label>
           <select name="sort_by" id="sortBy" class="form-control value-select">
-            <option value="ratio"      {% if sort_by == 'ratio'      %}selected{% endif %}>Calidad/Precio</option>
-            <option value="price_asc"  {% if sort_by == 'price_asc'  %}selected{% endif %}>Precio ascendente</option>
-            <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Precio descendente</option>
+            <option value="ratio"      {% if sort_by == 'ratio'      %}selected{% endif %} data-i18n="sort_ratio">Calidad/Precio</option>
+            <option value="price_asc"  {% if sort_by == 'price_asc'  %}selected{% endif %} data-i18n="sort_price_asc">Precio ascendente</option>
+            <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %} data-i18n="sort_price_desc">Precio descendente</option>
           </select>
         </div>
 
         {# Tipo de vino #}
         <div class="filter-group">
-          <label class="filter-label">Tipo de vino</label>
+          <label class="filter-label" data-i18n="filter_wine_type">Tipo de vino</label>
           <div class="ms-wrap">
             <button type="button" class="ms-btn" data-ms="ms-tipos">
               <span class="ms-btn-text {% if sel_wine_types %}has-sel{% endif %}"
-                    data-placeholder="Todos los tipos">
+                    data-placeholder="Todos los tipos" data-i18n-ph-placeholder="filter_all_types">
                 {% if sel_wine_types %}{{ sel_wine_types | join(", ") }}
-                {% else %}Todos los tipos{% endif %}
+                {% else %}<span data-i18n="filter_all_types">Todos los tipos</span>{% endif %}
               </span>
               {% if sel_wine_types %}<span class="ms-badge">{{ sel_wine_types | length }}</span>{% endif %}
               <span class="ms-caret">▾</span>
@@ -222,27 +222,27 @@
                 </label>
                 {% endfor %}
               </div>
-              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-tipos">Limpiar selección</button></div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-tipos" data-i18n="filter_clear">Limpiar selección</button></div>
             </div>
           </div>
         </div>
 
         {# Región #}
         <div class="filter-group">
-          <label class="filter-label">Región</label>
+          <label class="filter-label" data-i18n="filter_region">Región</label>
           <div class="ms-wrap">
             <button type="button" class="ms-btn" data-ms="ms-regions">
               <span class="ms-btn-text {% if sel_regions %}has-sel{% endif %}"
                     data-placeholder="Todas las regiones">
                 {% if sel_regions %}{{ sel_regions | join(", ") }}
-                {% else %}Todas las regiones{% endif %}
+                {% else %}<span data-i18n="filter_all_regions">Todas las regiones</span>{% endif %}
               </span>
               {% if sel_regions %}<span class="ms-badge">{{ sel_regions | length }}</span>{% endif %}
               <span class="ms-caret">▾</span>
             </button>
             <div id="ms-regions" class="ms-panel" style="display:none;min-width:230px">
               <div class="ms-search-wrap">
-                <input type="text" placeholder="Buscar región..." data-ms="ms-regions">
+                <input type="text" placeholder="Buscar región..." data-i18n-ph="filter_search_region" data-ms="ms-regions">
               </div>
               <div class="ms-list">
                 {% for r in regions %}
@@ -254,27 +254,27 @@
                 </label>
                 {% endfor %}
               </div>
-              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-regions">Limpiar selección</button></div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-regions" data-i18n="filter_clear">Limpiar selección</button></div>
             </div>
           </div>
         </div>
 
         {# Variedad de uva #}
         <div class="filter-group">
-          <label class="filter-label">Variedad de uva</label>
+          <label class="filter-label" data-i18n="filter_grape">Variedad de uva</label>
           <div class="ms-wrap">
             <button type="button" class="ms-btn" data-ms="ms-grapes" style="min-width:155px">
               <span class="ms-btn-text {% if sel_grape_varieties %}has-sel{% endif %}"
                     data-placeholder="Todas las variedades">
                 {% if sel_grape_varieties %}{{ sel_grape_varieties | join(", ") }}
-                {% else %}Todas las variedades{% endif %}
+                {% else %}<span data-i18n="filter_all_grapes">Todas las variedades</span>{% endif %}
               </span>
               {% if sel_grape_varieties %}<span class="ms-badge">{{ sel_grape_varieties | length }}</span>{% endif %}
               <span class="ms-caret">▾</span>
             </button>
             <div id="ms-grapes" class="ms-panel" style="display:none;min-width:220px">
               <div class="ms-search-wrap">
-                <input type="text" placeholder="Buscar uva..." data-ms="ms-grapes">
+                <input type="text" placeholder="Buscar uva..." data-i18n-ph="filter_search_grape" data-ms="ms-grapes">
               </div>
               <div class="ms-list">
                 {% for g in grapes %}
@@ -286,17 +286,18 @@
                 </label>
                 {% endfor %}
               </div>
-              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-grapes">Limpiar selección</button></div>
+              <div class="ms-footer"><button type="button" class="ms-clear" data-ms="ms-grapes" data-i18n="filter_clear">Limpiar selección</button></div>
             </div>
           </div>
         </div>
 
         {# Acciones #}
         <div class="filter-group" style="flex-direction:row;align-items:flex-end;gap:0.5rem">
-          <button type="submit" class="btn btn-gold btn-sm">Filtrar</button>
+          <button type="submit" class="btn btn-gold btn-sm" data-i18n="filter_apply">Filtrar</button>
           {% if sel_wine_types or sel_regions or sel_grape_varieties or max_price != 50 or min_rating != 4.2 or sort_by != 'ratio' %}
           <a href="/valor" class="btn btn-sm"
-             style="background:transparent;border:1px solid var(--border-light);color:var(--cream-muted)">
+             style="background:transparent;border:1px solid var(--border-light);color:var(--cream-muted)"
+             data-i18n="filter_clear_all">
             Limpiar todo
           </a>
           {% endif %}
@@ -308,7 +309,7 @@
       {% set active = sel_wine_types + sel_regions + sel_grape_varieties %}
       {% if active %}
       <div style="margin-top:0.8rem;display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center">
-        <span style="font-size:0.77rem;color:var(--cream-muted)">Filtrando por:</span>
+        <span style="font-size:0.77rem;color:var(--cream-muted)" data-i18n="filter_active_label">Filtrando por:</span>
         {% for tag in active %}
         <span class="filter-tag">{{ tag }}</span>
         {% endfor %}
@@ -319,15 +320,16 @@
     {# ── Tabla de resultados ──────────────────────────────── #}
     {% if wines %}
     <div style="margin:1.2rem 0 0.5rem;color:var(--cream-muted);font-size:0.83rem">
-      {{ total }} vino{{ 's' if total != 1 else '' }} encontrado{{ 's' if total != 1 else '' }}
+      <span class="i18n-es-only">{{ total }} vino{{ 's' if total != 1 else '' }} encontrado{{ 's' if total != 1 else '' }}</span>
+      <span class="i18n-en-only">{{ total }} wine{{ 's' if total != 1 else '' }} found</span>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
     <table class="value-table">
       <thead>
         <tr>
-          <th>#</th><th>Vino</th><th>Tipo</th>
-          <th class="col-hide-sm">Región</th><th class="col-hide-sm">Uva</th>
-          <th>Valoración</th><th>Precio</th><th>Ratio C/P</th>
+          <th>#</th><th data-i18n="th_wine">Vino</th><th data-i18n="th_type">Tipo</th>
+          <th class="col-hide-sm" data-i18n="th_region">Región</th><th class="col-hide-sm" data-i18n="th_grape">Uva</th>
+          <th data-i18n="th_rating">Valoración</th><th data-i18n="th_price">Precio</th><th data-i18n="th_ratio">Ratio C/P</th>
         </tr>
       </thead>
       <tbody>
@@ -361,15 +363,16 @@
     {% set last_item = [page * per_page, total] | min %}
     <div class="pagination">
       <span class="pagination-info">
-        Mostrando {{ first_item }}–{{ last_item }} de {{ total }} vinos
+        <span class="i18n-es-only">Mostrando {{ first_item }}–{{ last_item }} de {{ total }} vinos</span>
+        <span class="i18n-en-only">Showing {{ first_item }}–{{ last_item }} of {{ total }} wines</span>
       </span>
       <div class="pagination-controls">
 
         {# Anterior #}
         {% if page > 1 %}
-        <a href="/valor?{{ filter_qs }}&page={{ page - 1 }}" class="pg-btn">← Anterior</a>
+        <a href="/valor?{{ filter_qs }}&page={{ page - 1 }}" class="pg-btn" data-i18n="pg_prev">← Anterior</a>
         {% else %}
-        <span class="pg-btn pg-disabled">← Anterior</span>
+        <span class="pg-btn pg-disabled" data-i18n="pg_prev">← Anterior</span>
         {% endif %}
 
         {# Números de página con elipsis #}
@@ -390,9 +393,9 @@
 
         {# Siguiente #}
         {% if page < total_pages %}
-        <a href="/valor?{{ filter_qs }}&page={{ page + 1 }}" class="pg-btn">Siguiente →</a>
+        <a href="/valor?{{ filter_qs }}&page={{ page + 1 }}" class="pg-btn" data-i18n="pg_next">Siguiente →</a>
         {% else %}
-        <span class="pg-btn pg-disabled">Siguiente →</span>
+        <span class="pg-btn pg-disabled" data-i18n="pg_next">Siguiente →</span>
         {% endif %}
 
       </div>
@@ -400,7 +403,8 @@
     {% endif %}
 
     {% else %}
-      {{ empty_state("wine-bottle", "No hay vinos que cumplan estos criterios. Prueba a ampliar los filtros.") }}
+      <div class="i18n-es-only">{{ empty_state("wine-bottle", "No hay vinos que cumplan estos criterios. Prueba a ampliar los filtros.") }}</div>
+      <div class="i18n-en-only">{{ empty_state("wine-bottle", "No wines match these criteria. Try broadening the filters.") }}</div>
     {% endif %}
 
   </div>
