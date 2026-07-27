@@ -55,7 +55,11 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # 2. Construimos las rutas absolutas subiendo un nivel (.parent) hacia 'data/processed'
 # Esto funcionará sin importar desde qué carpeta de la terminal se ejecute el script.
-INPUT_PATH = BASE_DIR.parent / "data" / "processed" / "wines_SPA_clean.csv"
+# Preferimos wines_SPA_enriched_FINAL.csv (tiene flavor_descriptor del scraper);
+# si no existe, usamos wines_SPA_clean.csv como fallback sin flavors.
+_ENRICHED_FINAL = BASE_DIR.parent / "data" / "processed" / "wines_SPA_enriched_FINAL.csv"
+_CLEAN = BASE_DIR.parent / "data" / "processed" / "wines_SPA_clean.csv"
+INPUT_PATH = _ENRICHED_FINAL if _ENRICHED_FINAL.exists() else _CLEAN
 OUTPUT_PATH = BASE_DIR.parent / "data" / "processed" / "wines_SPA_model_ready.csv"
 
 TARGET_ENCODING_SMOOTHING = 10  # Suavizado estadístico

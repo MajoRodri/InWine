@@ -98,8 +98,7 @@
 
 <div align="center">
 
-<!-- Reemplazar la URL cuando esté desplegada en railway -->
-<a href="#">
+<a href="https://inwine-production.up.railway.app/">
   <img src="https://img.shields.io/badge/🍷%20Ver%20demo%20en%20vivo-InWine-6B1020?style=for-the-badge&logoColor=F0E4CC"/>
 </a>
 
@@ -327,6 +326,99 @@ Web app con **FastAPI + Jinja2**. Diseño luxury: fondo burdeos, tipografía ser
 
 </details>
 
+<details>
+<summary>&nbsp;▸&nbsp; <strong>VIII &nbsp;·&nbsp; MLOps — Pipeline reutilizable</strong> &nbsp;—&nbsp; <code>src/</code></summary>
+<br>
+
+Los notebooks entrenan el modelo, pero no sirven para producción: cada vez que se ejecutan **re-ajustan** el scaler y el K-Means desde cero, lo que daría resultados distintos para el mismo vino. El pipeline MLOps resuelve esto: **entrenar una vez, predecir siempre sin reentrenar**.
+
+Los tres objetos entrenados (StandardScaler, K-Means y PCA) se serializan juntos en `models/inwine_pipeline.joblib` con `joblib.dump()`. Cuando llega un vino nuevo, se cargan con `joblib.load()` y se aplican con `.transform()` / `.predict()` — nunca `.fit()`.
+
+<br>
+
+**Archivos**
+
+| Script | Qué hace |
+| :--- | :--- |
+| `src/train_pipeline.py` | Carga el CSV, llama a `preprocess()`, entrena K-Means (K=8) y PCA (2D), guarda el artefacto `.joblib` |
+| `src/predict_pipeline.py` | Carga el artefacto, aplica Target Encoding + escalado + K-Means + PCA a un DataFrame nuevo, y opcionalmente lo añade al catálogo CSV |
+| `src/add_wine.py` | CLI interactivo: pregunta los datos campo a campo, valida, muestra resumen, llama a `predict_pipeline` y añade el vino al catálogo |
+
+<br>
+
+**Flujo de datos**
+
+```
+wines_SPA_enriched_FINAL.csv
+        │
+        ▼
+  train_pipeline.py
+  ┌───────────────────────────────────────┐
+  │  preprocess()  →  StandardScaler.fit  │
+  │  KMeans.fit(X)                        │
+  │  PCA.fit(X)                           │
+  └──────────────┬────────────────────────┘
+                 │ joblib.dump()
+                 ▼
+     models/inwine_pipeline.joblib
+                 │
+                 │ joblib.load()   (sin reentrenar)
+                 ▼
+  predict_pipeline.py / add_wine.py
+  ┌───────────────────────────────────────┐
+  │  scaler.transform()    ← NO .fit()   │
+  │  kmeans.predict()      ← NO .fit()   │
+  │  pca.transform()       ← NO .fit()   │
+  └──────────────┬────────────────────────┘
+                 ▼
+     cluster_id  ·  PC1  ·  PC2
+     → append_to_catalog()
+     → wines_SPA_enriched.csv  (la app)
+```
+
+<br>
+
+**Por qué `.transform()` y no `.fit_transform()`**
+
+`fit_transform()` recalcula la media y la desviación estándar sobre los nuevos datos. Si el vino nuevo tiene un precio de 35 €, la media del scaler cambia a 35 € — completamente distinta a la del entrenamiento (50 € de media sobre 2.024 vinos). El cluster asignado sería incorrecto porque la escala ha cambiado. Con `.transform()`, el scaler usa **la misma media y desviación que aprendió en entrenamiento**, garantizando comparabilidad.
+
+<br>
+
+**Cuándo volver a ejecutar `train_pipeline.py`**
+
+| Situación | ¿Re-entrenar? |
+| :--- | :---: |
+| Añadir un vino nuevo | ✗ No — usar `add_wine.py` |
+| El dataset base cambia (nuevos vinos del scraper) | ✓ Sí |
+| Se modifica `preprocessing.py` | ✓ Sí |
+| Se cambia el número de clusters K | ✓ Sí |
+
+<br>
+
+**Tests — `tests/test_pipeline.py`**
+
+11 tests con fixtures sintéticas (sin CSV real):
+
+| Test | Qué verifica |
+| :--- | :--- |
+| `test_artifact_save_and_load` | El `.joblib` se guarda y carga sin errores |
+| `test_artifact_contains_required_keys` | Las 6 claves del artefacto están presentes |
+| `test_new_wine_gets_cluster_id` | Cada vino recibe un `cluster_id` válido (0–7) |
+| `test_pc1_and_pc2_generated` | `PC1` y `PC2` se generan sin nulos |
+| `test_row_count_preserved` | El nº de filas de entrada = nº de filas de salida |
+| `test_feature_columns_match_scaler` | `feature_columns` tiene exactamente las mismas dimensiones que el scaler |
+| `test_unknown_region_and_grape_handled` | Región o uva desconocida → fallback a media global, sin error |
+| `test_no_refitting_during_prediction` | La media del scaler no cambia tras predecir |
+| `test_feature_column_order_matches_unscaled` | Todas las columnas acaban en `_scaled` |
+| `test_append_to_catalog_writes_correct_columns` | El CSV solo incluye columnas de catálogo, no internas (`PC1`, `price_log`…) |
+| `test_append_to_catalog_appends_without_overwriting` | Llamar dos veces acumula filas, no sobreescribe |
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+</details>
+
 <br>
 
 <details>
@@ -492,6 +584,197 @@ Web app built with **FastAPI + Jinja2**. Luxury design: burgundy background, ser
 
 </details>
 
+<details>
+<summary>&nbsp;▸&nbsp; <strong>VIII &nbsp;·&nbsp; MLOps — Reusable Pipeline</strong> &nbsp;—&nbsp; <code>src/</code></summary>
+<br>
+
+The notebooks train the model, but they are not suitable for production: every time they run they **refit** the scaler and K-Means from scratch, which would produce different results for the same wine. The MLOps pipeline solves this: **train once, predict always without retraining**.
+
+The three trained objects (StandardScaler, K-Means and PCA) are serialised together into `models/inwine_pipeline.joblib` with `joblib.dump()`. When a new wine arrives, they are loaded with `joblib.load()` and applied with `.transform()` / `.predict()` — never `.fit()`.
+
+<br>
+
+**Scripts**
+
+| Script | What it does |
+| :--- | :--- |
+| `src/train_pipeline.py` | Loads the CSV, calls `preprocess()`, trains K-Means (K=8) and PCA (2D), saves the `.joblib` artifact |
+| `src/predict_pipeline.py` | Loads the artifact, applies Target Encoding + scaling + K-Means + PCA to a new DataFrame, and optionally appends it to the catalog CSV |
+| `src/add_wine.py` | Interactive CLI: asks for data field by field, validates, shows a summary, calls `predict_pipeline` and appends the wine to the catalog |
+
+<br>
+
+**Why `.transform()` and not `.fit_transform()`**
+
+`fit_transform()` recalculates the mean and standard deviation on the new data. If the new wine has a price of €35, the scaler's mean changes to €35 — completely different from the training mean (€50 over 2,024 wines). The assigned cluster would be incorrect because the scale has changed. With `.transform()`, the scaler uses **the same mean and standard deviation it learned during training**, guaranteeing comparability.
+
+<br>
+
+**When to re-run `train_pipeline.py`**
+
+| Situation | Retrain? |
+| :--- | :---: |
+| Adding a new wine | ✗ No — use `add_wine.py` |
+| Base dataset changes (new wines from the scraper) | ✓ Yes |
+| `preprocessing.py` logic is modified | ✓ Yes |
+| Number of clusters K changes | ✓ Yes |
+
+<br>
+
+**Tests — `tests/test_pipeline.py`**
+
+11 tests with synthetic fixtures (no real CSV needed):
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+</details>
+
+</details>
+
+<br>
+
+---
+
+<br>
+
+## ✦ &nbsp; MLOps — Comandos rápidos
+
+<br>
+
+<details>
+<summary>&nbsp;▸&nbsp; Ver todos los comandos</summary>
+<br>
+
+**Paso 0 — Solo la primera vez (o al cambiar el dataset): entrenar el artefacto**
+
+```bash
+python -m src.train_pipeline
+```
+
+Salida esperada:
+```
+Dataset cargado: (2024, 13)
+Preprocesamiento completado: (2024, 43)
+Features para clustering/PCA: 15 columnas
+K-Means entrenado (K=8). Distribución: {0: 315, 1: 137, ...}
+PCA entrenado — PC1: 31.2%, PC2: 17.6% de varianza explicada
+Artefacto guardado en: models/inwine_pipeline.joblib
+```
+
+<br>
+
+**Paso 1 — Añadir un vino nuevo (script interactivo)**
+
+```bash
+python -m src.add_wine
+```
+
+```
+═══════════════════════════════════════
+   InWine · Añadir vino nuevo
+═══════════════════════════════════════
+
+  Bodega: Bodega Torres
+  Nombre del vino: Gran Coronas
+  Añada: 2021
+  Rating (1.0 – 5.0): 4.3
+  Región (D.O.): Penedès
+  Precio (€): 35
+  Tipo de vino:
+    1. Tinto  2. Blanco  3. Rosado  4. Espumoso  5. Generoso
+  Elige: 1
+  Variedad de uva [Blend/Other]: Cabernet Sauvignon
+  Crianza [0/1]: 0
+  Temperatura de servicio: 6. 16-18°C
+
+─── Resumen ───────────────────────────
+  Bodega:       Bodega Torres
+  Vino:         Gran Coronas (2021)
+  Región:       Penedès
+  Tipo:         Tinto  ·  Uva: Cabernet Sauvignon
+  Precio:       35€  ·  Rating: 4.3
+  Crianza:      No
+  Temperatura:  16-18°C
+───────────────────────────────────────
+
+  ¿Añadir al catálogo? [s/n]: s
+
+Procesando...
+  → Cluster asignado: 6  ·  PC1: 1.2  ·  PC2: -0.8
+✓ 'Gran Coronas' añadido al catálogo.
+  Reinicia la app para verlo reflejado.
+```
+
+Después reinicia la app: `uvicorn app.main:app --reload`
+
+<br>
+
+**Paso 2 — Subir el vino nuevo a la demo en vivo (Railway)**
+
+La app **nunca ejecuta el modelo en tiempo real**. Solo lee el CSV. Cuando `add_wine.py` termina, el `cluster_id` ya está calculado y guardado en la fila del CSV — la app simplemente lo lee para hacer las recomendaciones. Por eso el único paso para que el vino aparezca en Railway es subir el CSV actualizado:
+
+```bash
+git add data/processed/wines_SPA_enriched.csv
+git commit -m "data: add wine [nombre del vino]"
+git push
+```
+
+Railway detecta el push y redespliega automáticamente.
+
+> El CSV no se sube con el push de código porque cada persona puede añadir vinos distintos localmente. Solo se sube cuando lo decides explícitamente.
+
+<br>
+
+**Tests del pipeline**
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+<br>
+
+</details>
+
+<details>
+<summary><strong>English — Quick commands</strong></summary>
+<br>
+
+**Step 0 — First time only (or when the dataset changes): train the artifact**
+
+```bash
+python -m src.train_pipeline
+```
+
+**Step 1 — Add a new wine (interactive CLI)**
+
+```bash
+python -m src.add_wine
+# asks field by field · shows summary · appends to catalog
+# then restart: uvicorn app.main:app --reload
+```
+
+**Step 2 — Push the new wine to the live demo (Railway)**
+
+The app **never runs the model in real time** — it only reads the CSV. When `add_wine.py` finishes, the `cluster_id` is already calculated and saved in the CSV row. The app just reads it to make recommendations. So the only step to make the wine appear on Railway is to push the updated CSV:
+
+```bash
+git add data/processed/wines_SPA_enriched.csv
+git commit -m "data: add wine [wine name]"
+git push
+```
+
+Railway detects the push and redeploys automatically.
+
+**Run pipeline tests**
+
+```bash
+pytest tests/test_pipeline.py -v
+```
+
+> For a full technical explanation see step VIII in the Pipeline section above.
+
 </details>
 
 <br>
@@ -636,10 +919,16 @@ InWine/
 │   └── 05_pca.ipynb
 ├── preprocessing/                # Scripts de transformación y mappings
 ├── scrapper/                     # Scraper Playwright sobre Vivinos
+├── src/                          # Scripts MLOps reutilizables
+│   ├── train_pipeline.py         # Entrena y guarda todos los objetos del modelo
+│   ├── predict_pipeline.py       # Aplica el pipeline guardado a vinos nuevos
+│   └── add_wine.py               # Script interactivo para añadir un vino nuevo
+├── models/                       # Artefacto entrenado (generado por train_pipeline.py)
+│   └── inwine_pipeline.joblib
 ├── data/
 │   ├── raw/                      # Dataset original de Kaggle
 │   └── processed/                # CSVs generados por el pipeline
-├── tests/                        # Tests unitarios (loader + services)
+├── tests/                        # Tests unitarios (loader + services + pipeline MLOps)
 ├── requirements.txt              # Dependencias de producción
 └── requirements-dev.txt          # Dependencias de desarrollo
 ```
@@ -666,10 +955,16 @@ InWine/
 │   └── 05_pca.ipynb
 ├── preprocessing/                # Transformation scripts and mappings
 ├── scrapper/                     # Playwright scraper for Vivinos
+├── src/                          # Reusable MLOps scripts
+│   ├── train_pipeline.py         # Trains and saves all model objects
+│   ├── predict_pipeline.py       # Applies the saved pipeline to new wines
+│   └── add_wine.py               # Interactive script to add a new wine
+├── models/                       # Trained artifact (generated by train_pipeline.py)
+│   └── inwine_pipeline.joblib
 ├── data/
 │   ├── raw/                      # Original Kaggle dataset
 │   └── processed/                # CSVs generated by the pipeline
-├── tests/                        # Unit tests (loader + services)
+├── tests/                        # Unit tests (loader + services + MLOps pipeline)
 ├── requirements.txt              # Production dependencies
 └── requirements-dev.txt          # Development dependencies
 ```
@@ -717,6 +1012,22 @@ python scrapper/scrapper_enriched.py
 cd preprocessing && python preprocessing.py
 ```
 
+**MLOps — entrenar el artefacto** *(solo la primera vez o al cambiar el dataset)*
+```bash
+python -m src.train_pipeline
+```
+
+**MLOps — añadir un vino nuevo**
+```bash
+python -m src.add_wine
+```
+
+**Tests**
+```bash
+pytest                          # todos los tests
+pytest tests/test_pipeline.py   # solo el pipeline MLOps
+```
+
 <br>
 
 <details>
@@ -752,6 +1063,22 @@ python scrapper/scrapper_enriched.py
 ```bash
 # Run notebooks in order: 01 → 02 → 03 → 04 → 05
 cd preprocessing && python preprocessing.py
+```
+
+**MLOps — train the artifact** *(first time only, or when the dataset changes)*
+```bash
+python -m src.train_pipeline
+```
+
+**MLOps — add a new wine**
+```bash
+python -m src.add_wine
+```
+
+**Tests**
+```bash
+pytest                          # all tests
+pytest tests/test_pipeline.py   # MLOps pipeline only
 ```
 
 </details>
