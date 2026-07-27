@@ -8,8 +8,8 @@
 <div class="page-hero">
   <div class="container">
     <span class="page-hero-icon">{{ svg_icon("plate") }}</span>
-    <h1>Tu sommelier <span class="text-gold">inteligente</span></h1>
-    <p>Pídeme un maridaje o deja que te recomiende el vino perfecto.</p>
+    <h1 data-i18n-html="food_page_title_html">Tu sommelier <span class="text-gold">inteligente</span></h1>
+    <p data-i18n="food_page_subtitle">Pídeme un maridaje o deja que te recomiende el vino perfecto.</p>
   </div>
 </div>
 
@@ -315,12 +315,13 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
   var state      = { intent:null, food:null, wineType:null, ageing:null, budget:null };
   var lastSearch = null;
   var excludedIds = [];
+  var lastRecId  = null;
 
   function scrollBottom() {
     msgs.scrollTo({ top: msgs.scrollHeight, behavior:'smooth' });
   }
 
-  /* Mensaje del bot  */
+  /* Bot message: extracts chips to the sticky bar / Mensaje del bot: mueve chips a la barra fija */
   function botMsg(html) {
     var tmp = document.createElement('div');
     tmp.innerHTML = html;
@@ -339,7 +340,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     }
   }
 
-  /* Respuesta del usuario  */
+  /* User message bubble / Burbuja de respuesta del usuario */
   function userMsg(iconName, label) {
     var b = document.createElement('div');
     b.className = 'bs-bubble-user';
@@ -348,7 +349,7 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     scrollBottom();
   }
 
-  /* Indicador de escritura */
+  /* Typing indicator (animated dots) / Indicador de escritura (puntos animados) */
   function showTyping() {
     var b = document.createElement('div');
     b.id = 'typingRow';
@@ -379,34 +380,44 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
       }).join('') + '</div>';
   }
 
-  var INTENTS = [
-    { action:'intent', value:'maridaje',   label:'Maridaje',             icon:'plate'   },
-    { action:'intent', value:'recomendar', label:'Recomiéndame un vino', icon:'sparkle' },
-  ];
-  function intentChips(){ return chipsHtml(INTENTS); }
+  function t(key){ return window.getT ? window.getT(key) : key; }
+
+  function intentChips(){
+    return chipsHtml([
+      { action:'intent', value:'maridaje',   label:t('chat_intent_pairing'),   icon:'plate'   },
+      { action:'intent', value:'recomendar', label:t('chat_intent_recommend'), icon:'sparkle' },
+    ]);
+  }
   function foodChips(){
     return chipsHtml(FOOD_OPTIONS.map(function(f){
-      return { action:'food', value:f.key, label:f.name, icon:f.icon_name };
+      var label = t('food_' + f.key) !== ('food_' + f.key) ? t('food_' + f.key) : f.name;
+      return { action:'food', value:f.key, label:label, icon:f.icon_name };
     }));
   }
-  var WINE_TYPES = [
-    { action:'type', value:'Tinto',          label:'Tinto',       icon:'wine-bottle'        },
-    { action:'type', value:'Blanco',          label:'Blanco',      icon:'wine-glass'         },
-    { action:'type', value:'Espumoso',        label:'Espumoso',    icon:'wine-glass-bubbles' },
-    { action:'type', value:'Generoso',        label:'Generoso',    icon:'gem'                },
-    { action:'type', value:'Sin preferencia', label:'Sorpréndeme', icon:'sparkle'            },
-  ];
-  var AGEINGS = [
-    { action:'ageing', value:'Joven',       label:'Joven → Fresco y afrutado',  icon:'leaf'    },
-    { action:'ageing', value:'Crianza',     label:'Crianza → Complejo y largo', icon:'trophy'  },
-    { action:'ageing', value:'Indiferente', label:'Me da igual',                icon:'sparkle' },
-  ];
-  var BUDGETS = [
-    { action:'budget', value:'15',   label:'Hasta 15€',  icon:'leaf'   },
-    { action:'budget', value:'30',   label:'15 – 30€',   icon:'grapes' },
-    { action:'budget', value:'80',   label:'30 – 80€',   icon:'star'   },
-    { action:'budget', value:'3200', label:'Sin límite',  icon:'trophy' },
-  ];
+  function wineTypeChips(){
+    return chipsHtml([
+      { action:'type', value:'Tinto',          label:t('wtype_red'),        icon:'wine-bottle'        },
+      { action:'type', value:'Blanco',          label:t('wtype_white'),      icon:'wine-glass'         },
+      { action:'type', value:'Espumoso',        label:t('wtype_sparkling'),  icon:'wine-glass-bubbles' },
+      { action:'type', value:'Generoso',        label:t('wtype_fortified'),  icon:'gem'                },
+      { action:'type', value:'Sin preferencia', label:t('wtype_surprise'),   icon:'sparkle'            },
+    ]);
+  }
+  function ageingChips(){
+    return chipsHtml([
+      { action:'ageing', value:'Joven',       label:t('ageing_young'),       icon:'leaf'    },
+      { action:'ageing', value:'Crianza',     label:t('ageing_crianza'),     icon:'trophy'  },
+      { action:'ageing', value:'Indiferente', label:t('ageing_indifferent'), icon:'sparkle' },
+    ]);
+  }
+  function budgetChips(){
+    return chipsHtml([
+      { action:'budget', value:'15',   label:t('budget_15'),        icon:'leaf'   },
+      { action:'budget', value:'30',   label:t('budget_30'),        icon:'grapes' },
+      { action:'budget', value:'80',   label:t('budget_80'),        icon:'star'   },
+      { action:'budget', value:'3200', label:t('budget_unlimited'), icon:'trophy' },
+    ]);
+  }
 
   function wineCardHtml(w) {
     var stars=''; var full=Math.round(w.rating);
@@ -420,15 +431,22 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
         '<span class="chat-wine-price">'+Math.round(w.price_euros)+'€</span>'+
       '</div></a>';
   }
+  var _VINE_EN = { 'Tinto':'Red','Blanco':'White','Rosado':'Rosé','Espumoso':'Sparkling','Generoso':'Fortified' };
+  var _AGEING_EN = { 'Joven':'Young','Crianza':'Crianza','Reserva':'Reserva','Gran Reserva':'Gran Reserva' };
+
   function recCardHtml(r) {
+    var isEn = getLang() === 'en';
     var stars='';
     for(var i=0;i<5;i++) stars+=i<Math.round(r.rating)?'★':'☆';
+    var vineLabel = isEn ? (_VINE_EN[r.vine_type] || r.vine_type) : r.vine_type;
+    var ageingLabel = r.wine_ageing ? (isEn ? (_AGEING_EN[r.wine_ageing] || r.wine_ageing) : r.wine_ageing) : '';
     var meta=[r.region];
     if(r.grape_variety&&r.grape_variety!=='Blend/Other') meta.push(r.grape_variety);
-    if(r.wine_ageing) meta.push(r.wine_ageing);
+    if(ageingLabel) meta.push(ageingLabel);
+    var expl = isEn ? (r.explanation_en || r.explanation) : r.explanation;
     return '<a href="/vino/'+r.id+'" class="chat-rec-card">'+
-      '<div class="chat-rec-label">'+icon('sparkle')+' Recomendación personalizada</div>'+
-      '<div class="chat-wine-type">'+r.vine_type+'</div>'+
+      '<div class="chat-rec-label">'+icon('sparkle')+' '+t('chat_rec_label')+'</div>'+
+      '<div class="chat-wine-type">'+vineLabel+'</div>'+
       '<div class="chat-wine-name">'+r.wine_name+'</div>'+
       '<div class="chat-wine-winery">'+r.winery+'</div>'+
       '<div class="chat-rec-meta">'+meta.join(' · ')+'</div>'+
@@ -436,16 +454,21 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
         '<span class="chat-wine-stars">'+stars+' '+r.rating.toFixed(1)+'</span>'+
         '<span class="chat-wine-price">'+Math.round(r.price_euros)+'€</span>'+
       '</div>'+
-      '<p class="chat-rec-explanation">'+r.explanation+'</p>'+
+      '<p class="chat-rec-explanation">'+expl+'</p>'+
     '</a>';
   }
 
   /* ── FLOW ── */
   function otraAndIntentChipsHtml() {
     return chipsHtml([
-      { action:'otra',   value:'',          label:'Dame otra opción',  icon:'wine-glass' },
-      { action:'intent', value:'maridaje',   label:'Maridaje',          icon:'plate'      },
-      { action:'intent', value:'recomendar', label:'Nueva recomendación', icon:'sparkle'   },
+      { action:'otra',          value:'', label:t('chat_otra'),            icon:'wine-glass' },
+      { action:'maridaje-vino', value:'', label:t('chat_pairing'),         icon:'plate'      },
+      { action:'reset',         value:'', label:t('chat_new_conv'),        icon:'sparkle'    },
+    ]);
+  }
+  function nuevaConversacionChipHtml() {
+    return chipsHtml([
+      { action:'reset', value:'', label:t('chat_new_conv'), icon:'sparkle' },
     ]);
   }
 
@@ -455,9 +478,9 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     disableChips(); userMsg(iconName, label);
     await new Promise(function(r){ setTimeout(r,350); });
     if (value==='maridaje') {
-      botMsg('El maridaje es el arte de hacer que la comida y el vino se realcen mutuamente. ¿Qué vas a preparar hoy?'+foodChips());
+      botMsg(t('chat_pairing_intro')+foodChips());
     } else {
-      botMsg('Perfecto, te ayudo a encontrar tu vino ideal. Son tres preguntas rápidas.<br><br>¿Con qué lo vas a disfrutar?'+foodChips());
+      botMsg(t('chat_rec_intro')+foodChips());
     }
   }
   async function handleFood(key, label, iconName) {
@@ -473,61 +496,65 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
         var hasVal=data.value_pairings&&data.value_pairings.length>0;
         var wines='';
         if (hasTop||hasVal) {
-          wines='Para acompañar <strong>'+data.food.name+'</strong> te propongo:';
-          if(hasTop) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('star')+' Los más destacados</div><div class="chat-wines">'+data.top_pairings.map(wineCardHtml).join('')+'</div></div>';
-          if(hasVal) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('gem')+' Mejor calidad-precio</div><div class="chat-wines">'+data.value_pairings.map(wineCardHtml).join('')+'</div></div>';
+          wines=t('chat_pairing_for').replace('{food}','<strong>'+data.food.name+'</strong>');
+          if(hasTop) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('star')+' '+t('chat_top_wines')+'</div><div class="chat-wines">'+data.top_pairings.map(wineCardHtml).join('')+'</div></div>';
+          if(hasVal) wines+='<div class="chat-pairing-group"><div class="chat-pairing-group-label">'+icon('gem')+' '+t('chat_value_wines')+'</div><div class="chat-wines">'+data.value_pairings.map(wineCardHtml).join('')+'</div></div>';
         } else {
           wines='<div class="chat-placeholder">'+aiIcon+'<strong>'+data.food.name+'</strong> '+data.food.description+'</div>';
         }
-        botMsg(wines+'<div class="chat-followup">¿Qué más puedo hacer por ti?</div>'+intentChips());
+        botMsg(wines+'<div class="chat-followup">'+t('chat_what_else')+'</div>'+intentChips());
         state={intent:null,food:null,wineType:null,ageing:null,budget:null};
       } else {
-        botMsg('¿Tienes preferencia por algún tipo de vino?'+chipsHtml(WINE_TYPES));
+        botMsg(t('chat_wine_type_q')+wineTypeChips());
       }
-    } catch(_){ hideTyping(); botMsg('Algo fue mal, inténtalo de nuevo.'+intentChips()); }
+    } catch(_){ hideTyping(); botMsg(t('chat_error')+intentChips()); }
   }
   async function handleType(value, label, iconName) {
     state.wineType=value; disableChips(); userMsg(iconName,label);
     await new Promise(function(r){ setTimeout(r,350); });
     if (value === 'Sin preferencia') {
       state.ageing = 'Indiferente';
-      botMsg('¡Perfecto, yo me encargo del resto! Solo dime, ¿qué presupuesto tienes?'+chipsHtml(BUDGETS));
+      botMsg(t('chat_surprise_ok')+budgetChips());
       return;
     }
-    botMsg('¿Qué carácter buscas?'+chipsHtml(AGEINGS));
+    botMsg(t('chat_ageing_q')+ageingChips());
   }
   async function handleAgeing(value, label, iconName) {
     state.ageing=value; disableChips(); userMsg(iconName,label);
     await new Promise(function(r){ setTimeout(r,350); });
-    botMsg('Por último, ¿Qué presupuesto tienes?'+chipsHtml(BUDGETS));
+    botMsg(t('chat_budget_q')+budgetChips());
   }
   async function handleBudget(value, label, iconName) {
     state.budget=parseInt(value,10); disableChips(); userMsg(iconName,label); showTyping();
     await new Promise(function(r){ setTimeout(r,1200); });
     try {
+      var lastSeen = localStorage.getItem('inwine-last-rec') || '';
       var url='/api/recommend-chat'+
         '?food='+encodeURIComponent(state.food)+
         '&wine_type='+encodeURIComponent(state.wineType)+
         '&ageing='+encodeURIComponent(state.ageing)+
-        '&budget='+state.budget;
+        '&budget='+state.budget+
+        (lastSeen ? '&exclude_ids='+lastSeen : '');
       var res=await fetch(url); var data=await res.json();
       hideTyping();
       if(data.recommendation) {
         var rec = data.recommendation;
         excludedIds.push(rec.id);
+        localStorage.setItem('inwine-last-rec', rec.id);
         lastSearch = { food:state.food, wineType:state.wineType, ageing:state.ageing, budget:state.budget };
-        botMsg('Después de valorar todo, esta es mi recomendación:'+recCardHtml(rec)+'<div class="chat-followup">¿Qué más puedo hacer por ti?</div>'+otraAndIntentChipsHtml());
+        lastRecId = rec.id;
+        botMsg(t('chat_my_rec')+recCardHtml(rec)+'<div class="chat-followup">'+t('chat_what_else')+'</div>'+otraAndIntentChipsHtml());
       } else {
         lastSearch = null; excludedIds = [];
-        botMsg('Con esa combinación no encuentro el vino perfecto. Prueba ampliando el presupuesto o eligiendo Sorpréndeme.'+'<div class="chat-followup">¿Empezamos de nuevo?</div>'+intentChips());
+        botMsg(t('chat_no_match')+'<div class="chat-followup">'+t('chat_start_over_q')+'</div>'+intentChips());
       }
       state={intent:null,food:null,wineType:null,ageing:null,budget:null};
-    } catch(_){ hideTyping(); botMsg('Algo fue mal, inténtalo de nuevo.'+intentChips()); }
+    } catch(_){ hideTyping(); botMsg(t('chat_error')+intentChips()); }
   }
 
   async function handleOtra(iconName) {
     if (!lastSearch) return;
-    disableChips(); userMsg(iconName, 'Dame otra opción'); showTyping();
+    disableChips(); userMsg(iconName, t('chat_another')); showTyping();
     await new Promise(function(r){ setTimeout(r, 900); });
     try {
       var refId = excludedIds[excludedIds.length - 1] || 0;
@@ -543,12 +570,44 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
       if (data.recommendation) {
         var rec = data.recommendation;
         excludedIds.push(rec.id);
-        botMsg('¡Aquí tienes otra opción!'+recCardHtml(rec)+'<div class="chat-followup">¿Qué más puedo hacer por ti?</div>'+otraAndIntentChipsHtml());
+        lastRecId = rec.id;
+        botMsg(t('chat_another_option')+recCardHtml(rec)+'<div class="chat-followup">'+t('chat_what_else')+'</div>'+otraAndIntentChipsHtml());
       } else {
         lastSearch = null; excludedIds = [];
-        botMsg('Ya he agotado las opciones con esos criterios. ¿Probamos con algo diferente?'+'<div class="chat-followup">¿Empezamos de nuevo?</div>'+intentChips());
+        botMsg(t('chat_exhausted')+'<div class="chat-followup">'+t('chat_start_over_q')+'</div>'+intentChips());
       }
-    } catch(_){ hideTyping(); botMsg('Algo fue mal, inténtalo de nuevo.'+intentChips()); }
+    } catch(_){ hideTyping(); botMsg(t('chat_error')+intentChips()); }
+  }
+
+  function getPairingIntro(vineType) {
+    var key = 'pairing_intro_' + vineType.toLowerCase();
+    var val = t(key);
+    return val !== key ? val : t('pairing_intro_default');
+  }
+  async function handleMaridajeVino(iconName) {
+    if (!lastRecId) return;
+    disableChips(); userMsg(iconName, t('chat_pairing')); showTyping();
+    await new Promise(function(r){ setTimeout(r, 900); });
+    try {
+      var res = await fetch('/api/wine-pairing?wine_id=' + lastRecId);
+      var data = await res.json();
+      hideTyping();
+      var intro = getPairingIntro(data.wine.vine_type);
+      var html = intro + ' ' + t('chat_wine_proposals').replace('{wine}', '<strong>' + data.wine.wine_name + '</strong>');
+      html += '<div class="chat-pairing-foods">';
+      data.pairings.forEach(function(p) {
+        html += '<div class="chat-food-item">' +
+          '<span class="chat-food-icon">' + icon(p.icon_name) + '</span>' +
+          '<div class="chat-food-info"><strong>' + p.name + '</strong><span>' + p.description + '</span></div>' +
+          '</div>';
+      });
+      html += '</div>';
+      botMsg(html + '<div class="chat-followup">'+t('chat_start_over_q')+'</div>' + nuevaConversacionChipHtml());
+    } catch(_) { hideTyping(); botMsg(t('chat_error') + otraAndIntentChipsHtml()); }
+  }
+
+  function handleReset() {
+    location.reload();
   }
 
   /* Chips en el mostrador */
@@ -557,20 +616,37 @@ const FOOD_OPTIONS = {{ food_options | tojson }};
     if(!chip||chip.disabled) return;
     var action=chip.dataset.action, value=chip.dataset.value,
         label=chip.dataset.label,  iconName=chip.dataset.icon;
-    if(action==='intent') handleIntent(value,label,iconName);
-    if(action==='food')   handleFood(value,label,iconName);
-    if(action==='type')   handleType(value,label,iconName);
-    if(action==='ageing') handleAgeing(value,label,iconName);
-    if(action==='budget') handleBudget(value,label,iconName);
-    if(action==='otra')   handleOtra(iconName);
+    if(action==='intent')        handleIntent(value,label,iconName);
+    if(action==='food')          handleFood(value,label,iconName);
+    if(action==='type')          handleType(value,label,iconName);
+    if(action==='ageing')        handleAgeing(value,label,iconName);
+    if(action==='budget')        handleBudget(value,label,iconName);
+    if(action==='otra')          handleOtra(iconName);
+    if(action==='maridaje-vino') handleMaridajeVino(iconName);
+    if(action==='reset')         handleReset();
   });
 
-  /* Saludo */
-  botMsg(
-    '¡Hola! Soy <strong>MrSommi</strong>, tu sommelier personal en InWine.<br>'+
-    'Estoy aquí para ayudarte a encontrar el vino perfecto ya sea para una cena especial, un maridaje o simplemente una buena recomendación.<br><br>'+
-    '¿En qué puedo ayudarte hoy?'+intentChips()
-  );
+  /* Saludo — diferido para que i18n.js esté cargado */
+  document.addEventListener('DOMContentLoaded', function() {
+    botMsg(t('chat_greeting_html') + intentChips());
+
+    /* Cuando el usuario cambia de idioma, reinicia el chat en el nuevo idioma */
+    var _prevLang = document.documentElement.getAttribute('data-lang') || 'es';
+    new MutationObserver(function(muts) {
+      muts.forEach(function(m) {
+        if (m.attributeName === 'data-lang') {
+          var newLang = document.documentElement.getAttribute('data-lang') || 'es';
+          if (newLang !== _prevLang) {
+            _prevLang = newLang;
+            state = { intent: null, food: null, wineType: null, ageing: null, budget: null };
+            lastSearch = null; excludedIds = [];
+            msgs.innerHTML = '';
+            botMsg(t('chat_greeting_html') + intentChips());
+          }
+        }
+      });
+    }).observe(document.documentElement, { attributes: true });
+  });
 
 })();
 </script>

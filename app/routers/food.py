@@ -8,7 +8,7 @@ from typing import Optional
 
 from app.data.food_options import FOOD_OPTIONS
 from app.services.pairing_service import get_food_pairings, get_food_pairings_split
-from app.services.recommender import get_wine_recommendation, get_wine_recommendation_chat
+from app.services.recommender import get_wine_recommendation, get_wine_recommendation_chat, get_wine_by_id
 from app.templates_config import templates
 
 router = APIRouter()
@@ -71,6 +71,29 @@ async def food_api(food: str):
     }
 
 
+@router.get("/api/wine-pairing")
+async def wine_pairing_api(wine_id: int):
+    """Returns food pairings for a specific wine. / Devuelve maridajes para un vino específico."""
+    wine = get_wine_by_id(wine_id)
+    if not wine:
+        return JSONResponse({"error": "not found"}, status_code=404)
+
+    vine_type = wine["vine_type"]
+    matching = [f for f in FOOD_OPTIONS if vine_type in f["wine_types"]]
+    # Sort by number of compatible wine types: fewer types = more specific pairing = higher priority
+    # Ordena por número de tipos de vino compatibles: menos tipos = maridaje más específico = mayor prioridad
+    matching.sort(key=lambda f: len(f["wine_types"]))
+    top2 = matching[:2]
+
+    return {
+        "wine": {"id": wine["id"], "wine_name": wine["wine_name"], "vine_type": vine_type},
+        "pairings": [
+            {"key": f["key"], "name": f["name"], "icon": f["icon"], "icon_name": f["icon_name"], "description": f["description"]}
+            for f in top2
+        ],
+    }
+
+
 @router.get("/api/recommend-chat")
 async def recommend_chat_api(
     food: str,
@@ -103,6 +126,7 @@ async def recommend_chat_api(
             "wine_ageing": rec.get("wine_ageing", ""),
             "rating": rec["rating"],
             "price_euros": rec["price_euros"],
-            "explanation": rec["explanation"],
+            "explanation":    rec["explanation"],
+            "explanation_en": rec.get("explanation_en", rec["explanation"]),
         }
     }

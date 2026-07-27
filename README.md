@@ -132,6 +132,7 @@ https://github.com/user-attachments/assets/a3f644f1-d2b5-44e0-b1f9-925f5b96f1d4
 | 🍽️ | **Sommelier por plato** | Chatbot que recomienda el vino ideal según el plato que vas a servir |
 | 💎 | **Ranking calidad-precio** | Los mejores vinos del dataset filtrados por precio, rating y región |
 | 📋 | **Ficha de vino** | Detalle completo con perfil sensorial y vinos similares del mismo cluster |
+| 🌐 | **Bilingüe ES / EN** | Toda la interfaz traducida al inglés con cambio instantáneo sin recargar la página |
 
 </div>
 
@@ -152,6 +153,7 @@ https://github.com/user-attachments/assets/a3f644f1-d2b5-44e0-b1f9-925f5b96f1d4
 | 🍽️ | **Food sommelier** | Chatbot that recommends the ideal wine based on the dish you are serving |
 | 💎 | **Quality-price ranking** | Best wines in the dataset filtered by price, rating and region |
 | 📋 | **Wine profile** | Full detail with sensory profile and similar wines from the same cluster |
+| 🌐 | **Bilingual ES / EN** | Full interface translated into English with instant switching — no page reload |
 
 </div>
 
@@ -869,7 +871,7 @@ A clustering model is not neutral. Preprocessing decisions and the dataset compo
 | **Análisis** | Pandas · NumPy · Matplotlib · Seaborn |
 | **Modelado** | scikit-learn → k-means · PCA · StandardScaler |
 | **Backend** | FastAPI · Uvicorn |
-| **Frontend** | Jinja2 · CSS · Vanilla JS |
+| **Frontend** | Jinja2 · CSS · Vanilla JS · i18n custom (ES/EN) |
 
 </div>
 
@@ -887,7 +889,7 @@ A clustering model is not neutral. Preprocessing decisions and the dataset compo
 | **Analysis** | Pandas · NumPy · Matplotlib · Seaborn |
 | **Modelling** | scikit-learn → k-means · PCA · StandardScaler |
 | **Backend** | FastAPI · Uvicorn |
-| **Frontend** | Jinja2 · CSS · Vanilla JS |
+| **Frontend** | Jinja2 · CSS · Vanilla JS · custom i18n (ES/EN) |
 
 </div>
 
@@ -909,7 +911,12 @@ InWine/
 │   ├── routers/                  # Endpoints — home, recommend, search…
 │   ├── services/                 # Lógica de negocio — recommender, search, pairing
 │   ├── data/                     # Carga y definición de datasets y perfiles
-│   ├── static/                   # CSS, JS, imágenes
+│   ├── static/
+│   │   ├── css/                  # Estilos globales
+│   │   ├── js/
+│   │   │   ├── i18n.js           # Sistema de traducción ES/EN (~400 claves, client-side)
+│   │   │   └── main.js           # Navbar, tema oscuro/claro
+│   │   └── img/                  # Imágenes y logos
 │   └── templates/                # HTML con Jinja2
 ├── notebooks/
 │   ├── 01_cleaning.ipynb
@@ -945,7 +952,12 @@ InWine/
 │   ├── routers/                  # Endpoints — home, recommend, search…
 │   ├── services/                 # Business logic — recommender, search, pairing
 │   ├── data/                     # Dataset loading and cluster profile definitions
-│   ├── static/                   # CSS, JS, images
+│   ├── static/
+│   │   ├── css/                  # Global styles
+│   │   ├── js/
+│   │   │   ├── i18n.js           # ES/EN translation system (~400 keys, client-side)
+│   │   │   └── main.js           # Navbar, dark/light theme
+│   │   └── img/                  # Images and logos
 │   └── templates/                # HTML with Jinja2
 ├── notebooks/
 │   ├── 01_cleaning.ipynb

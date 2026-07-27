@@ -149,17 +149,17 @@ class TestGetBestValueWines:
 
 class TestGetWineById:
     def test_existing_id_returns_wine(self):
-        from app.services.pairing_service import get_wine_by_id
+        from app.services.recommender import get_wine_by_id
         wine = get_wine_by_id(1)
         assert wine is not None
         assert wine["id"] == 1
 
     def test_missing_id_returns_none(self):
-        from app.services.pairing_service import get_wine_by_id
+        from app.services.recommender import get_wine_by_id
         assert get_wine_by_id(999_999) is None
 
     def test_negative_id_returns_none(self):
-        from app.services.pairing_service import get_wine_by_id
+        from app.services.recommender import get_wine_by_id
         assert get_wine_by_id(-1) is None
 
 

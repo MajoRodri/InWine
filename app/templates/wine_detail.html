@@ -8,7 +8,7 @@
 <section class="wine-detail-section">
   <div class="container">
 
-    <a href="javascript:history.back()" class="back-link">← Volver</a>
+    <a href="javascript:history.back()" class="back-link" data-i18n="back_link">← Volver</a>
 
     {# ── Layout de dos columnas / Two-column layout ────────── #}
     <div class="wine-detail-grid">
@@ -25,20 +25,20 @@
         {% endif %}
 
         <div class="wine-score">{{ "%.1f" | format(wine.rating) }}</div>
-        <div class="wine-score-lbl">Valoración / 5</div>
+        <div class="wine-score-lbl" data-i18n="detail_rating_lbl">Valoración / 5</div>
 
         <div style="margin-top:1.2rem">
           {{ stars(wine.rating) | indent(8) }}
         </div>
 
         <div style="margin-top:1.5rem; padding-top:1.2rem; border-top: 1px solid var(--border);">
-          <div style="font-size:0.75rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem">Temperatura</div>
+          <div style="font-size:0.75rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem" data-i18n="detail_temp_lbl">Temperatura</div>
           <div style="font-family:var(--font-serif); font-size:1.1rem; color:var(--cream)">{{ wine.service_temperature }}</div>
         </div>
 
         {# Badge de precio / Price badge #}
         <div style="margin-top:1rem; padding:0.9rem; background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; text-align:center">
-          <div style="font-size:0.7rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.2rem">Precio</div>
+          <div style="font-size:0.7rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.2rem" data-i18n="detail_price_lbl">Precio</div>
           <div style="font-family:var(--font-serif); font-size:2rem; color:var(--gold); font-weight:700">{{ "%.0f" | format(wine.price_euros) }}€</div>
           {% if wine.luxury_category %}
           <span class="wine-badge badge-generoso" style="margin-top:0.4rem">Premium</span>
@@ -66,27 +66,27 @@
         {# Grid de especificaciones / Spec grid #}
         <div class="specs-grid">
           <div class="spec">
-            <div class="spec-label">D.O.</div>
+            <div class="spec-label" data-i18n="spec_do">D.O.</div>
             <div class="spec-value">{{ wine.region }}</div>
           </div>
           <div class="spec">
-            <div class="spec-label">País</div>
-            <div class="spec-value">España</div>
+            <div class="spec-label" data-i18n="spec_country">País</div>
+            <div class="spec-value" data-i18n="spec_spain">España</div>
           </div>
           <div class="spec">
-            <div class="spec-label">Añada</div>
+            <div class="spec-label" data-i18n="spec_vintage">Añada</div>
             <div class="spec-value">{{ wine.year or 'N.V.' }}</div>
           </div>
           <div class="spec">
-            <div class="spec-label">Uva</div>
+            <div class="spec-label" data-i18n="spec_grape">Uva</div>
             <div class="spec-value">{{ wine.grape_variety }}</div>
           </div>
           <div class="spec">
-            <div class="spec-label">Crianza</div>
+            <div class="spec-label" data-i18n="spec_ageing">Crianza</div>
             <div class="spec-value">{{ wine.wine_ageing }}</div>
           </div>
           <div class="spec">
-            <div class="spec-label">Ratio C/P</div>
+            <div class="spec-label" data-i18n="spec_ratio">Ratio C/P</div>
             <div class="spec-value text-gold">{{ "%.2f" | format(wine.quality_price_ratio) }}</div>
           </div>
         </div>
@@ -94,7 +94,7 @@
         {# Descripción / Description #}
         {% if wine.description %}
         <div class="info-section">
-          <div class="info-section-title">{{ svg_icon("book") }} Sobre este vino</div>
+          <div class="info-section-title">{{ svg_icon("book") }} <span data-i18n="detail_about">Sobre este vino</span></div>
           <p>{{ wine.description }}</p>
         </div>
         {% endif %}
@@ -102,10 +102,13 @@
         {# Perfil sensorial basado en el cluster ML / Sensory profile from ML cluster #}
         {% if cluster and cluster.flavors %}
         <div class="info-section">
-          <div class="info-section-title">{{ svg_icon("aroma") }} Perfil sensorial</div>
+          <div class="info-section-title">{{ svg_icon("aroma") }} <span data-i18n="detail_sensory">Perfil sensorial</span></div>
           <div class="flavor-tags">
             {% for f in cluster.flavors %}
-            <span class="flavor-tag">{{ f }}</span>
+            <span class="flavor-tag i18n-es-only">{{ f }}</span>
+            {% endfor %}
+            {% for f in (cluster.flavors_en or cluster.flavors) %}
+            <span class="flavor-tag i18n-en-only">{{ f }}</span>
             {% endfor %}
           </div>
         </div>
@@ -114,16 +117,17 @@
         {# Maridaje / Food pairing #}
         {% if wine.pairing %}
         <div class="info-section">
-          <div class="info-section-title">{{ svg_icon("plate") }} Maridaje recomendado</div>
+          <div class="info-section-title">{{ svg_icon("plate") }} <span data-i18n="detail_pairing">Maridaje recomendado</span></div>
           <p>{{ wine.pairing }}</p>
         </div>
         {% endif %}
 
         {# Explicación generada por el modelo ML / ML model explanation #}
         <div class="info-section">
-          <div class="info-section-title">{{ svg_icon("ai-circuit") }} ¿Por qué te lo recomendamos?</div>
+          <div class="info-section-title">{{ svg_icon("ai-circuit") }} <span data-i18n="detail_why">¿Por qué te lo recomendamos?</span></div>
           {% if explanation %}
-          <p style="line-height:1.7; color:var(--cream-muted)">{{ explanation }}</p>
+          <p class="i18n-es-only" style="line-height:1.7; color:var(--cream-muted)">{{ explanation }}</p>
+          <p class="i18n-en-only" style="line-height:1.7; color:var(--cream-muted)">{{ explanation_en or explanation }}</p>
           {% else %}
           {{ placeholder("Explicación del modelo ML — próximamente") }}
           {% endif %}
@@ -138,7 +142,7 @@
        TODO: replace with real k-NN model results
        ════════════════════════════════════════════════════════ #}
     <div style="margin-top:3rem; padding-top:3rem; border-top:1px solid var(--border);">
-      <h3 style="margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem">{{ svg_icon("star") }} Vinos similares</h3>
+      <h3 style="margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem">{{ svg_icon("star") }} <span data-i18n="detail_similar">Vinos similares</span></h3>
 
       {% if similar_wines %}
       <div class="wines-grid">
