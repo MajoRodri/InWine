@@ -12,6 +12,7 @@ Despliegue en Railway / Railway deployment:
 import os
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.routers import home, recommend, search, explore, profile, food, value, wine, about
@@ -23,6 +24,7 @@ app = FastAPI(
     description="Tu sumiller virtual de vinos españoles",
     version="0.1.0",
 )
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # ── Archivos estáticos (CSS, JS, imágenes) / Static files ─────────────────────
 

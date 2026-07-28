@@ -38,7 +38,7 @@
 
         {# Badge de precio / Price badge #}
         <div style="margin-top:1rem; padding:0.9rem; background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; text-align:center">
-          <div style="font-size:0.7rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.2rem" data-i18n="detail_price_lbl">Precio</div>
+          <div style="font-size:0.7rem; color:var(--cream-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.2rem" data-i18n="detail_price_lbl">Precio estimado</div>
           <div style="font-family:var(--font-serif); font-size:2rem; color:var(--gold); font-weight:700">{{ "%.0f" | format(wine.price_euros) }}€</div>
           {% if wine.luxury_category %}
           <span class="wine-badge badge-generoso" style="margin-top:0.4rem">Premium</span>
@@ -141,7 +141,7 @@
        TODO: reemplazar con resultados reales del modelo k-NN
        TODO: replace with real k-NN model results
        ════════════════════════════════════════════════════════ #}
-    <div style="margin-top:3rem; padding-top:3rem; border-top:1px solid var(--border);">
+    <div style="margin-top:5rem; padding-top:3rem; border-top:1px solid var(--border);">
       <h3 style="margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem">{{ svg_icon("star") }} <span data-i18n="detail_similar">Vinos similares</span></h3>
 
       {% if similar_wines %}
