@@ -34,7 +34,7 @@
         {# Grid de detalles / Details grid #}
         <div class="result-details">
           <div class="result-detail">
-            <div class="rd-label" data-i18n="detail_price_lbl">Precio</div>
+            <div class="rd-label" data-i18n="detail_price_lbl">Precio estimado</div>
             <div class="rd-value">{{ "%.0f" | format(recommendation.price_euros) }}€</div>
           </div>
           <div class="result-detail">
@@ -74,7 +74,7 @@
 
         <div class="flex gap-2 mt-4 flex-wrap">
           <a href="/vino/{{ recommendation.id }}" class="btn btn-gold" data-i18n="rec_view_full">Ver ficha completa</a>
-          <a href="/recomendar" class="btn btn-outline" data-i18n="rec_new_link">Nueva recomendación</a>
+          <a href="/recomendar" class="btn btn-outline" data-i18n="rec_new_link">← Nueva recomendación</a>
         </div>
       </div>
 

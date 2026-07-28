@@ -30,7 +30,7 @@
       </a>
       <a class="team-card" href="https://github.com/adrianaarang" target="_blank" rel="noopener">
         <img class="team-avatar" src="https://github.com/adrianaarang.png" alt="Adrianna Aránguez"/>
-        <div class="team-name">Adrianna Aránguez</div>
+        <div class="team-name">Adriana Aránguez</div>
         <div class="team-role">Developer</div>
       </a>
       <a class="team-card" href="https://github.com/Gema-Villanueva" target="_blank" rel="noopener">
@@ -213,7 +213,7 @@
               <li><strong>Sin datos vacíos</strong> en el resultado final (los sabores cubrían el 94,7&nbsp;% de los vinos)</li>
             </ul>
             <ul class="study-findings i18n-en-only">
-              <li><strong>5,476 duplicate wines</strong> removed in total — 72.7% of the catalogue</li>
+              <li><strong>5,476 duplicate wines</strong> removed in total → 72.7% of the catalogue</li>
               <li>From 7,500 entries to <strong>2,024 unique wines</strong></li>
               <li>We separated wine type and grape variety, which were mixed in the same field</li>
               <li>We added whether the wine is aged and a quality-price score</li>
@@ -252,11 +252,11 @@
             </ul>
             <ul class="study-findings i18n-en-only">
               <li>Prices range from <strong>€4.99 to €3,119</strong> — most are affordable and very few are luxury</li>
-              <li>Wine ratings barely vary — almost all fall between <strong>4.2 and 4.9</strong> out of 5</li>
+              <li>Wine ratings barely vary, almost all fall between <strong>4.2 and 4.9</strong> out of 5</li>
               <li>There are <strong>76 different regions</strong>, but Ribera del Duero and Rioja account for half the wines</li>
               <li><strong>Tempranillo</strong> is the grape in 55% of wines; 20% are blends</li>
-              <li><strong>20.6%</strong> of wines are aged — they tend to be pricier, but not always</li>
-              <li>Many wines are the same but from different vintages — something to keep in mind when training the model</li>
+              <li><strong>20.6%</strong> of wines are aged, they tend to be pricier, but not always</li>
+              <li>Many wines are the same but from different vintages, something to keep in mind when training the model</li>
             </ul>
           </div>
           {# Donut SVG — distribución por tipo de vino #}
@@ -350,7 +350,7 @@
             </p>
             <p class="i18n-en-only">
               For the recommender to compare wines fairly, we need all data to speak the same
-              language. A €5 wine and a €500 wine can't carry equal raw weight — they need to be
+              language. A €5 wine and a €500 wine can't carry equal raw weight, they need to be
               balanced first.
             </p>
             <ul class="study-findings i18n-es-only">
@@ -364,7 +364,7 @@
             <ul class="study-findings i18n-en-only">
               <li>Prices are mathematically adjusted so expensive wines don't distort comparisons</li>
               <li>Wine type (red, white…) is converted to numeric values so the model can understand it</li>
-              <li>Region and grape are replaced by their average price and rating — more useful than just their name</li>
+              <li>Region and grape are replaced by their average price and ratin, more useful than just their name</li>
               <li>We avoided counting price three times, which would have given money too much weight</li>
               <li>We normalised all numbers so no single data point dominates others due to its scale</li>
               <li>We ensured entire wineries didn't end up simultaneously in training and test sets</li>
@@ -594,7 +594,7 @@
             </p>
             <p class="i18n-en-only">
               The 2,024 wines exist in an 18-dimensional space. PCA projects them onto three
-              axes that together preserve <strong>58% of the variance</strong> — enough to see
+              axes that together preserve <strong>58% of the variance</strong>, enough to see
               that the 8 groups form distinct zones on the map.
             </p>
             <ul class="study-findings i18n-es-only">
@@ -857,6 +857,92 @@
       </script>
 
     </div>{# /study-phases #}
+
+    {# ── Sesgos del modelo ── #}
+    <div class="section-header" style="margin-top:3.5rem;">
+      <h2 data-i18n-html="about_bias_html">Sesgos que debes <span class="text-gold">conocer</span></h2>
+    </div>
+    <div class="about-intro">
+      <p class="i18n-es-only">
+        InWine es una herramienta honesta. Nuestro conjunto de datos refleja el mercado del vino español tal como
+        existe en Vivinos y Kaggle, no como nos gustaría que fuera. Eso introduce sesgos reales que pueden
+        hacer que el recomendador favorezca ciertos vinos sobre otros.
+      </p>
+      <p class="i18n-en-only">
+        InWine is an honest tool. Our dataset reflects the Spanish wine market as it exists on Vivinos and
+        Kaggle, not as we would like it to be. This introduces real biases that may cause the recommender
+        to favour certain wines over others.
+      </p>
+    </div>
+    <div class="about-sources" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem;">
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#8B1A2E;color:#F5EDD8;">83,7 %</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_type_title">Sesgo de tipo de vino</h3>
+          <p class="i18n-es-only">Casi 9 de cada 10 vinos del catálogo son tintos.
+            El recomendador tiende a sugerir tintos incluso cuando el perfil del usuario encajaría igual de bien con un blanco o un espumoso.</p>
+          <p class="i18n-en-only">Almost 9 in 10 wines in the catalogue are red.
+            The recommender tends to suggest reds even when the user's profile would match whites or sparkling wines equally well.</p>
+        </div>
+      </div>
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#8B1A2E;color:#F5EDD8;">~50 %</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_geo_title">Sesgo geográfico</h3>
+          <p class="i18n-es-only">Rioja y Ribera del Duero concentran la mitad del catálogo.
+            Regiones menos conocidas como Toro, Bierzo o Terra Alta aparecen con mucha menos frecuencia y tienen menos posibilidades de ser recomendadas.</p>
+          <p class="i18n-en-only">Rioja and Ribera del Duero account for half the catalogue.
+            Lesser-known regions like Toro, Bierzo or Terra Alta appear far less often and are therefore less likely to be recommended.</p>
+        </div>
+      </div>
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#8B1A2E;color:#F5EDD8;">55 %</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_grape_title">Sesgo de uva</h3>
+          <p class="i18n-es-only">El Tempranillo representa el 55 % de los vinos.
+            Variedades minoritarias como Mencía, Garnacha Blanca o Xarel·lo tienen poca representación y es más difícil que aparezcan en las recomendaciones.</p>
+          <p class="i18n-en-only">Tempranillo accounts for 55% of wines.
+            Minority varieties such as Mencía, Garnacha Blanca or Xarel·lo are underrepresented and less likely to surface in recommendations.</p>
+        </div>
+      </div>
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#701828;color:#F5EDD8;">4,2–4,9</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_rating_title">Sesgo de puntuación</h3>
+          <p class="i18n-es-only">Las valoraciones de los vinos apenas varían: casi todos están entre 4,2 y 4,9 sobre 5.
+            Esta falta de rango hace que la puntuación aporte muy poca información real al modelo para diferenciar la calidad.</p>
+          <p class="i18n-en-only">Wine ratings barely vary, almost all fall between 4.2 and 4.9 out of 5.
+            This narrow range means ratings provide very little useful signal for the model to differentiate quality.</p>
+        </div>
+      </div>
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#701828;color:#F5EDD8;">5,3 %</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_coverage_title">Sesgo de cobertura de sabores</h3>
+          <p class="i18n-es-only">El 5,3 % de los vinos no tenía notas de cata en Vivinos.
+            Para esos vinos el modelo trabaja sin información de sabor, lo que puede afectar a la calidad de sus recomendaciones.</p>
+          <p class="i18n-en-only">5.3% of wines had no tasting notes on Vivinos.
+            For those wines the model works without any flavour information, which may reduce the quality of their recommendations.</p>
+        </div>
+      </div>
+
+      <div class="source-card" style="border-left:3px solid #C9A050;">
+        <div class="source-badge" style="background:#4a4a4a;color:#F5EDD8;">ES</div>
+        <div class="source-body">
+          <h3 class="source-title" data-i18n="about_bias_origin_title">Sesgo de origen</h3>
+          <p class="i18n-es-only">El catálogo contiene únicamente vinos españoles.
+            InWine no puede comparar ni recomendar vinos de otras regiones del mundo, aunque el usuario los prefiera.</p>
+          <p class="i18n-en-only">The catalogue contains only Spanish wines.
+            InWine cannot compare or recommend wines from other regions of the world, even if the user prefers them.</p>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 </section>

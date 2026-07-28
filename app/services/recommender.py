@@ -395,18 +395,45 @@ def get_wines_by_budget(max_price: float, exclude_ids: set | None = None) -> lis
 
 
 def get_similar_wines(wine_id: int, n: int = 3) -> list[dict]:
-    """Return wines from the same cluster, excluding the current wine.
-    Devuelve vinos del mismo cluster excluyendo el actual."""
+    """Return the most attribute-similar wines from the same cluster.
+
+    Scores cluster-mates by: same grape (+3), same type (+2), same ageing (+2),
+    price proximity (+0-2), same region (+1). Samples from the top-scoring pool
+    so results vary each visit while staying genuinely similar.
+    """
     if not isinstance(wine_id, int) or wine_id < 1:
         return []
     wine = next((w for w in WINES if w["id"] == wine_id), None)
     if not wine:
         return []
-    similar = [
+
+    cluster_mates = [
         w for w in WINES
         if w["cluster_id"] == wine["cluster_id"] and w["id"] != wine_id
     ]
-    return similar[:n]
+    if not cluster_mates:
+        return []
+
+    wine_price = wine.get("price_euros") or 0
+
+    def _score(w: dict) -> float:
+        s = 0.0
+        if w.get("grape_variety") == wine.get("grape_variety"):
+            s += 3
+        if w.get("vine_type") == wine.get("vine_type"):
+            s += 2
+        if w.get("wine_ageing") == wine.get("wine_ageing"):
+            s += 2
+        w_price = w.get("price_euros") or 0
+        if wine_price > 0 and w_price > 0:
+            s += min(wine_price, w_price) / max(wine_price, w_price) * 2
+        if w.get("region") == wine.get("region"):
+            s += 1
+        return s
+
+    ranked = sorted(cluster_mates, key=_score, reverse=True)
+    pool = ranked[: max(n * 3, 10)]
+    return random.sample(pool, min(n, len(pool)))
 
 
 def get_user_profile(answers: list[str]) -> dict:
