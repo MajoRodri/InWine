@@ -81,7 +81,7 @@ _FOOD_PAIRING_REASONS_EN = {
         "creating that balance where every bite is better than the last."
     ),
     "pescado": (
-        "Fish has a delicate texture that is beautifully enhanced by a fresh white — "
+        "Fish has a delicate texture that is beautifully enhanced by a fresh white "
         "its acidity cleanses the palate between bites without overpowering the flavour of the sea."
     ),
     "marisco": (
@@ -93,7 +93,7 @@ _FOOD_PAIRING_REASONS_EN = {
         "This one in particular hits just the right note to achieve that perfect balance."
     ),
     "pasta": (
-        "Pasta and rice appreciate a wine with its own personality that accompanies without overpowering the dish — "
+        "Pasta and rice appreciate a wine with its own personality that accompanies without overpowering the dish "
         "not too timid, not too bold. Simply the ideal companion."
     ),
     "quesos": (
@@ -105,7 +105,7 @@ _FOOD_PAIRING_REASONS_EN = {
         "The golden finish that every good meal deserves."
     ),
     "aperitivo": (
-        "For aperitifs the ideal choice is something festive and light that opens the appetite without tiring the palate — "
+        "For aperitifs the ideal choice is something festive and light that opens the appetite without tiring the palate "
         "a wine that invites conversation and sets the mood from the very first sip."
     ),
 }
@@ -386,27 +386,103 @@ def get_wines_by_cluster(cluster_id: int, max_price: float | None = None) -> lis
     return wines
 
 
-def get_wines_by_budget(max_price: float, exclude_ids: set | None = None) -> list[dict]:
-    """Return best-rated wines within budget, excluding given IDs."""
-    wines = [w for w in WINES if w["price_euros"] <= max_price]
-    if exclude_ids:
-        wines = [w for w in wines if w["id"] not in exclude_ids]
-    return sorted(wines, key=lambda w: w.get("rating", 0), reverse=True)
+
+_VINE_TYPE_MAP: dict[str, str] = {
+    "pref_tinto":    "Tinto",
+    "pref_blanco":   "Blanco",
+    "pref_espumoso": "Espumoso",
+    "pref_generoso": "Generoso",
+}
+_AGEING_MAP: dict[str, set[str]] = {
+    "car_joven":    {"Joven"},
+    "car_barrica":  {"Crianza"},
+    "car_reserva":  {"Reserva", "Gran Reserva"},
+    "car_espumoso": set(),
+}
+
+
+def get_profile_wines(
+    cluster_id: int,
+    max_price: float | None,
+    vine_type_pref: str,
+    ageing_pref: str,
+    n: int = 4,
+) -> list[dict]:
+    """Score and randomly sample wines for a profile, mirroring get_similar_wines().
+
+    Scores cluster wines by: wine-type match (+3), ageing match (+2),
+    rating x2, price proximity (+0-2). Samples from the top pool so
+    results vary each quiz while staying genuinely relevant.
+    """
+    wines = [w for w in WINES if w["cluster_id"] == cluster_id]
+    if max_price is not None:
+        wines = [w for w in wines if (w.get("price_euros") or 0) <= max_price]
+
+    if not wines:
+        fallback = [w for w in WINES if max_price is None or (w.get("price_euros") or 0) <= max_price]
+        wines = sorted(fallback, key=lambda w: w.get("rating", 0), reverse=True)[: n * 3]
+
+    target_type   = _VINE_TYPE_MAP.get(vine_type_pref, "")
+    target_ageing = _AGEING_MAP.get(ageing_pref, set())
+
+    def _score(w: dict) -> float:
+        s = (w.get("rating") or 0) * 2
+        if target_type and w.get("vine_type") == target_type:
+            s += 3
+        if target_ageing and w.get("wine_ageing") in target_ageing:
+            s += 2
+        if max_price:
+            w_price = w.get("price_euros") or 0
+            budget_mid = max_price * 0.7
+            if w_price > 0 and budget_mid > 0:
+                s += min(w_price, budget_mid) / max(w_price, budget_mid) * 2
+        return s
+
+    ranked = sorted(wines, key=_score, reverse=True)
+    pool = ranked[: max(n * 3, 10)]
+    return random.sample(pool, min(n, len(pool)))
 
 
 def get_similar_wines(wine_id: int, n: int = 3) -> list[dict]:
-    """Return wines from the same cluster, excluding the current wine.
-    Devuelve vinos del mismo cluster excluyendo el actual."""
+    """Return the most attribute-similar wines from the same cluster.
+
+    Scores cluster-mates by: same grape (+3), same type (+2), same ageing (+2),
+    price proximity (+0-2), same region (+1). Samples from the top-scoring pool
+    so results vary each visit while staying genuinely similar.
+    """
     if not isinstance(wine_id, int) or wine_id < 1:
         return []
     wine = next((w for w in WINES if w["id"] == wine_id), None)
     if not wine:
         return []
-    similar = [
+
+    cluster_mates = [
         w for w in WINES
         if w["cluster_id"] == wine["cluster_id"] and w["id"] != wine_id
     ]
-    return similar[:n]
+    if not cluster_mates:
+        return []
+
+    wine_price = wine.get("price_euros") or 0
+
+    def _score(w: dict) -> float:
+        s = 0.0
+        if w.get("grape_variety") == wine.get("grape_variety"):
+            s += 3
+        if w.get("vine_type") == wine.get("vine_type"):
+            s += 2
+        if w.get("wine_ageing") == wine.get("wine_ageing"):
+            s += 2
+        w_price = w.get("price_euros") or 0
+        if wine_price > 0 and w_price > 0:
+            s += min(wine_price, w_price) / max(wine_price, w_price) * 2
+        if w.get("region") == wine.get("region"):
+            s += 1
+        return s
+
+    ranked = sorted(cluster_mates, key=_score, reverse=True)
+    pool = ranked[: max(n * 3, 10)]
+    return random.sample(pool, min(n, len(pool)))
 
 
 def get_user_profile(answers: list[str]) -> dict:
@@ -424,32 +500,44 @@ def get_user_profile(answers: list[str]) -> dict:
       7 = El Cotidiano Premium   → everyday quality reds
     """
     answer_profile_map = {
-        # Q1: flavors / sabores
-        "frutas_frescas": 7,  "frutas_secas": 4,  "especias": 6,
-        "hierbas": 1,          "maderas": 0,
-        # Q2: body / cuerpo
+        # Q1: sabores
+        "frutas_frescas": 2,  # joven y afrutado → explorador
+        "frutas_secas": 4,    "especias": 6,
+        "hierbas": 1,         "maderas": 0,
+        # Q2: cuerpo
         "ligero": 1,  "estructura": 6,  "cremoso": 5,  "burbujas": 5,
-        # Q3: price / precio
-        "menos_10": 3,  "10_20": 7,  "20_40": 2,  "mas_40": 0,
+        # Q3: precio
+        "menos_10": 3,   # asequible → libre pensador
+        "10_20":    2,   # rango explorador
+        "20_40":    7,   # cotidiano premium
+        "mas_40":   0,
         # Q4: frecuencia
-        "celebraciones": 5,  "fines_semana": 6,  "frecuente": 7,  "siempre": 6,
-        # Q5: cuisine / cocina
-        "mediterranea": 1,  "carnes": 6,  "mariscos": 5,  "variada": 7,
-        # Q6: tipo de vino preferido
-        "pref_tinto": 7,  "pref_blanco": 1,  "pref_espumoso": 5,
-        "pref_generoso": 4,  "pref_sin_pref": 3,
+        "celebraciones": 5,
+        "fines_semana":  3,   # casual → libre pensador
+        "frecuente":     2,   # busca variedad → explorador
+        "siempre":       6,
+        # Q5: cocina
+        "mediterranea": 1,  "carnes": 6,  "mariscos": 5,
+        "variada": 3,        # ecléctico → libre pensador
+        # Q6: tipo de vino preferido (peso ×3 por ser la señal más directa)
+        "pref_tinto": 7,  "pref_blanco": 1,
+        "pref_espumoso": 5,  "pref_generoso": 4,
         # Q7: carácter del vino
-        "car_joven": 7,  "car_barrica": 6,  "car_reserva": 0,
-        "car_espumoso": 5,  "car_indiferente": 3,
+        "car_joven":    2,  # joven → explorador
+        "car_barrica":  6,  "car_reserva": 0,  "car_espumoso": 5,
         # Q8: criterio de elección
-        "criterio_tradicion": 6,  "criterio_sorpresa": 3,
-        "criterio_precio": 7,     "criterio_exclusividad": 0,
+        "criterio_tradicion": 6,
+        "criterio_sorpresa":  3,  # sorpresa → libre pensador
+        "criterio_precio":    7,
+        "criterio_exclusividad": 0,
     }
 
     votes: dict[int, int] = {}
     for ans in (answers or []):
-        profile_id = answer_profile_map.get(_clean(ans), 7)
-        votes[profile_id] = votes.get(profile_id, 0) + 1
+        key = _clean(ans)
+        profile_id = answer_profile_map.get(key, 7)
+        weight = 3 if key.startswith("pref_") else 1
+        votes[profile_id] = votes.get(profile_id, 0) + weight
 
     profile_id = max(votes, key=lambda k: votes[k]) if votes else 7
     return USER_PROFILES_BY_ID.get(profile_id, USER_PROFILES[0])

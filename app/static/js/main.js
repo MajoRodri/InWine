@@ -112,14 +112,98 @@
     current = idx;
   }
 
+  // Jerarquía de compatibilidad entre preguntas
+  // step indices: Q1=0, Q2=1, Q3=2, Q4=3, Q5=4, Q6=5, Q7=6, Q8=7
+  const FILTERS = [
+    // Q1 (sabores) → Q2 (cuerpo)
+    { trigger: 0, target: 1, map: {
+      frutas_frescas: null,
+      frutas_secas:   ["estructura", "cremoso"],
+      especias:       ["estructura", "cremoso"],
+      hierbas:        ["ligero", "estructura", "burbujas"],  // solo quita cremoso
+      maderas:        ["estructura", "cremoso"],
+    }},
+    // Q2 (cuerpo) → Q6 (tipo de vino)
+    { trigger: 1, target: 5, map: {
+      ligero:     ["pref_blanco", "pref_tinto", "pref_espumoso"],
+      estructura: ["pref_tinto", "pref_blanco", "pref_generoso"],
+      cremoso:    ["pref_tinto", "pref_blanco", "pref_generoso"],
+      burbujas:   ["pref_espumoso"],
+    }},
+    // Q5 (cocina) → Q6 (tipo de vino): solo mariscos oculta tinto
+    { trigger: 4, target: 5, map: {
+      mediterranea: null,
+      carnes:       null,
+      mariscos:     ["pref_blanco", "pref_espumoso", "pref_generoso"],
+      variada:      null,
+    }},
+    // Q6 (tipo de vino) → Q7 (carácter)
+    { trigger: 5, target: 6, map: {
+      pref_tinto:    ["car_joven", "car_barrica", "car_reserva"],
+      pref_blanco:   null,
+      pref_espumoso: ["car_espumoso"],
+      pref_generoso: ["car_reserva"],
+    }},
+  ];
+
+  // Calcula la intersección de todos los filtros activos para un paso destino
+  function computeAllowed(targetIdx) {
+    let result = null;
+    FILTERS.forEach(f => {
+      if (f.target !== targetIdx) return;
+      const triggerAnswer = answers[f.trigger];
+      if (triggerAnswer == null) return;
+      const allowed = f.map[triggerAnswer];
+      if (!allowed) return;
+      result = result
+        ? new Set([...result].filter(v => allowed.includes(v)))
+        : new Set(allowed);
+    });
+    return result; // null = todas permitidas
+  }
+
+  function applyAllFilters(targetIdx) {
+    const allowed = computeAllowed(targetIdx);
+    const targetStep = steps[targetIdx];
+    if (!targetStep) return;
+
+    let invalidated = false;
+    targetStep.querySelectorAll(".quiz-option").forEach(opt => {
+      const isAllowed = !allowed || allowed.has(opt.dataset.value);
+      opt.classList.toggle("quiz-option--disabled", !isAllowed);
+      if (!isAllowed && opt.classList.contains("selected")) {
+        opt.classList.remove("selected");
+        invalidated = true;
+      }
+    });
+
+    if (invalidated) {
+      delete answers[targetIdx];
+      const first = targetStep.querySelector(".quiz-option:not(.quiz-option--disabled)");
+      if (first && quizForm) {
+        const input = quizForm.querySelector(`[name="q${targetIdx + 1}"]`);
+        if (input) input.value = first.dataset.value;
+      }
+      const downstream = new Set(FILTERS.filter(f => f.trigger === targetIdx).map(f => f.target));
+      downstream.forEach(t => applyAllFilters(t));
+    }
+  }
+
+  function applyFilter(triggerStep) {
+    const targets = new Set(FILTERS.filter(f => f.trigger === triggerStep).map(f => f.target));
+    targets.forEach(t => applyAllFilters(t));
+  }
+
   // Al hacer clic en una opción / On option click
   document.querySelectorAll(".quiz-option").forEach(opt => {
     opt.addEventListener("click", () => {
+      if (opt.classList.contains("quiz-option--disabled")) return;
       // Marcar seleccionado visualmente / Mark selected visually
       const parent = opt.closest(".quiz-step");
       parent.querySelectorAll(".quiz-option").forEach(o => o.classList.remove("selected"));
       opt.classList.add("selected");
       answers[current] = opt.dataset.value;
+      applyFilter(current);
 
       // Avanzar tras una breve pausa / Advance after short pause
       setTimeout(() => {

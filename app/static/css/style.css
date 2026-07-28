@@ -848,9 +848,10 @@ html[data-lang="en"] .i18n-en-only { display: revert; }
   font-size: 0.9rem; color: var(--cream-muted);
   transition: all var(--t);
 }
-.quiz-option:hover     { border-color: var(--gold-dim); color: var(--cream); }
-.quiz-option.selected  { border-color: var(--gold); background: rgba(155,112,16,0.07); color: var(--gold); }
+.quiz-option:hover                        { border-color: var(--gold-dim); color: var(--cream); }
+.quiz-option.selected                     { border-color: var(--gold); background: rgba(155,112,16,0.07); color: var(--gold); }
 [data-theme="dark"] .quiz-option.selected { background: rgba(201,160,80,0.08); }
+.quiz-option--disabled                    { opacity: 0.28; pointer-events: none; filter: grayscale(0.5); }
 .quiz-option-icon { font-size: 1.4rem; flex-shrink: 0; }
 
 .quiz-legend {

@@ -15,7 +15,7 @@
       if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
       else document.documentElement.setAttribute('data-theme', 'dark');
       var l = localStorage.getItem('inwine-lang');
-      if (l === 'en') document.documentElement.setAttribute('data-lang', 'en');
+      document.documentElement.setAttribute('data-lang', l === 'en' ? 'en' : 'es');
     })();
   </script>
 
