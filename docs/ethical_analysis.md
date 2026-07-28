@@ -39,754 +39,960 @@ El usuario puede indicar preferencias como:
 
 La aplicación filtra el catálogo utilizando estas respuestas. Algunas preferencias, como la región, la uva o el sabor, se aplican de forma flexible: si no existen vinos que cumplan una de ellas, el sistema conserva los candidatos anteriores para evitar devolver una recomendación vacía.
 
-Finalmente, entre los vinos que permanecen después de aplicar los filtros, selecciona el que tiene el `rating` más alto.
+Finalmente, los candidatos se ordenan según su `rating`. La aplicación toma como máximo los cinco vinos mejor valorados y selecciona aleatoriamente uno de ellos. Este procedimiento introduce cierta variedad y evita mostrar siempre el mismo vino, aunque sigue ofreciendo mayor visibilidad a los candidatos con las valoraciones más altas.
 
 La ocasión no interviene directamente en la selección del vino, aunque se utiliza posteriormente para personalizar el texto de la recomendación.
 
-Esta vía trabaja sobre el catálogo disponible y no comienza asignando al usuario un clúster.
+Esta vía trabaja directamente sobre el catálogo disponible y no comienza asignando al usuario un clúster.
 
-### 2.2. Quiz de perfil
+### 2.2. Recomendación mediante quiz
 
-El quiz relaciona las respuestas del usuario con uno de los ocho perfiles de vino definidos por el equipo.
+Esta vía realiza varias preguntas sobre las preferencias del usuario y utiliza sus respuestas para asignarle uno de los ocho perfiles de vino definidos a partir de los clústeres.
 
-Cada respuesta otorga un voto a un perfil concreto. El perfil que recibe más votos determina el `cluster_id` asignado al usuario y la aplicación muestra vinos pertenecientes a ese clúster, teniendo también en cuenta el presupuesto indicado.
+Cada respuesta suma votos a uno o varios perfiles. La respuesta relacionada con el tipo de vino tiene un peso triple, por lo que influye más que el resto en la elección del perfil. Si se produce un empate, se aplican las reglas de desempate establecidas en la aplicación.
 
-La asignación se realiza mediante reglas fijas creadas por el equipo, no mediante un modelo entrenado con datos de usuarios. Por tanto, el resultado depende directamente de cómo se hayan definido esas correspondencias y las reglas de desempate.
+Una vez seleccionado el perfil, la aplicación busca los vinos pertenecientes al clúster correspondiente y los puntúa teniendo en cuenta:
+
+- La coincidencia con el tipo de vino indicado.
+- La coincidencia con la crianza elegida.
+- El `rating`.
+- La cercanía del precio al presupuesto del usuario.
+
+Finalmente, selecciona aleatoriamente un vino entre los candidatos mejor puntuados. Esto aporta variedad y evita que una misma combinación de respuestas muestre siempre exactamente el mismo resultado.
+
+Esta recomendación depende tanto de la interpretación realizada por el equipo al definir los ocho perfiles como de los pesos y reglas utilizados en el quiz. Por ello, el perfil asignado representa una aproximación a las preferencias del usuario y no una clasificación objetiva o definitiva de sus gustos.
 
 ### 2.3. Recomendación conversacional
 
-La aplicación también permite solicitar recomendaciones de forma conversacional, por ejemplo, indicando la comida, el presupuesto o algunas características deseadas.
+Esta vía solicita al usuario información sobre el plato que va a acompañar, su presupuesto, el tipo de vino que prefiere y la crianza deseada.
 
-Esta vía combina distintos criterios, como:
+A partir de estas respuestas, la aplicación filtra y puntúa los vinos disponibles teniendo en cuenta:
 
-- Compatibilidad con el presupuesto.
-- Tipo y crianza del vino.
-- Maridaje.
-- `rating`.
-- Relación calidad-precio.
+- La compatibilidad del vino con el plato seleccionado.
+- La coincidencia con el tipo de vino indicado.
+- La coincidencia con la crianza elegida.
+- El ajuste al presupuesto.
+- El `rating`.
+- La relación entre la valoración y el precio.
 
-Si la primera recomendación no convence, el usuario puede pedir otra opción. En ese caso, la aplicación excluye los vinos mostrados anteriormente e intenta encontrar una alternativa perteneciente al mismo clúster. Si no existen candidatos compatibles suficientes, algunos criterios pueden relajarse.
+Los candidatos se ordenan según la puntuación obtenida y la aplicación selecciona aleatoriamente uno de los cinco vinos mejor posicionados. Esto introduce variedad en los resultados, aunque los vinos con mejor puntuación tienen más posibilidades de aparecer.
 
-### 2.4. Vinos similares y exploración de perfiles
+Cuando no existen vinos que cumplan todos los criterios, la aplicación puede flexibilizar algunas preferencias para poder ofrecer una recomendación. Por ello, el resultado no siempre satisface exactamente todas las condiciones introducidas por el usuario.
 
-La aplicación permite consultar vinos pertenecientes al mismo clúster que un vino de referencia y explorar los ocho perfiles creados mediante K-Means.
+Esta vía depende de las reglas y ponderaciones definidas por el equipo para combinar los distintos criterios. Por tanto, la puntuación expresa la compatibilidad estimada por el sistema y no garantiza que el vino recomendado sea objetivamente la mejor opción para el usuario.
 
-En este contexto, pertenecer al mismo clúster significa compartir características generales según las variables utilizadas durante el modelado. Sin embargo, la aplicación no calcula la distancia individual entre los vinos para ordenarlos por grado de similitud.
+### 2.4. Recomendación de vinos similares
 
-Por ello, estas opciones deben entenderse como vinos del mismo perfil general y no necesariamente como los vinos matemáticamente más cercanos entre sí.
+Esta función parte de un vino concreto y busca alternativas dentro de su mismo clúster. De esta forma, se limita inicialmente la búsqueda a vinos que comparten un perfil general según el modelo de clustering.
 
-### 2.5. Papel de PCA y K-Means
+Después, los candidatos se puntúan teniendo en cuenta distintos criterios:
 
-Antes de utilizarse en la aplicación, los vinos pasan por un proceso de preparación y escalado de sus variables.
+- La coincidencia de la variedad de uva.
+- La coincidencia del tipo de vino.
+- La coincidencia de la crianza.
+- La pertenencia a la misma región.
+- La cercanía entre los precios.
 
-PCA reduce la información a dos componentes principales, `PC1` y `PC2`, facilitando la representación visual de los vinos. K-Means utiliza las variables preparadas para agruparlos en ocho clústeres con características similares.
+Finalmente, los vinos se ordenan según la puntuación obtenida y se introduce cierta aleatoriedad entre los candidatos mejor posicionados para ofrecer resultados variados.
 
-El equipo interpreta posteriormente esos grupos y les asigna nombres descriptivos para facilitar su comprensión. Estos nombres son una interpretación humana de las características predominantes en cada grupo y no categorías objetivas o universales.
+Aunque este método utiliza más características que la pertenencia al clúster, no calcula la distancia matemática exacta entre los vinos utilizando todas las variables del modelo. Por ello, los resultados deben entenderse como alternativas con características compatibles, pero no necesariamente como los vinos más cercanos o parecidos desde el punto de vista estadístico.
 
-Los resultados del modelado se incorporan al catálogo mediante columnas como `cluster_id`, `PC1` y `PC2`. La aplicación utiliza principalmente el `cluster_id` para explorar perfiles, ofrecer alternativas y buscar vinos pertenecientes al mismo grupo.
+Además, la similitud depende de los criterios y pesos definidos por el equipo. Algunas características pueden tener más influencia que otras y determinados vinos pueden recibir mayor visibilidad por estar mejor representados en el catálogo.
+
+### 2.5. Uso de PCA y clustering
+
+Antes de agrupar los vinos, el pipeline aplica PCA sobre las 18 variables escaladas y genera dos componentes principales, `PC1` y `PC2`. Estas componentes resumen parte de la información del conjunto de variables y permiten representar visualmente la distribución de los vinos en dos dimensiones.
+
+En conjunto, `PC1` y `PC2` conservan el 48,83 % de la varianza de los datos. Por tanto, esta representación resulta útil para explorar y visualizar los grupos, pero deja fuera el 51,17 % restante de la información. Dos vinos que aparecen próximos en el gráfico no tienen por qué ser idénticos ni compartir todas sus características.
+
+El modelo K-Means agrupa los vinos en ocho clústeres utilizando las 18 variables escaladas originales. Posteriormente, el equipo interpreta las características predominantes de cada grupo y les asigna nombres descriptivos para convertirlos en perfiles comprensibles dentro de la aplicación.
+
+Estos nombres no son categorías oficiales ni objetivas del mundo del vino, sino interpretaciones realizadas por el equipo a partir de los valores medios de cada clúster. Además, el número asignado a cada clúster funciona únicamente como un identificador y no indica calidad, orden o superioridad.
+
+Aunque el pipeline genera `PC1` y `PC2`, estas componentes no se guardan como columnas en el catálogo utilizado por la aplicación. El catálogo conserva el `cluster_id`, que permite relacionar cada vino con el perfil correspondiente.
 
 ## 3. Sesgos y limitaciones del dataset
 
-Las recomendaciones de InWine están condicionadas por los vinos incluidos en el dataset. Si determinados tipos, regiones, uvas o rangos de precio aparecen con mayor frecuencia, también tendrán más posibilidades de estar presentes en los clústeres y en los resultados de la aplicación.
+Las recomendaciones de InWine están condicionadas por la composición del dataset. Los tipos de vino, regiones, variedades de uva y rangos de precio con mayor presencia disponen de más candidatos y, por tanto, pueden tener más posibilidades de aparecer en los clústeres y en las recomendaciones.
 
-Esto no significa que la aplicación favorezca esos vinos de manera intencionada, sino que trabaja con un catálogo que no representa de forma equilibrada toda la diversidad del mercado español.
+Esto no significa que la aplicación favorezca intencionadamente determinados vinos, sino que trabaja con un catálogo que no representa de forma equilibrada toda la diversidad del mercado español.
 
 ### 3.1. Predominio de vinos tintos
 
-Aproximadamente el 84 % de los vinos del dataset son tintos. Como consecuencia, los vinos blancos, rosados y espumosos tienen una representación mucho menor.
+Aproximadamente el 84 % de los vinos del dataset son tintos. Los vinos blancos, rosados, espumosos y generosos tienen una representación considerablemente menor.
 
 Este desequilibrio puede provocar que:
 
-- Los clústeres estén definidos principalmente por las características de los vinos tintos.
-- Existan menos alternativas disponibles para usuarios que prefieren otros tipos de vino.
-- Al relajar algún filtro, sea más probable que aparezcan vinos tintos.
-- Los resultados generales de la aplicación transmitan una imagen poco equilibrada de la oferta vinícola española.
+- Los clústeres estén condicionados principalmente por las características de los vinos tintos.
+- Existan menos alternativas para los usuarios que prefieren otros tipos de vino.
+- Algunas combinaciones de preferencias produzcan pocos resultados.
+- Cuando se flexibilicen ciertos criterios, los vinos tintos tengan más posibilidades de aparecer.
+- La aplicación muestre una visión poco equilibrada de la diversidad del vino español.
 
-La importancia histórica y comercial del vino tinto en España puede explicar parcialmente su presencia destacada. Sin embargo, los datos oficiales sobre superficie de cultivo y producción por color no muestran una diferencia suficiente para justificar por sí sola una proporción cercana al 84 %.
+Esta distribución puede estar relacionada con la composición de la fuente original, la disponibilidad de información y reseñas o los criterios empleados para recopilar los vinos. Por tanto, debe entenderse como una limitación de representatividad del catálogo.
 
-Por tanto, este desequilibrio debe considerarse una limitación de representatividad del dataset. También podría estar relacionado con la fuente original, la disponibilidad de reseñas o los criterios utilizados para recopilar y seleccionar los vinos.
+### 3.2. Concentración en determinadas regiones y denominaciones de origen
 
-### 3.2. Concentración en determinadas regiones
+El dataset no representa de manera equilibrada todas las regiones y denominaciones de origen españolas. Algunas zonas cuentan con un número elevado de vinos, mientras que otras aparecen de forma minoritaria o no están representadas.
 
-Regiones con una gran presencia comercial y un número elevado de reseñas, especialmente Rioja y Ribera del Duero, aparecen con mayor frecuencia en el dataset.
+Este desequilibrio puede provocar que:
 
-Esto puede hacer que:
+- Las regiones con más registros tengan una mayor presencia en los clústeres y en las recomendaciones.
+- Los usuarios reciban menos alternativas procedentes de zonas con poca representación.
+- Algunas regiones se asocien con mayor facilidad a determinados perfiles de vino.
+- La aplicación transmita una visión incompleta de la diversidad geográfica del vino español.
 
-- Tengan más presencia dentro de los clústeres.
-- Dispongan de más candidatos cuando se aplican los filtros.
-- Aparezcan con mayor frecuencia en las recomendaciones.
-- Otras denominaciones de origen y regiones menos representadas tengan menos oportunidades de ser descubiertas.
+Además, la ausencia o escasa presencia de una región no implica que sus vinos sean menos relevantes o de menor calidad. Únicamente indica que el catálogo utilizado contiene menos información sobre ellos.
 
-No puede afirmarse que la aplicación recomiende sistemáticamente estas regiones sin analizar la frecuencia real de sus resultados. Sin embargo, su mayor presencia en el catálogo aumenta potencialmente sus posibilidades de selección.
+Por tanto, las recomendaciones reflejan la distribución geográfica del dataset y no deben interpretarse como una clasificación de la importancia, calidad o variedad de las distintas regiones y denominaciones de origen.
 
-### 3.3. Predominio de determinadas variedades de uva
+### 3.3. Representación desigual de las variedades de uva
 
-La variedad Tempranillo tiene una presencia destacada en el dataset. Además, durante el preprocesamiento algunas variedades minoritarias o combinaciones de uvas se agrupan en categorías generales, como `Blend/Other`.
+Las variedades de uva tampoco están representadas de manera equilibrada. Algunas aparecen en numerosos vinos, mientras que otras cuentan con pocos registros o no están presentes en el dataset.
 
-Esta simplificación facilita el tratamiento de los datos, pero también provoca una pérdida de información. Vinos elaborados con variedades diferentes pueden quedar representados bajo una misma categoría, aunque sus características reales no sean iguales.
+Esta distribución puede provocar que:
 
-Como consecuencia:
+- Las variedades mayoritarias tengan más influencia en la formación de los clústeres.
+- Los vinos elaborados con variedades menos representadas tengan menos posibilidades de aparecer en las recomendaciones.
+- Algunas preferencias del usuario dispongan de pocas alternativas.
+- La aplicación refleje principalmente las características de las uvas más frecuentes en el catálogo.
 
-- Las variedades mayoritarias conservan una identidad más definida.
-- Las variedades minoritarias pierden parte de su detalle.
-- El modelo puede distinguir peor la diversidad existente dentro de `Blend/Other`.
-- Las recomendaciones pueden favorecer indirectamente las categorías con más ejemplos y mejor diferenciadas.
+Además, la variedad de uva se transforma mediante Target Encoding utilizando el precio medio asociado a cada categoría. Por tanto, su representación numérica no expresa directamente una característica sensorial de la uva, sino su relación con los precios disponibles en el dataset.
 
-### 3.4. Distribución del precio
+Esto puede hacer que dos variedades con precios medios similares reciban valores parecidos, aunque tengan características sensoriales diferentes. También puede reforzar diferencias económicas ya existentes en los datos.
 
-El catálogo contiene vinos de distintos precios, pero su distribución no es uniforme. Los rangos con más ejemplos ofrecen más posibilidades de encontrar candidatos compatibles.
+La ausencia o menor presencia de una variedad no implica que sea menos importante, adecuada o valiosa. Únicamente refleja las limitaciones del catálogo utilizado..
 
-Además, el precio influye en varias partes de la aplicación:
+### 3.4. Precios y disponibilidad
 
-- Como presupuesto máximo en el formulario.
-- Como restricción en el quiz.
-- Como criterio en la recomendación conversacional.
-- En el cálculo de la relación calidad-precio.
+Los precios proceden del dataset original utilizado para construir el catálogo. Sin embargo, no se dispone de la fecha exacta en la que se recogió el precio de cada vino ni de información sobre su actualización posterior.
 
-Por ello, los vinos pertenecientes a rangos poco representados pueden aparecer con menor frecuencia. También debe tenerse en cuenta que el precio puede cambiar según la tienda, la añada, las promociones o el momento de la consulta, por lo que el valor incluido en el dataset no garantiza que el usuario encuentre actualmente el vino a ese precio.
+Por este motivo, los importes deben considerarse orientativos. El precio real puede variar según el establecimiento, la añada, el formato de la botella, las promociones o el momento de la consulta. Además, un vino incluido en el catálogo puede no encontrarse actualmente disponible.
 
-### 3.5. Calidad y procedencia de las valoraciones
+Esta limitación influye especialmente en las funciones que utilizan el presupuesto y la relación calidad-precio, ya que sus cálculos se realizan con los precios almacenados en el dataset. Si estos están desactualizados, un vino podría clasificarse como ajustado al presupuesto o con buena relación calidad-precio sin que esto coincida con la situación actual del mercado.
 
-El `rating` tiene una influencia importante en la aplicación, especialmente en el recomendador mediante formulario, que selecciona el vino mejor valorado entre los candidatos disponibles.
+Por tanto, la aplicación no debe presentar los precios como actuales ni garantizar la disponibilidad de los productos. Sería recomendable indicar al usuario que compruebe ambos datos en el establecimiento antes de realizar la compra.
 
-Sin embargo, una valoración no constituye una medida completamente objetiva de calidad. Puede depender de:
+### 3.5. Limitaciones de las valoraciones
 
-- La cantidad y el perfil de las personas que valoraron el vino.
-- La popularidad y visibilidad previa de la bodega.
-- La plataforma o fuente de la que procede la puntuación.
-- El número de reseñas disponibles.
-- Los gustos de los usuarios o especialistas que realizaron las valoraciones.
+El `rating` influye en varias funciones de la aplicación. Se utiliza para ordenar o puntuar candidatos y, por tanto, los vinos con valoraciones más altas pueden tener más posibilidades de aparecer en las recomendaciones.
 
-Además, disponer de un `rating` elevado no significa necesariamente que el vino sea el más adecuado para las preferencias concretas de una persona.
+Sin embargo, el dataset no proporciona suficiente información para interpretar completamente estas puntuaciones. No se conoce con precisión:
 
-Por tanto, el `rating` debe interpretarse como una señal adicional de calidad percibida, no como una medida universal ni neutral.
+- El número de valoraciones utilizado para calcular cada puntuación.
+- La fecha en la que se realizaron las valoraciones.
+- El perfil o procedencia de las personas que valoraron los vinos.
+- Si todos los vinos fueron evaluados siguiendo los mismos criterios.
+- Si las puntuaciones se han actualizado posteriormente.
+
+Por ello, dos vinos con un `rating` similar pueden no disponer de la misma cantidad ni calidad de información. Una puntuación alta basada en pocas opiniones no tiene necesariamente la misma solidez que otra obtenida a partir de muchas valoraciones.
+
+Además, las valoraciones reflejan preferencias subjetivas y pueden estar condicionadas por la popularidad, el precio, la disponibilidad o la mayor visibilidad de determinadas bodegas, regiones y variedades.
+
+Por tanto, el `rating` debe entenderse como una señal orientativa y no como una medida objetiva o definitiva de la calidad del vino. La aplicación debería combinarlo con el resto de las preferencias del usuario y evitar presentar el vino mejor valorado como necesariamente el mejor para todas las personas.
 
 ### 3.6. Cobertura limitada del mercado
 
-El dataset no contiene todos los vinos disponibles en España ni se actualiza automáticamente con los cambios del mercado. Las recomendaciones solo pueden realizarse entre los vinos incluidos en el catálogo.
+El dataset no contiene todos los vinos disponibles en España ni se actualiza automáticamente cuando aparecen nuevos productos o cambia la oferta comercial. Por tanto, InWine únicamente puede recomendar vinos incluidos en su catálogo.
 
 Esto implica que:
 
 - Un vino adecuado para el usuario puede no aparecer porque no forma parte del dataset.
-- La aplicación no garantiza la disponibilidad comercial de los vinos.
-- Pueden quedar fuera bodegas pequeñas, vinos nuevos o productos con pocas reseñas.
-- Los precios, añadas y otras características pueden quedar desactualizados.
+- Pueden estar menos representadas las bodegas pequeñas, los vinos nuevos o los productos con pocas reseñas.
+- La aplicación no garantiza que los vinos continúen disponibles en el mercado.
+- Algunas añadas, precios y características pueden haber cambiado desde la recopilación de los datos.
 
-Por ello, InWine recomienda la mejor opción encontrada dentro de su catálogo y según sus reglas, no necesariamente el mejor vino existente en todo el mercado.
+Por ello, InWine recomienda opciones compatibles dentro del catálogo disponible y según las reglas definidas por el equipo. No puede garantizar que el resultado sea el mejor vino existente en todo el mercado español.
 
-## 4. Limitaciones del preprocesamiento de los datos
+### 3.7. Vinos repetidos y distintas añadas
 
-Antes de aplicar PCA y K-Means, los datos pasan por distintas transformaciones para convertir la información original en variables que puedan utilizarse durante el modelado.
+El catálogo puede contener registros con el mismo nombre comercial o pertenecientes a una misma bodega. En algunos casos pueden corresponder a distintas añadas, variedades, formatos o versiones del producto, por lo que no deben considerarse automáticamente duplicados.
 
-Estas decisiones son necesarias para trabajar con el dataset, pero también simplifican la información y pueden influir en la forma en la que los vinos quedan representados y agrupados.
+Sin embargo, cuando varios registros son muy similares, una misma marca, bodega o familia de vinos puede adquirir mayor presencia dentro del dataset. Esto puede provocar que:
+
+- Tenga más influencia en la formación de los clústeres.
+- Aparezca con mayor frecuencia entre los candidatos recomendados.
+- Se reduzca la diversidad percibida por el usuario.
+- Algunas recomendaciones parezcan repetidas, aunque correspondan a registros diferentes.
+
+Además, las distintas añadas de un mismo vino pueden presentar diferencias de precio, valoración o características. Por ello, no sería adecuado eliminarlas únicamente porque compartan nombre.
+
+Para detectar duplicados reales sería necesario comparar conjuntamente varios campos, como el nombre, la bodega, la añada, la región, la variedad, el tipo y el precio. La coincidencia en un solo campo no es suficiente para concluir que dos registros representan exactamente el mismo producto.
+
+Por tanto, la posible repetición de vinos debe considerarse una limitación relacionada con la diversidad y la representación del catálogo, pero su revisión requiere distinguir cuidadosamente entre duplicados reales y versiones legítimamente diferentes.
+
+## 4. Sesgos y limitaciones del preprocesamiento
+
+Las transformaciones aplicadas durante el preprocesamiento permiten convertir los datos originales en variables que puedan utilizar PCA y K-Means. Sin embargo, estas decisiones también simplifican la información y pueden influir en la formación de los clústeres y en las recomendaciones posteriores.
 
 ### 4.1. Agrupación de categorías minoritarias
 
-Algunas variedades de uva con pocos ejemplos y determinadas combinaciones se agrupan dentro de categorías generales, como `Blend/Other`.
+Durante el preprocesamiento, algunas categorías con pocos registros se agrupan bajo una categoría común, como `Otros`. Esta decisión evita generar numerosas variables con muy pocos ejemplos y facilita el entrenamiento del modelo.
 
-Esta decisión evita crear muchas categorías con muy pocos datos, pero hace que vinos diferentes compartan una misma representación. Como consecuencia, el modelo puede perder parte de la información que distingue a las variedades minoritarias.
-
-La agrupación beneficia técnicamente a las categorías con más ejemplos, mientras que las menos frecuentes quedan representadas de una forma más general.
-
-### 4.2. Codificación de variables categóricas
-
-Variables como la región, la variedad de uva o la denominación de origen deben transformarse en valores numéricos antes de utilizarse en el modelado.
-
-Esta codificación no reproduce completamente la complejidad cultural, geográfica y enológica de cada categoría. Dos regiones o variedades representadas mediante valores distintos no son necesariamente más o menos parecidas por la distancia entre esos números.
-
-Por tanto, las variables codificadas son una representación técnica que permite entrenar el modelo, pero no deben interpretarse como una medición exacta de la relación real entre regiones, uvas o denominaciones.
-
-### 4.3. Transformación del precio
-
-El precio presenta una distribución desigual y puede contener algunos valores muy elevados. Para reducir la influencia de estos casos se aplica una transformación logarítmica mediante `log1p`.
-
-Esta transformación permite que las diferencias entre los precios más altos no dominen el agrupamiento. Sin embargo, también modifica la distancia original entre los vinos: una diferencia de precio elevada queda comprimida después de la transformación.
-
-Se trata de una decisión razonable para el modelado, pero debe tenerse en cuenta al interpretar los clústeres, ya que el modelo trabaja con el precio transformado y no directamente con su valor original en euros.
-
-### 4.4. Escalado de las variables
-
-Las variables utilizadas por el modelo tienen unidades y rangos diferentes. Por ejemplo, el precio, el `rating` y las variables sensoriales no se miden de la misma manera.
-
-Para evitar que las variables con números más grandes tengan automáticamente más influencia, se utiliza `StandardScaler`. Este proceso centra y escala cada variable tomando como referencia la media y la desviación estándar del dataset.
-
-El escalado mejora la comparabilidad entre variables, pero no garantiza que todas tengan la misma relevancia real para las preferencias de los usuarios. La importancia enológica o subjetiva de cada característica depende también de las variables seleccionadas y de la información disponible.
-
-### 4.5. Creación de variables sensoriales a partir de descripciones
-
-Las características sensoriales utilizadas por el proyecto se obtienen a partir de las descripciones textuales de los vinos mediante la búsqueda de palabras asociadas a perfiles como:
-
-- Frutal.
-- Floral.
-- Especiado.
-- Madera.
-- Mineral.
-- Dulce.
-
-Este procedimiento permite convertir textos en variables utilizables por el modelo, pero presenta varias limitaciones:
-
-- Depende del vocabulario incluido en los diccionarios.
-- Puede no reconocer sinónimos o expresiones no previstas.
-- Una palabra puede tener significados diferentes según el contexto.
-- La ausencia de una palabra no demuestra que el vino carezca de esa característica.
-- Las descripciones más extensas tienen más posibilidades de contener términos detectables.
-- La calidad de la extracción depende de la calidad y el nivel de detalle de la descripción original.
-
-Por tanto, estas variables representan la información que el sistema ha podido detectar en el texto, no una evaluación sensorial completa del vino.
-
-### 4.6. Diferencia entre característica ausente e información desconocida
-
-Cuando una característica sensorial no se encuentra en una descripción, puede representarse con un valor bajo o con cero. Sin embargo, este resultado puede significar dos cosas diferentes:
-
-- Que el vino realmente no presenta esa característica.
-- Que la descripción no la menciona o no contiene las palabras reconocidas por el sistema.
-
-El modelo no siempre puede distinguir entre ambas situaciones. Esto puede hacer que vinos con descripciones incompletas parezcan sensorialmente similares, aunque en realidad no lo sean.
-
-Esta limitación debe tenerse especialmente en cuenta al interpretar los clústeres y las recomendaciones basadas en perfiles de sabor.
-
-### 4.7. Pérdida de registros durante la preparación
-
-Durante la limpieza y preparación pueden descartarse registros incompletos, duplicados o vinos cuyo tipo no puede clasificarse correctamente.
-
-Esta eliminación mejora la consistencia técnica del dataset, pero también reduce su cobertura. Si los registros descartados pertenecen con mayor frecuencia a determinadas regiones, variedades o tipos de vino, su eliminación podría aumentar la infrarrepresentación de esas categorías.
-
-Por este motivo, es importante documentar cuántos registros se eliminan y por qué, y comprobar que el proceso no excluye de forma desproporcionada a un grupo concreto de vinos.
-
-### 4.8. Reproducibilidad del proceso
-
-El proyecto incorpora un flujo básico de MLOps para guardar y reutilizar los objetos empleados durante el preprocesamiento y el modelado, incluidos el escalado, K-Means y PCA.
-
-Esto permite que los nuevos vinos reciban las mismas transformaciones y que las variables se utilicen en el mismo orden que durante el entrenamiento. También mejora la reproducibilidad, la trazabilidad y la coherencia técnica del sistema.
-
-Sin embargo, este flujo no elimina automáticamente los sesgos del dataset ni corrige las limitaciones de las variables creadas. Si los datos originales están desequilibrados o una transformación pierde información, el pipeline reproducirá de forma consistente esas mismas decisiones.
-
-## 5. Limitaciones de PCA y K-Means
-
-PCA y K-Means permiten resumir la información del catálogo y organizar los vinos en perfiles generales. Estas técnicas son útiles para explorar el dataset y facilitar algunas funciones de la aplicación, pero sus resultados dependen de las variables seleccionadas y de las decisiones tomadas durante el modelado.
-
-### 5.1. Reducción de información mediante PCA
-
-PCA transforma las variables originales en nuevas componentes que concentran parte de la variabilidad presente en los datos.
-
-En el proyecto se utilizan dos componentes, `PC1` y `PC2`, para representar visualmente los vinos. Esta reducción facilita la creación de gráficos y permite observar agrupaciones generales, pero dos componentes no conservan necesariamente toda la información del dataset.
+Sin embargo, esta agrupación puede provocar una pérdida de información. Regiones, variedades de uva, tipos de vino u otras categorías poco frecuentes pueden quedar representadas mediante el mismo valor, aunque tengan características muy diferentes.
 
 Como consecuencia:
 
-- Parte de la variabilidad original puede perderse.
-- Dos vinos cercanos en el gráfico no tienen por qué ser idénticos en todas sus características.
-- Algunas diferencias importantes para un usuario pueden quedar poco representadas.
-- La interpretación de cada componente no siempre es directa, porque combina varias variables originales.
+- Se reduce la capacidad del modelo para distinguir algunas categorías minoritarias.
+- Vinos con características diferentes pueden recibir una representación similar.
+- Las particularidades de regiones o variedades poco frecuentes pueden tener menos influencia en la formación de los clústeres.
+- Las categorías mayoritarias conservan una representación más específica y pueden tener mayor peso en el modelo.
 
-Por ello, el gráfico de PCA debe entenderse como una representación simplificada del catálogo y no como una descripción completa de cada vino.
+La categoría `Otros` no debe interpretarse como un grupo homogéneo ni como una indicación de menor calidad. Únicamente reúne categorías con poca representación para facilitar el procesamiento de los datos.
+
+Por tanto, esta transformación mejora la estabilidad técnica del modelo, pero puede reducir la visibilidad y los matices de los vinos menos representados.
+
+### 4.2. Target Encoding de la región y la variedad de uva
+
+Las variables categóricas `region` y `grape_variety` se transforman mediante Target Encoding utilizando el precio medio de los vinos de cada categoría. Para reducir valores extremos y evitar depender únicamente de categorías con pocos registros, se aplica un suavizado con respecto al precio medio global del dataset.
+
+Esta transformación permite representar cada región y variedad de uva mediante un único valor numérico, evitando generar una gran cantidad de columnas. Sin embargo, ese valor no describe directamente sus características geográficas, sensoriales o enológicas, sino su relación con el precio dentro del dataset.
+
+Como consecuencia:
+
+- Dos regiones o variedades con precios medios similares pueden recibir valores parecidos, aunque sus vinos tengan características muy diferentes.
+- Las categorías asociadas a vinos más caros pueden adquirir una posición diferente en el modelo por motivos económicos y no necesariamente sensoriales.
+- Los precios desactualizados o poco representativos pueden influir también en la codificación.
+- Las categorías con pocos registros dependen en mayor medida del suavizado aplicado.
+- Las diferencias económicas existentes en el dataset pueden trasladarse a la formación de los clústeres.
+
+Este procedimiento no utiliza la variable que la aplicación intenta predecir, ya que InWine es un sistema de clustering no supervisado. En este caso, el precio se emplea como referencia para codificar estas variables antes de aplicar K-Means.
+
+Por tanto, los valores obtenidos no deben interpretarse como una medida de la calidad, importancia o similitud real de una región o variedad. Son únicamente una representación numérica diseñada para que estas categorías puedan incorporarse al modelo.
+
+### 4.3. Transformación del precio
+
+El precio presenta una distribución desigual: la mayoría de los vinos se concentra en determinados rangos, mientras que existen algunos importes considerablemente más elevados.
+
+Para reducir la influencia de estos valores altos durante el modelado, se aplica la transformación logarítmica `log1p`. Esta transformación comprime las diferencias entre los precios, especialmente en la parte más elevada de la distribución, y evita que unos pocos vinos caros condicionen excesivamente la formación de los clústeres.
+
+Sin embargo, también modifica las distancias originales entre los precios. Por ejemplo, una diferencia de 50 euros no conserva el mismo peso después de la transformación que en los valores originales.
+
+Como consecuencia:
+
+- El modelo no trabaja directamente con el precio expresado en euros.
+- Las diferencias entre los vinos más caros quedan reducidas.
+- El precio continúa influyendo en los clústeres, pero de una forma transformada.
+- La interpretación económica de la distancia entre dos vinos resulta menos directa.
+
+Esta transformación resulta útil para evitar que los precios extremos dominen el agrupamiento, pero debe tenerse en cuenta al interpretar los perfiles obtenidos. El precio original se mantiene en el catálogo para mostrarlo al usuario y aplicar criterios como el presupuesto.
+
+### 4.4. Escalado de las variables
+
+Las 18 variables utilizadas durante el modelado presentan escalas y unidades diferentes. Algunas son variables binarias, otras proceden de codificaciones categóricas y otras representan valores como el `rating` o el precio transformado.
+
+Antes de aplicar PCA y K-Means, estas variables se estandarizan mediante `StandardScaler`. Este proceso transforma cada variable tomando como referencia su media y su desviación estándar, evitando que aquellas con valores numéricos más elevados dominen automáticamente el cálculo de las distancias.
+
+Sin embargo, el escalado no determina qué características son realmente más importantes para los gustos de los usuarios. Después de estandarizarlas, todas las variables pueden influir en el modelo, aunque su relevancia sensorial o enológica no sea equivalente.
+
+Además:
+
+- Una variable incluida en el modelo puede influir aunque tenga poca importancia para determinados usuarios.
+- Las variables relacionadas entre sí pueden aportar información parcialmente repetida.
+- Los valores extremos pueden afectar a la media y a la desviación estándar utilizadas para escalar.
+- Si cambia la distribución de los nuevos datos, el escalado aprendido con el dataset original puede representar peor esos vinos.
+
+Por tanto, el escalado mejora la comparabilidad técnica entre las variables, pero no garantiza que su influencia coincida exactamente con la importancia que cada persona concede a las distintas características de un vino.
+
+### 4.5. Extracción de características sensoriales
+
+Las variables sensoriales, como las notas frutales, florales, especiadas, de madera o minerales, no proceden de mediciones físicas ni de catas realizadas específicamente para este proyecto. Se obtienen automáticamente a partir de las descripciones de los vinos mediante la búsqueda de palabras clave asociadas a cada categoría.
+
+Este método permite transformar textos no estructurados en variables numéricas que pueden incorporarse al modelo. Sin embargo, simplifica la riqueza y los matices del lenguaje utilizado para describir un vino.
+
+Como consecuencia:
+
+- Una característica puede no detectarse si se expresa con una palabra o sinónimo que no está incluido en el diccionario.
+- Una palabra puede aparecer en la descripción sin representar realmente una característica predominante del vino.
+- El método puede tener dificultades para interpretar negaciones, comparaciones, ambigüedades o expresiones figuradas.
+- Las descripciones más largas o detalladas pueden generar más coincidencias que las breves.
+- Los vinos sin descripción, o con una descripción poco completa, disponen de menos información sensorial.
+- Las categorías definidas por el equipo condicionan qué características puede reconocer el sistema.
+
+Además, las descripciones originales pueden reflejar la opinión subjetiva de críticos, bodegas o vendedores. Por tanto, las variables extraídas no representan una medición objetiva del sabor, sino una aproximación basada en el texto disponible y en las reglas definidas para interpretarlo.
+
+Estas variables resultan útiles para identificar patrones generales, pero no garantizan que todos los usuarios perciban en el vino los mismos aromas, sabores o sensaciones.
+
+### 4.6. Diferencia entre característica ausente e información desconocida
+
+Cuando el sistema no detecta una característica sensorial en la descripción de un vino, la variable correspondiente recibe un valor de cero. Sin embargo, este valor puede representar situaciones diferentes:
+
+- La característica realmente no está presente en el vino.
+- La característica está presente, pero no se menciona en la descripción.
+- Se expresa mediante una palabra que no está incluida en el diccionario.
+- La descripción es demasiado breve o incompleta para detectarla.
+
+El modelo trata todos estos casos del mismo modo, porque no dispone de un valor específico que permita distinguir entre ausencia real e información desconocida.
+
+Como consecuencia, los vinos con descripciones poco detalladas pueden parecer sensorialmente más neutros o similares entre sí. Esto puede afectar tanto a la formación de los clústeres como a las recomendaciones que utilizan el perfil de sabor.
+
+Por tanto, un valor de cero en estas variables debe interpretarse como “característica no detectada en el texto” y no necesariamente como “característica ausente en el vino”.
+
+### 4.7. Eliminación de registros duplicados
+
+El dataset original utilizado por InWine contenía 7.500 filas. Durante la exploración inicial se comprobó que 5.452 de ellas, el 72,7 %, eran copias exactas de otros registros.
+
+Estos duplicados coincidían en todas las columnas originales, incluyendo la bodega, el nombre del vino, la añada, el `rating`, el número de valoraciones, la región, el precio y el tipo. Por ejemplo, el vino `Contino - Reserva - 2016` aparecía repetido 220 veces con exactamente los mismos valores.
+
+Por este motivo, la deduplicación se realizó antes del resto de las transformaciones. Tras eliminar las copias exactas, el dataset pasó de 7.500 a 2.048 vinos únicos.
+
+Este paso era necesario porque, si se hubieran mantenido los duplicados:
+
+- Algunos vinos habrían tenido mucha más influencia que otros en los cálculos y en la formación de los clústeres.
+- Las bodegas, regiones, tipos de vino y variedades asociadas a esos registros habrían quedado sobrerrepresentadas.
+- Los porcentajes, medias y demás estadísticas del análisis no habrían reflejado correctamente la composición del catálogo.
+- La aplicación podría haber mostrado repetidamente el mismo producto en sus recomendaciones.
+- El proceso de enriquecimiento de datos habría podido repetirse innecesariamente sobre un mismo vino.
+
+Posteriormente se eliminaron las columnas `num_reviews`, `country`, `body` y `acidity`, porque no formaban parte de las variables utilizadas por el modelo. Al retirar estas columnas, algunos registros que antes presentaban alguna diferencia pasaron a ser idénticos dentro del catálogo final. Por ello, se realizó una segunda deduplicación, en la que se eliminaron otros 24 registros.
+
+Finalmente, el dataset limpio quedó formado por 2.024 registros sin duplicados.
+
+En este caso, la importante reducción del número de filas no significa que se eliminara una proporción equivalente de vinos diferentes. La mayor parte de los registros retirados eran copias exactas que ya estaban representadas en el dataset. La deduplicación permitió evitar que esas repeticiones alteraran el análisis, el clustering y las recomendaciones de InWine.
+
+### 4.8. Reproducibilidad del pipeline y MLOps
+
+InWine incorpora un pipeline reutilizable para aplicar a vinos nuevos las mismas transformaciones y modelos utilizados durante el entrenamiento.
+
+El proceso parte de dos archivos generados previamente por los notebooks:
+
+- `data/processed/wines_SPA_model_ready.csv`, que contiene los vinos preprocesados y las 18 variables escaladas utilizadas por K-Means y PCA.
+- `preprocessing/preprocessing_objects.pkl`, generado por `03_preprocessing.ipynb`, que contiene el `StandardScaler`, los mapas de precios por región y variedad de uva y la lista ordenada de variables del modelo.
+
+El script `src/train_pipeline.py` carga estos archivos y entrena:
+
+- Un modelo K-Means con ocho clústeres, `random_state=42` y `n_init=10`.
+- Un modelo PCA con dos componentes principales.
+
+A continuación, guarda en `models/inwine_pipeline.joblib` un diccionario con estos ocho elementos:
+
+- `scaler`: el `StandardScaler` entrenado en el notebook.
+- `region_price_map`: el mapa utilizado para codificar las regiones.
+- `grape_price_map`: el mapa utilizado para codificar las variedades de uva.
+- `model_features`: las variables originales y su orden.
+- `kmeans`: el modelo K-Means entrenado.
+- `pca`: el modelo PCA entrenado.
+- `feature_columns`: las 18 columnas escaladas y su orden.
+- `k`: el número de clústeres, fijado en ocho.
+
+El script `src/predict_pipeline.py` carga este artefacto para procesar vinos nuevos. Aplica la transformación logarítmica del precio, la extracción de las cinco familias sensoriales, la transformación de la temperatura de servicio, la codificación de región, uva y tipo de vino y el escalado de las variables.
+
+Después utiliza:
+
+- `scaler.transform()` para escalar el vino con los parámetros aprendidos durante el entrenamiento.
+- `kmeans.predict()` para asignarle uno de los ocho `cluster_id`.
+- `pca.transform()` para calcular sus coordenadas `PC1` y `PC2`.
+
+Durante este proceso no se vuelve a ejecutar `fit()`. Por tanto, añadir un vino no modifica la media ni la desviación estándar del escalador, los centroides de K-Means ni las componentes aprendidas por PCA.
+
+La aplicación web tampoco ejecuta el modelo cada vez que un usuario solicita una recomendación. El nuevo vino se procesa previamente y su `cluster_id` se incorpora al archivo `data/processed/wines_SPA_enriched.csv`. La aplicación carga este catálogo y utiliza el clúster ya asignado.
+
+La reproducibilidad del clustering se refuerza mediante `random_state=42`. Sin embargo, el artefacto `inwine_pipeline.joblib` no guarda actualmente metadatos como la fecha de entrenamiento, la versión del dataset, el commit de Git utilizado, las versiones exactas de las dependencias o métricas de seguimiento. Además, `requirements.txt` establece versiones mínimas mediante `>=`, pero no fija versiones exactas.
+
+Por tanto, el repositorio permite reutilizar el mismo pipeline sin reentrenar al incorporar cada vino, pero todavía no dispone de un sistema completo de versionado y trazabilidad de los experimentos y artefactos.
+
+## 5. Limitaciones de PCA y K-Means
+
+InWine utiliza PCA y K-Means con objetivos diferentes. Ambos modelos se entrenan en `src/train_pipeline.py` utilizando las mismas 18 variables escaladas de `data/processed/wines_SPA_model_ready.csv`.
+
+PCA crea una representación bidimensional de los vinos, mientras que K-Means realiza la agrupación en ocho clústeres. Por tanto, las limitaciones de PCA afectan principalmente a la visualización y no a la asignación del `cluster_id`.
+
+### 5.1. Reducción de información mediante PCA
+
+El pipeline de InWine entrena `PCA(n_components=2)` sobre las 18 variables escaladas y obtiene dos componentes principales: `PC1` y `PC2`.
+
+Estas dos componentes conservan conjuntamente el 48,83 % de la varianza del dataset. Esto significa que la representación bidimensional utilizada en los gráficos resume aproximadamente la mitad de la variabilidad contenida en las 18 variables, mientras que el 51,17 % restante no aparece representado en ese plano.
+
+Por este motivo:
+
+- La posición de un vino en el gráfico depende de una combinación de las 18 variables originales.
+- Dos vinos próximos en el plano formado por `PC1` y `PC2` pueden presentar diferencias en información que no ha quedado reflejada en esas dos componentes.
+- Dos vinos visualmente alejados no tienen por qué ser completamente incompatibles.
+- El gráfico permite observar patrones generales, pero no representa todas las características de cada vino.
+- `PC1` y `PC2` no deben interpretarse como puntuaciones de calidad ni como características concretas del vino.
+
+En InWine, K-Means no se entrena utilizando únicamente `PC1` y `PC2`. El modelo se ajusta directamente sobre las 18 variables escaladas originales. Por tanto, la pérdida de información de esta reducción a dos dimensiones afecta a la representación visual, pero no determina la formación de los ocho clústeres.
+
+Además, aunque el pipeline puede calcular las coordenadas `PC1` y `PC2` de un vino mediante `pca.transform()`, la aplicación utiliza principalmente su `cluster_id` para mostrar perfiles y generar alternativas.
 
 ### 5.2. Papel de PCA en el agrupamiento
 
-PCA y K-Means cumplen funciones diferentes. PCA reduce dimensiones y facilita la visualización, mientras que K-Means es la técnica que asigna cada vino a un clúster.
+En InWine, PCA y K-Means se entrenan sobre las mismas 18 variables escaladas, pero funcionan de manera independiente.
 
-La utilidad y las limitaciones de PCA dependen también de cómo se haya utilizado durante el entrenamiento final. Si K-Means se entrena con las variables preparadas originales, `PC1` y `PC2` sirven principalmente para visualizar los grupos. Si se entrena con las componentes principales, la pérdida de información producida por PCA también influye directamente en la formación de los clústeres.
+En `src/train_pipeline.py`, K-Means recibe directamente la matriz formada por esas 18 variables:
 
-Por este motivo, el pipeline debe conservar y documentar claramente qué variables recibe K-Means y en qué orden.
+- No utiliza `PC1` y `PC2` para crear los clústeres.
+- No utiliza las coordenadas generadas por PCA para calcular los centroides.
+- La varianza conservada por PCA no interviene en la asignación del `cluster_id`.
+- Modificar el número de componentes de PCA no cambiaría los clústeres mientras K-Means continúe entrenándose con las 18 variables escaladas.
 
-### 5.3. Elección del número de clústeres
+El modelo PCA se utiliza para reducir las 18 variables a dos dimensiones y facilitar la representación gráfica de los vinos y los clústeres. K-Means, en cambio, utiliza toda la información incluida en las variables escaladas para distribuir los 2.024 vinos entre ocho grupos.
 
-El catálogo se ha dividido en ocho clústeres. Esta cantidad permite ofrecer perfiles variados y comprensibles dentro de la aplicación, pero no representa una división natural o universal de todos los vinos.
+Por tanto, el gráfico formado por `PC1` y `PC2` es una proyección de los clústeres ya calculados en un espacio de 18 dimensiones. Como las dos componentes conservan el 48,83 % de la varianza, el gráfico no puede mostrar completamente las distancias que K-Means tuvo en cuenta.
 
-El número de clústeres depende de:
+Esto explica que en la representación bidimensional:
 
-- Las métricas utilizadas durante la evaluación.
-- La distribución de los datos.
-- La utilidad práctica de los grupos para la aplicación.
-- La interpretación realizada por el equipo.
+- Algunos vinos pertenecientes al mismo clúster puedan aparecer separados.
+- Puntos de clústeres diferentes puedan verse próximos o parcialmente superpuestos.
+- Los ocho grupos no tengan que aparecer como zonas completamente separadas.
+- La forma observada en el gráfico no coincida exactamente con la distribución utilizada por K-Means.
 
-Otra elección del número de clústeres podría producir agrupaciones diferentes. Por tanto, los ocho perfiles son una forma útil de organizar este catálogo, pero no deben presentarse como las únicas categorías posibles.
+Esta superposición visual no significa necesariamente que K-Means haya asignado incorrectamente los vinos. Indica que parte de la información utilizada para agruparlos se encuentra en dimensiones que no aparecen en el plano formado por `PC1` y `PC2`.
+
+En la aplicación, las coordenadas de PCA no se utilizan para recomendar directamente un vino. La información operativa es el `cluster_id` asignado por K-Means, mientras que `PC1` y `PC2` se conservan como apoyo para analizar y visualizar la distribución del catálogo.
+
+### 5.3. Selección de ocho clústeres
+
+En `notebooks/04_clustering.ipynb`, InWine prueba configuraciones de K-Means desde `k=2` hasta `k=10`. Todos los modelos se entrenan con las 18 variables escaladas, utilizando `random_state=42` y `n_init=10`.
+
+Para comparar las configuraciones se calculan dos métricas:
+
+- La inercia, que mide la compactación interna de los clústeres.
+- El Silhouette Score, que valora conjuntamente la cohesión de cada clúster y su separación respecto a los demás.
+
+Los resultados obtenidos fueron:
+
+| Número de clústeres | Inercia | Silhouette Score |
+|---:|---:|---:|
+| 2 | 19.581,16 | 0,4872 |
+| 3 | 16.698,51 | 0,2239 |
+| 4 | 14.236,37 | 0,2419 |
+| 5 | 12.009,17 | 0,2690 |
+| 6 | 10.602,50 | 0,2745 |
+| 7 | 9.106,71 | 0,3442 |
+| 8 | 6.946,11 | 0,3697 |
+| 9 | 6.304,85 | 0,3670 |
+| 10 | 5.840,58 | 0,3575 |
+
+El valor más alto de Silhouette Score corresponde a `k=2`, con `0,4872`. Sin embargo, esta opción únicamente dividiría los 2.024 vinos en dos grupos muy amplios y no permitiría construir una segmentación suficientemente detallada para las recomendaciones de InWine.
+
+Entre las alternativas con más grupos, `k=8` obtiene el mejor Silhouette Score, con `0,3697`. A partir de ese punto, aumentar el número de clústeres no mejora el resultado:
+
+- Con `k=9`, el Silhouette Score baja a `0,3670`.
+- Con `k=10`, desciende nuevamente hasta `0,3575`.
+- La reducción de la inercia también se hace mucho menor después de `k=8`.
+
+Por este motivo se seleccionó `k=8`: representa un equilibrio entre la separación estadística de los grupos y la necesidad de obtener perfiles comerciales diferenciados.
+
+Los ocho clústeres obtenidos se caracterizaron posteriormente según el tipo de vino, el precio, el `rating`, la crianza y las regiones dominantes. A partir de sus características reales se asignaron manualmente los siguientes nombres:
+
+1. Iconos de Guarda.
+2. Blancos Selectos.
+3. Tintos Jóvenes de Autor.
+4. Vinos Singulares.
+5. Generosos y Jerez.
+6. Espumosos Premium.
+7. Tintos Crianza Clásicos.
+8. Tintos Jóvenes Premium.
+
+Por tanto, `k=8` no se eligió porque fuera el valor con el Silhouette Score más alto de toda la prueba. Se eligió porque ofrecía el mejor resultado entre las configuraciones que permitían disponer de una segmentación más detallada y útil para el funcionamiento de InWine.
+
+La elección también se validó repitiendo K-Means con las semillas `0`, `1`, `42`, `123` y `2024`. Las diez comparaciones entre sus resultados obtuvieron un Adjusted Rand Index de `1,0`, lo que indica que los 2.024 vinos recibieron agrupaciones equivalentes en las cinco ejecuciones.
 
 ### 5.4. Diferencias de tamaño entre clústeres
 
-Los clústeres no contienen necesariamente el mismo número de vinos. Algunos perfiles disponen de muchas más opciones que otros debido a la distribución original del dataset y a la forma en la que K-Means realiza el agrupamiento.
+Los ocho clústeres creados por K-Means no contienen el mismo número de vinos. En `app/data/clusters.py` se registra la siguiente distribución:
 
-Esta diferencia puede provocar que:
+| `cluster_id` | Perfil | Número de vinos | Porcentaje del catálogo |
+|---:|---|---:|---:|
+| 0 | Iconos de Guarda | 315 | 15,56 % |
+| 1 | Blancos Selectos | 137 | 6,77 % |
+| 2 | Tintos Jóvenes de Autor | 288 | 14,23 % |
+| 3 | Vinos Singulares | 65 | 3,21 % |
+| 4 | Generosos y Jerez | 90 | 4,45 % |
+| 5 | Espumosos Premium | 38 | 1,88 % |
+| 6 | Tintos Crianza Clásicos | 333 | 16,45 % |
+| 7 | Tintos Jóvenes Premium | 758 | 37,45 % |
 
-- Algunos perfiles ofrezcan más variedad de precios, regiones y uvas.
-- Los clústeres pequeños tengan menos alternativas compatibles con los filtros.
-- Sea necesario recurrir antes a vinos de otros clústeres para completar resultados.
-- Los usuarios asignados a perfiles grandes tengan más posibilidades de recibir recomendaciones variadas.
+El perfil más numeroso es `Tintos Jóvenes Premium`, con 758 vinos, mientras que `Espumosos Premium` contiene únicamente 38. Por tanto, el clúster más grande tiene casi veinte veces más registros que el más pequeño.
 
-K-Means busca grupos internamente similares, pero no garantiza que tengan el mismo tamaño ni que ofrezcan las mismas oportunidades de recomendación.
+Esta diferencia está relacionada con la composición del catálogo. Los clústeres 0, 2, 6 y 7 están dominados por vinos tintos y reúnen conjuntamente 1.694 de los 2.024 vinos, es decir, el 83,70 % del dataset. En cambio, los perfiles correspondientes a blancos, generosos y espumosos disponen de muchos menos registros.
 
-### 5.5. Sensibilidad a las variables utilizadas
+Esta distribución influye directamente en las opciones disponibles en la aplicación:
 
-K-Means agrupa los vinos según las variables que recibe. Las características que no están presentes en el dataset no pueden influir en el resultado.
+- `Tintos Jóvenes Premium` ofrece un conjunto mucho mayor de vinos entre los que aplicar restricciones de precio u otros criterios.
+- `Espumosos Premium`, `Vinos Singulares` y `Generosos y Jerez` disponen de menos alternativas.
+- Al excluir recomendaciones ya mostradas, los clústeres pequeños pueden agotar antes sus candidatos compatibles.
+- En el quiz, un usuario asignado a un clúster pequeño tiene menos posibilidades de encontrar cuatro vinos de su perfil que además cumplan su presupuesto.
+- Cuando no existen suficientes candidatos del clúster asignado, la aplicación completa los resultados con vinos pertenecientes a otros clústeres.
 
-Además, aunque las variables estén escaladas, la selección de cuáles incluir determina el concepto de similitud utilizado por el modelo. Si se utilizan precio, `rating`, tipo de vino y características sensoriales, los clústeres reflejarán principalmente esas dimensiones.
+K-Means no incorpora ninguna condición para equilibrar el número de vinos de los grupos. Su objetivo es asignar cada registro al centroide más cercano según las 18 variables escaladas. Por ello, esta diferencia de tamaño no constituye un error de ejecución, pero sí afecta a la variedad de recomendaciones que puede ofrecer cada perfil.
 
-Esto significa que dos vinos pueden pertenecer al mismo clúster según las variables disponibles y, aun así, diferenciarse en aspectos no incluidos, como:
+En InWine, los ocho perfiles no tienen la misma cobertura dentro del catálogo: los usuarios asociados a perfiles dominados por vinos tintos disponen de muchas más alternativas que quienes obtienen perfiles minoritarios, especialmente `Espumosos Premium`.
 
-- El método concreto de elaboración.
-- La añada y su evolución.
-- La disponibilidad comercial.
-- Preferencias sensoriales más detalladas.
-- La percepción subjetiva de cada persona.
+### 5.5. Influencia de las variables utilizadas
 
-La pertenencia a un mismo clúster representa una similitud aproximada dentro del modelo, no una equivalencia completa entre los vinos.
+K-Means crea los ocho clústeres de InWine utilizando las 18 variables escaladas de `data/processed/wines_SPA_model_ready.csv`.
 
-### 5.6. Sensibilidad de K-Means a la inicialización y a los datos
+Estas variables incluyen información sobre:
 
-K-Means puede producir resultados diferentes según la inicialización de los centroides y los datos utilizados durante el entrenamiento.
+- La valoración del vino.
+- El precio y su relación con la calidad.
+- La crianza.
+- La región y la variedad de uva.
+- La temperatura de servicio.
+- Las cinco familias sensoriales.
+- El tipo de vino.
 
-El uso de una semilla fija permite reproducir el mismo resultado con el mismo dataset y la misma configuración. Sin embargo, si se incorporan vinos nuevos, cambian las variables o se modifica el preprocesamiento, los clústeres y sus centroides pueden variar.
+Antes de entrenar K-Means, todas las variables se estandarizan mediante `StandardScaler`. De esta forma, las diferencias entre sus escalas originales no provocan que una variable domine el cálculo de las distancias únicamente por contener valores numéricos más elevados.
 
-El flujo de MLOps ayuda a conservar el modelo entrenado y evita recalcular los grupos de forma accidental en cada ejecución. Si en el futuro se vuelve a entrenar el modelo, será necesario comparar la nueva versión con la anterior y revisar si el significado de los clústeres ha cambiado.
+La selección realizada permite que los clústeres reflejen diferentes dimensiones del catálogo. Por ejemplo:
+
+- Las columnas correspondientes al tipo de vino permiten diferenciar perfiles como `Blancos Selectos`, `Generosos y Jerez` y `Espumosos Premium`.
+- Las variables relacionadas con el precio contribuyen a distinguir perfiles con niveles económicos diferentes.
+- Las familias sensoriales incorporan información sobre los sabores y aromas identificados en la descripción de cada vino.
+- La crianza, la región y la uva ayudan a diferenciar vinos que pueden compartir tipo o precio, pero presentan otras características distintas.
+
+En el modelo, la información económica aparece representada mediante `price_log`, `luxury_category`, `quality_price_ratio`, `region_encoded` y `grape_variety_encoded`. Estas variables no contienen exactamente la misma información, ya que representan respectivamente el precio transformado, la categoría económica, la relación entre puntuación y precio y los precios medios asociados a cada región y variedad.
+
+Sin embargo, su presencia conjunta hace que el componente económico tenga una influencia relevante en la segmentación. Esto se observa en las diferencias de precio entre perfiles como `Iconos de Guarda`, con un precio medio de 540,92 euros, y `Vinos Singulares`, con 33,53 euros.
+
+Esta configuración es coherente con el objetivo de InWine, ya que el precio es una característica importante para diferenciar y recomendar productos. No obstante, los clústeres obtenidos representan necesariamente la selección concreta de variables utilizada por el equipo.
+
+El repositorio no incluye actualmente una comparación del clustering eliminando diferentes grupos de variables. Como mejora futura, podría estudiarse cómo cambia la segmentación al utilizar únicamente variables sensoriales, retirar algunas variables económicas o asignar más importancia a las preferencias relacionadas con el sabor. Esta comparación permitiría comprobar qué combinación genera los perfiles más útiles para las recomendaciones.
+
+### 5.6. Tratamiento de los valores extremos
+
+K-Means asigna los vinos de InWine al centroide más próximo utilizando las 18 variables escaladas. Por ello, los valores especialmente alejados de la distribución habitual pueden influir en las distancias utilizadas para crear los clústeres.
+
+El precio es la variable que presenta las diferencias más amplias dentro del catálogo. Para reducir su efecto, el preprocesamiento no utiliza directamente `price_euros`, sino que crea:
+
+`price_log = log1p(price_euros)`
+
+La transformación logarítmica reduce la distancia numérica entre los vinos de precio habitual y los vinos de varios cientos de euros. Esto permite conservar la información económica sin que los importes más elevados tengan la misma influencia que tendrían utilizando el precio original.
+
+Después, las 18 variables se estandarizan mediante `StandardScaler`. Este paso sitúa las variables en una escala comparable antes de entrenar K-Means y evita que una característica influya más solamente por utilizar unidades o rangos numéricos mayores.
+
+Estas decisiones son adecuadas para el dataset de InWine y permiten que el precio forme parte de la segmentación de una manera más controlada. Aun así, algunos vinos presentan características muy diferentes de las del resto del catálogo y pueden quedar alejados de los centroides obtenidos.
+
+Esta situación no impide el funcionamiento del modelo: K-Means siempre asigna cada vino al clúster cuyo centroide se encuentra más próximo. Por tanto, el `cluster_id` indica cuál es el perfil más cercano entre los ocho disponibles, pero no mide por sí mismo el grado de proximidad del vino a dicho perfil.
+
+Como posible evolución del pipeline, podría calcularse la distancia de cada vino a su centroide. Esta información permitiría identificar productos especialmente atípicos y analizar individualmente si su asignación representa correctamente sus características.
+
+En conclusión, InWine ya reduce el efecto de los precios extremos mediante `log1p` y aplica el mismo escalado a todas las variables. El control de la distancia a los centroides sería una mejora adicional para analizar casos poco habituales, no un requisito para el funcionamiento actual del clustering.
 
 ### 5.7. Interpretación y nombres de los perfiles
 
-Los nombres y descripciones de los ocho perfiles no son generados automáticamente por K-Means. El modelo únicamente crea agrupaciones numéricas; posteriormente, el equipo interpreta las características predominantes de cada clúster y les asigna nombres comprensibles.
+K-Means crea los ocho clústeres utilizando las características de los 2.024 vinos, pero no les asigna automáticamente un significado comercial ni un nombre.
 
-Esta interpretación facilita el uso de la aplicación, pero introduce una valoración humana. Un nombre breve puede simplificar demasiado la diversidad interna del grupo o destacar unas características y dejar otras en segundo plano.
+Después de entrenar el modelo, el equipo analizó cada clúster mediante variables como:
 
-Por tanto:
+- El tipo de vino predominante.
+- El precio medio.
+- El `rating`.
+- La crianza.
+- Las regiones y variedades de uva más frecuentes.
+- Las familias sensoriales.
 
-- Los nombres deben presentarse como descripciones orientativas.
-- No todos los vinos del clúster tienen que cumplir cada rasgo del perfil con la misma intensidad.
-- Las descripciones deberían revisarse si cambia el modelo o el dataset.
-- No deben interpretarse como categorías enológicas oficiales.
+A partir de las características predominantes, los ocho grupos recibieron manualmente los siguientes nombres:
+
+| `cluster_id` | Nombre del perfil |
+|---:|---|
+| 0 | Iconos de Guarda |
+| 1 | Blancos Selectos |
+| 2 | Tintos Jóvenes de Autor |
+| 3 | Vinos Singulares |
+| 4 | Generosos y Jerez |
+| 5 | Espumosos Premium |
+| 6 | Tintos Crianza Clásicos |
+| 7 | Tintos Jóvenes Premium |
+
+Estos nombres permiten presentar los resultados del modelo de una forma comprensible para los usuarios de la aplicación. En lugar de mostrar únicamente un número de clúster, InWine utiliza una denominación que resume las características principales del grupo.
+
+Los nombres deben interpretarse como descripciones orientativas. Un clúster agrupa vinos próximos según las 18 variables utilizadas por K-Means, pero no todos sus integrantes presentan cada característica con la misma intensidad. Por ejemplo, pertenecer a `Iconos de Guarda` indica que el vino está incluido en el perfil identificado con ese nombre, pero no constituye por sí mismo una clasificación enológica oficial.
+
+La interpretación humana es adecuada para trasladar el resultado matemático del modelo a la aplicación. Si en el futuro se modifica el dataset, el conjunto de variables o el número de clústeres, será necesario revisar las características de los nuevos grupos antes de mantener o modificar estos nombres.
 
 ### 5.8. Similitud dentro de un mismo clúster
 
-La aplicación utiliza el `cluster_id` para identificar vinos del mismo perfil. Sin embargo, pertenecer al mismo clúster no significa que todos sus integrantes sean igual de similares entre sí.
+K-Means asigna cada vino de InWine al clúster cuyo centroide se encuentra más próximo, teniendo en cuenta conjuntamente las 18 variables escaladas.
 
-K-Means asigna cada vino al centroide más cercano, pero dentro de un mismo grupo puede haber vinos más próximos o más alejados entre sí. La función de vinos similares no calcula ni utiliza estas distancias para ordenar los resultados.
+Por tanto, los vinos que pertenecen al mismo clúster comparten un perfil general, pero no tienen que ser idénticos en todas sus características. Dentro de un mismo grupo pueden existir diferencias de precio, `rating`, región, variedad de uva, crianza o perfil sensorial.
 
-Por ello, es más preciso indicar que la aplicación muestra vinos pertenecientes al mismo clúster que afirmar que presenta los vinos matemáticamente más similares.
+Esta diversidad es coherente con el objetivo de InWine. Los clústeres no representan categorías cerradas, sino conjuntos de vinos que presentan una combinación de características similar. Así, dos vinos pueden pertenecer al mismo perfil aunque uno destaque más por su precio y otro por su crianza o sus características sensoriales.
 
-### 5.9. Ausencia de validación con preferencias reales de usuarios
+Además, el tamaño de los clústeres influye en su variedad interna. Por ejemplo, `Tintos Jóvenes Premium` contiene 758 vinos, por lo que reúne un catálogo más amplio y diverso que `Espumosos Premium`, formado por 38 vinos.
 
-Los clústeres se han creado a partir de las características de los vinos y no mediante datos históricos sobre los gustos o elecciones de los usuarios.
+En la aplicación, el `cluster_id` se utiliza como punto de partida para identificar vinos pertenecientes al mismo perfil. Después se aplican otros criterios, como el presupuesto indicado por el usuario, para seleccionar las recomendaciones más adecuadas dentro de los candidatos disponibles.
 
-Por tanto, que dos vinos sean próximos según el modelo no garantiza que una persona que disfrute de uno vaya a preferir también el otro. Para comprobar la utilidad real de los perfiles sería necesario recopilar valoraciones voluntarias y analizar, respetando la privacidad, si las recomendaciones resultan relevantes para distintos tipos de usuarios.
+Por tanto, compartir un clúster significa que dos vinos pertenecen al mismo perfil general según el modelo, no que sean equivalentes ni que tengan exactamente las mismas características. Esta variedad permite que InWine ofrezca distintas alternativas dentro de una recomendación coherente.
 
-Mientras no se realice esa validación, los perfiles deben considerarse una aproximación basada en las características disponibles del catálogo.
+### 5.9. Validación con preferencias reales de usuarios
+
+Los clústeres de InWine se han creado a partir de las características de los vinos, como el precio, el tipo, la crianza, la región, la uva y el perfil sensorial. No se han utilizado historiales de compras ni valoraciones personales para entrenar el modelo.
+
+Esta decisión permite organizar el catálogo sin recopilar datos personales y resulta adecuada para una primera versión de la aplicación. Sin embargo, la similitud entre las características de dos vinos no garantiza que todos los usuarios perciban esa similitud de la misma manera o disfruten de ambos por igual.
+
+Por ahora, la utilidad de los perfiles se ha evaluado mediante el análisis de sus características y su coherencia dentro de la aplicación. Como mejora futura, podrían incorporarse valoraciones voluntarias y anónimas para conocer si las recomendaciones se ajustan a los gustos de los usuarios.
+
+Esta información permitiría comprobar la utilidad real de los perfiles y mejorar progresivamente las recomendaciones, siempre informando de forma clara sobre el uso de los datos recopilados.
 
 ## 6. Sesgos y limitaciones de las vías de recomendación
 
-InWine ofrece varias formas de obtener recomendaciones. Cada una emplea una lógica diferente, por lo que sus posibles sesgos y limitaciones deben analizarse por separado.
+InWine permite obtener recomendaciones mediante distintas vías de interacción. Cada una utiliza información diferente: las respuestas del cuestionario, las características de un vino seleccionado o los filtros y preferencias indicados por el usuario.
+
+Estas vías facilitan la búsqueda dentro de un catálogo amplio, pero sus resultados dependen tanto de la información proporcionada como de la disponibilidad de vinos compatibles. Por ello, las recomendaciones deben entenderse como propuestas personalizadas dentro del catálogo de InWine, no como una valoración definitiva sobre cuál es el mejor vino para cada persona.
 
 ### 6.1. Recomendador mediante formulario
 
-El formulario aplica diferentes filtros sobre el catálogo según las preferencias indicadas por el usuario. El presupuesto y el tipo de vino tienen una influencia directa, mientras que otros criterios, como la región, la variedad de uva o el perfil de sabor, se aplican de forma flexible.
+El formulario filtra el catálogo según las preferencias indicadas por el usuario. El presupuesto y el tipo de vino actúan como criterios principales, mientras que otros elementos, como la región, la variedad de uva o el perfil sensorial, se aplican de forma flexible.
 
-Cuando uno de estos filtros flexibles no encuentra coincidencias, la aplicación mantiene los candidatos obtenidos en el paso anterior. Esta decisión evita que el sistema se quede sin resultados, pero también puede provocar que la recomendación final no cumpla todas las preferencias seleccionadas.
+Esta flexibilidad evita que una combinación muy concreta deje al usuario sin ninguna recomendación. Cuando un filtro no encuentra coincidencias, la aplicación mantiene los candidatos obtenidos anteriormente y continúa la búsqueda con el resto de los criterios.
 
-Por ejemplo, si no existen vinos compatibles con la región elegida, el sistema puede recomendar un vino de otra región sin que esta relajación resulte evidente para el usuario.
+Una vez seleccionados los vinos compatibles, se priorizan los que tienen un `rating` más elevado. Esta decisión permite destacar opciones bien valoradas, aunque también hace que determinados vinos aparezcan con mayor frecuencia que otros con una puntuación algo inferior.
 
-Una vez aplicados los filtros, la aplicación selecciona el vino con mayor `rating` entre los candidatos disponibles. Esto introduce varias limitaciones:
+La ocasión seleccionada se utiliza principalmente para adaptar la explicación de la recomendación. Por ello, sería conveniente que la aplicación diferenciara claramente entre las preferencias que participaron directamente en la selección y las utilizadas para personalizar el mensaje.
 
-- El `rating` puede tener más peso que otras preferencias personales.
-- Los vinos populares o con valoraciones elevadas parten con ventaja.
-- El sistema no considera el número de valoraciones ni la incertidumbre asociada a la puntuación.
-- Si se repite la misma consulta, normalmente se obtiene el mismo resultado.
-- Los vinos con una puntuación algo menor tienen pocas oportunidades de ser mostrados, aunque también sean compatibles.
-
-Además, la ocasión elegida no modifica directamente la selección del vino. Se utiliza para personalizar la explicación posterior, por lo que el texto puede transmitir una adaptación a la ocasión mayor que la que realmente ha intervenido en el cálculo.
+En futuras versiones podría mostrarse un aviso cuando no haya sido posible respetar algún criterio. De esta forma, el usuario sabría qué preferencias se han cumplido y cuáles se han flexibilizado para poder ofrecerle una alternativa.
 
 ### 6.2. Quiz de perfil
 
-El quiz asigna al usuario uno de los ocho clústeres mediante reglas creadas por el equipo. Cada respuesta suma un voto a un perfil y el resultado final depende del perfil que acumula más votos.
+El quiz asigna al usuario uno de los ocho perfiles de InWine mediante reglas definidas por el equipo. Cada respuesta aporta votos a determinados clústeres y el perfil con más votos se utiliza como resultado final.
 
-Este sistema es comprensible y reproducible, pero no ha sido aprendido a partir de las preferencias reales de los usuarios. Las relaciones entre una respuesta y un clúster representan decisiones humanas sobre qué perfil se considera más apropiado.
+Este sistema es comprensible, reproducible y permite relacionar las respuestas del usuario con los perfiles creados por K-Means. Sin embargo, las asociaciones entre las respuestas y los clústeres no han sido aprendidas a partir del comportamiento real de los usuarios, sino diseñadas a partir de la interpretación de los perfiles.
 
-Esto puede provocar que:
+Una vez obtenido el resultado, la aplicación busca vinos pertenecientes al clúster asignado y compatibles con el presupuesto indicado. Si no existen cuatro candidatos adecuados, completa las opciones con vinos de otros clústeres.
 
-- Algunas respuestas simplifiquen demasiado los gustos personales.
-- Personas con preferencias diferentes terminen en el mismo perfil.
-- Una pequeña variación en una respuesta cambie el clúster asignado.
-- Las reglas de desempate influyan en el resultado.
-- Algunos perfiles reciban más votos potenciales que otros según el diseño de las preguntas.
+Esta estrategia permite que el usuario reciba siempre varias recomendaciones, aunque los perfiles pequeños disponen de menos alternativas que los más numerosos. Por ello, no todos los vinos mostrados tienen que pertenecer necesariamente al clúster obtenido en el quiz.
 
-Una vez asignado el clúster, la aplicación busca vinos que pertenezcan a él y que se encuentren dentro del presupuesto indicado. Sin embargo, si no hay cuatro vinos compatibles, completa las opciones con vinos de otros clústeres.
-
-Esta estrategia garantiza que siempre aparezcan cuatro resultados, pero reduce la coherencia entre el perfil obtenido y las recomendaciones mostradas. Por tanto, no debe afirmarse que todos los vinos presentados por el quiz pertenecen necesariamente al clúster asignado.
-
-También existe una diferencia de oportunidades entre perfiles: los clústeres grandes y con una mayor variedad de precios tienen más posibilidades de ofrecer cuatro vinos propios, mientras que los pequeños pueden necesitar recurrir con mayor frecuencia a otros grupos.
+Como mejora futura, podrían revisarse las reglas del cuestionario utilizando pruebas con usuarios reales. Esto permitiría comprobar si las personas se identifican con el perfil recibido y si las recomendaciones se ajustan a sus preferencias.
 
 ### 6.3. Recomendación conversacional
 
-La recomendación conversacional interpreta la petición del usuario y combina criterios como el presupuesto, el tipo de vino, la crianza, el maridaje, el `rating` y la relación calidad-precio.
+La recomendación conversacional permite expresar las preferencias de una forma más libre. El sistema interpreta la petición y combina criterios como el presupuesto, el tipo de vino, la crianza, el maridaje, el `rating` y la relación calidad-precio.
 
-Esta vía permite consultas más flexibles, pero también presenta limitaciones:
+Esta vía ofrece una experiencia más flexible que un formulario cerrado, aunque su resultado depende de que la petición contenga información suficiente y pueda relacionarse con las variables disponibles en el catálogo.
 
-- La petición del usuario puede ser ambigua o incompleta.
-- Dos expresiones parecidas pueden interpretarse de manera diferente.
-- El vocabulario reconocido por el sistema puede no cubrir todas las formas de describir un vino.
-- Los criterios empleados no tienen necesariamente la misma importancia para todas las personas.
-- El `rating` y la relación calidad-precio pueden favorecer a vinos bien puntuados o situados en determinados rangos de precio.
+El sistema utiliza una puntuación que combina la compatibilidad con las preferencias y la relación calidad-precio. Esta lógica es específica de la recomendación conversacional y no se utiliza necesariamente de la misma manera en el formulario o en el quiz.
 
-El chatbot aplica una puntuación que combina compatibilidad y calidad-precio. Este mecanismo no se utiliza necesariamente de la misma forma en el formulario ni en el quiz. Por ello, no debe describirse como un sistema general compartido por todas las recomendaciones de InWine.
+La relación calidad-precio resulta útil para comparar distintas alternativas, pero debe entenderse como un criterio definido dentro de InWine. Depende del `rating`, del precio almacenado y de la fórmula utilizada, por lo que no representa una medida objetiva y universal de la calidad de un vino.
 
-Además, una buena relación entre `rating` y precio no significa que un vino sea objetivamente mejor. El resultado depende de la fiabilidad de la valoración, del precio almacenado y de la fórmula definida por el equipo.
+Cuando una petición sea ambigua o incluya características que no se encuentran en los datos, una posible mejora sería solicitar información adicional antes de generar la recomendación.
 
-### 6.4. Función de solicitar otra opción
+### 6.4. Solicitud de otra opción
 
-Cuando el usuario pide otra alternativa, la aplicación excluye los vinos que ya se han mostrado. Esta medida mejora la diversidad y evita repetir continuamente la misma recomendación.
-
-El sistema intenta mantener el mismo clúster para conservar el perfil general de la propuesta anterior. Sin embargo, esto solo es posible si siguen existiendo candidatos compatibles. Si no hay suficientes vinos disponibles, puede ser necesario relajar algunos criterios.
-
-Por tanto, esta función constituye una mitigación parcial:
-
-- Aumenta la variedad de vinos mostrados.
-- Da mayor control al usuario.
-- Reduce la repetición de las opciones mejor posicionadas.
-- No garantiza que todas las alternativas cumplan exactamente los mismos criterios.
-- No corrige el desequilibrio original del catálogo ni de los clústeres.
-
-Sería conveniente que la aplicación informara al usuario cuando una nueva opción requiere relajar alguna preferencia.
-
-### 6.5. Función de vinos similares
-
-La función de vinos similares selecciona vinos que pertenecen al mismo clúster que el vino de referencia y excluye el propio vino consultado.
-
-Esta aproximación permite descubrir productos del mismo perfil general, pero no calcula la distancia entre los vinos ni los ordena según su proximidad al vino original. Los resultados corresponden a los primeros candidatos compatibles encontrados en el catálogo.
-
-Por tanto:
-
-- Los vinos pertenecen al mismo clúster, pero no tienen que ser los más próximos entre sí.
-- El orden del dataset puede influir en qué vinos aparecen.
-- Las diferencias internas dentro del clúster no se tienen en cuenta.
-- Los vinos situados cerca de los límites del grupo pueden tener características distintas.
-
-La expresión más precisa es “vinos pertenecientes al mismo clúster” y no “los vinos más similares”.
-
-### 6.6. Influencia del orden y de la disponibilidad de candidatos
-
-En algunas funciones, cuando varios vinos cumplen las condiciones y no existe una ordenación adicional por distancia o diversidad, el orden en el que aparecen en el dataset puede influir en la selección.
-
-Esto puede dar más visibilidad a determinados vinos sin que exista una razón relacionada con las preferencias del usuario. Además, los grupos con más candidatos tienen más posibilidades de ofrecer variedad que aquellos con pocos ejemplos.
-
-Para reducir esta influencia podrían aplicarse, según la función:
-
-- Una ordenación por compatibilidad claramente definida.
-- Una selección aleatoria controlada entre candidatos equivalentes.
-- Límites para evitar la repetición excesiva de regiones, bodegas o variedades.
-- Criterios de diversidad dentro del conjunto de resultados.
-- Una ordenación por distancia al centroide o al vino de referencia cuando se busque similitud.
-
-### 6.7. Explicaciones de las recomendaciones
-
-Las explicaciones ayudan al usuario a comprender la recomendación, pero deben corresponder exactamente con los criterios que realmente participaron en la selección.
-
-Existe un riesgo de sobreexplicación cuando el texto menciona una preferencia, como la ocasión o el maridaje, aunque esta no haya influido directamente o haya sido relajada durante el filtrado.
-
-Para mantener la transparencia, las explicaciones deberían diferenciar entre:
-
-- Los criterios utilizados para seleccionar el vino.
-- Las preferencias que se utilizaron únicamente para personalizar el texto.
-- Los filtros que no pudieron cumplirse.
-- Las reglas que se relajaron para encontrar una alternativa.
-
-Una explicación comprensible no garantiza por sí sola que el proceso sea completamente explicable. Su contenido debe poder relacionarse con la lógica real ejecutada por la aplicación.
-
-### 6.8. Evaluación limitada de los resultados generados
-
-El proyecto incluye tests que comprueban el funcionamiento técnico de las recomendaciones en casos concretos. Sin embargo, todavía no se realiza un análisis global que mida qué vinos, tipos, regiones, variedades o clústeres aparecen con mayor frecuencia en el conjunto de resultados.
-
-Esta evaluación permitiría detectar si determinados grupos reciben más visibilidad y comprobar la diversidad real de las recomendaciones.
-
-## 7. Medidas de mitigación incorporadas
-
-InWine incluye varias decisiones destinadas a mejorar la diversidad, la transparencia y la coherencia de sus recomendaciones. Estas medidas no eliminan completamente los sesgos y limitaciones detectados, pero ayudan a reducir algunos de sus efectos.
-
-### 7.1. Posibilidad de solicitar otra recomendación
-
-El usuario puede rechazar una propuesta y solicitar otra opción. La aplicación excluye los vinos mostrados anteriormente para evitar repeticiones y ampliar las alternativas disponibles.
+El usuario puede pedir una alternativa cuando la primera propuesta no le convence. En ese caso, la aplicación excluye los vinos mostrados anteriormente para evitar repeticiones.
 
 Esta funcionalidad:
 
-- Aumenta el control del usuario sobre la recomendación.
-- Reduce la repetición de los vinos mejor posicionados.
-- Permite descubrir opciones que inicialmente tenían una puntuación inferior.
-- Introduce cierta diversidad dentro de los candidatos disponibles.
+- Aumenta el control del usuario.
+- Favorece la variedad de las recomendaciones.
+- Permite descubrir vinos que inicialmente no ocupaban la primera posición.
+- Reduce la repetición continua de los productos mejor valorados.
 
-Sin embargo, su eficacia depende del número de vinos compatibles. Los clústeres o categorías con pocos ejemplos seguirán ofreciendo menos variedad.
+La aplicación intenta conservar el perfil y los criterios de la recomendación anterior. No obstante, si quedan pocos candidatos compatibles, puede ser necesario flexibilizar alguna preferencia.
 
-### 7.2. Flexibilidad de algunos filtros
+Esta función mejora la diversidad dentro de las opciones disponibles, aunque su alcance depende del número de vinos existentes en cada categoría o clúster.
 
-En el recomendador mediante formulario, algunos filtros se aplican de forma flexible para evitar que una combinación muy concreta de preferencias deje al usuario sin resultados.
+### 6.5. Función de vinos similares
 
-Esta decisión mejora la utilidad de la aplicación, pero debe ir acompañada de transparencia. Cuando no sea posible respetar una preferencia, la aplicación debería indicarlo claramente y explicar qué criterio se ha relajado.
+La función de vinos similares selecciona productos pertenecientes al mismo clúster que el vino de referencia y excluye el propio vino consultado.
 
-De este modo, el usuario puede decidir si la alternativa continúa siendo adecuada para sus necesidades.
+Este sistema permite descubrir alternativas con un perfil general parecido. Sin embargo, actualmente los resultados no se ordenan calculando la distancia exacta entre el vino seleccionado y los demás vinos del grupo.
 
-### 7.3. Uso combinado de diferentes criterios
+Por tanto, la expresión más precisa es que la aplicación muestra vinos pertenecientes al mismo perfil, no necesariamente los vinos matemáticamente más próximos.
 
-La aplicación no utiliza únicamente una característica para todas sus recomendaciones. Dependiendo de la vía elegida, puede tener en cuenta elementos como:
+Como evolución futura, podría calcularse la distancia entre los vinos utilizando sus variables escaladas. Esto permitiría ordenar las alternativas según su similitud y combinar esa distancia con otros criterios, como el presupuesto, el tipo de vino o la diversidad de regiones y bodegas.
 
-- Presupuesto.
-- Tipo de vino.
-- Región.
-- Variedad de uva.
-- Maridaje.
-- Perfil sensorial.
-- Crianza.
-- `rating`.
-- Relación calidad-precio.
-- Pertenencia a un clúster.
+### 6.6. Disponibilidad y variedad de candidatos
 
-Combinar distintos criterios reduce la dependencia de una única variable. No obstante, cada vía de recomendación utiliza estos elementos de manera diferente y algunos tienen más peso que otros.
+La cantidad de vinos disponibles influye en la variedad de recomendaciones que puede ofrecer cada función.
 
-### 7.4. Explicaciones para el usuario
+Los perfiles con más registros disponen de un conjunto mayor de candidatos entre los que aplicar filtros de precio, tipo o región. Los perfiles minoritarios pueden agotar antes sus alternativas y necesitar recurrir con mayor frecuencia a vinos pertenecientes a otros grupos.
 
-InWine acompaña sus recomendaciones con textos que ayudan a comprender las características del vino y su posible adecuación a las preferencias indicadas.
+Además, cuando varios vinos cumplen las mismas condiciones y no se aplica una ordenación adicional, su posición en el catálogo puede influir en cuáles aparecen primero.
 
-Esta explicación mejora la accesibilidad del sistema, especialmente para personas que no tienen conocimientos especializados sobre vinos.
+Para aumentar la variedad podrían incorporarse criterios que eviten repetir en exceso las mismas bodegas, regiones o variedades, o realizar una selección controlada entre candidatos con un nivel de compatibilidad similar.
 
-Para que esta medida sea realmente efectiva, el contenido debe reflejar la lógica aplicada por la aplicación. No debería afirmar que una preferencia determinó la selección cuando solo se utilizó para personalizar el mensaje o cuando tuvo que ser descartada.
+### 6.7. Explicaciones de las recomendaciones
 
-### 7.5. Exploración de distintos perfiles
+InWine acompaña las recomendaciones con explicaciones para que el usuario comprenda las características del vino y su posible relación con las preferencias indicadas.
 
-La posibilidad de consultar los ocho perfiles y descubrir vinos pertenecientes a cada uno permite al usuario explorar opciones diferentes a su recomendación inicial.
+Esta funcionalidad mejora la accesibilidad de la aplicación, especialmente para personas que no tienen conocimientos especializados sobre vinos.
 
-Esta funcionalidad reduce la idea de que existe una única elección correcta y presenta los clústeres como herramientas de descubrimiento, no como clasificaciones rígidas de los gustos personales.
+Para mantener la transparencia, la explicación debería reflejar los criterios que realmente participaron en la selección. También sería útil indicar cuándo una preferencia se utilizó únicamente para adaptar el mensaje o tuvo que flexibilizarse por falta de candidatos.
 
-### 7.6. Conservación del pipeline de modelado
+De esta manera, el usuario podría comprender no solo por qué se propone un vino, sino también qué condiciones se han cumplido completamente y cuáles solo de forma aproximada.
 
-El flujo de MLOps permite guardar y reutilizar los objetos utilizados durante el preprocesamiento y el modelado.
+### 6.8. Evaluación de las recomendaciones
 
-Esto ayuda a garantizar que:
+El análisis del dataset permite identificar posibles desequilibrios, pero no indica por sí solo con qué frecuencia aparece cada vino en el funcionamiento real de la aplicación.
 
-- Las variables se procesen siempre de la misma manera.
-- Se respete el mismo orden de las características.
-- No se vuelva a entrenar el modelo accidentalmente en cada ejecución.
-- Los resultados puedan reproducirse con la misma versión del dataset y del pipeline.
-- Sea posible identificar qué versión del modelo se está utilizando.
+Para evaluar el sistema de una forma más completa, podrían ejecutarse consultas controladas y medir:
 
-Esta medida mejora la coherencia técnica y la trazabilidad, aunque no corrige por sí sola los desequilibrios presentes en los datos.
+- La frecuencia de recomendación de cada tipo de vino.
+- La representación de regiones, denominaciones de origen y variedades de uva.
+- La distribución de precios de los vinos mostrados.
+- La frecuencia con la que el quiz necesita utilizar otros clústeres.
+- El número de ocasiones en las que se flexibiliza algún filtro.
+- La repetición de vinos, bodegas o perfiles.
+- La diversidad de las alternativas ofrecidas.
 
-### 7.7. Uso de una semilla fija
+Estas pruebas permitirían comprobar el comportamiento real de las tres vías y detectar posibles diferencias entre el catálogo disponible y las recomendaciones finalmente generadas.
 
-El entrenamiento utiliza una semilla fija para controlar la aleatoriedad de K-Means. Esto permite obtener los mismos clústeres cuando se trabaja con los mismos datos, variables y parámetros.
+## 7. Medidas incorporadas en InWine
 
-La reproducibilidad facilita la revisión de los resultados y evita que los perfiles cambien sin una modificación consciente del proceso.
+InWine incluye distintas decisiones que favorecen la diversidad, la transparencia y la coherencia técnica de sus recomendaciones. Estas medidas no eliminan todas las limitaciones, pero contribuyen a reducir algunos de sus efectos.
 
-Sin embargo, una semilla fija no demuestra que la agrupación sea la única posible ni que sea la mejor para representar las preferencias reales de los usuarios.
+### 7.1. Participación y control del usuario
 
-### 7.8. Documentación de las limitaciones
+El usuario puede comparar varias opciones, rechazar una propuesta y solicitar una alternativa. La aplicación excluye los vinos mostrados anteriormente para evitar repeticiones.
 
-La elaboración de este análisis constituye también una medida de mitigación. Documentar los posibles sesgos permite:
+La recomendación no obliga a tomar ninguna decisión ni produce consecuencias de alto impacto. La elección final corresponde siempre a la persona, que puede valorar aspectos que la aplicación no conoce, como sus experiencias anteriores, la disponibilidad comercial o preferencias más concretas.
 
-- Evitar afirmaciones exageradas sobre las capacidades del sistema.
-- Informar al usuario sobre el alcance real de las recomendaciones.
-- Identificar mejoras para futuras versiones.
-- Facilitar la revisión del modelo y de las reglas utilizadas.
-- Diferenciar entre resultados observados y riesgos potenciales.
+### 7.2. Flexibilidad de los filtros
 
-La transparencia no elimina las limitaciones, pero permite utilizar la aplicación de una forma más responsable y comprender mejor sus resultados.
+Algunos filtros se aplican de forma flexible para evitar que una combinación muy específica deje al usuario sin resultados.
 
-### 7.9. Supervisión y decisión final del usuario
+Esta decisión mejora la utilidad de la aplicación y permite ofrecer una alternativa incluso cuando el catálogo no contiene una coincidencia exacta. Para reforzar la transparencia, sería conveniente informar al usuario cuando se haya flexibilizado alguna preferencia.
 
-InWine no toma decisiones obligatorias ni produce consecuencias de alto impacto. El usuario puede aceptar, rechazar o ignorar cualquier recomendación.
+### 7.3. Combinación de distintos criterios
 
-La decisión final sigue correspondiendo a la persona, que puede comparar varias opciones y tener en cuenta aspectos que la aplicación no conoce, como la disponibilidad real, sus experiencias anteriores o sus preferencias más específicas.
+Dependiendo de la vía seleccionada, InWine puede considerar elementos como:
+
+- El presupuesto.
+- El tipo de vino.
+- La región.
+- La variedad de uva.
+- El maridaje.
+- El perfil sensorial.
+- La crianza.
+- El `rating`.
+- La relación calidad-precio.
+- La pertenencia a un clúster.
+
+La combinación de diferentes criterios evita que todas las recomendaciones dependan de una única característica. Cada vía los utiliza de una forma distinta para adaptarse al tipo de interacción elegido por el usuario.
+
+### 7.4. Exploración de diferentes perfiles
+
+La aplicación permite consultar los ocho perfiles y descubrir vinos incluidos en cada uno de ellos.
+
+Esta funcionalidad presenta los clústeres como herramientas de exploración y permite conocer opciones diferentes a la recomendación inicial. Los perfiles ayudan a organizar el catálogo, pero no se presentan como clasificaciones rígidas ni como la única forma posible de describir los gustos de una persona.
+
+### 7.5. Reproducibilidad del pipeline
+
+InWine guarda en un único artefacto los principales objetos entrenados: `StandardScaler`, K-Means, PCA, las columnas utilizadas y los elementos necesarios para reproducir las transformaciones.
+
+El script de predicción carga este artefacto y aplica a los vinos nuevos el mismo procesamiento utilizado durante el entrenamiento. Esto permite reutilizar el modelo sin volver a entrenarlo con cada predicción y evita diferencias accidentales en el orden o tratamiento de las variables.
+
+Además, K-Means utiliza una semilla fija y se comprobó su estabilidad con distintas semillas. En las ejecuciones realizadas, las comparaciones obtuvieron un Adjusted Rand Index de `1,0`, lo que indica que las agrupaciones fueron equivalentes.
+
+Estas decisiones proporcionan una base técnica reproducible y estable para la versión actual de la aplicación.
+
+### 7.6. Documentación del funcionamiento y sus límites
+
+La elaboración de este análisis permite diferenciar claramente entre:
+
+- Los resultados observados en los datos.
+- Las decisiones tomadas por el equipo.
+- Las limitaciones de la versión actual.
+- Las posibles mejoras para futuras versiones.
+
+Documentar estos aspectos evita atribuir al sistema capacidades que no tiene y facilita que sus resultados se interpreten correctamente.
 
 ## 8. Propuestas de mejora
 
-A partir de los sesgos y limitaciones identificados, se proponen distintas mejoras para aumentar la representatividad del catálogo, la calidad de las recomendaciones y la transparencia de InWine.
+Las siguientes propuestas representan posibles líneas de evolución para futuras versiones de InWine. No son requisitos pendientes para que la aplicación actual funcione, sino oportunidades para ampliar su alcance y mejorar progresivamente las recomendaciones.
 
-Estas medidas no forman parte necesariamente de la versión actual, sino que representan posibles líneas de trabajo para futuras versiones.
+### 8.1. Ampliar la diversidad del catálogo
 
-### 8.1. Ampliar y equilibrar el dataset
+Una de las mejoras principales sería incorporar más vinos pertenecientes a los grupos menos representados, especialmente:
 
-Una de las mejoras prioritarias sería incorporar más vinos de los grupos que actualmente tienen poca representación, especialmente:
-
-- Vinos blancos.
-- Vinos rosados.
-- Vinos espumosos.
+- Vinos blancos, rosados y espumosos.
 - Regiones y denominaciones de origen minoritarias.
 - Variedades de uva menos frecuentes.
-- Bodegas pequeñas o con menos presencia en plataformas de reseñas.
+- Bodegas pequeñas o con menor presencia en plataformas de reseñas.
 - Vinos pertenecientes a diferentes rangos de precio.
 
-El objetivo no sería conseguir exactamente el mismo número de vinos en todas las categorías, ya que esto tampoco reflejaría necesariamente el mercado real, sino evitar que unos pocos grupos dominen excesivamente el catálogo.
+El objetivo no tendría que ser igualar artificialmente todas las categorías, sino conseguir un catálogo suficientemente variado para ofrecer alternativas relevantes a distintos perfiles de usuario.
 
-También sería conveniente comparar la distribución del dataset con fuentes oficiales del sector vinícola para comprobar hasta qué punto representa la diversidad real de la oferta española.
+También podría compararse la distribución del dataset con fuentes oficiales del sector para conocer mejor su grado de representatividad.
 
-### 8.2. Mejorar la información sobre las valoraciones
+### 8.2. Completar la información sobre las valoraciones
 
-El `rating` sería más fiable si estuviera acompañado de información adicional, como:
+Además del `rating`, sería útil disponer de información como:
 
-- Número de valoraciones recibidas.
-- Fuente de la puntuación.
-- Fecha de actualización.
-- Tipo de personas que realizaron la valoración, cuando esa información estuviera disponible.
-- Diferenciación entre puntuaciones de usuarios y de especialistas.
+- El número de valoraciones recibidas.
+- La fuente de la puntuación.
+- La fecha de actualización.
+- La diferenciación entre opiniones de usuarios y valoraciones de especialistas.
 
-De este modo, la aplicación podría evitar tratar de la misma manera un vino con una puntuación alta basada en pocas opiniones y otro con una valoración similar respaldada por muchas reseñas.
+Estos datos permitirían interpretar mejor la fiabilidad de cada puntuación y evitarían tratar de la misma forma un `rating` basado en pocas opiniones y otro respaldado por un número elevado de reseñas.
 
-También podría utilizarse una puntuación ajustada que combine el `rating` con el número de valoraciones.
+También podría utilizarse una puntuación ajustada que combine la valoración media con el número de opiniones.
 
 ### 8.3. Actualizar precios y disponibilidad
 
-Los precios deberían revisarse periódicamente o conectarse, cuando sea posible, con fuentes comerciales actualizadas.
+Los precios pueden cambiar según la tienda, la añada o el momento de la consulta. Por ello, podrían revisarse periódicamente o conectarse en el futuro con fuentes comerciales actualizadas.
 
-La aplicación también podría indicar:
+La aplicación también podría mostrar:
 
 - La fecha de actualización del precio.
-- Un intervalo orientativo en lugar de un precio exacto.
-- Que el valor puede variar según la tienda y la añada.
-- Si existe información reciente sobre su disponibilidad.
+- Un intervalo aproximado en lugar de un importe exacto.
+- Un aviso indicando que el valor puede variar.
+- Información reciente sobre la disponibilidad del producto.
 
-Esto reduciría el riesgo de recomendar vinos que ya no se encuentran en el mercado o cuyo precio actual supera el presupuesto del usuario.
+Esto ayudaría a mantener la utilidad del presupuesto como criterio de recomendación.
 
-### 8.4. Mejorar la extracción de características sensoriales
+### 8.4. Mejorar las variables sensoriales
 
-Las variables sensoriales podrían obtenerse mediante técnicas de procesamiento del lenguaje más avanzadas que la búsqueda directa de palabras.
+Las familias sensoriales actuales permiten transformar las descripciones de los vinos en variables numéricas mediante la identificación de términos asociados a distintos sabores y aromas.
 
-Por ejemplo, se podrían incorporar:
+En futuras versiones podría ampliarse este proceso mediante:
 
-- Diccionarios más completos con sinónimos y expresiones equivalentes.
-- Lematización para reconocer distintas formas de una misma palabra.
-- Detección del contexto en el que aparece cada término.
-- Reconocimiento de negaciones.
-- Modelos de lenguaje entrenados o adaptados al vocabulario enológico.
-- Una revisión manual de una muestra de resultados para comprobar la calidad de la extracción.
+- Diccionarios más completos.
+- Incorporación de sinónimos.
+- Reconocimiento de distintas formas de una misma palabra.
+- Interpretación del contexto y de las negaciones.
+- Revisión manual de una muestra de resultados.
+- Técnicas de procesamiento del lenguaje adaptadas al vocabulario enológico.
 
-También sería útil distinguir entre una característica realmente ausente y una característica desconocida porque la descripción no aporta información suficiente.
+También podría diferenciarse entre una característica realmente ausente y una característica desconocida porque la descripción no aporta información suficiente.
 
-### 8.5. Revisar la agrupación de variedades minoritarias
+### 8.5. Revisar las variedades agrupadas
 
-La categoría `Blend/Other` podría dividirse en grupos más informativos cuando exista un número suficiente de registros.
+La categoría `Blend/Other` reúne variedades minoritarias, mezclas y casos con poca representación.
 
-Por ejemplo, podrían diferenciarse:
+Si el catálogo aumenta, podría dividirse en grupos más informativos, como:
 
-- Vinos elaborados con mezclas de variedades.
+- Mezclas de distintas variedades.
 - Variedades autóctonas minoritarias.
 - Variedades internacionales.
-- Registros cuya variedad es realmente desconocida.
+- Registros cuya variedad es desconocida.
 
-Esta separación permitiría conservar más información y evitaría representar de la misma manera vinos que presentan características distintas.
+Esto permitiría conservar más información sin crear categorías con un número demasiado reducido de ejemplos.
 
 ### 8.6. Evaluar periódicamente los clústeres
 
-Los clústeres deberían revisarse cuando cambie el dataset, el preprocesamiento o el número de variables.
+Los ocho clústeres deberían revisarse cuando cambie de forma importante el dataset, el preprocesamiento o las variables utilizadas.
 
 La evaluación podría incluir:
 
-- Comparación de distintas cantidades de clústeres.
-- Métricas como el coeficiente de silueta.
-- Análisis del tamaño de cada grupo.
-- Revisión de la estabilidad de los clústeres con distintas inicializaciones.
-- Comprobación de la coherencia de los perfiles por parte de personas con conocimientos enológicos.
-- Revisión de los nombres y descripciones asignados a cada perfil.
+- Comparación de diferentes números de clústeres.
+- Coeficiente de silueta e inercia.
+- Tamaño de los grupos.
+- Estabilidad con distintas inicializaciones.
+- Coherencia de los perfiles.
+- Revisión de los nombres y descripciones asignados.
+- Utilidad de los grupos dentro de la aplicación.
 
-También sería importante comprobar si los ocho clústeres siguen siendo útiles para la aplicación después de incorporar nuevos vinos.
+También podría probarse K-Means después de aplicar PCA con el número de componentes necesario para conservar entre el 80 % y el 90 % de la varianza. Los resultados podrían compararse con el enfoque actual, en el que K-Means utiliza directamente las 18 variables escaladas.
 
-### 8.7. Mejorar la búsqueda de vinos similares
+### 8.7. Mejorar la función de vinos similares
 
-En lugar de seleccionar únicamente vinos que pertenezcan al mismo clúster, la aplicación podría calcular la distancia entre el vino de referencia y los demás vinos.
+La aplicación podría calcular la distancia entre el vino de referencia y el resto de los vinos utilizando las variables escaladas.
 
-Esto permitiría ordenar los resultados según su proximidad real dentro del espacio utilizado por el modelo.
+De esta forma, las alternativas podrían ordenarse según su proximidad real y combinarse con otros criterios, como:
 
-La búsqueda podría combinar:
-
-- Distancia entre las variables escaladas.
 - Pertenencia al mismo clúster.
 - Compatibilidad con el presupuesto.
 - Tipo de vino.
 - Características sensoriales.
-- Diversidad de regiones, bodegas o variedades.
+- Diversidad de regiones, bodegas y variedades.
 
-De este modo, la expresión “vinos similares” tendría un respaldo matemático más preciso.
+Esta mejora permitiría que la expresión “vinos similares” tuviera un significado matemático más preciso.
 
 ### 8.8. Aumentar la transparencia de los filtros
 
-La aplicación debería informar claramente cuando no pueda cumplir alguna preferencia.
+Cuando no sea posible cumplir alguna preferencia, la aplicación podría mostrar mensajes como:
 
-Por ejemplo, podría mostrar mensajes como:
+- “No hemos encontrado vinos de la región seleccionada; te mostramos una alternativa de otra región”.
+- “Para ofrecerte cuatro resultados hemos incluido vinos pertenecientes a otros perfiles”.
+- “Esta recomendación respeta tu presupuesto y el tipo de vino, pero no coincide con la variedad indicada”.
 
-- “No hemos encontrado opciones de la región seleccionada; te mostramos una alternativa de otra región”.
-- “Para ofrecerte cuatro resultados hemos incluido vinos de otros perfiles”.
-- “Esta recomendación respeta tu presupuesto y tipo de vino, pero no coincide con la variedad indicada”.
+También podrían diferenciarse visualmente las preferencias cumplidas, aproximadas y flexibilizadas.
 
-También sería útil diferenciar visualmente entre:
+### 8.9. Validar las reglas del quiz
 
-- Preferencias cumplidas.
-- Preferencias aproximadas.
-- Preferencias que tuvieron que relajarse.
-
-Esto permitiría al usuario comprender mejor por qué ha recibido cada recomendación.
-
-### 8.9. Revisar y validar las reglas del quiz
-
-Las reglas que relacionan cada respuesta con un clúster deberían analizarse para comprobar que ningún perfil recibe una ventaja injustificada.
+Las reglas que relacionan las respuestas con los clústeres podrían revisarse para comprobar que los perfiles tienen oportunidades similares de ser seleccionados.
 
 Para ello se podría:
 
-- Contar cuántos votos potenciales puede recibir cada clúster.
-- Probar todas las combinaciones posibles de respuestas.
+- Contar los votos potenciales de cada clúster.
+- Probar distintas combinaciones de respuestas.
 - Revisar las reglas de desempate.
-- Analizar con qué frecuencia se asigna cada perfil.
-- Pedir a personas con conocimientos sobre vinos que revisen las asociaciones.
-- Comparar el resultado del quiz con las preferencias expresadas posteriormente por los usuarios.
+- Analizar la frecuencia con la que aparece cada perfil.
+- Solicitar la revisión de personas con conocimientos enológicos.
+- Comprobar si los usuarios se identifican con el resultado obtenido.
 
-Esta validación permitiría detectar preguntas demasiado determinantes o perfiles que resulten muy difíciles de obtener.
+Esta evaluación permitiría ajustar las preguntas sin perder la sencillez actual del cuestionario.
 
-### 8.10. Incorporar opiniones voluntarias de los usuarios
+### 8.10. Incorporar valoraciones voluntarias
 
-La aplicación podría permitir que los usuarios indicaran voluntariamente si una recomendación les ha resultado útil.
+La aplicación podría permitir que los usuarios indicaran voluntariamente:
 
-Por ejemplo, podrían valorar:
-
-- Si les gustó el vino recomendado.
-- Si la propuesta respetó sus preferencias.
+- Si les gustó la recomendación.
+- Si respetó sus preferencias.
 - Si la explicación fue comprensible.
 - Si encontraron el vino dentro de su presupuesto.
-- Si desean recibir opciones diferentes en el futuro.
+- Si desean recibir opciones diferentes.
 
-Esta información permitiría evaluar el sistema con experiencias reales y no únicamente con las características técnicas del dataset.
+Esta información permitiría evaluar la utilidad real de las recomendaciones y mejorar el sistema a partir de experiencias de uso.
 
-La recogida de datos debería ser voluntaria, limitada a la información necesaria y acompañada de una explicación clara sobre su uso.
+La recogida debería limitarse a los datos necesarios, ser voluntaria e incluir una explicación clara de su finalidad.
 
-### 8.11. Incorporar pruebas periódicas de sesgo
+### 8.11. Crear pruebas periódicas del sistema
 
-Como mejora futura, se podría crear un conjunto fijo de consultas para repetirlo cada vez que se actualicen los datos, el modelo o el sistema de recomendación.
+Podría prepararse un conjunto estable de consultas para ejecutar después de cada actualización.
 
-Estas pruebas permitirían comparar versiones y detectar cambios importantes en la frecuencia con la que aparecen determinados tipos de vino, regiones, variedades, rangos de precio o clústeres. También ayudarían a identificar resultados excesivamente repetidos o perfiles con pocas alternativas.
+Estas pruebas permitirían comparar entre versiones:
 
-Estas comprobaciones complementarían los tests técnicos actuales, ya que no evaluarían únicamente si la aplicación funciona correctamente, sino también la diversidad y el equilibrio de las recomendaciones que genera.
+- Los tipos de vino recomendados.
+- La presencia de regiones y variedades.
+- Los rangos de precio predominantes.
+- La frecuencia con la que se flexibilizan filtros.
+- El uso de otros clústeres en el quiz.
+- La repetición de productos.
+- La variedad de las alternativas.
+- La correspondencia entre las explicaciones y los criterios aplicados.
 
-### 8.12. Prioridades de mejora
+Así sería posible detectar si un cambio mejora o reduce la diversidad y la coherencia de las recomendaciones.
 
-Tras revisar el estado actual del repositorio, se han identificado cuatro mejoras principales para futuras versiones.
+### 8.12. Ampliar el seguimiento de las versiones
 
-1. **Avisar cuando no se pueda cumplir alguna preferencia.**  
-   La aplicación debería indicar claramente cuándo ha tenido que flexibilizar o descartar algún criterio seleccionado por el usuario, como la región, la variedad de uva o el perfil de sabor.
+El proyecto ya permite conservar y reutilizar los objetos entrenados en un único artefacto. Como evolución del flujo de MLOps, podrían registrarse también:
 
-2. **Ampliar la diversidad del catálogo.**  
-   Se deberían incorporar más vinos blancos, rosados y espumosos, así como vinos de regiones, denominaciones de origen y variedades de uva que actualmente tienen poca representación.
+- La versión del dataset.
+- La fecha de entrenamiento.
+- Las variables y su orden.
+- Las transformaciones aplicadas.
+- Los parámetros de PCA y K-Means.
+- La semilla utilizada.
+- Las métricas obtenidas.
+- El tamaño y las características de cada clúster.
+- Los cambios respecto a la versión anterior.
+- El commit del repositorio asociado al entrenamiento.
 
-3. **Mejorar la función de vinos similares.**  
-   La aplicación debería calcular la distancia entre los vinos según sus características para mostrar los más próximos al vino de referencia. Actualmente, pertenecer al mismo clúster no garantiza que sean los vinos más similares.
+Esta información facilitaría la comparación entre modelos y permitiría recuperar una versión anterior si una actualización produjera resultados menos adecuados.
 
-4. **Añadir más información sobre las valoraciones.**  
-   Además del `rating`, sería conveniente incluir el número de opiniones, su procedencia y la fecha de actualización. Esto permitiría valorar mejor la fiabilidad de cada puntuación.
+### 8.13. Prioridades para futuras versiones
 
-Estas mejoras permitirían aumentar la diversidad, la transparencia y la calidad de las recomendaciones.
+Entre todas las mejoras propuestas, se consideran prioritarias las siguientes:
+
+1. Informar cuando no se pueda cumplir alguna preferencia.
+2. Evaluar las recomendaciones generadas mediante consultas controladas.
+3. Ampliar la diversidad del catálogo.
+4. Ordenar los vinos similares mediante una medida de distancia.
+5. Añadir información sobre la procedencia, cantidad y actualización de las valoraciones.
+
+Estas acciones reforzarían especialmente la diversidad, la transparencia y la evaluación del sistema.
 
 ## 9. Conclusiones
 
-El análisis realizado muestra que InWine ofrece diferentes formas de recomendar vinos y facilita que personas sin conocimientos especializados puedan explorar el catálogo según sus gustos, presupuesto u ocasión.
+InWine es una herramienta de orientación y descubrimiento que facilita la exploración de un catálogo de 2.024 vinos españoles. La aplicación permite buscar alternativas según diferentes preferencias y ofrece tres vías de recomendación adaptadas a distintas formas de interacción.
 
-Sin embargo, la calidad y la variedad de las recomendaciones están condicionadas por los datos disponibles. El catálogo contiene una presencia mayoritaria de vinos tintos y algunas regiones, denominaciones de origen y variedades de uva tienen mucha más representación que otras. Por ello, determinados perfiles de vino cuentan con más posibilidades de aparecer en las recomendaciones.
+El proyecto combina el análisis de las características de los vinos con técnicas de aprendizaje no supervisado. K-Means organiza el catálogo en ocho perfiles utilizando las 18 variables escaladas, mientras que PCA permite representar esos datos en dos dimensiones para facilitar su análisis visual.
 
-También se han identificado limitaciones relacionadas con el origen y la actualización de los datos. El `rating` no incluye información suficiente sobre el número o la procedencia de las valoraciones, mientras que los precios y la disponibilidad pueden cambiar con el tiempo.
+Las decisiones técnicas adoptadas son coherentes con el objetivo de esta primera versión. El precio se transforma mediante `log1p`, las variables se estandarizan, se comparan distintos valores de `k` y se comprueba la estabilidad del clustering con varias semillas. Además, el flujo de MLOps permite guardar y reutilizar los objetos entrenados sin volver a ejecutar manualmente todo el proceso.
 
-Las variables sensoriales proceden de las descripciones de los vinos y se han obtenido mediante reglas basadas en palabras clave. Esto permite convertir información textual en variables utilizables por el modelo, pero puede simplificar algunos matices o no reconocer características que no aparecen expresadas claramente.
+Los ocho perfiles ayudan a presentar los clústeres de una forma comprensible, aunque sus nombres son interpretaciones creadas por el equipo y no categorías enológicas oficiales. Los vinos de un mismo grupo comparten un perfil general, pero pueden mantener diferencias de precio, región, crianza, variedad o características sensoriales.
 
-PCA y K-Means permiten reducir la información y organizar los vinos en ocho perfiles. Estos grupos son útiles para explorar el catálogo, pero no representan categorías objetivas ni garantizan que todos los vinos de un mismo clúster sean igual de similares. Además, los nombres y las interpretaciones de los perfiles han sido definidos por el equipo a partir de las características predominantes de cada grupo.
+La variedad de las recomendaciones depende en parte de la composición del catálogo, donde los vinos tintos tienen una presencia mayoritaria. Los perfiles más numerosos disponen de más candidatos, mientras que los grupos pequeños pueden ofrecer menos alternativas compatibles con todas las preferencias.
 
-Las tres vías de recomendación no utilizan exactamente la misma lógica. El formulario aplica filtros y prioriza el `rating`; el quiz asigna un perfil mediante reglas y votos; y la recomendación conversacional combina distintos criterios de compatibilidad y calidad-precio. Por tanto, sus resultados y limitaciones deben evaluarse por separado.
+Las tres vías de recomendación utilizan lógicas diferentes. El formulario aplica filtros y prioriza el `rating`; el quiz asigna un perfil mediante reglas y votos; y la recomendación conversacional combina distintos criterios de compatibilidad y relación calidad-precio. Esta variedad permite adaptar la experiencia, aunque cada vía debe evaluarse según su propio funcionamiento.
 
-InWine incorpora algunas medidas que reducen parcialmente estos riesgos, como permitir solicitar otra opción, excluir vinos ya mostrados, conservar los objetos del pipeline y utilizar una semilla fija para que los resultados sean reproducibles. 
+InWine también incorpora medidas que favorecen un uso responsable: permite solicitar otras opciones, evita repetir vinos ya mostrados, combina distintos criterios, explica las recomendaciones y mantiene la decisión final en manos del usuario.
 
-En conclusión, InWine debe entenderse como una herramienta de orientación y descubrimiento. Sus recomendaciones pueden ayudar al usuario a encontrar vinos compatibles con sus preferencias, pero no constituyen una valoración objetiva ni garantizan la elección perfecta. La decisión final corresponde siempre al usuario.
+En conclusión, InWine cumple su objetivo como primera versión de un sumiller virtual orientado a ayudar al usuario a descubrir vinos compatibles con sus preferencias. Sus recomendaciones no pretenden sustituir el criterio personal ni proporcionar una elección perfecta, sino ofrecer un punto de partida comprensible dentro del catálogo disponible.
 
-La ampliación del catálogo, la mejora de la información disponible, la validación del quiz y una mayor transparencia sobre los criterios que no se han podido cumplir permitirían desarrollar en el futuro un sistema más diverso, comprensible y fiable.
+La ampliación del dataset, la validación de las recomendaciones con usuarios, la mejora de la función de vinos similares y una mayor transparencia cuando se flexibilicen los filtros permitirían seguir desarrollando en el futuro un sistema más diverso, preciso y útil.git sta
