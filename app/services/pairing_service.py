@@ -16,12 +16,15 @@ def get_food_pairings(food_key: str) -> list[dict]:
     preferred_types = food["wine_types"]
     preferred_ageing = food["ageing"]
 
-    # Primary: type AND ageing match / Tipo Y crianza coinciden
+    # Two-tier matching: wines that match BOTH type and ageing come first,
+    # then wines that match only type. This surfaces the best pairing first
+    # while keeping the list broad enough to always show results.
+    # Maridaje en dos niveles: primero los vinos que coinciden en tipo Y crianza,
+    # luego los que solo coinciden en tipo, para asegurar siempre resultados.
     primary = [
         w for w in WINES
         if w["vine_type"] in preferred_types and w["wine_ageing"] in preferred_ageing
     ]
-    # Secondary: type match only / Solo coincide el tipo
     secondary = [
         w for w in WINES
         if w["vine_type"] in preferred_types and w not in primary
@@ -32,7 +35,8 @@ def get_food_pairings(food_key: str) -> list[dict]:
 
 
 def get_food_pairings_split(food_key: str) -> dict:
-    """Return top 3 by rating and top 3 by quality-price ratio for a food."""
+    """Return top 3 by rating and top 3 by quality-price ratio for a food.
+    Devuelve top 3 por valoración y top 3 por ratio calidad-precio para un plato."""
     food = next((f for f in FOOD_OPTIONS if f["key"] == food_key), None)
     if not food:
         return {"top": [], "value": []}
@@ -53,6 +57,8 @@ def get_food_pairings_split(food_key: str) -> dict:
     top = sorted(all_candidates, key=lambda w: w["rating"], reverse=True)[:3]
     top_ids = {w["id"] for w in top}
 
+    # Value picks exclude the top-rated three to avoid showing the same wines twice
+    # Los de calidad-precio excluyen los tres mejor valorados para no repetir
     remaining = [w for w in all_candidates if w["id"] not in top_ids]
     value = sorted(remaining, key=lambda w: w.get("quality_price_ratio", 0), reverse=True)[:3]
 
@@ -65,14 +71,6 @@ def get_value_filter_options() -> dict:
     regions = sorted({w["region"] for w in WINES})
     grapes = sorted({g.strip() for w in WINES for g in w["grape_variety"].split(" / ")})
     return {"vine_types": vine_types, "regions": regions, "grapes": grapes}
-
-
-def get_wine_by_id(wine_id: int) -> dict | None:
-    """Return a wine by its unique ID, or None if not found.
-    Devuelve un vino por su ID único, o None si no existe."""
-    if wine_id <= 0:
-        return None
-    return next((w for w in WINES if w["id"] == wine_id), None)
 
 
 def get_best_value_wines(

@@ -90,10 +90,10 @@
 <div class="explore-page-hero">
   <div class="container">
     <span class="page-hero-icon">{{ svg_icon("compass") }}</span>
-    <h1>Explorar <span class="text-gold">perfiles de vino</span></h1>
+    <h1 data-i18n-html="explore_title_html">Explorar <span class="text-gold">perfiles de vino</span></h1>
     <p>
-      Nuestro modelo de clustering descubrió {{ profiles | length }} perfiles naturales en el dataset.
-      Cada uno tiene su propio carácter, temperatura y maridaje.
+      <span class="i18n-es-only">Nuestro modelo de clustering descubrió {{ profiles | length }} perfiles naturales en el dataset. Cada uno tiene su propio carácter, temperatura y maridaje.</span>
+      <span class="i18n-en-only">Our clustering model discovered {{ profiles | length }} natural profiles in the dataset. Each has its own character, serving temperature and food pairing.</span>
     </p>
   </div>
 </div>
@@ -108,12 +108,12 @@
     </span>
     {% endfor %}
   </div>
-  <h2 class="explore-cta-title">¿Cuál de estos perfiles eres tú?</h2>
-  <p class="explore-cta-desc">
+  <h2 class="explore-cta-title" data-i18n="explore_cta_title">¿Cuál de estos perfiles eres tú?</h2>
+  <p class="explore-cta-desc" data-i18n="explore_cta_desc">
     Responde 5 preguntas rápidas y nuestro sommelier IA identificará el perfil
     vinícola que mejor encaja con tu paladar.
   </p>
-  <a href="/perfil" class="btn btn-gold" style="padding: 0.9rem 2.6rem; font-size: 0.95rem;">
+  <a href="/perfil" class="btn btn-gold" style="padding: 0.9rem 2.6rem; font-size: 0.95rem;" data-i18n="explore_cta_btn">
     Descubre tu perfil →
   </a>
 </div>
@@ -124,7 +124,10 @@
 
     <div class="explore-profiles-heading">
       <div class="explore-divider"></div>
-      <span class="explore-profiles-label">Los {{ profiles | length }} perfiles vinícolas</span>
+      <span class="explore-profiles-label">
+        <span class="i18n-es-only">Los {{ profiles | length }} perfiles vinícolas</span>
+        <span class="i18n-en-only">The {{ profiles | length }} wine profiles</span>
+      </span>
       <div class="explore-divider"></div>
     </div>
 
@@ -137,7 +140,13 @@
         <div class="cc-medallion">{{ svg_icon(p.icon_name) }}</div>
         <div class="cc-name">{{ p.name }}</div>
         <div class="cc-count">
-          {% if p.wine_count > 0 %}{{ p.wine_count }} vinos{% else %}Próximamente{% endif %}
+          {% if p.wine_count > 0 %}
+            <span class="i18n-es-only">{{ p.wine_count }} vinos</span>
+            <span class="i18n-en-only">{{ p.wine_count }} wines</span>
+          {% else %}
+            <span class="i18n-es-only">Próximamente</span>
+            <span class="i18n-en-only">Coming soon</span>
+          {% endif %}
         </div>
       </button>
       {% endfor %}
@@ -157,16 +166,28 @@
           <div>
             <div class="cp-name">{{ p.name }}</div>
             <div class="cp-count">
-              {% if p.wine_count > 0 %}{{ p.wine_count }} vinos{% else %}Próximamente{% endif %}
+              {% if p.wine_count > 0 %}
+                <span class="i18n-es-only">{{ p.wine_count }} vinos</span>
+                <span class="i18n-en-only">{{ p.wine_count }} wines</span>
+              {% else %}
+                <span class="i18n-es-only">Próximamente</span>
+                <span class="i18n-en-only">Coming soon</span>
+              {% endif %}
             </div>
           </div>
         </div>
 
-        <p class="cp-desc">{{ p.description }}</p>
+        <p class="cp-desc">
+          <span class="i18n-es-only">{{ p.description }}</span>
+          <span class="i18n-en-only">{{ p.description_en or p.description }}</span>
+        </p>
 
         <div class="cp-tags">
           {% for tag in p.characteristics %}
-          <span class="cluster-tag">{{ tag }}</span>
+          <span class="cluster-tag i18n-es-only">{{ tag }}</span>
+          {% endfor %}
+          {% for tag in (p.characteristics_en or p.characteristics) %}
+          <span class="cluster-tag i18n-en-only">{{ tag }}</span>
           {% endfor %}
         </div>
 
@@ -184,7 +205,7 @@
 
         <div class="cp-footer">
           <div class="temp-badge">{{ svg_icon("thermometer") }} {{ p.temp }}</div>
-          <a href="/explorar?cluster={{ p.id }}" class="btn btn-outline btn-sm">
+          <a href="/explorar?cluster={{ p.id }}" class="btn btn-outline btn-sm" data-i18n="explore_view_all">
             Ver todos los vinos →
           </a>
         </div>
@@ -209,7 +230,8 @@
       {% endfor %}
     </div>
     {% elif selected_profile %}
-      {{ empty_state("ai-circuit", "Los vinos de este perfil estarán disponibles cuando se integre el modelo ML.") }}
+      <div class="i18n-es-only">{{ empty_state("ai-circuit", "Los vinos de este perfil estarán disponibles cuando se integre el modelo ML.") }}</div>
+      <div class="i18n-en-only">{{ empty_state("ai-circuit", "The wines for this profile will be available once the ML model is integrated.") }}</div>
     {% endif %}
 
   </div>

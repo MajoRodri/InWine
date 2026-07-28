@@ -2,7 +2,7 @@
 Router de recomendación / Recommendation router.
 """
 
-from fastapi import APIRouter, Request, Form, Query
+from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse
 
 from app.services.recommender import get_wine_recommendation, get_filter_options

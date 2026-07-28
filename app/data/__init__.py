@@ -24,8 +24,9 @@ WINE_PROFILES: list[dict] = [
         **v,
         **PROFILE_UI.get(k, {}),
         "wine_count":  _cluster_counts.get(k, 0),
-        "name":        USER_PROFILES_BY_ID[k]["name"] if k in USER_PROFILES_BY_ID else v.get("name", f"Cluster {k}"),
-        "description": USER_PROFILES_BY_ID[k]["description"] if k in USER_PROFILES_BY_ID else v.get("description", ""),
+        "name":           USER_PROFILES_BY_ID[k]["name"] if k in USER_PROFILES_BY_ID else v.get("name", f"Cluster {k}"),
+        "description":    USER_PROFILES_BY_ID[k]["description"] if k in USER_PROFILES_BY_ID else v.get("description", ""),
+        "description_en": USER_PROFILES_BY_ID[k].get("description_en", "") if k in USER_PROFILES_BY_ID else "",
     }
     for k, v in sorted(CLUSTER_PROFILES.items())
 ]
