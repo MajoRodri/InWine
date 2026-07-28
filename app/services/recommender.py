@@ -475,8 +475,10 @@ def get_user_profile(answers: list[str]) -> dict:
 
     votes: dict[int, int] = {}
     for ans in (answers or []):
-        profile_id = answer_profile_map.get(_clean(ans), 7)
-        votes[profile_id] = votes.get(profile_id, 0) + 1
+        key = _clean(ans)
+        profile_id = answer_profile_map.get(key, 7)
+        weight = 4 if key.startswith("pref_") else 1
+        votes[profile_id] = votes.get(profile_id, 0) + weight
 
     profile_id = max(votes, key=lambda k: votes[k]) if votes else 7
     return USER_PROFILES_BY_ID.get(profile_id, USER_PROFILES[0])
