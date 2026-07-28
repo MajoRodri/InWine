@@ -1144,7 +1144,7 @@ pytest tests/test_pipeline.py   # MLOps pipeline only
 
 <div align="center">
 
-| [**Mariajose Alvarez**](https://github.com/MajoRodri) | [**María Roldán**](https://github.com/Mary1922) | [**Adrianna Aránguez**](https://github.com/adrianaarang) | [**Gema Villanueva**](https://github.com/Gema-Villanueva) |
+| [**Mariajose Alvarez**](https://github.com/MajoRodri) | [**María Roldán**](https://github.com/Mary1922) | [**Adriana Aránguez**](https://github.com/adrianaarang) | [**Gema Villanueva**](https://github.com/Gema-Villanueva) |
 | :---: | :---: | :---: | :---: |
 | Scrum Master | Product Owner | Developer | Developer |
 
