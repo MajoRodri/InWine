@@ -6,7 +6,7 @@ from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse
 
 from app.data.user_profiles import USER_PROFILES
-from app.services.recommender import get_user_profile, get_wines_by_cluster, get_wines_by_budget
+from app.services.recommender import get_user_profile, get_profile_wines
 from app.templates_config import templates
 
 router = APIRouter()
@@ -35,7 +35,7 @@ async def profile_result(
     q3: str = Form("menos_10"),
     q4: str = Form("fines_semana"),
     q5: str = Form("variada"),
-    q6: str = Form("pref_sin_pref"),
+    q6: str = Form("pref_tinto"),
     q7: str = Form("car_joven"),
     q8: str = Form("criterio_precio"),
 ):
@@ -44,15 +44,13 @@ async def profile_result(
     profile = get_user_profile(answers)
     max_price = _PRICE_MAX.get(q3)
 
-    cluster_wines = get_wines_by_cluster(profile["cluster_id"], max_price=max_price)
-    if len(cluster_wines) >= 4 or max_price is None:
-        recommended = cluster_wines[:4]
-    else:
-        # Cluster too small for this budget → pad with top-rated wines from the full catalogue
-        # El cluster tiene pocos vinos para este presupuesto → completar con los mejor valorados del catálogo
-        seen = {w["id"] for w in cluster_wines}
-        extras = get_wines_by_budget(max_price, exclude_ids=seen)
-        recommended = (cluster_wines + extras)[:4]
+    recommended = get_profile_wines(
+        profile["cluster_id"],
+        max_price=max_price,
+        vine_type_pref=q6,
+        ageing_pref=q7,
+        n=4,
+    )
 
     return templates.TemplateResponse(request, "profile.html", {
         "user_profile": profile,
