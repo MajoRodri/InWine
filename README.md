@@ -342,8 +342,8 @@ Los tres objetos entrenados (StandardScaler, K-Means y PCA) se serializan juntos
 
 | Script | Qué hace |
 | :--- | :--- |
-| `src/train_pipeline.py` | Carga el CSV, llama a `preprocess()`, entrena K-Means (K=8) y PCA (2D), guarda el artefacto `.joblib` |
-| `src/predict_pipeline.py` | Carga el artefacto, aplica Target Encoding + escalado + K-Means + PCA a un DataFrame nuevo, y opcionalmente lo añade al catálogo CSV |
+| `src/train_pipeline.py` | Lee `wines_SPA_model_ready.csv` (ya preprocesado por los notebooks), carga el scaler del `.pkl`, entrena K-Means (K=8) y PCA (2D), guarda el artefacto `.joblib` |
+| `src/predict_pipeline.py` | Carga el artefacto, aplica Target Encoding + OHE + escalado + K-Means + PCA a un DataFrame nuevo, y opcionalmente lo añade al catálogo CSV |
 | `src/add_wine.py` | CLI interactivo: pregunta los datos campo a campo, valida, muestra resumen, llama a `predict_pipeline` y añade el vino al catálogo |
 
 <br>
@@ -351,13 +351,14 @@ Los tres objetos entrenados (StandardScaler, K-Means y PCA) se serializan juntos
 **Flujo de datos**
 
 ```
-wines_SPA_enriched_FINAL.csv
-        │
-        ▼
+wines_SPA_model_ready.csv  +  preprocessing_objects.pkl
+        │                           │
+        │ (ya escalado por notebooks)│ (scaler + mapeos)
+        └─────────────┬─────────────┘
+                      ▼
   train_pipeline.py
   ┌───────────────────────────────────────┐
-  │  preprocess()  →  StandardScaler.fit  │
-  │  KMeans.fit(X)                        │
+  │  KMeans.fit(X)   ← 18 features       │
   │  PCA.fit(X)                           │
   └──────────────┬────────────────────────┘
                  │ joblib.dump()
@@ -392,19 +393,19 @@ wines_SPA_enriched_FINAL.csv
 | :--- | :---: |
 | Añadir un vino nuevo | ✗ No — usar `add_wine.py` |
 | El dataset base cambia (nuevos vinos del scraper) | ✓ Sí |
-| Se modifica `preprocessing.py` | ✓ Sí |
+| Se vuelven a ejecutar los notebooks de preprocessing | ✓ Sí |
 | Se cambia el número de clusters K | ✓ Sí |
 
 <br>
 
 **Tests — `tests/test_pipeline.py`**
 
-11 tests con fixtures sintéticas (sin CSV real):
+11 tests con fixtures sintéticas (sin CSV real) que verifican las 8 claves del artefacto, las 18 features y la ausencia de re-entrenamiento:
 
 | Test | Qué verifica |
 | :--- | :--- |
 | `test_artifact_save_and_load` | El `.joblib` se guarda y carga sin errores |
-| `test_artifact_contains_required_keys` | Las 6 claves del artefacto están presentes |
+| `test_artifact_contains_required_keys` | Las 8 claves del artefacto están presentes |
 | `test_new_wine_gets_cluster_id` | Cada vino recibe un `cluster_id` válido (0–7) |
 | `test_pc1_and_pc2_generated` | `PC1` y `PC2` se generan sin nulos |
 | `test_row_count_preserved` | El nº de filas de entrada = nº de filas de salida |
@@ -600,8 +601,8 @@ The three trained objects (StandardScaler, K-Means and PCA) are serialised toget
 
 | Script | What it does |
 | :--- | :--- |
-| `src/train_pipeline.py` | Loads the CSV, calls `preprocess()`, trains K-Means (K=8) and PCA (2D), saves the `.joblib` artifact |
-| `src/predict_pipeline.py` | Loads the artifact, applies Target Encoding + scaling + K-Means + PCA to a new DataFrame, and optionally appends it to the catalog CSV |
+| `src/train_pipeline.py` | Reads `wines_SPA_model_ready.csv` (already preprocessed by the notebooks), loads the scaler from the `.pkl`, trains K-Means (K=8) and PCA (2D), saves the `.joblib` artifact |
+| `src/predict_pipeline.py` | Loads the artifact, applies Target Encoding + OHE + scaling + K-Means + PCA to a new DataFrame, and optionally appends it to the catalog CSV |
 | `src/add_wine.py` | Interactive CLI: asks for data field by field, validates, shows a summary, calls `predict_pipeline` and appends the wine to the catalog |
 
 <br>
@@ -618,7 +619,7 @@ The three trained objects (StandardScaler, K-Means and PCA) are serialised toget
 | :--- | :---: |
 | Adding a new wine | ✗ No — use `add_wine.py` |
 | Base dataset changes (new wines from the scraper) | ✓ Yes |
-| `preprocessing.py` logic is modified | ✓ Yes |
+| Preprocessing notebooks are re-run | ✓ Yes |
 | Number of clusters K changes | ✓ Yes |
 
 <br>
@@ -657,11 +658,11 @@ python -m src.train_pipeline
 
 Salida esperada:
 ```
-Dataset cargado: (2024, 13)
-Preprocesamiento completado: (2024, 43)
-Features para clustering/PCA: 15 columnas
-K-Means entrenado (K=8). Distribución: {0: 315, 1: 137, ...}
-PCA entrenado — PC1: 31.2%, PC2: 17.6% de varianza explicada
+Dataset cargado: (2024, 45)
+Features para clustering/PCA: 18 columnas
+Scaler y mapeos de preprocesamiento cargados.
+K-Means entrenado (K=8). Distribucion: {0: 315, 1: 137, ...}
+PCA entrenado - PC1: 31.2%, PC2: 17.6% de varianza explicada
 Artefacto guardado en: models/inwine_pipeline.joblib
 ```
 
@@ -685,7 +686,7 @@ python -m src.add_wine
   Región (D.O.): Penedès
   Precio (€): 35
   Tipo de vino:
-    1. Tinto  2. Blanco  3. Rosado  4. Espumoso  5. Generoso
+    1. Tinto  2. Blanco  3. Espumoso  4. Generoso  5. Desconocido
   Elige: 1
   Variedad de uva [Blend/Other]: Cabernet Sauvignon
   Crianza [0/1]: 0
@@ -1018,10 +1019,10 @@ playwright install chromium
 python scrapper/scrapper_enriched.py
 ```
 
-**Pipeline de datos** *(solo si quieres re-entrenar)*
+**Pipeline de datos** *(solo si quieres re-entrenar desde cero)*
 ```bash
 # Ejecutar notebooks en orden: 01 → 02 → 03 → 04 → 05
-cd preprocessing && python preprocessing.py
+# Generan wines_SPA_model_ready.csv y preprocessing_objects.pkl
 ```
 
 **MLOps — entrenar el artefacto** *(solo la primera vez o al cambiar el dataset)*
@@ -1071,10 +1072,10 @@ playwright install chromium
 python scrapper/scrapper_enriched.py
 ```
 
-**Data pipeline** *(only if you want to retrain)*
+**Data pipeline** *(only if you want to retrain from scratch)*
 ```bash
 # Run notebooks in order: 01 → 02 → 03 → 04 → 05
-cd preprocessing && python preprocessing.py
+# They generate wines_SPA_model_ready.csv and preprocessing_objects.pkl
 ```
 
 **MLOps — train the artifact** *(first time only, or when the dataset changes)*

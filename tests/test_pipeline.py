@@ -43,22 +43,28 @@ FLAVOR_FAMILIES = [
     "floral_mineral",
 ]
 
-# Lista de columnas numéricas en el mismo orden que usa preprocessing.py para escalar
-# Si el orden cambia aquí pero no en preprocessing.py (o viceversa), los tests fallarán
-# List of numeric columns in the same order that preprocessing.py uses for scaling
-# If the order changes here but not in preprocessing.py (or vice versa), tests will fail
+# Lista de columnas en el mismo orden que usa el notebook 03_preprocessing.ipynb para escalar.
+# Debe coincidir exactamente con feature_columns del artefacto real (18 columnas).
+# Si el orden cambia aquí pero no en el notebook (o viceversa), los tests fallarán.
+# List of columns in the same order that notebook 03_preprocessing.ipynb uses for scaling.
+# Must match exactly the feature_columns of the real artifact (18 columns).
+# If the order changes here but not in the notebook (or vice versa), tests will fail.
 NUMERIC_COLS = [
-    "price_log",
-    "rating",
-    "quality_price_ratio",
     "year",
+    "rating",
+    "price_log",
     "wine_ageing",
-    "region_mean_price",
-    "region_mean_rating",
-    "grape_variety_mean_price",
-    "grape_variety_mean_rating",
+    "quality_price_ratio",
+    "region_encoded",          # Target Encoding de región (precio medio) / Region Target Encoding (mean price)
+    "grape_variety_encoded",   # Target Encoding de uva (precio medio) / Grape Target Encoding (mean price)
     "service_temp_midpoint",
-] + [f"flavor_{f}" for f in FLAVOR_FAMILIES]  # Añade las 5 columnas de sabor al final / Adds the 5 flavor columns at the end
+] + [f"flavor_{f}" for f in FLAVOR_FAMILIES] + [  # 5 familias aromáticas / 5 aroma families
+    "type_Blanco",             # One-Hot Encoding de vine_type (5 columnas) / vine_type One-Hot Encoding (5 columns)
+    "type_Desconocido",
+    "type_Espumoso",
+    "type_Generoso",
+    "type_Tinto",
+]
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -122,42 +128,22 @@ def _make_artifacts(n_clusters: int = 3) -> dict:
     # List of scaled column names (same as feature_columns in the real pipeline)
     feature_columns = [f"{c}_scaled" for c in NUMERIC_COLS]
 
-    # Diccionario de Target Encoding sintético con algunas regiones y uvas conocidas
-    # Synthetic Target Encoding dictionary with some known regions and grapes
-    encodings = {
-        "region": {
-            "global_mean_price": 50.0,   # Fallback si la región no está en la tabla / Fallback if region is not in the table
-            "global_mean_rating": 4.3,
-            "region_stats": {
-                "Rioja": {"region_mean_price": 55.0, "region_mean_rating": 4.35},
-                "Penedes": {"region_mean_price": 42.0, "region_mean_rating": 4.28},
-            },
-        },
-        "grape": {
-            "global_mean_price": 50.0,
-            "global_mean_rating": 4.3,
-            "grape_variety_stats": {
-                "Tempranillo": {
-                    "grape_variety_mean_price": 48.0,
-                    "grape_variety_mean_rating": 4.32,
-                },
-                "Garnacha": {
-                    "grape_variety_mean_price": 38.0,
-                    "grape_variety_mean_rating": 4.25,
-                },
-            },
-        },
-    }
+    # Mapas de Target Encoding sintéticos: región y uva → precio medio
+    # Synthetic Target Encoding maps: region and grape → mean price
+    region_price_map = {"Rioja": 55.0, "Penedes": 42.0}   # Fallback implícito = media de estos valores
+    grape_price_map  = {"Tempranillo": 48.0, "Garnacha": 38.0}
 
     # Devuelve el diccionario con la misma estructura que el pipeline real
     # Returns the dictionary with the same structure as the real pipeline
     return {
-        "scaler": scaler,
-        "target_encodings": encodings,
-        "kmeans": kmeans,
-        "pca": pca,
-        "feature_columns": feature_columns,
-        "k": n_clusters,  # Número de clusters / Number of clusters
+        "scaler":           scaler,
+        "region_price_map": region_price_map,  # Precio medio por región / Mean price per region
+        "grape_price_map":  grape_price_map,   # Precio medio por uva / Mean price per grape
+        "model_features":   NUMERIC_COLS,      # Nombres sin _scaled, en orden / Names without _scaled, in order
+        "kmeans":           kmeans,
+        "pca":              pca,
+        "feature_columns":  feature_columns,
+        "k":                n_clusters,        # Número de clusters / Number of clusters
     }
 
 
@@ -210,7 +196,7 @@ def test_artifact_contains_required_keys(artifacts):
     Verifica que el artefacto tiene todas las claves que el pipeline necesita.
     Verifies that the artifact has all the keys the pipeline needs.
     """
-    required = {"scaler", "target_encodings", "kmeans", "pca", "feature_columns", "k"}
+    required = {"scaler", "region_price_map", "grape_price_map", "model_features", "kmeans", "pca", "feature_columns", "k"}
     # issubset comprueba que 'required' está contenido en las claves del artefacto
     # issubset checks that 'required' is contained in the artifact's keys
     assert required.issubset(set(artifacts.keys()))

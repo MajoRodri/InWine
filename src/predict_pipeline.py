@@ -104,49 +104,37 @@ def _apply_temperature_mapping(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def _apply_target_encodings(df: pd.DataFrame, encodings: dict) -> pd.DataFrame:
+def _apply_target_encodings(df: pd.DataFrame, artifacts: dict) -> pd.DataFrame:
     """
-    Sustituye región y variedad de uva por sus estadísticos medios guardados durante el entrenamiento.
+    Sustituye región y variedad de uva por el precio medio guardado durante el entrenamiento
+    (replicando el Target Encoding simple del notebook 03_preprocessing.ipynb).
     Si la región o uva es desconocida, usa la media global como fallback.
 
-    Replaces region and grape variety with their mean statistics saved during training.
+    Replaces region and grape variety with the mean price saved during training
+    (replicating the simple Target Encoding from notebook 03_preprocessing.ipynb).
     If the region or grape is unknown, uses the global mean as fallback.
     """
-    # Extrae el diccionario de encodings de región del artefacto
-    # Extracts the region encodings dictionary from the artifact
-    region_enc = encodings["region"]
-    region_stats = region_enc["region_stats"]       # Tabla con estadísticos por región / Table with stats per region
-    global_price_r = region_enc["global_mean_price"] # Precio medio global (fallback) / Global mean price (fallback)
-    global_rating_r = region_enc["global_mean_rating"] # Rating medio global (fallback) / Global mean rating (fallback)
+    region_map = artifacts["region_price_map"]
+    grape_map  = artifacts["grape_price_map"]
 
-    # Para cada vino, busca el precio medio de su región en la tabla guardada
-    # Si la región no existe, usa la media global
-    # For each wine, looks up the mean price of its region in the saved table
-    # If the region doesn't exist, uses the global mean
-    df["region_mean_price"] = df["region"].map(
-        lambda r: region_stats.get(r, {}).get("region_mean_price", global_price_r)
-    )
+    global_region = sum(region_map.values()) / len(region_map) if region_map else 0.0
+    global_grape  = sum(grape_map.values())  / len(grape_map)  if grape_map  else 0.0
 
-    # Mismo proceso para el rating medio de la región
-    # Same process for the mean rating of the region
-    df["region_mean_rating"] = df["region"].map(
-        lambda r: region_stats.get(r, {}).get("region_mean_rating", global_rating_r)
-    )
+    df["region_encoded"]        = df["region"].map(lambda r: region_map.get(r, global_region))
+    df["grape_variety_encoded"] = df["grape_variety"].map(lambda g: grape_map.get(g, global_grape))
+    return df
 
-    # Repite el proceso para la variedad de uva
-    # Repeats the process for the grape variety
-    grape_enc = encodings["grape"]
-    grape_stats = grape_enc["grape_variety_stats"]
-    global_price_g = grape_enc["global_mean_price"]
-    global_rating_g = grape_enc["global_mean_rating"]
 
-    df["grape_variety_mean_price"] = df["grape_variety"].map(
-        lambda g: grape_stats.get(g, {}).get("grape_variety_mean_price", global_price_g)
-    )
-    df["grape_variety_mean_rating"] = df["grape_variety"].map(
-        lambda g: grape_stats.get(g, {}).get("grape_variety_mean_rating", global_rating_g)
-    )
+def _apply_one_hot_encoding(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Crea las columnas OHE de vine_type replicando el pd.get_dummies del notebook.
+    Solo los 5 tipos presentes en el entrenamiento: Blanco, Desconocido, Espumoso, Generoso, Tinto.
 
+    Creates vine_type OHE columns replicating the notebook's pd.get_dummies.
+    Only the 5 types present at training time: Blanco, Desconocido, Espumoso, Generoso, Tinto.
+    """
+    for t in ["Blanco", "Desconocido", "Espumoso", "Generoso", "Tinto"]:
+        df[f"type_{t}"] = (df["vine_type"] == t).astype(int)
     return df
 
 
@@ -161,10 +149,9 @@ def predict_from_artifacts(df_new: pd.DataFrame, artifacts: dict) -> pd.DataFram
     Returns the same DataFrame with cluster_id, PC1 and PC2 added.
     """
     # Extrae cada objeto del artefacto por su clave / Extracts each object from the artifact by its key
-    scaler = artifacts["scaler"]                    # StandardScaler ya entrenado / Already trained StandardScaler
-    encodings = artifacts["target_encodings"]       # Diccionarios de Target Encoding / Target Encoding dictionaries
-    kmeans = artifacts["kmeans"]                    # Modelo K-Means ya entrenado / Already trained K-Means model
-    pca = artifacts["pca"]                          # Modelo PCA ya entrenado / Already trained PCA model
+    scaler          = artifacts["scaler"]           # StandardScaler ya entrenado / Already trained StandardScaler
+    kmeans          = artifacts["kmeans"]           # Modelo K-Means ya entrenado / Already trained K-Means model
+    pca             = artifacts["pca"]              # Modelo PCA ya entrenado / Already trained PCA model
     feature_columns = artifacts["feature_columns"]  # Nombres de columnas en el orden exacto del entrenamiento
                                                     # Column names in the exact order used during training
 
@@ -189,24 +176,29 @@ def predict_from_artifacts(df_new: pd.DataFrame, artifacts: dict) -> pd.DataFram
     df = _apply_temperature_mapping(df)
 
     # PASO 4 / STEP 4:
-    # Sustituye región y uva por sus estadísticos guardados (sin re-entrenar)
-    # Replaces region and grape with their saved statistics (without retraining)
-    df = _apply_target_encodings(df, encodings)
+    # Sustituye región y uva por el precio medio guardado (sin re-entrenar)
+    # Replaces region and grape with the saved mean price (without retraining)
+    df = _apply_target_encodings(df, artifacts)
 
     # PASO 5 / STEP 5:
+    # Crea columnas One-Hot para vine_type replicando el pd.get_dummies del entrenamiento
+    # Creates One-Hot columns for vine_type replicating training's pd.get_dummies
+    df = _apply_one_hot_encoding(df)
+
+    # PASO 6 / STEP 6:
     # Recupera los nombres de columnas sin escalar a partir de los nombres escalados
     # e.g. "price_log_scaled" → "price_log"
     # Recovers the unscaled column names from the scaled column names
     unscaled_cols = [col[: -len("_scaled")] for col in feature_columns]
 
-    # PASO 6 / STEP 6:
+    # PASO 7 / STEP 7:
     # Escala los datos usando el scaler ya entrenado
     # CRÍTICO: .transform() aplica la fórmula aprendida, .fit() la re-aprendería desde cero
     # Scales the data using the already trained scaler
     # CRITICAL: .transform() applies the learned formula, .fit() would re-learn it from scratch
     X = scaler.transform(df[unscaled_cols])
 
-    # PASO 7 / STEP 7:
+    # PASO 8 / STEP 8:
     # KMeans.predict() asigna cada vino al cluster más cercano sin mover los centroides
     # KMeans.predict() assigns each wine to the nearest cluster without moving the centroids
     df["cluster_id"] = kmeans.predict(X)
