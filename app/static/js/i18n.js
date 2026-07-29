@@ -38,7 +38,7 @@
       /* explore.html */
       explore_title_html: 'Explorar <span class="text-gold">perfiles de vino</span>',
       explore_cta_title:  "¿Cuál de estos perfiles eres tú?",
-      explore_cta_desc:   "Responde 5 preguntas rápidas y nuestro sommelier IA identificará el perfil vinícola que mejor encaja con tu paladar.",
+      explore_cta_desc:   "Responde 8 preguntas rápidas y nuestro sommelier IA identificará el perfil vinícola que mejor encaja con tu paladar.",
       explore_cta_btn:    "Descubre tu perfil →",
       explore_wine_soon:  "Próximamente",
       explore_view_all:   "Ver todos los vinos →",
@@ -175,7 +175,7 @@
 
       /* profile.html */
       profile_title_html:   'Descubre tu <span class="text-gold">perfil vinícola</span>',
-      profile_subtitle:     "5 preguntas rápidas sobre tus gustos. Te diremos qué tipo de vino eres.",
+      profile_subtitle:     "8 preguntas rápidas sobre tus gustos. Te diremos qué tipo de vino eres.",
       profile_wheel_sub:    "Explora todos los perfiles vinícolas — el tuyo aparece resaltado",
       profile_yours:        "Tu perfil",
       profile_match_badge:  "Tu perfil vinícola",
@@ -383,7 +383,7 @@
       chat_intent_pairing:  "Maridaje",
       chat_intent_rec:      "Recomiéndame un vino",
       chat_pairing_intro:   "El maridaje es el arte de hacer que la comida y el vino se realcen mutuamente. ¿Qué vas a preparar hoy?",
-      chat_rec_intro:       "Perfecto, te ayudo a encontrar tu vino ideal. Son tres preguntas rápidas.<br><br>¿Con qué lo vas a disfrutar?",
+      chat_rec_intro:       "Perfecto, te ayudo a encontrar tu vino ideal. Son cuatro preguntas rápidas.<br><br>¿Con qué lo vas a disfrutar?",
       chat_type_q:          "¿Tienes preferencia por algún tipo de vino?",
       chat_surprise:        "Sorpréndeme",
       chat_tinto:           "Tinto",
@@ -725,7 +725,7 @@
       /* explore.html */
       explore_title_html: 'Explore <span class="text-gold">wine profiles</span>',
       explore_cta_title:  "Which of these profiles are you?",
-      explore_cta_desc:   "Answer 5 quick questions and our AI sommelier will identify the wine profile that best matches your palate.",
+      explore_cta_desc:   "Answer 8 quick questions and our AI sommelier will identify the wine profile that best matches your palate.",
       explore_cta_btn:    "Discover your profile →",
       explore_wine_soon:  "Coming soon",
       explore_view_all:   "See all wines →",
@@ -862,7 +862,7 @@
 
       /* profile.html */
       profile_title_html:   'Discover your <span class="text-gold">wine profile</span>',
-      profile_subtitle:     "5 quick questions about your tastes. We'll tell you what kind of wine you are.",
+      profile_subtitle:     "8 quick questions about your tastes. We'll tell you what kind of wine you are.",
       profile_wheel_sub:    "Explore all wine profiles — yours appears highlighted",
       profile_yours:        "Your profile",
       profile_match_badge:  "Your wine profile",
@@ -1070,7 +1070,7 @@
       chat_intent_pairing:  "Pairing",
       chat_intent_rec:      "Recommend me a wine",
       chat_pairing_intro:   "Pairing is the art of making food and wine enhance each other. What are you cooking today?",
-      chat_rec_intro:       "Perfect, I\'ll help you find your ideal wine. Just three quick questions.<br><br>What will you enjoy it with?",
+      chat_rec_intro:       "Perfect, I\'ll help you find your ideal wine. Just four quick questions.<br><br>What will you enjoy it with?",
       chat_type_q:          "Do you have a preference for any wine type?",
       chat_surprise:        "Surprise me",
       chat_tinto:           "Red",
